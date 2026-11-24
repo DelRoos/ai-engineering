@@ -8,11 +8,10 @@ export const site = {
   description:
     "Une formation open source et gratuite pour devenir AI Engineer : 72 semaines, 6 projets publics, sur un PC de 8 Go de RAM sans carte graphique. En français, ancrée en Afrique francophone.",
   /**
-   * URL du dépôt GitHub public. Tant qu'elle vaut null, les boutons « GitHub »
+   * URL du dépôt GitHub public. Si elle vaut null, les boutons « GitHub »
    * mènent à la section open source, qui annonce que le dépôt arrive bientôt.
-   * TODO : renseigner l'URL quand le dépôt sera public.
    */
-  githubUrl: null as string | null,
+  githubUrl: "https://github.com/DelRoos/ai-engineering" as string | null,
   licences: {
     content: "CC BY-SA 4.0",
     code: "MIT",
