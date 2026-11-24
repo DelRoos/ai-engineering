@@ -1,0 +1,137 @@
+---
+id: "X.Y"
+chapitre: 1
+titre: "Titre du cours"
+parcours: "0N-nom-de-l-etape"
+semaine: 1
+duree_estimee: "3 h"
+objectifs: [O1, O2, O3]
+prerequis: []
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-24
+licence: CC-BY-SA-4.0
+---
+
+{/* CONSIGNE : structure obligatoire (docs/guide-pedagogique.md § 1) : Objectifs, Prérequis, Pourquoi, Notions, Erreurs fréquentes, Résumé. Format et pièges MDX : docs/format-contenu.md. Pas de titre « # » : le titre vient du front matter. Supprime tous les commentaires CONSIGNE. */}
+
+<Objectifs>
+
+À la fin de ce cours, tu sais :
+
+- **O1** — écrire …
+- **O2** — calculer …
+- **O3** — choisir et justifier …
+
+</Objectifs>
+
+<Prerequis>
+
+- … (voir [module X.Y](../NN-nom/cours.mdx))
+
+</Prerequis>
+
+<Pourquoi>
+
+{/* CONSIGNE : 100 à 250 mots. Une situation concrète ancrée en Afrique francophone, où l'apprenant ressent le besoin de la notion. C'est le début du fil rouge. */}
+
+…
+
+</Pourquoi>
+
+<Notion id="premiere-notion" titre="Titre de la première notion">
+
+{/* CONSIGNE : 300 à 800 mots. Une seule idée nouvelle. Ordre : explication → exemple → mini-exercice. Termes techniques selon docs/glossaire.md et le guide § 3.1 : « un **dataset** (en français : jeu de données) » pour un terme anglais, « une **liste** (*list*) » pour un mot transparent. 3 termes anglais nouveaux au plus par notion. */}
+
+…
+
+<Exemple titre="Titre de l'exemple">
+
+{/* CONSIGNE : code exécuté et vérifié, 15 lignes de préférence, avec la vraie sortie dans un bloc « text ». */}
+
+```python title="exemple.py"
+# code
+```
+
+```text
+sortie
+```
+
+</Exemple>
+
+<MiniExercice id="premiere-notion-1">
+
+{/* CONSIGNE : 2 à 10 minutes. Faisable dans la tête, sur papier ou dans un terminal Python. */}
+
+…
+
+<Solution>
+
+…
+
+</Solution>
+</MiniExercice>
+
+</Notion>
+
+<Notion id="deuxieme-notion" titre="Titre de la deuxième notion">
+
+…
+
+<Exemple titre="…">
+
+…
+
+</Exemple>
+
+<MiniExercice id="deuxieme-notion-1">
+
+…
+
+<Solution>
+
+…
+
+</Solution>
+</MiniExercice>
+
+</Notion>
+
+## Erreurs fréquentes
+
+{/* CONSIGNE : 3 à 6 erreurs réelles de débutant. Pour chacune : symptôme (message exact), cause, correction avec le code corrigé. */}
+
+<Erreur titre="Message ou symptôme court">
+
+**Symptôme** : …
+
+**Cause** : …
+
+**Correction** : …
+
+</Erreur>
+
+<Resume>
+
+- …
+- …
+- …
+
+</Resume>
+
+<Vocabulaire>
+
+{/* CONSIGNE : obligatoire. Tous les termes de catégorie A et B introduits dans ce cours, conformes à docs/glossaire.md (ajoute au glossaire les termes nouveaux). */}
+
+| Terme | Se dit aussi | Définition courte | Prononciation |
+| --- | --- | --- | --- |
+| dataset (le) | jeu de données | Ensemble de données rangées pour une analyse ou un entraînement | « dé-ta-sète » |
+| fonction (*function*) | — | Bloc de code nommé qu'on peut appeler plusieurs fois | — |
+
+</Vocabulaire>
+
+## Pour aller plus loin
+
+{/* CONSIGNE : facultatif. 1 à 3 ressources gratuites, avec langue et durée. Supprime la section si elle est vide. */}
+
+- [Titre de la ressource (anglais, 20 min)](https://…)

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QCM d'un module de la formation AI Engineer",
+  "description": "Format des fichiers qcm.yaml. Règles non exprimables ici et vérifiées par l'outil de validation : la banque contient au moins 2 fois le nombre de questions tirées ; chaque objectif du module a au moins 2 questions ; les identifiants de choix sont uniques dans une question ; chaque valeur de bonnes_reponses existe dans choix.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version_format", "module", "titre", "tirage", "seuil", "questions"],
+  "properties": {
+    "version_format": {
+      "description": "Version du format de ce fichier. Vaut 1 pour l'instant.",
+      "const": 1
+    },
+    "module": {
+      "description": "Identifiant du module, ex. \"0.1\" ou \"3.4\".",
+      "type": "string",
+      "pattern": "^[0-6]\\.[0-9]{1,2}$"
+    },
+    "chapitre": {
+      "description": "Numéro du chapitre si le module a un QCM par chapitre (qcm/NN-slug.yaml).",
+      "type": "integer",
+      "minimum": 1
+    },
+    "titre": {
+      "type": "string",
+      "minLength": 3
+    },
+    "statut": {
+      "enum": ["brouillon", "relu", "publie"]
+    },
+    "mise_a_jour": {
+      "type": "string",
+      "format": "date"
+    },
+    "tirage": {
+      "description": "Nombre de questions tirées au hasard à chaque tentative.",
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 30
+    },
+    "seuil": {
+      "description": "Proportion de bonnes réponses pour valider. 0.8 dans toute la formation.",
+      "type": "number",
+      "const": 0.8
+    },
+    "questions": {
+      "description": "Banque de questions. Au moins 2 fois « tirage » (vérifié par l'outil).",
+      "type": "array",
+      "minItems": 10,
+      "items": { "$ref": "#/$defs/question" }
+    }
+  },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "objectif", "notion", "type", "difficulte", "question", "choix", "bonnes_reponses"],
+      "properties": {
+        "id": {
+          "description": "Identifiant stable : <module>-qNN, ex. \"0.1-q07\". Ne change plus une fois publié.",
+          "type": "string",
+          "pattern": "^[0-6]\\.[0-9]{1,2}-q[0-9]{2,3}$"
+        },
+        "objectif": {
+          "description": "Objectif évalué, défini dans fiche.md (O1, O2…).",
+          "type": "string",
+          "pattern": "^O[0-9]{1,2}$"
+        },
+        "notion": {
+          "description": "Identifiant de la <Notion> du cours à revoir en cas d'erreur.",
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "type": {
+          "description": "unique : une seule bonne réponse. multiple : plusieurs (l'énoncé doit le dire).",
+          "enum": ["unique", "multiple"]
+        },
+        "difficulte": {
+          "description": "1 : rappel. 2 : application. 3 : analyse.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "question": {
+          "description": "Énoncé en Markdown simple (code en ligne et blocs de code autorisés).",
+          "type": "string",
+          "minLength": 10
+        },
+        "choix": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/choix" }
+        },
+        "bonnes_reponses": {
+          "description": "Identifiants des choix corrects.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-e]$" }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "unique" } } },
+          "then": { "properties": { "bonnes_reponses": { "maxItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "multiple" } } },
+          "then": { "properties": { "bonnes_reponses": { "minItems": 2 } } }
+        }
+      ]
+    },
+    "choix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "texte", "explication"],
+      "properties": {
+        "id": {
+          "description": "Lettre du choix (a à e). L'ordre d'affichage est mélangé par l'outil.",
+          "type": "string",
+          "pattern": "^[a-e]$"
+        },
+        "texte": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explication": {
+          "description": "Pourquoi ce choix est juste ou faux, en 1 ou 2 phrases. Affichée après la réponse.",
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    }
+  }
+}

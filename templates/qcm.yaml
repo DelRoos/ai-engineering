@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=./qcm.schema.json
+# CONSIGNE : format validé par templates/qcm.schema.json. Règles d'écriture : docs/guide-pedagogique.md § 7.
+# CONSIGNE : la banque contient au moins 2 fois « tirage » questions, et au moins 2 questions par objectif.
+# CONSIGNE : en copiant ce fichier dans un module, remplace le chemin du schéma ci-dessus
+#            par un chemin relatif valide, ex. ../../templates/qcm.schema.json.
+# CONSIGNE : les deux questions ci-dessous sont des exemples ; remplace-les. Le schéma exige au moins 10 questions :
+#            ce modèle ne sera donc valide qu'une fois complété. Supprime toutes les lignes CONSIGNE.
+
+version_format: 1
+module: "0.1"
+titre: "Python pour l'ingénieur : listes et dictionnaires"
+statut: brouillon
+mise_a_jour: "2026-11-24"   # entre guillemets, sinon YAML la lit comme une date et non comme un texte
+tirage: 10
+seuil: 0.8
+
+questions:
+  - id: "0.1-q01"
+    objectif: O1
+    notion: listes
+    type: unique
+    difficulte: 2
+    question: |
+      Fatou range ses ventes de la semaine dans une liste. Que va afficher ce code ?
+
+      ```python
+      sales = [12500, 9800, 15000]
+      print(sales[1])
+      ```
+    choix:
+      - id: a
+        texte: "`12500`"
+        explication: "Faux. En Python, le premier élément a l'indice 0, pas 1. `sales[0]` vaut 12500."
+      - id: b
+        texte: "`9800`"
+        explication: "Juste. Les indices commencent à 0 : `sales[1]` est le deuxième élément."
+      - id: c
+        texte: "`15000`"
+        explication: "Faux. `15000` est le dernier élément, à l'indice 2 (ou -1)."
+      - id: d
+        texte: "Une erreur `IndexError`"
+        explication: "Faux. L'indice 1 existe, car la liste a 3 éléments (indices 0, 1 et 2)."
+    bonnes_reponses: [b]
+
+  - id: "0.1-q02"
+    objectif: O2
+    notion: dictionnaires
+    type: multiple
+    difficulte: 1
+    question: |
+      Moussa veut associer chaque produit de sa boutique à son prix en FCFA.
+      **Coche toutes les bonnes réponses.** Quelles écritures créent un dictionnaire correct ?
+    choix:
+      - id: a
+        texte: "`prices = {\"riz\": 650, \"huile\": 1200}`"
+        explication: "Juste. Des paires clé : valeur entre accolades, séparées par des virgules."
+      - id: b
+        texte: "`prices = dict(riz=650, huile=1200)`"
+        explication: "Juste. La fonction `dict` accepte des arguments nommés qui deviennent les clés."
+      - id: c
+        texte: "`prices = [\"riz\": 650, \"huile\": 1200]`"
+        explication: "Faux. Les crochets créent une liste, qui n'accepte pas la syntaxe `clé: valeur`. C'est une erreur de syntaxe."
+      - id: d
+        texte: "`prices = {\"riz\", 650, \"huile\", 1200}`"
+        explication: "Faux. Sans les deux-points, les accolades créent un ensemble (set) de 4 valeurs, pas un dictionnaire."
+    bonnes_reponses: [a, b]

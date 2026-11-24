@@ -1,0 +1,23 @@
+# Dépendances et builds
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Secrets et réglages locaux
+.env*
+*.pem
+.claude/settings.local.json
+
+# Système
+.DS_Store
+Thumbs.db

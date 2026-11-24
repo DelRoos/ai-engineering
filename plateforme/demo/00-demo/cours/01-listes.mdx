@@ -1,0 +1,235 @@
+---
+id: "demo"
+chapitre: 1
+titre: "Ranger plusieurs valeurs : les listes"
+parcours: "demo"
+semaine: 1
+duree_estimee: "40 min"
+objectifs: [O1, O2, O3]
+prerequis: []
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-24
+licence: CC-BY-SA-4.0
+---
+
+{/* Chapitre de démonstration : il utilise chaque composant au moins une fois pour tester l'affichage. */}
+
+<Objectifs>
+
+À la fin de ce chapitre, tu sais :
+
+- **O1** — créer une liste et lire un de ses éléments ;
+- **O2** — ajouter un élément à une liste et compter ses éléments ;
+- **O3** — calculer la moyenne des valeurs d'une liste.
+
+</Objectifs>
+
+<Prerequis>
+
+- Savoir créer une variable et afficher une valeur avec `print`.
+- Avoir Python 3.11 ou plus récent installé sur ton PC.
+
+</Prerequis>
+
+<Pourquoi>
+
+Fatou vend des beignets au marché de Sandaga, à Dakar. Chaque soir, elle note le montant de ses ventes en FCFA. Au bout d'une semaine, elle a sept nombres. Au bout d'un mois, elle en a trente.
+
+Créer trente variables, une par jour, serait pénible. Il lui faut une seule variable qui garde **toutes** ses ventes, dans l'ordre. C'est exactement le rôle d'une liste.
+
+</Pourquoi>
+
+<Notion id="creer-une-liste" titre="Créer une liste et lire un élément">
+
+Une **liste** (*list*) est une suite ordonnée de valeurs. On l'écrit entre crochets, avec des virgules entre les valeurs.
+
+Chaque élément a une position, qu'on appelle son **indice** (*index*). En Python, le premier indice est **0**, pas 1. Pour lire un élément, on écrit le nom de la liste, puis l'indice entre crochets.
+
+<Exemple titre="Les ventes de trois jours">
+
+```python title="ventes.py"
+sales = [12500, 9800, 15000]
+print(sales[0])
+print(sales[-1])
+```
+
+```text
+12500
+15000
+```
+
+L'indice `-1` désigne le dernier élément. C'est pratique quand on ne connaît pas la longueur de la liste.
+
+</Exemple>
+
+<Astuce>
+
+Retiens « le premier, c'est zéro ». Tu le retrouveras dans presque tous les langages de programmation.
+
+</Astuce>
+
+<MiniExercice id="creer-une-liste-1">
+
+Crée une liste `prices` avec trois prix en FCFA : 500, 750 et 1000. Affiche le deuxième prix.
+
+<Solution>
+
+Le deuxième élément a l'indice 1 :
+
+```python
+prices = [500, 750, 1000]
+print(prices[1])
+```
+
+```text
+750
+```
+
+</Solution>
+</MiniExercice>
+
+</Notion>
+
+<Notion id="ajouter-compter" titre="Ajouter un élément et compter">
+
+Le soir, Fatou veut ajouter la vente du jour à la fin de sa liste. Pour cela, on utilise la **méthode** (*method*) `append`. Une méthode est une fonction attachée à une valeur : on l'appelle avec un point.
+
+Pour savoir combien de jours sont enregistrés, on utilise la fonction `len`, qui renvoie le nombre d'éléments.
+
+<Exemple titre="Un quatrième jour de ventes">
+
+```python
+sales = [12500, 9800, 15000]
+sales.append(11200)
+print(len(sales))
+print(sales)
+```
+
+```text
+4
+[12500, 9800, 15000, 11200]
+```
+
+</Exemple>
+
+<Note>
+
+`append` modifie la liste elle-même. Elle ne renvoie rien d'utile : n'écris pas `sales = sales.append(11200)`, sinon `sales` vaudra `None`.
+
+</Note>
+
+<MiniExercice id="ajouter-compter-1">
+
+Ajoute le prix 1250 à ta liste `prices`, puis affiche combien de prix elle contient.
+
+<Solution>
+
+```python
+prices = [500, 750, 1000]
+prices.append(1250)
+print(len(prices))
+```
+
+```text
+4
+```
+
+</Solution>
+</MiniExercice>
+
+</Notion>
+
+<Notion id="moyenne" titre="Calculer la moyenne des ventes">
+
+La **moyenne** est la somme des valeurs divisée par leur nombre. Avec $n$ valeurs $x_1, x_2, \dots, x_n$, on écrit :
+
+$$
+\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n}
+$$
+
+Autrement dit : on additionne tout, puis on divise par le nombre de valeurs. Python fait les deux avec `sum` et `len`.
+
+<Exemple titre="La vente moyenne de Fatou">
+
+```python
+sales = [12500, 9800, 15000, 11200]
+average = sum(sales) / len(sales)
+print(average)
+```
+
+```text
+12125.0
+```
+
+</Exemple>
+
+| Jour | Vente (FCFA) |
+| --- | --- |
+| Lundi | 12 500 |
+| Mardi | 9 800 |
+| Mercredi | 15 000 |
+| Jeudi | 11 200 |
+| **Moyenne** | **12 125** |
+
+<Attention>
+
+Si la liste est vide, `len(sales)` vaut 0 et la division provoque une erreur. Vérifie toujours qu'une liste n'est pas vide avant de calculer une moyenne.
+
+</Attention>
+
+<Video url="#" titre="Les listes en Python, en 6 minutes" duree="6 min" poids="18 Mo en 480p" />
+
+</Notion>
+
+## Erreurs fréquentes
+
+<Erreur titre="IndexError: list index out of range">
+
+**Symptôme** : Python s'arrête avec ce message quand tu lis `sales[4]`.
+
+**Cause** : la liste a 4 éléments, donc ses indices vont de 0 à 3. L'indice 4 n'existe pas.
+
+**Correction** : utilise `sales[3]`, ou `sales[-1]` pour le dernier élément.
+
+</Erreur>
+
+<Erreur titre="ZeroDivisionError: division by zero">
+
+**Symptôme** : le calcul de la moyenne plante.
+
+**Cause** : la liste est vide, donc `len(sales)` vaut 0.
+
+**Correction** : teste d'abord si la liste contient des éléments :
+
+```python
+if len(sales) > 0:
+    print(sum(sales) / len(sales))
+```
+
+</Erreur>
+
+<Resume>
+
+- Une liste garde plusieurs valeurs dans l'ordre : `[12500, 9800, 15000]`.
+- Le premier élément a l'indice 0, le dernier l'indice -1.
+- `append` ajoute un élément à la fin de la liste.
+- `len` donne le nombre d'éléments.
+- Moyenne = `sum(liste) / len(liste)`, seulement si la liste n'est pas vide.
+
+</Resume>
+
+<Vocabulaire>
+
+| Terme | Se dit aussi | Définition courte | Prononciation |
+| --- | --- | --- | --- |
+| liste (*list*) | — | Suite ordonnée de valeurs, écrite entre crochets | — |
+| indice (*index*) | — | Position d'un élément dans une liste, à partir de 0 | « inn-dèks » |
+| méthode (*method*) | — | Fonction attachée à une valeur, appelée avec un point | « mè-seud » |
+| bug | bogue | Erreur dans un programme | « beug » |
+
+</Vocabulaire>
+
+## Pour aller plus loin
+
+- [Le tutoriel officiel de Python, chapitre sur les listes (anglais)](https://docs.python.org/3/tutorial/introduction.html#lists)

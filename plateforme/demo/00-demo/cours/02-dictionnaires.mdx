@@ -1,0 +1,78 @@
+---
+id: "demo"
+chapitre: 2
+titre: "Associer des noms et des valeurs : les dictionnaires"
+parcours: "demo"
+semaine: 1
+duree_estimee: "15 min"
+objectifs: [O4]
+prerequis: []
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-24
+licence: CC-BY-SA-4.0
+---
+
+{/* Chapitre de démonstration, volontairement court : il sert à tester la navigation entre chapitres. */}
+
+<Objectifs>
+
+À la fin de ce chapitre, tu sais :
+
+- **O4** — créer un dictionnaire, lire une valeur et en ajouter une.
+
+</Objectifs>
+
+<Pourquoi>
+
+Moussa tient une petite boutique à Ouagadougou. Il veut retrouver vite le prix de chaque produit à partir de son nom. Une liste ne suffit pas : il ne veut pas retenir que l'huile est « à l'indice 1 ».
+
+</Pourquoi>
+
+<Notion id="dictionnaire" titre="Un nom, une valeur">
+
+Un **dictionnaire** (*dictionary*, souvent abrégé *dict*) associe des **clés** à des **valeurs**. On l'écrit entre accolades, avec `clé: valeur` pour chaque paire.
+
+<Exemple titre="Les prix de la boutique">
+
+```python
+prices = {"riz": 650, "huile": 1200}
+print(prices["riz"])
+prices["sucre"] = 900
+print(len(prices))
+```
+
+```text
+650
+3
+```
+
+</Exemple>
+
+<MiniExercice id="dictionnaire-1">
+
+Ajoute le savon à 300 FCFA, puis affiche son prix.
+
+<Solution>
+
+```python
+prices["savon"] = 300
+print(prices["savon"])
+```
+
+```text
+300
+```
+
+</Solution>
+</MiniExercice>
+
+</Notion>
+
+<Resume>
+
+- Un dictionnaire associe des clés à des valeurs : `{"riz": 650}`.
+- On lit une valeur avec sa clé : `prices["riz"]`.
+- On ajoute une paire en affectant une nouvelle clé : `prices["sucre"] = 900`.
+
+</Resume>
