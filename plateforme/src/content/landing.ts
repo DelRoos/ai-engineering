@@ -175,7 +175,6 @@ export type EtapeParcours = {
   label: string;
   title: string;
   weeks: number;
-  modules: number | null;
   project: string | null;
   kind: "fondations" | "etape" | "consolidation";
 };
@@ -186,7 +185,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 0",
     title: "Fondations : Python, Git, Linux, maths, données",
     weeks: 20,
-    modules: 5,
     project: "Outil en ligne de commande qui analyse un dataset public local",
     kind: "fondations",
   },
@@ -195,7 +193,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 1",
     title: "Développement assisté par IA, données terrain, machine learning classique",
     weeks: 10,
-    modules: 8,
     project: "Modèle de prédiction entraîné en partie sur des données que tu as collectées",
     kind: "etape",
   },
@@ -204,7 +201,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 2",
     title: "Deep learning avec PyTorch",
     weeks: 6,
-    modules: 5,
     project: "Classifieur de maladies des plantes, optimisé pour mobile",
     kind: "etape",
   },
@@ -213,7 +209,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Consolidation",
     title: "Rattrapage, révisions, projet libre",
     weeks: 1,
-    modules: null,
     project: null,
     kind: "consolidation",
   },
@@ -222,7 +217,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 3",
     title: "LLM, RAG, agents, IA locale, langues africaines",
     weeks: 12,
-    modules: 10,
     project: "Assistant RAG sur des documents officiels + agent avec outils, utilisable hors ligne",
     kind: "etape",
   },
@@ -231,7 +225,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 4",
     title: "Ingénierie de production et pipelines de données",
     weeks: 9,
-    modules: 9,
     project: "Mise en production du projet 3",
     kind: "etape",
   },
@@ -240,7 +233,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Consolidation",
     title: "Rattrapage, révisions, projet libre",
     weeks: 1,
-    modules: null,
     project: null,
     kind: "consolidation",
   },
@@ -249,7 +241,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 5",
     title: "Sécurité, éthique, IA responsable",
     weeks: 3,
-    modules: 3,
     project: "Audit de sécurité et de biais d'un système existant",
     kind: "etape",
   },
@@ -258,7 +249,6 @@ export const etapesParcours: EtapeParcours[] = [
     label: "Étape 6",
     title: "Capstone, produit, entrepreneuriat et carrière",
     weeks: 10,
-    modules: 2,
     project: "Solution complète sur un cas réaliste, présentée en anglais en vidéo",
     kind: "etape",
   },
