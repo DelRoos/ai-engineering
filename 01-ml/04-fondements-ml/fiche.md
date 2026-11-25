@@ -22,28 +22,31 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Reconnaître le type d'un problème : régression, classification, clustering. | ex01 à ex03, ex04 à ex06, qcm |
-| O2 | Entraîner un premier modèle avec scikit-learn et le comparer à un modèle de référence. | ex07 à ex09, qcm |
-| O3 | Découper des données en train, validation et test, sans tricher. | ex10 à ex13, exercice clé (ex17), qcm |
-| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex10 à ex13, ex14 à ex16, exercice clé (ex17), qcm |
-| O5 | Repérer et corriger une fuite de données. | ex10 à ex13, ex14 à ex16, exercice clé (ex17), qcm |
-| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex14 à ex16, qcm |
+| O1 | Reconnaître le type d'un problème : régression, classification, clustering. | ex01 à ex05, ex06 à ex10, qcm |
+| O2 | Entraîner un premier modèle avec scikit-learn et le comparer à un modèle de référence. | ex06 à ex10, ex11 à ex15, qcm |
+| O3 | Découper des données en train, validation et test, sans tricher. | ex16 à ex20, exercice clé (ex24), qcm |
+| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex16 à ex20, exercice clé (ex24), ex25 à ex27, qcm |
+| O5 | Repérer et corriger une fuite de données. | ex21 à ex23, exercice clé (ex24), ex25 à ex27, qcm |
+| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex25 à ex27, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Qu'est-ce qu'apprendre | 3 |
-| 2 | Le cycle d'un projet de ML | 3 |
-| 3 | Un premier modèle | 3 |
-| 4 | Ne pas se mentir | 4 |
-| 5 | Quand le monde change | 4 |
+| 1 | Qu'est-ce qu'apprendre | 5 |
+| 2 | Le cycle d'un projet de ML | 5 |
+| 3 | Un premier modèle | 5 |
+| 4 | Ne pas se mentir | 5 |
+| 5 | Les pièges classiques | 4 |
+| 6 | Quand le monde change | 3 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `apprendre` | Qu'est-ce qu'apprendre, pour une machine | O1 |
+| 1 | `regles-ou-exemples` | Programmer des règles ou apprendre des exemples | O1 |
+| 1 | `ia-ml-dl` | IA, machine learning, deep learning : qui contient quoi | O1 |
 | 1 | `faut-il-ml` | Faut-il vraiment du machine learning ? | O1 |
 | 1 | `types-problemes` | Supervisé ou non : régression, classification, clustering | O1 |
 | 1 | `autres-apprentissages` | Semi-supervisé et par renforcement : un aperçu | O1 |
@@ -52,23 +55,34 @@ mise_a_jour: 2026-11-25
 | 2 | `formuler-probleme` | Formuler un problème de ML | O1 |
 | 2 | `metrique-succes` | Définir le succès avant de coder | O1 |
 | 2 | `donnees-disponibles` | Faire l'inventaire des données disponibles | O1 |
+| 2 | `tableau-features` | Préparer les données : le tableau d'exemples et de features | O1 |
+| 2 | `iterer-ml` | Itérer : du modèle simple au modèle meilleur | O2 |
 | 2 | `risques-projet-ml` | Les risques d'un projet de ML | O1 |
 | 3 | `premier-modele` | Ton premier modèle avec scikit-learn | O2 |
 | 3 | `api-sklearn` | La logique de scikit-learn : fit, predict, transform | O2 |
+| 3 | `preparation-minimale` | Préparer les colonnes : nombres, catégories, valeurs manquantes | O2 |
 | 3 | `apprendre-perte` | Comment un modèle apprend : la perte et l'optimisation | O2 |
 | 3 | `reference` | Le modèle de référence : faire mieux que le hasard | O2 |
 | 3 | `predire-probabilites` | Prédire une classe ou une probabilité | O2 |
+| 3 | `mesurer-premier-modele` | Mesurer la qualité d'un premier modèle | O2 |
 | 4 | `decoupage` | Découper les données : train, validation, test | O3 |
 | 4 | `decoupage-avance` | Découper quand les données sont groupées ou datées | O3 |
+| 4 | `validation-croisee-idee` | Plusieurs découpages : l'idée de la validation croisée | O3 |
+| 4 | `generalisation` | Ce que veut dire généraliser | O4 |
 | 4 | `biais-variance` | Surapprentissage et sous-apprentissage | O4 |
 | 4 | `compromis-biais-variance` | Le compromis biais-variance | O4 |
 | 4 | `courbes-apprentissage` | Lire une courbe d'apprentissage | O4 |
-| 4 | `fuite` | La fuite de données | O5 |
-| 5 | `derive-distribution` | Quand les données de demain ne ressemblent pas à celles d'hier | O5 |
-| 5 | `malediction-dimension` | Trop de colonnes : la malédiction de la dimension | O4 |
-| 5 | `biais-donnees` | Quand les données sont injustes : les biais | O6 |
-| 5 | `generalisation` | Ce que veut dire généraliser | O4 |
-| 5 | `donnees-hors-distribution` | Reconnaître une donnée jamais vue | O5 |
+| 4 | `regularisation-idee` | Freiner un modèle trop complexe : l'idée de la régularisation | O4 |
+| 5 | `fuite` | La fuite de données | O5 |
+| 5 | `fuite-temporelle` | Utiliser le futur pour prédire le passé : la fuite dans le temps | O5 |
+| 5 | `fuite-pretraitement` | La fuite par le prétraitement | O5 |
+| 5 | `doublons-train-test` | Les mêmes exemples dans l'entraînement et le test | O5 |
+| 5 | `metrique-trompeuse` | Une métrique qui flatte : l'exactitude sur des classes rares | O5 |
+| 6 | `derive-distribution` | Quand les données de demain ne ressemblent pas à celles d'hier | O5 |
+| 6 | `donnees-hors-distribution` | Reconnaître une donnée jamais vue | O5 |
+| 6 | `malediction-dimension` | Trop de colonnes : la malédiction de la dimension | O4 |
+| 6 | `biais-donnees` | Quand les données sont injustes : les biais | O6 |
+| 6 | `reentrainer` | Réentraîner un modèle : quand et comment | O5 |
 
 ## Vocabulaire du module
 
@@ -88,6 +102,11 @@ mise_a_jour: 2026-11-25
 | découpage stratifié, GroupKFold | A | `decoupage-avance` |
 | courbe d'apprentissage (learning curve) | A | `courbes-apprentissage` |
 | biais historique, équité (fairness) | A | `biais-donnees` |
+| règle, exemple | B | `regles-ou-exemples` |
+| validation croisée (cross-validation) | A | `validation-croisee-idee` |
+| régularisation | B | `regularisation-idee` |
+| fuite temporelle | B | `fuite-temporelle` |
+| réentraînement (retraining) | A | `reentrainer` |
 
 ## Fil rouge et ancrage local
 
@@ -99,12 +118,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 1.4-ex01 à ex03 | Qu'est-ce qu'apprendre | O1 | 1 | non |
-| 1.4-ex04 à ex06 | Le cycle d'un projet de ML | O1 | 2 | non |
-| 1.4-ex07 à ex09 | Un premier modèle | O2 | 2 | non |
-| 1.4-ex10 à ex13 | Ne pas se mentir | O3, O4, O5 | 2–3 | non |
-| 1.4-ex14 à ex16 | Quand le monde change | O4, O5, O6 | 2–3 | non |
-| 1.4-ex17 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
+| 1.4-ex01 à ex05 | Qu'est-ce qu'apprendre | O1 | 1 | non |
+| 1.4-ex06 à ex10 | Le cycle d'un projet de ML | O1, O2 | 1 | non |
+| 1.4-ex11 à ex15 | Un premier modèle | O2 | 2 | non |
+| 1.4-ex16 à ex20 | Ne pas se mentir | O3, O4 | 2 | non |
+| 1.4-ex21 à ex23 | Les pièges classiques | O5 | 2–3 | non |
+| 1.4-ex24 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
+| 1.4-ex25 à ex27 | Quand le monde change | O4, O5, O6 | 2–3 | non |
 
 ## Ressources matérielles
 
