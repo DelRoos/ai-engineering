@@ -22,32 +22,38 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex03, exercice clé (ex17), qcm |
-| O2 | Mesurer la fidélité et la pertinence des réponses. | ex04 à ex07, exercice clé (ex17), qcm |
-| O3 | Utiliser un LLM comme juge en connaissant ses biais. | ex08 à ex10, qcm |
-| O4 | Organiser une évaluation humaine. | ex11 à ex13, qcm |
-| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex14 à ex16, exercice clé (ex17), qcm |
+| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex05, exercice clé (ex24), ex25 à ex27, qcm |
+| O2 | Mesurer la fidélité et la pertinence des réponses. | ex06 à ex10, exercice clé (ex24), qcm |
+| O3 | Utiliser un LLM comme juge en connaissant ses biais. | ex11 à ex15, qcm |
+| O4 | Organiser une évaluation humaine. | ex16 à ex19, ex25 à ex27, qcm |
+| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex20 à ex23, exercice clé (ex24), ex25 à ex27, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Pourquoi évaluer | 3 |
-| 2 | Les métriques | 4 |
-| 3 | Le LLM juge | 3 |
-| 4 | Les humains | 3 |
-| 5 | Ne pas régresser | 4 |
+| 1 | Pourquoi évaluer | 5 |
+| 2 | Les métriques | 5 |
+| 3 | Le LLM juge | 5 |
+| 4 | Les humains | 4 |
+| 5 | Ne pas régresser | 5 |
+| 6 | Évaluer en production | 3 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `evaluer-llm` | Pourquoi « ça a l'air bien » ne suffit pas | O1 |
-| 1 | `jeu-test-llm` | Construire un jeu de test | O1 |
-| 1 | `generer-tests` | Générer des questions de test, et les vérifier | O1 |
-| 1 | `cas-difficiles` | Les cas difficiles et les questions pièges | O1 |
+| 1 | `criteres-succes` | Définir ce qu'est une bonne réponse pour ta tâche | O1 |
 | 1 | `analyse-erreurs-llm` | Lire les réponses ratées avant de mesurer | O1 |
+| 1 | `jeu-test-llm` | Construire un jeu de test | O1 |
+| 1 | `taille-jeu-test` | Combien de questions faut-il ? | O1 |
+| 1 | `cas-difficiles` | Les cas difficiles et les questions pièges | O1 |
+| 1 | `generer-tests` | Générer des questions de test, et les vérifier | O1 |
+| 1 | `jeu-test-vivant` | Faire vivre le jeu de test avec les cas réels | O1 |
 | 2 | `correspondance-exacte` | Les tâches à réponse unique : la correspondance exacte | O2 |
+| 2 | `verifications-code` | Vérifier le format et les règles avec du code | O2 |
+| 2 | `evaluer-extraction` | Évaluer une extraction champ par champ | O2 |
 | 2 | `fidelite` | La fidélité aux sources | O2 |
 | 2 | `pertinence` | La pertinence de la réponse | O2 |
 | 2 | `recherche-et-reponse` | Évaluer séparément la recherche et la réponse | O2 |
@@ -55,19 +61,28 @@ mise_a_jour: 2026-11-25
 | 2 | `evaluer-securite` | Évaluer la sécurité et les refus | O2 |
 | 3 | `llm-juge` | Un LLM comme juge | O3 |
 | 3 | `grille-juge` | Écrire la grille du juge | O3 |
+| 3 | `juge-reference` | Juger avec une réponse de référence | O3 |
 | 3 | `comparaison-paires` | Comparer deux réponses plutôt que noter | O3 |
 | 3 | `biais-juge` | Les biais du juge, et comment les vérifier | O3 |
 | 3 | `calibrer-juge` | Vérifier et ajuster le juge | O3 |
+| 3 | `juge-local` | Un juge local et gratuit | O3 |
 | 4 | `evaluation-humaine` | L'évaluation humaine | O4 |
-| 4 | `juge-humain` | Le juge est-il d'accord avec les humains ? | O4 |
 | 4 | `consignes-annotateurs-eval` | Des consignes claires pour les évaluateurs | O4 |
 | 4 | `plateforme-annotation-eval` | Organiser une campagne d'évaluation | O4 |
+| 4 | `accord-evaluateurs` | Mesurer l'accord entre évaluateurs | O4 |
+| 4 | `juge-humain` | Le juge est-il d'accord avec les humains ? | O4 |
 | 4 | `retours-utilisateurs-eval` | Les retours des utilisateurs comme évaluation | O4 |
 | 5 | `non-regression` | Les tests de non-régression | O5 |
 | 5 | `comparer-variantes` | Comparer plusieurs variantes d'un système | O5 |
 | 5 | `significativite` | Une différence est-elle réelle ? | O5 |
 | 5 | `cout-latence-eval` | Mesurer aussi le coût et la latence | O5 |
 | 5 | `automatiser-eval` | Automatiser l'évaluation | O5 |
+| 5 | `presenter-resultats-eval` | Présenter les résultats d'une évaluation | O5 |
+| 6 | `echantillon-production` | Évaluer un échantillon des vraies conversations | O5 |
+| 6 | `signaux-implicites` | Les signaux implicites : reformulations et abandons | O4 |
+| 6 | `test-ab-llm` | Tester une nouvelle version sur une partie des utilisateurs | O5 |
+| 6 | `boucle-amelioration` | De l'erreur repérée au jeu de test : la boucle d'amélioration | O1 |
+| 6 | `qualite-dans-le-temps` | Surveiller la qualité dans le temps | O5 |
 
 ## Vocabulaire du module
 
@@ -80,6 +95,11 @@ mise_a_jour: 2026-11-25
 | grille d'évaluation (rubric) | A | `grille-juge` |
 | non-régression | B | `non-regression` |
 | variante, A/B | A | `comparer-variantes` |
+| critère de succès | B | `criteres-succes` |
+| vérification par code (assertion) | A | `verifications-code` |
+| réponse de référence (ground truth) | A | `juge-reference` |
+| signal implicite | B | `signaux-implicites` |
+| boucle d'amélioration (data flywheel) | A | `boucle-amelioration` |
 
 ## Fil rouge et ancrage local
 
@@ -91,12 +111,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.5-ex01 à ex03 | Pourquoi évaluer | O1 | 1 | non |
-| 3.5-ex04 à ex07 | Les métriques | O2 | 2 | non |
-| 3.5-ex08 à ex10 | Le LLM juge | O3 | 2 | non |
-| 3.5-ex11 à ex13 | Les humains | O4 | 2–3 | non |
-| 3.5-ex14 à ex16 | Ne pas régresser | O5 | 2–3 | non |
-| 3.5-ex17 | Exercice clé : un jeu d'évaluation de 50 questions, et la mesure de 3 variantes du RAG | O1, O2, O5 | 3 | oui → GRILLE.md (analyse des résultats) |
+| 3.5-ex01 à ex05 | Pourquoi évaluer | O1 | 1 | non |
+| 3.5-ex06 à ex10 | Les métriques | O2 | 1 | non |
+| 3.5-ex11 à ex15 | Le LLM juge | O3 | 2 | non |
+| 3.5-ex16 à ex19 | Les humains | O4 | 2 | non |
+| 3.5-ex20 à ex23 | Ne pas régresser | O5 | 2–3 | non |
+| 3.5-ex24 | Exercice clé : un jeu d'évaluation de 50 questions, et la mesure de 3 variantes du RAG | O1, O2, O5 | 3 | oui → GRILLE.md (analyse des résultats) |
+| 3.5-ex25 à ex27 | Évaluer en production | O1, O4, O5 | 2–3 | non |
 
 ## Ressources matérielles
 
