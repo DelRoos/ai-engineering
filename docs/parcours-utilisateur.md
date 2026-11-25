@@ -83,12 +83,12 @@ Profils secondaires, hors plateforme : le **recruteur** (il vérifie le portfoli
 
 ### Étape 8 — Construire un projet, du problème métier au résultat
 
-- **Décision du mainteneur (25/11/2026)** : les **grands projets** forment une grande section à part, à la fin du parcours (`07-projets/`). Chaque projet se construit comme un module, avec une page par mission. Les projets d'étape gardent leur place à la fin de chaque étape.
+- **Décision du mainteneur (25/11/2026)** : les **grands projets** forment une grande section à part, à la fin du parcours (`07-projets/`), rangée par **familles**. Une famille se lit comme un module : chaque projet est un chapitre, chaque étape d'expert une leçon. Les projets doivent être assez réalistes pour se vendre et servir de portfolio, et couvrir tous les aspects du métier (RAG, agents, multi-agents, MCP, fine-tuning, IA locale, multimodal, prédiction, mise à l'échelle, sécurité). Les projets d'étape gardent leur place à la fin de chaque étape.
 - **Awa** : « Qu'est-ce que je construis, pour qui, et par où je commence ? » **Ibrahim** : « Qu'est-ce que ce projet prouve à un recruteur ? »
-- **Écran** : **Projets** (`/projets`) — la démarche d'un grand projet, les grands projets, puis le projet de chaque étape. Entrée « Projets » du menu.
-- **Écran** : **Projet** (`/projets/<nom>`) — le brief du client, les indicateurs de réussite, les compétences reliées aux leçons, les missions, la validation, le portfolio.
-- **Écran** : **Mission** (`/projets/<nom>/<mission>`, nouvel onglet) — la situation, le livrable, « c'est réussi quand », la démarche conseillée, l'imprévu, les leçons à revoir, la commande de vérification.
-- **Lien retour** : chaque chapitre affiche les missions qui appliquent ses leçons (« À appliquer dans un projet »).
+- **Écran** : **Projets** (`/projets`) — la démarche commune, les familles et leurs projets, puis le projet de chaque étape. Entrée « Projets » du menu.
+- **Écran** : **Famille** (`/modules/<famille>`) — le comparatif des projets (même domaine, approches différentes), puis les projets.
+- **Écran** : **Projet** (`/modules/<famille>/<projet>`, nouvel onglet) — le client et son problème, pourquoi ce cas est différent, comment un expert l'aborde (et ce qu'il écarte), les étapes, l'imprévu, « c'est réussi quand », ce qui se vend, les leçons à revoir, la validation et le portfolio.
+- **Lien retour** : chaque chapitre des étapes 0 à 6 affiche les projets qui appliquent ses leçons (« À appliquer dans un projet »).
 - **Ressenti visé** : « Je sais ce que je construis, comment avancer, et comment prouver que c'est réussi. »
 
 ### Étape 9 — Prouver
@@ -118,7 +118,7 @@ Profils secondaires, hors plateforme : le **recruteur** (il vérifie le portfoli
 | 5 | Chapitre | 5 | Existe, mis de côté, à revoir |
 | 6 | Exercice | 6 | À concevoir |
 | 7 | QCM | 7 | À concevoir (question ouverte) |
-| 8 | Projets, Projet, Mission (grands projets) | 8 | Fait (25/11/2026) ; projets d'étape à concevoir |
+| 8 | Projets, Famille, Projet (grands projets) | 8 | Fait (25/11/2026) ; projets d'étape à concevoir |
 | 9 | Validation par l'IA | 9 | À concevoir |
 | 10 | Portfolio | 10 | À concevoir |
 | 11 | Glossaire | Transversal | À concevoir |

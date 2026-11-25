@@ -260,14 +260,26 @@ Exercice : un dossier d'une page (problème, solution, coûts, prix, marché) po
 
 ## Les grands projets
 
-Après les sept étapes, une grande section de **projets complets**, menés comme chez un vrai client. Chaque projet est indépendant, indique les modules qu'il demande, et se construit comme un module : un brief client, des indicateurs de réussite, des missions vérifiables (dont des changements imprévus), une validation (tests, grille de l'agent correcteur, examen oral) et un guide de portfolio. Les fiches sont dans `07-projets/`.
+Après les sept étapes, une grande section de **projets réels**, rangés par **familles**. Le but : donner les prérequis des projets qu'un AI engineer rencontre dans sa carrière, et construire un portfolio qui convainc. Chaque projet est assez réaliste pour qu'une entreprise l'achète et l'utilise : un client crédible, ses contraintes réelles, un modèle économique, des critères mesurables et un imprévu en cours de route.
 
-| Projet | Famille | Ce que l'apprenant construit | Après les modules |
-| --- | --- | --- | --- |
-| P1 | Assistant documentaire | L'assistant d'une inspection du travail qui répond en citant l'article exact, dit « je ne sais pas » et suit les textes qui changent | 3.3, 3.4, 3.5, 4.2, 4.5 |
-| P2 | Assistant opérationnel | L'assistant d'une coopérative de cacao qui interroge les données, planifie les tournées et prépare les paiements validés par le trésorier | 3.4, 3.6, 4.2, 4.5, 4.7 |
-| P3 | Commercial virtuel | Le commercial d'un distributeur de kits solaires qui recommande, établit des devis exacts, négocie dans les limites et enregistre les commandes sans doublon | 3.2, 3.3, 3.5, 3.6, 4.2 |
-| P4 | Studio de contenu | Le studio d'une ONG de santé qui transforme des consignes validées en messages écrits, illustrés et parlés, en plusieurs langues | 3.2, 3.4, 3.9, 3.10, 5.2 |
+Une famille se lit comme un module : **chaque projet est un chapitre, chaque étape d'expert une leçon**. Dans une même famille, les projets posent des problèmes différents qui se résolvent différemment ; un tableau comparatif apprend à choisir l'approche. Les fiches sont dans `07-projets/`.
+
+| Famille | Projets | Ce qu'elle couvre |
+| --- | --- | --- |
+| 7.1 Assistants documentaires | Assistant juridique qui cite l'article · Archives scannées et tableaux · Base de connaissances d'entreprise · Questions globales sur 500 rapports · Chiffres en langage naturel · Santé hors ligne et multilingue | RAG hybride, citations, OCR, ColPali, droits d'accès, GraphRAG, texte vers SQL, IA locale |
+| 7.2 Agents opérationnels | Back-office d'une coopérative · Outils d'un transitaire par MCP · 200 dossiers de crédit · Veille sur portails sans API · Analyste en bac à sable | Outils, MCP, harness, reprise, agents navigateur, exécution de code |
+| 7.3 Systèmes multi-agents | Équipe de recherche · Support à plusieurs spécialistes · Centrale d'achat qui négocie · Un agent ou plusieurs ? | Orchestration, relais, protocoles, comparaison mesurée |
+| 7.4 Commercial et relation client | Commercial virtuel · Support WhatsApp · Recommandation de produits · Qualification de prospects | Agents avec limites, recommandation, scoring, effet sur les ventes |
+| 7.5 Modèles sur mesure | Réclamations mobile money · Bons de livraison distillés · Calculateur de cotisations · Ton d'une banque · Recherche médicale · Traduction français-wolof | LoRA, distillation, GRPO, DPO, retriever adapté, langue locale |
+| 7.6 IA locale et embarquée | Office notarial confidentiel · Diagnostic sur téléphone · Serveur de PME · Parc de 200 tablettes | Quantification, service local, mobile, mises à jour d'un parc |
+| 7.7 Voix, vision et contenu | Studio de contenu · Serveur vocal · Reçus et factures · Comptes rendus de réunions · Visuels marketing | Voix en temps réel, modèles vision-langage, transcription, génération d'images |
+| 7.8 Données et prédiction | Demande des pharmacies · Score de crédit · Fraude mobile money · Tri du cacao par la vision | Séries temporelles, scoring équitable, classes rares, détection d'objets |
+| 7.9 Plateformes à grande échelle | 100 000 utilisateurs · Passerelle LLM · Évaluation continue · 5 millions de documents · 300 clients sur une plateforme | Mise à l'échelle, routage, repli, observabilité, réindexation, multi-clients |
+| 7.10 IA de confiance | Test d'intrusion · Garde-fous · Audit de biais · Mise en conformité | Sécurité, équité, droit des données et de l'IA |
+
+**La mise à l'échelle** est traitée dans les modules 3.8 (service d'un modèle), 4.8 (performance et coûts) et 4.9 (architecture), puis appliquée dans toute la famille 7.9.
+
+**Validation d'un projet** : ses tests, la grille de l'agent correcteur (au moins 14/20) et l'examen oral avec l'IA. Pour un portfolio équilibré, l'apprenant livre des projets dans plusieurs familles.
 
 ## Évaluation, certification et organisation open source
 

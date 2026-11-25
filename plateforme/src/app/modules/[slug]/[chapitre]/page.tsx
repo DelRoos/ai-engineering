@@ -5,10 +5,10 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, Briefcase, Check, ChevronRight, Fl
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { CopyCommand } from "@/components/module/copy-command";
+import { ProjetCorps } from "@/components/projet/projet-corps";
 import { Container, cn } from "@/components/ui";
-import { chapterObjectives, getChapitre, getFiches, type Chapitre } from "@/lib/fiches";
+import { chapterObjectives, getChapitre, getFiches, projectsUsingChapter, type Chapitre } from "@/lib/fiches";
 import { site } from "@/content/site";
-import { missionsForChapter } from "@/lib/projets";
 
 export const dynamicParams = false;
 
@@ -36,7 +36,8 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
   if (!found) notFound();
   const { fiche: m, chapitre: c, prev, next } = found;
   const objectives = chapterObjectives(m, c);
-  const applications = missionsForChapter(m, c);
+  const isProjet = m.nature === "projets";
+  const applications = isProjet ? [] : projectsUsingChapter(m, c);
 
   return (
     <>
@@ -57,15 +58,17 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
           </div>
           <Container>
             <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center gap-1.5 text-sm text-fg-subtle">
-              <Link href="/commencer" className="transition-colors duration-200 hover:text-fg">
-                Tous les modules
+              <Link href={isProjet ? "/projets" : "/commencer"} className="transition-colors duration-200 hover:text-fg">
+                {isProjet ? "Les grands projets" : "Tous les modules"}
               </Link>
               <ChevronRight className="size-4" aria-hidden="true" />
               <Link href={`/modules/${m.slug}`} className="transition-colors duration-200 hover:text-fg">
-                Module {m.id}&nbsp;: {m.title}
+                {isProjet ? "Famille" : "Module"} {m.id}&nbsp;: {m.title}
               </Link>
               <ChevronRight className="size-4" aria-hidden="true" />
-              <span className="text-fg-muted">Chapitre {c.n}</span>
+              <span className="text-fg-muted">
+                {isProjet ? "Projet" : "Chapitre"} {c.n}
+              </span>
             </nav>
 
             <div className="mt-8 flex items-start gap-5 sm:gap-7">
@@ -77,7 +80,7 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
               </span>
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-fg-subtle">
-                  Chapitre {c.n} sur {m.chapters.length}
+                  {isProjet ? "Projet" : "Chapitre"} {c.n} sur {m.chapters.length}
                 </p>
                 <h1
                   className="mt-2 font-bold tracking-[-0.035em] text-balance text-fg"
@@ -91,7 +94,7 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
             <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-display">
               <li>
                 <span className="text-3xl font-bold tracking-tight text-fg">{c.lessons.length}</span>
-                <span className="ml-1.5 text-fg-muted">leçons</span>
+                <span className="ml-1.5 text-fg-muted">{isProjet ? "étapes" : "leçons"}</span>
               </li>
               {c.exercises > 0 && (
                 <li>
@@ -106,7 +109,9 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
             {m.status !== "publie" && (
               <p className="mt-8 inline-flex items-start gap-3 rounded-2xl border border-line-strong px-4 py-2.5 text-sm text-fg-muted">
                 <span className="mt-1.5 size-2 shrink-0 rounded-full bg-accent" />
-                Les leçons de ce chapitre sont en cours de rédaction.
+                {isProjet
+                  ? "Le cahier des charges est fixé. Les énoncés détaillés, les données et les tests sont en préparation."
+                  : "Les leçons de ce chapitre sont en cours de rédaction."}
               </p>
             )}
           </Container>
@@ -116,6 +121,10 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
         <section className="border-t border-line pb-24 sm:pb-32">
           <Container className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
             <div className="min-w-0">
+              {isProjet ? (
+                <ProjetCorps famille={m} projet={c} />
+              ) : (
+              <>
               {/* Les leçons */}
               <section aria-labelledby="titre-lecons" className="pt-14 sm:pt-20">
                 <h2 id="titre-lecons" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
@@ -179,6 +188,9 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
                   </article>
                 </section>
               )}
+              </>
+              )}
+
               {/* À appliquer dans un projet */}
               {applications.length > 0 && (
                 <section aria-labelledby="titre-appliquer" className="pt-16 sm:pt-20">
@@ -186,21 +198,21 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
                     <Briefcase className="size-6 text-accent" aria-hidden="true" />
                     À appliquer dans un projet
                   </h2>
-                  <p className="mt-3 text-fg-muted">Ce que tu apprends ici sert dans ces missions des grands projets.</p>
+                  <p className="mt-3 text-fg-muted">Ce que tu apprends ici sert dans ces grands projets.</p>
                   <ul className="mt-6 border-t border-line">
-                    {applications.map(({ projet, mission, lessons }) => (
-                      <li key={`${projet.id}-${mission.n}`} className="border-b border-line">
+                    {applications.map(({ famille, chapitre: projet, lessons }) => (
+                      <li key={`${famille.id}-${projet.n}`} className="border-b border-line">
                         <a
-                          href={`/projets/${projet.slug}/${mission.slug}`}
+                          href={`/modules/${famille.slug}/${projet.slug}`}
                           target="_blank"
                           rel="noopener"
                           className="group flex items-start justify-between gap-4 py-4"
                         >
                           <span className="min-w-0">
                             <span className="block text-sm text-fg-subtle">
-                              {projet.id} {projet.family}, mission {mission.n}
+                              {famille.id} {famille.title}, projet {projet.n}
                             </span>
-                            <span className="mt-0.5 block font-semibold text-fg group-hover:text-accent-1">{mission.title}</span>
+                            <span className="mt-0.5 block font-semibold text-fg group-hover:text-accent-1">{projet.title}</span>
                             <span className="mt-1 block text-sm text-fg-muted">
                               Avec&nbsp;: {lessons.map((l) => l.lessonTitle).join(" · ")}
                             </span>
@@ -221,7 +233,7 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
             {/* Colonne : le module */}
             <aside className="lg:pt-20">
               <div className="space-y-4 lg:sticky lg:top-24">
-                <nav aria-label="Chapitres du module" className="rounded-3xl border border-line bg-surface p-5">
+                <nav aria-label={isProjet ? "Projets de la famille" : "Chapitres du module"} className="rounded-3xl border border-line bg-surface p-5">
                   <Link
                     href={`/modules/${m.slug}`}
                     className="group flex items-center gap-2 text-sm font-semibold text-fg transition-colors duration-200 hover:text-accent-1"
@@ -251,17 +263,17 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
           {/* Chapitres voisins */}
           <Container>
             <nav aria-label="Chapitres voisins" className="mt-20 grid gap-3 border-t border-line pt-10 sm:grid-cols-2">
-              {prev ? <NeighbourLink moduleSlug={m.slug} chapitre={prev} direction="prev" /> : <span className="hidden sm:block" />}
+              {prev ? <NeighbourLink moduleSlug={m.slug} chapitre={prev} direction="prev" projet={isProjet} /> : <span className="hidden sm:block" />}
               {next ? (
-                <NeighbourLink moduleSlug={m.slug} chapitre={next} direction="next" />
+                <NeighbourLink moduleSlug={m.slug} chapitre={next} direction="next" projet={isProjet} />
               ) : (
                 <Link
                   href={`/modules/${m.slug}`}
                   className="group rounded-3xl border border-line bg-surface p-6 transition-[border-color,background-color,transform] duration-200 hover:border-accent/50 hover:bg-surface-2 motion-safe:hover:-translate-y-0.5 sm:text-right"
                 >
-                  <p className="text-sm text-fg-subtle">Dernier chapitre du module</p>
+                  <p className="text-sm text-fg-subtle">{isProjet ? "Dernier projet de la famille" : "Dernier chapitre du module"}</p>
                   <p className="mt-2 text-xl font-bold text-fg group-hover:text-accent-1">
-                    {m.hasQcm ? "Le QCM et l'exercice clé" : "Retour au module"}
+                    {isProjet ? "Retour à la famille" : m.hasQcm ? "Le QCM et l'exercice clé" : "Retour au module"}
                   </p>
                 </Link>
               )}
@@ -291,7 +303,17 @@ function ChapterLink({ moduleSlug, chapitre, current }: { moduleSlug: string; ch
   );
 }
 
-function NeighbourLink({ moduleSlug, chapitre, direction }: { moduleSlug: string; chapitre: Chapitre; direction: "prev" | "next" }) {
+function NeighbourLink({
+  moduleSlug,
+  chapitre,
+  direction,
+  projet = false,
+}: {
+  moduleSlug: string;
+  chapitre: Chapitre;
+  direction: "prev" | "next";
+  projet?: boolean;
+}) {
   const next = direction === "next";
   return (
     <Link
@@ -303,7 +325,7 @@ function NeighbourLink({ moduleSlug, chapitre, direction }: { moduleSlug: string
     >
       <p className={cn("flex items-center gap-1.5 text-sm text-fg-subtle", next && "sm:justify-end")}>
         {!next && <ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />}
-        {next ? "Chapitre suivant" : "Chapitre précédent"}
+        {projet ? (next ? "Projet suivant" : "Projet précédent") : next ? "Chapitre suivant" : "Chapitre précédent"}
         {next && <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />}
       </p>
       <p className="mt-2 text-xl font-bold text-fg group-hover:text-accent-1">

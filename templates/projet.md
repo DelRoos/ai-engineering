@@ -1,94 +1,90 @@
 ---
-id: "PN"                      # P1, P2… unique, ne change plus une fois publié
-titre: "Un … pour …"          # le produit et son client
-famille: "…"                  # Assistant documentaire, Assistant opérationnel, Commercial virtuel, Studio de contenu…
-promesse: "Tu construis … qui … pour …"
-prerequis: ["3.4", "3.6"]     # modules à avoir suivis
+id: "7.N"                     # identifiant de la famille, ne change plus une fois publié
+titre: "Nom de la famille"    # Assistants documentaires, Agents opérationnels…
+parcours: "07-projets"
+nature: projets               # obligatoire : chaque chapitre est un projet, chaque leçon une étape d'expert
+promesse: "N projets qui … : chacun face à un problème différent."
+question_saut: "Tu as déjà … ?"
+qcm: false
+prerequis: ["3.4", "3.6"]     # modules à maîtriser avant la famille
 statut: brouillon             # brouillon | relu | publie
 version: 1
 mise_a_jour: AAAA-MM-JJ
 ---
 
-# PN — Titre
+# 7.N — Nom de la famille
 
-<!-- CONSIGNE : un grand projet se lit comme un module. Il mène l'apprenant du problème métier au résultat prouvé.
-La plateforme lit ce fichier (plateforme/src/lib/projets.ts) : garde exactement les titres de section et les libellés en gras.
-Contrat complet : docs/format-contenu.md § 5. -->
+<!-- CONSIGNE : une famille regroupe 4 à 6 projets du même domaine qui posent des problèmes DIFFÉRENTS et se résolvent
+DIFFÉREMMENT. Chaque projet doit être assez réaliste pour qu'une entreprise l'achète et l'utilise : client crédible,
+contraintes du terrain, modèle économique, critères mesurables. Contrat complet : docs/format-contenu.md § 4 bis. -->
 
-## Le brief client
+## Extrait du programme
 
-<!-- CONSIGNE : un client fictif mais réaliste, ancré en Afrique francophone. Cinq lignes, dans cet ordre. -->
+- **Exercice clé** : Livrer de bout en bout au moins un projet de la famille, …
+
+## Objectifs vérifiables
+
+<!-- Un objectif par projet. -->
+
+| Id | À la fin, l'apprenant sait… | Évalué par |
+| --- | --- | --- |
+| O1 | Livrer … | projet 1 |
+
+## Chapitres
+
+<!-- Un chapitre = un projet. Le titre dit le produit et le client. La colonne Exercices reste à 0. -->
+
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Le … d'un … | 0 |
+
+## Notions, dans l'ordre
+
+<!-- 5 à 8 étapes par projet, dans l'ordre où un expert les mène. Chaque étape est propre au projet
+(« Citer l'article exact, vérifié par du code »), jamais générique (« Coder », « Tester »).
+Les identifiants sont uniques dans la famille. -->
+
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `etape-precise` | Une étape précise et vérifiable | O1 |
+
+## Comparatif des projets
+
+<!-- Une ligne par projet. Le tableau apprend à choisir l'approche selon le problème. -->
+
+| Projet | Le problème | L'approche | Le point dur | Coût d'exploitation |
+| --- | --- | --- | --- | --- |
+| … | … | … | … | … |
+
+## Les projets
+
+<!-- Une sous-section par projet, numérotée comme son chapitre, avec exactement ces libellés. -->
+
+### 1. Le … d'un …
 
 - **Le client** : qui, où, quelle taille, quelle activité.
-- **Les utilisateurs** : qui utilisera le système, et dans quelles conditions (téléphone, langue, connexion).
-- **Le problème** : ce qui coûte aujourd'hui (temps, erreurs, argent, confiance), chiffré si possible.
-- **Le résultat attendu** : ce que le système fait quand le projet est réussi.
-- **Hors périmètre** : ce que le système ne fait pas, et qui s'en charge.
+- **Le problème** : ce qui coûte aujourd'hui, chiffré si possible.
+- **Pourquoi ce cas est différent** : ce qui le distingue des autres projets de la famille.
+- **L'approche de l'expert** : la démarche et l'architecture retenues.
+- **Alternatives écartées** : ce que l'expert n'a pas fait, et pourquoi.
+- **Ce qui se vend** : qui paie, comment, et l'argument chiffré.
+- **Contraintes réelles** : réglementation, matériel, réseau, langues, données.
+- **L'imprévu** : ce qui change en cours de route ; les tests le rejouent.
+- **C'est réussi quand** :
+  - Un critère mesurable.
+  - Un autre critère mesurable.
+- **À revoir** : `3.4/citations`, `3.6/garde-fous`
+- **Pour ton portfolio** : ce qu'un recruteur ou un client doit pouvoir vérifier.
 
-## Indicateurs de réussite
+## Fil rouge et ancrage local
 
-<!-- CONSIGNE : des indicateurs métier (qui parlent au client) et techniques (qui parlent à l'équipe). Chacun mesurable sur les données fournies. -->
-
-| Indicateur | Nature | Cible | Comment le mesurer |
-| --- | --- | --- | --- |
-| … | métier | … | … |
-| … | technique | … | … |
-
-## Compétences démontrées
-
-<!-- CONSIGNE : chaque compétence renvoie aux leçons où elle s'apprend, sous la forme `module/id-de-la-leçon`. Une leçon introuvable fait échouer le build. -->
-
-| Compétence | Leçons à revoir |
-| --- | --- |
-| … | `3.4/citations`, `3.6/garde-fous` |
-
-## Missions
-
-<!-- CONSIGNE : 6 à 10 missions, numérotées 1, 2, 3…, dans l'ordre où on les fait. Une mission = un livrable vérifiable.
-La première fait comprendre le besoin, la dernière mesure et présente. Au moins deux missions contiennent un changement imprévu.
-Le titre de la mission donne l'URL de sa page et le nom de son dossier : missions/NN-titre-en-slug/. -->
-
-### 1. Comprendre le besoin
-
-- **Situation** : ce qui arrive, du point de vue du client.
-- **Livrable** : ce que l'apprenant produit, précisément.
-- **Critères de réussite** :
-  - Un critère vérifiable.
-  - Un autre critère vérifiable.
-- **Étapes conseillées** :
-  1. Première étape.
-  2. Deuxième étape.
-- **Changement imprévu** : facultatif. Ce qui change en cours de route ; les tests le rejouent.
-- **Leçons utiles** : `3.5/criteres-succes`, `4.9/exigences`
-- **Vérification** : tests automatiques | grille | tests automatiques et grille
-
-## Validation
-
-| Contrôle | Comment | Règle |
-| --- | --- | --- |
-| Tests des missions | `python outils/check.py` sur chaque mission | Tous les tests passent |
-| Indicateurs de réussite | Évaluation de la mission N, relancée par une commande | Cibles atteintes, ou écart expliqué |
-| Correction par l'agent IA | `GRILLE.md` du projet | Au moins 14/20 |
-| Examen oral avec l'IA | 5 à 10 questions sur ton code et tes choix | Au moins 70 % de réponses jugées correctes |
-
-## Portfolio
-
-- Un README en anglais : le problème, la démonstration, l'architecture en un schéma, les résultats chiffrés.
-- …
-
-## Données et ressources matérielles
-
-- **Données fournies** : …
-- **Modèle** : …
-- **Machine** : PC de 8 Go de RAM, sans carte graphique.
+- **Situation** : les clients de la famille, en une phrase.
 
 ## Circuit
 
 - [ ] 1. Fiche validée par le mainteneur
-- [ ] 2. Solution et tests
-- [ ] 3. Énoncés des missions
-- [ ] 4. Indices
-- [ ] 5. Données
-- [ ] 6. Grille
-- [ ] 7. Relecture élève
-- [ ] 8. Relecture expert
+- [ ] 2. Données fictives réalistes et solution de référence
+- [ ] 3. Énoncés des étapes
+- [ ] 4. Tests et grilles
+- [ ] 5. Relecture élève
+- [ ] 6. Relecture expert

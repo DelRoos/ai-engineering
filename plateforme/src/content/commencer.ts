@@ -119,5 +119,27 @@ export const etapes: Etape[] = [
   },
 ];
 
+/**
+ * La section finale du parcours : les grands projets, rangés par familles (07-projets/).
+ * Chaque famille est un module, chaque projet un chapitre, chaque étape d'expert une leçon.
+ */
+export const grandsProjets: Etape = {
+  n: 7,
+  title: "Les grands projets",
+  project: "Ton portfolio : des projets réels dans plusieurs familles",
+  modules: [
+    { id: "7.1", title: "Assistants documentaires", content: "Citer la loi, lire des scans, respecter les droits d'accès, répondre aux questions globales, interroger des chiffres, fonctionner hors ligne." },
+    { id: "7.2", title: "Agents opérationnels", content: "Un back-office, un serveur MCP, des dossiers traités sur plusieurs sessions, un navigateur, un bac à sable de code." },
+    { id: "7.3", title: "Systèmes multi-agents", content: "Une équipe de recherche, un support à plusieurs spécialistes, une centrale d'achat qui négocie, un agent ou plusieurs tranché par la mesure." },
+    { id: "7.4", title: "Commercial et relation client", content: "Un commercial virtuel, un support WhatsApp, une recommandation de produits, une qualification de prospects." },
+    { id: "7.5", title: "Modèles sur mesure", content: "Fine-tuning LoRA, distillation, GRPO, DPO, retriever adapté, traduction en langue locale." },
+    { id: "7.6", title: "IA locale et embarquée", content: "Un assistant confidentiel sur PC, un diagnostic sur téléphone sans réseau, un serveur de PME, un parc de tablettes." },
+    { id: "7.7", title: "Voix, vision et contenu", content: "Un studio multilingue, un serveur vocal, des reçus lus par la vision, des comptes rendus, des visuels de marque." },
+    { id: "7.8", title: "Données et prédiction", content: "Prévoir la demande, scorer un crédit, arrêter la fraude, trier une récolte par la vision." },
+    { id: "7.9", title: "Plateformes à grande échelle", content: "100 000 utilisateurs, une passerelle LLM, l'évaluation continue, 5 millions de documents, 300 clients sur une plateforme." },
+    { id: "7.10", title: "IA de confiance", content: "Test d'intrusion, garde-fous, audit de biais, mise en conformité." },
+  ],
+};
+
 /** Pauses de consolidation, placées après ces étapes (docs/programme.md). */
 export const consolidationAfter = [2, 4];

@@ -15,7 +15,7 @@ Deux règles guident tout le reste :
 | --- | --- | --- |
 | `cours.mdx`, `cours/NN-slug.mdx` | MDX avec front matter YAML | Oui, avec les composants du § 4 |
 | `fiche.md` | Markdown avec front matter YAML | Oui : la page du module et de ses chapitres en est tirée |
-| `07-projets/*/fiche.md` | Markdown avec front matter YAML (`templates/projet.md`) | Oui : la page du projet et une page par mission (§ 4 bis) |
+| `07-projets/*/fiche.md` | Markdown avec front matter YAML (`templates/projet.md`) | Oui : la page de la famille et une page par projet (§ 4 bis) |
 | `exercices/*/ENONCE.md`, `projet/ENONCE.md` | Markdown avec front matter YAML | Oui, en Markdown simple (pas de composants) |
 | `exercices/*/indices.md` | Markdown avec `<details>` | Oui, chaque `<details>` devient un indice dépliable |
 | `qcm.yaml`, `qcm/NN-slug.yaml` | YAML, validé par `templates/qcm.schema.json` | Oui, en QCM interactif |
@@ -156,26 +156,26 @@ Ajouter un composant : propose-le dans ce document (nom, propriétés, rôle, re
 
 ---
 
-## 4 bis. Fiche d'un grand projet
+## 4 bis. Famille de grands projets
 
-Un grand projet (`07-projets/<NN-nom>/fiche.md`, modèle `templates/projet.md`) mène l'apprenant **du problème métier au résultat prouvé**. La plateforme le lit au build (`plateforme/src/lib/projets.ts`) et en tire trois sortes de pages : `/projets` (tous les projets), `/projets/<nom>` (le projet) et `/projets/<nom>/<mission>` (une page par mission, ouverte dans un nouvel onglet).
+Les grands projets forment la section finale du parcours (étape 7, dossier `07-projets/`). Ils sont rangés par **familles**, et une famille se lit exactement comme un module :
 
-| Section | Contenu | Rendu |
-| --- | --- | --- |
-| Front matter | `id`, `titre`, `famille`, `promesse`, `prerequis`, `statut`, `version`, `mise_a_jour` | En-tête de la page |
-| `## Le brief client` | Lignes `- **Le client** :`, `**Les utilisateurs**`, `**Le problème**`, `**Le résultat attendu**`, `**Hors périmètre**` | « Le brief du client » |
-| `## Indicateurs de réussite` | Tableau Indicateur, Nature (`métier` ou `technique`), Cible, Comment le mesurer | « Comment le client jugera ton travail » |
-| `## Compétences démontrées` | Tableau Compétence, Leçons à revoir | « Ce que tu vas prouver », avec un lien vers chaque leçon |
-| `## Missions` | Une sous-section `### N. Titre` par mission (voir ci-dessous) | Les missions, et une page par mission |
-| `## Validation` | Tableau Contrôle, Comment, Règle | « Valider ton projet » |
-| `## Portfolio` | Liste | « Le montrer dans ton portfolio » |
-| `## Données et ressources matérielles` | Lignes `- **Libellé** :` | Colonne « Données et matériel » |
+| Module | Famille de projets |
+| --- | --- |
+| Le module (`7.1`, `7.2`…) | Une famille : Assistants documentaires, Agents opérationnels… |
+| Un chapitre | **Un projet** : un client réel, un problème, une approche différente des autres projets de la famille |
+| Une leçon | **Une étape d'expert**, propre à ce projet et vérifiable |
 
-Chaque mission contient, dans cet ordre : `**Situation**`, `**Livrable**`, `**Critères de réussite**` (sous-liste), `**Étapes conseillées**` (sous-liste numérotée), `**Changement imprévu**` (facultatif), `**Leçons utiles**`, `**Vérification**` (`tests automatiques`, `grille`, ou les deux).
+La fiche (`07-projets/<NN-famille>/fiche.md`, modèle `templates/projet.md`) reprend le format d'une fiche de module, avec `nature: projets` dans le front matter et `Exercices` à 0 dans le tableau des chapitres. Elle ajoute deux sections :
 
-**Les leçons citées** s'écrivent `module/id-de-la-leçon` (`3.4/citations`). Le build vérifie que chacune existe, puis crée les liens dans les deux sens : la mission affiche « Pour réussir, revois… », et la page du chapitre de la leçon affiche « À appliquer dans un projet ». Une seule source, donc rien à tenir à jour deux fois.
+- `## Comparatif des projets` : un tableau, une ligne par projet (le problème, l'approche, le point dur, le coût). Il apprend à choisir l'approche selon le problème.
+- `## Les projets` : une sous-section `### N. Titre` par projet, numérotée comme son chapitre, avec exactement ces libellés : `**Le client**`, `**Le problème**`, `**Pourquoi ce cas est différent**`, `**L'approche de l'expert**`, `**Alternatives écartées**`, `**Ce qui se vend**`, `**Contraintes réelles**`, `**L'imprévu**`, `**C'est réussi quand**` (sous-liste), `**À revoir**`, `**Pour ton portfolio**`.
 
-**La commande de vérification** d'une mission est `python outils/check.py 07-projets/<NN-nom>/missions/<NN-titre-en-slug>` : le nom du dossier de la mission se déduit de son numéro et de son titre.
+**Les leçons à revoir** s'écrivent `module/id-de-la-leçon` (`3.4/citations`). Le build vérifie que chacune existe, puis crée les liens dans les deux sens : la page du projet affiche « Pour réussir, revois », et la page du chapitre de la leçon affiche « À appliquer dans un projet ».
+
+**Les pages** : `/modules/<famille>` (la famille, son comparatif, ses projets) et `/modules/<famille>/<projet>` (le projet), tirées de la fiche ; `/projets` présente toutes les familles puis le projet de chaque étape.
+
+**La commande de vérification** d'un projet est `python outils/check.py 07-projets/<NN-famille>/<NN-titre-du-projet-en-slug>`.
 
 ---
 

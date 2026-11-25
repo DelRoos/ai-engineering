@@ -1,30 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Flag, ListChecks, Zap } from "lucide-react";
+import { ArrowRight, Flag } from "lucide-react";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Container } from "@/components/ui";
 import { etapes } from "@/content/commencer";
 import { site } from "@/content/site";
-import { getProjets } from "@/lib/projets";
+import { getFamilles } from "@/lib/fiches";
 
 export const metadata: Metadata = {
   title: `Les projets — ${site.name}`,
   description:
-    "Les projets de la formation AI Engineer : un projet par étape, puis quatre grands projets construits du problème métier au résultat prouvé.",
+    "Les grands projets de la formation AI Engineer : dix familles, des dizaines de projets réels à livrer pour ton portfolio, du problème du client au résultat prouvé.",
 };
 
 const demarche = [
-  { label: "Comprendre", text: "Un brief client : qui souffre de quoi, et à quoi ressemble le succès." },
-  { label: "Construire", text: "Des missions dans l'ordre, chacune avec son livrable et ses critères vérifiés." },
-  { label: "S'adapter", text: "Des imprévus en cours de route : un besoin qui change, un outil qui tombe." },
-  { label: "Mesurer", text: "Les indicateurs du client, mesurés par toi sur les données fournies." },
-  { label: "Prouver", text: "Tests, grille de l'agent correcteur, oral, puis ton portfolio public." },
+  { label: "Comprendre", text: "Le client, son problème, ses contraintes réelles, et ce qui rend ce cas différent." },
+  { label: "Choisir", text: "L'approche de l'expert, et les alternatives qu'il écarte, avec leurs raisons." },
+  { label: "Construire", text: "Les étapes dans l'ordre, chacune vérifiable avant de passer à la suivante." },
+  { label: "Encaisser l'imprévu", text: "Un changement en cours de route, rejoué par les tests." },
+  { label: "Prouver et vendre", text: "Les critères de réussite, ce qui se vend, et ton portfolio." },
 ];
 
-/** Tous les projets : les grands projets (section finale du parcours) et le projet de chaque étape. */
+/** Tous les projets : les familles de grands projets (section finale du parcours), puis le projet de chaque étape. */
 export default function ProjetsPage() {
-  const projets = getProjets();
+  const familles = getFamilles();
+  const projectCount = familles.reduce((s, f) => s + f.chapters.length, 0);
   return (
     <>
       <a
@@ -36,7 +37,6 @@ export default function ProjetsPage() {
       <Header page="projets" />
 
       <main id="contenu" className="flex-1">
-        {/* Titre */}
         <section className="relative isolate -mt-[4.5rem] pt-32 pb-12 sm:pt-40 sm:pb-16">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
             <div className="bg-grid absolute inset-0" />
@@ -44,18 +44,18 @@ export default function ProjetsPage() {
           </div>
           <Container>
             <h1 className="font-bold tracking-[-0.04em] text-fg" style={{ fontSize: "clamp(2.6rem, 6vw, 5rem)", lineHeight: 1 }}>
-              Construire, mesurer, prouver.
+              Les projets que tu rencontreras dans ta carrière.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-fg-muted sm:text-xl">
-              Un projet par étape pour appliquer ce que tu viens d&apos;apprendre. Puis, à la fin du parcours, de grands
-              projets&nbsp;: des produits complets, construits comme chez un vrai client, du problème métier au résultat
-              prouvé.
+              Des projets réels, qu&apos;une entreprise pourrait acheter et utiliser demain, rangés par familles. Dans chaque
+              famille, des problèmes différents qui se résolvent différemment. Tu les réalises comme un expert, et ils
+              construisent ton portfolio.
             </p>
             <ul className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
               {[
-                { value: etapes.length, unit: "projets d'étape" },
-                { value: projets.length, unit: "grands projets" },
-                { value: projets.reduce((s, p) => s + p.missions.length, 0), unit: "missions" },
+                { value: familles.length, unit: "familles" },
+                { value: projectCount, unit: "projets" },
+                { value: familles.reduce((s, f) => s + f.chapters.reduce((t, c) => t + c.lessons.length, 0), 0), unit: "étapes d'expert" },
               ].map((f) => (
                 <li key={f.unit} className="font-display">
                   <span className="text-4xl font-bold tracking-tight text-fg sm:text-5xl">{f.value}</span>
@@ -70,7 +70,7 @@ export default function ProjetsPage() {
         <section aria-labelledby="titre-demarche" className="border-t border-line">
           <Container className="py-14 sm:py-20">
             <h2 id="titre-demarche" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
-              Comment se déroule un grand projet
+              Chaque projet, de la même façon
             </h2>
             <ol className="mt-8 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
               {demarche.map((d, k) => (
@@ -84,55 +84,58 @@ export default function ProjetsPage() {
           </Container>
         </section>
 
-        {/* Les grands projets */}
-        <section id="grands-projets" aria-labelledby="titre-grands" className="scroll-mt-24 border-t border-line">
+        {/* Les familles */}
+        <section id="grands-projets" aria-labelledby="titre-familles" className="scroll-mt-24 border-t border-line">
           <Container className="py-14 sm:py-20">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <h2 id="titre-grands" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
-                  Les grands projets
-                </h2>
-                <p className="mt-3 max-w-2xl text-fg-muted">
-                  La section finale du parcours. Chaque projet est indépendant et dit quels modules il demande.
-                </p>
-              </div>
-            </div>
+            <h2 id="titre-familles" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
+              Les familles de projets
+            </h2>
+            <p className="mt-3 max-w-2xl text-fg-muted">
+              La section finale du parcours. Chaque famille dit quels modules elle demande, et chaque projet est indépendant.
+              Pour un portfolio équilibré, livre des projets dans plusieurs familles.
+            </p>
             <ol className="mt-10 grid gap-4 lg:grid-cols-2">
-              {projets.map((p) => (
-                <li key={p.id}>
+              {familles.map((f) => (
+                <li key={f.id} className="flex flex-col rounded-3xl border border-line bg-surface p-6 sm:p-8">
+                  <p className="flex items-baseline justify-between gap-4">
+                    <span className="font-display text-3xl font-bold text-accent">{f.id}</span>
+                    <span className="text-sm text-fg-subtle">Après {f.prerequisites.map((x) => x.id).join(", ")}</span>
+                  </p>
+                  <h3 className="mt-4 text-2xl font-bold tracking-tight text-fg">
+                    <Link href={`/modules/${f.slug}`} className="transition-colors duration-200 hover:text-accent-1">
+                      {f.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-3 leading-relaxed text-fg-muted">{f.promise}</p>
+                  <ol className="mt-5 flex-1 border-t border-line">
+                    {f.chapters.map((c) => (
+                      <li key={c.n} className="border-b border-line last:border-b-0">
+                        <a
+                          href={`/modules/${f.slug}/${c.slug}`}
+                          target="_blank"
+                          rel="noopener"
+                          className="group flex items-baseline gap-3 py-2.5 text-fg transition-colors duration-200 hover:text-accent-1"
+                        >
+                          <span className="w-5 shrink-0 font-display text-sm font-bold text-accent-1 tabular-nums">{c.n}</span>
+                          <span className="min-w-0 flex-1">{c.title}</span>
+                          <span className="sr-only">(s&apos;ouvre dans un nouvel onglet)</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
                   <Link
-                    href={`/projets/${p.slug}`}
-                    className="group flex h-full flex-col rounded-3xl border border-line bg-surface p-6 transition-[border-color,background-color,transform] duration-200 hover:border-accent/50 hover:bg-surface-2 motion-safe:hover:-translate-y-0.5 sm:p-8"
+                    href={`/modules/${f.slug}`}
+                    className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-1"
                   >
-                    <p className="flex items-baseline justify-between gap-4">
-                      <span className="font-display text-4xl font-bold text-accent">{p.id}</span>
-                      <span className="text-sm font-semibold text-fg-subtle">{p.family}</span>
-                    </p>
-                    <h3 className="mt-5 text-2xl font-bold tracking-tight text-balance text-fg group-hover:text-accent-1">{p.title}</h3>
-                    <p className="mt-3 flex-1 leading-relaxed text-fg-muted">{p.promise}</p>
-                    <p className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-sm text-fg-subtle">
-                      <span className="flex items-center gap-1.5">
-                        <ListChecks className="size-4" aria-hidden="true" />
-                        {p.missions.length} missions
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Zap className="size-4" aria-hidden="true" />
-                        {p.missions.filter((m) => m.change).length} imprévus
-                      </span>
-                      <span>Après {p.prerequisites.map((x) => x.id).join(", ")}</span>
-                    </p>
-                    <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-1">
-                      Voir le projet
-                      <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
-                    </p>
+                    Comparer les projets de la famille
+                    <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
                   </Link>
                 </li>
               ))}
             </ol>
             <p className="mt-6 inline-flex items-start gap-3 rounded-2xl border border-line-strong px-5 py-3 text-sm text-fg-muted">
               <span className="mt-1.5 size-2 shrink-0 rounded-full bg-accent" />
-              Les cahiers des charges sont fixés. Les énoncés détaillés, les données et les tests des missions sont en
-              préparation.
+              Les cahiers des charges sont fixés. Les énoncés détaillés, les données et les tests sont en préparation.
             </p>
           </Container>
         </section>
@@ -141,11 +144,10 @@ export default function ProjetsPage() {
         <section aria-labelledby="titre-etapes" className="border-t border-line pb-24 sm:pb-32">
           <Container className="pt-14 sm:pt-20">
             <h2 id="titre-etapes" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
-              Un projet par étape
+              Pendant le parcours : un projet par étape
             </h2>
             <p className="mt-3 max-w-2xl text-fg-muted">
-              Pendant le parcours, chaque étape se termine par un projet qui assemble ses modules. Son énoncé est en
-              préparation.
+              Avant les grands projets, chaque étape se termine par un projet qui assemble ses modules.
             </p>
             <ol className="mt-8 border-t border-line">
               {etapes.map((e) => (

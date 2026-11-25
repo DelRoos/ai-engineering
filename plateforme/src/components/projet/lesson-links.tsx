@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import type { LeconRef } from "@/lib/projets";
+import type { LeconRef } from "@/lib/fiches";
 
 /** Lien vers la leçon, dans la page de son chapitre, ouverte dans un nouvel onglet. */
 export const lessonHref = (l: LeconRef) => `/modules/${l.moduleSlug}/${l.chapterSlug}#${l.lessonId}`;

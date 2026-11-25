@@ -125,22 +125,21 @@ Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-
 └── tests/
 ```
 
-### Structure d'un grand projet
+### Structure d'une famille de grands projets
 
-Un grand projet se construit comme un module : une fiche (`templates/projet.md`), puis une mission par dossier, chacune avec son énoncé, ses indices, ses tests.
+Les grands projets (étape 7) sont rangés par familles. Une famille se construit comme un module : sa fiche (`templates/projet.md`, `nature: projets`) liste ses projets comme des chapitres, et les étapes de chaque projet comme des leçons. Chaque projet a ensuite son dossier.
 
 ```
-07-projets/<NN-nom-court>/
-├── fiche.md                   # brief client, indicateurs, compétences, missions, validation, portfolio
-├── missions/
-│   └── <NN-titre-de-la-mission>/
-│       ├── ENONCE.md
-│       ├── indices.md
-│       ├── starter/
-│       └── tests/
-├── donnees/                   # données fictives fournies (catalogue, scénarios, conversations de test)
-├── GRILLE.md                  # grille de l'agent correcteur et banque de questions d'oral
-└── solution/
+07-projets/<NN-famille>/
+├── fiche.md                   # projets, comparatif, client, approche, ce qui se vend, critères, leçons à revoir
+└── <NN-titre-du-projet>/
+    ├── ENONCE.md              # cahier des charges détaillé, étape par étape
+    ├── indices.md
+    ├── donnees/               # données fictives réalistes (catalogue, scénarios, documents)
+    ├── starter/
+    ├── tests/                 # dont les tests qui rejouent l'imprévu
+    ├── GRILLE.md              # grille de l'agent correcteur et banque de questions d'oral
+    └── solution/
 ```
 
 Le module 0.0 « Préparer son PC » se trouve dans `00-fondations/00-preparer-son-pc/`.

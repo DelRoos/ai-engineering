@@ -120,10 +120,10 @@ export function Projects() {
         <span>
           <span className="block text-sm font-semibold text-fg-subtle">Et pour finir le parcours</span>
           <span className="mt-1 block text-xl font-bold text-fg group-hover:text-accent-1">
-            Quatre grands projets, construits comme chez un vrai client
+            Dix familles de grands projets, réalistes au point de se vendre
           </span>
           <span className="mt-1 block text-sm text-fg-muted">
-            Assistant documentaire, assistant opérationnel, commercial virtuel, studio de contenu.
+            RAG, agents, multi-agents, MCP, fine-tuning, IA locale, voix et vision, prédiction, mise à l'échelle, sécurité.
           </span>
         </span>
         <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-accent-1">

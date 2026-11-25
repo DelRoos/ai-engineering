@@ -2,7 +2,7 @@ import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { etapes } from "@/content/commencer";
+import { etapes, grandsProjets } from "@/content/commencer";
 import { ETAPES } from "./content";
 import { slugify } from "./slug";
 
@@ -18,6 +18,8 @@ export const REPO_ROOT = path.resolve(process.cwd(), "..");
 export type Lecon = { id: string; title: string; objective: string };
 export type Chapitre = {
   n: number;
+  /** Fiche d'un projet, quand le module est une famille de grands projets (étape 7). */
+  project?: Projet;
   /** Segment d'URL du chapitre, tiré de son titre : « Les listes » → « les-listes ». */
   slug: string;
   title: string;
@@ -49,6 +51,40 @@ export type Fiche = {
   prerequisites: Voisin[];
   resources: Ressource[];
   expert: Expert | null;
+  /** « projets » : une famille de grands projets, où chaque chapitre est un projet et chaque leçon une étape. */
+  nature: "module" | "projets";
+  /** Tableau comparatif des projets de la famille. */
+  comparison: { headers: string[]; rows: string[][] } | null;
+};
+
+/** Une leçon citée (« 3.4/citations »), résolue vers son module et son chapitre. */
+export type LeconRef = {
+  ref: string;
+  moduleId: string;
+  moduleTitle: string;
+  moduleSlug: string;
+  chapterN: number;
+  chapterSlug: string;
+  chapterTitle: string;
+  lessonId: string;
+  lessonTitle: string;
+};
+
+/** Un grand projet : du problème du client au résultat prouvé. */
+export type Projet = {
+  client: string;
+  problem: string;
+  difference: string;
+  approach: string;
+  rejected: string;
+  business: string;
+  constraints: string;
+  unexpected: string;
+  criteria: string[];
+  /** Références brutes (« 3.4/citations »), résolues dans `review` après lecture de toutes les fiches. */
+  reviewRefs: string[];
+  review: LeconRef[];
+  portfolio: string;
 };
 
 /** Épreuve de niveau expert : la tâche, les niveaux démontrés et le statut des méthodes enseignées. */
@@ -97,12 +133,57 @@ export function tableRows(section: string | undefined): string[][] {
     .filter((cells) => cells.some((c) => c !== ""));
 }
 
+/** Les lignes « - **Libellé** : texte », chacune avec ses sous-éléments indentés (« - … » ou « 1. … »). */
+function labelled(section: string): { label: string; text: string; items: string[] }[] {
+  const out: { label: string; text: string; items: string[] }[] = [];
+  for (const line of section.split(/\r?\n/)) {
+    const top = line.match(/^- \*\*(.+?)\*\* : ?(.*)$/);
+    if (top) {
+      out.push({ label: top[1].trim(), text: top[2].trim(), items: [] });
+      continue;
+    }
+    const sub = line.match(/^\s+(?:-|\d+\.) (.+)$/);
+    if (sub && out.length) out[out.length - 1].items.push(sub[1].trim());
+  }
+  return out;
+}
+
+/** Les projets d'une famille (section « Les projets »), rattachés à leur chapitre par leur numéro. */
+function readProjets(section: string, chapters: Chapitre[], fail: (m: string) => never) {
+  for (const part of section.split(/^### /m).slice(1)) {
+    const nl = part.indexOf("\n");
+    const head = part.slice(0, nl).match(/^(\d+)\. (.+)$/) ?? fail(`titre de projet illisible : « ${part.slice(0, nl)} » (attendu « 1. Titre »)`);
+    const c = chapters.find((x) => x.n === Number(head[1])) ?? fail(`le projet ${head[1]} n'a pas de chapitre`);
+    const fields = labelled(part.slice(nl + 1));
+    const get = (label: string) =>
+      fields.find((f) => f.label === label) ?? fail(`le projet ${head[1]} n'a pas de « ${label} »`);
+    const text = (label: string) => capitalize(typo(get(label).text));
+    c.project = {
+      client: text("Le client"),
+      problem: text("Le problème"),
+      difference: text("Pourquoi ce cas est différent"),
+      approach: text("L'approche de l'expert"),
+      rejected: text("Alternatives écartées"),
+      business: text("Ce qui se vend"),
+      constraints: text("Contraintes réelles"),
+      unexpected: text("L'imprévu"),
+      criteria: get("C'est réussi quand").items.map(typo),
+      reviewRefs: [...get("À revoir").text.matchAll(/(\d\.\d+)\/([a-z0-9-]+)/g)].map((m) => `${m[1]}/${m[2]}`),
+      review: [],
+      portfolio: text("Pour ton portfolio"),
+    };
+  }
+  const missing = chapters.find((c) => !c.project);
+  if (missing) fail(`le chapitre ${missing.n} n'a pas sa fiche dans « Les projets »`);
+}
+
 function bullet(section: string | undefined, label: string): string | null {
   const m = section?.match(new RegExp(`^- \\*\\*${label}\\*\\* : (.+)$`, "m"));
   return m ? m[1].trim() : null;
 }
 
-const allModules = etapes.flatMap((e) => e.modules.map((m) => ({ ...m, etape: e })));
+const toutesEtapes = [...etapes, grandsProjets];
+const allModules = toutesEtapes.flatMap((e) => e.modules.map((m) => ({ ...m, etape: e })));
 
 function readFiche(file: string, folder: string, etapeN: number): Fiche {
   const fail = (msg: string): never => {
@@ -121,7 +202,7 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
   };
 
   const id = need("id");
-  const etape = etapes.find((e) => e.n === etapeN) ?? fail(`étape ${etapeN} absente de content/commencer.ts`);
+  const etape = toutesEtapes.find((e) => e.n === etapeN) ?? fail(`étape ${etapeN} absente de content/commencer.ts`);
 
   // Chapitres et leçons
   const chapters: Chapitre[] = tableRows(s.get("Chapitres")).map(([n, title, exercises]) => ({
@@ -167,6 +248,20 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
 
   const slug = path.basename(folder).replace(/^\d+-/, "");
 
+  const nature = data.nature === "projets" ? "projets" : "module";
+  let comparison: Fiche["comparison"] = null;
+  if (nature === "projets") {
+    readProjets(s.get("Les projets") ?? fail("section « Les projets » absente"), chapters, fail);
+    const table = s.get("Comparatif des projets");
+    if (table) {
+      const head = table.split(/\r?\n/).find((l) => l.trim().startsWith("|"));
+      comparison = {
+        headers: (head ?? "").replace(/^\s*\||\|\s*$/g, "").split("|").map((c) => c.trim()),
+        rows: tableRows(table).map((r) => r.map(typo)),
+      };
+    }
+  }
+
   let expert: Expert | null = null;
   const epreuve = s.get("Épreuve de niveau expert");
   if (epreuve) {
@@ -199,6 +294,8 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
     prerequisites,
     resources,
     expert,
+    nature,
+    comparison,
   };
 }
 
@@ -208,12 +305,13 @@ let cache: Fiche[] | null = null;
 export function getFiches(): Fiche[] {
   if (cache) return cache;
   const fiches: Fiche[] = [];
-  ETAPES.forEach((etape, n) => {
-    const root = path.join(REPO_ROOT, etape.dir);
+  // Les 7 étapes du parcours, puis la section des grands projets (étape 7).
+  [...ETAPES.map((e) => e.dir), GRANDS_PROJETS_DIR].forEach((dir, n) => {
+    const root = path.join(REPO_ROOT, dir);
     if (!fs.existsSync(root)) return;
     for (const d of fs.readdirSync(root, { withFileTypes: true }).filter((x) => x.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
       const file = path.join(root, d.name, "fiche.md");
-      if (fs.existsSync(file)) fiches.push(readFiche(file, `${etape.dir}/${d.name}`, n));
+      if (fs.existsSync(file)) fiches.push(readFiche(file, `${dir}/${d.name}`, n));
     }
   });
   const slugs = fiches.map((f) => f.slug);
@@ -221,8 +319,49 @@ export function getFiches(): Fiche[] {
   if (dup) throw new Error(`Deux modules ont le même slug « ${dup} » : renomme l'un des dossiers.`);
   // Prérequis : lien seulement si la fiche existe.
   for (const f of fiches) for (const p of f.prerequisites) p.slug = fiches.find((x) => x.id === p.id)?.slug ?? null;
+  // Grands projets : chaque leçon citée doit exister ; elle est résolue vers son module et son chapitre.
+  for (const f of fiches)
+    for (const c of f.chapters)
+      if (c.project) c.project.review = c.project.reviewRefs.map((ref) => resolveLecon(fiches, ref, `${f.folder}/fiche.md, projet ${c.n}`));
   cache = fiches;
   return fiches;
+}
+
+const GRANDS_PROJETS_DIR = "07-projets";
+
+function resolveLecon(fiches: Fiche[], ref: string, where: string): LeconRef {
+  const fail = (msg: string): never => {
+    throw new Error(`${where} : ${msg}`);
+  };
+  const [moduleId, lessonId] = ref.split("/");
+  const f = fiches.find((x) => x.id === moduleId) ?? fail(`la leçon « ${ref} » cite le module ${moduleId}, introuvable`);
+  const c = f.chapters.find((x) => x.lessons.some((l) => l.id === lessonId)) ?? fail(`la leçon « ${ref} » n'existe pas dans le module ${moduleId}`);
+  return {
+    ref,
+    moduleId,
+    moduleTitle: f.title,
+    moduleSlug: f.slug,
+    chapterN: c.n,
+    chapterSlug: c.slug,
+    chapterTitle: c.title,
+    lessonId,
+    lessonTitle: c.lessons.find((l) => l.id === lessonId)!.title,
+  };
+}
+
+/** Les grands projets qui appliquent les leçons d'un chapitre : le lien retour, de la leçon vers le projet. */
+export function projectsUsingChapter(fiche: Fiche, chapitre: Chapitre) {
+  const ids = new Set(chapitre.lessons.map((l) => `${fiche.id}/${l.id}`));
+  return getFiches().flatMap((f) =>
+    f.chapters
+      .filter((c) => c.project?.review.some((l) => ids.has(l.ref)))
+      .map((c) => ({ famille: f, chapitre: c, lessons: c.project!.review.filter((l) => ids.has(l.ref)) })),
+  );
+}
+
+/** Les familles de grands projets (étape 7). */
+export function getFamilles(): Fiche[] {
+  return getFiches().filter((f) => f.nature === "projets");
 }
 
 export function getFiche(slug: string): Fiche | undefined {
@@ -245,7 +384,9 @@ export function neighbours(id: string): { prev: Voisin | null; next: Voisin | nu
   const next =
     nextM && nextM.etape.n === cur.etape.n
       ? toVoisin(nextM)
-      : { id: `Projet ${cur.etape.n}`, title: typo(cur.etape.project), slug: null, kind: "projet" as const };
+      : cur.etape.n === grandsProjets.n
+        ? null
+        : { id: `Projet ${cur.etape.n}`, title: typo(cur.etape.project), slug: null, kind: "projet" as const };
   return { prev, next };
 }
 

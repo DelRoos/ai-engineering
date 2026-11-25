@@ -47,8 +47,16 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
   const { prev, next } = neighbours(m.id);
   const totalLessons = m.chapters.reduce((s, c) => s + c.lessons.length, 0);
   const single = m.chapters.length === 1;
+  const isProjet = m.nature === "projets";
 
-  const stats = [
+  const stats = isProjet
+    ? [
+        { value: String(m.chapters.length), unit: "projets", detail: "un client réel chacun" },
+        { value: String(totalLessons), unit: "étapes", detail: "dans l'ordre d'un expert" },
+        { value: String(m.prerequisites.length), unit: "modules", detail: "à maîtriser avant" },
+        { value: "1", unit: "projet au moins", detail: "à livrer pour ton portfolio" },
+      ]
+    : [
     { value: String(m.chapters.length), unit: plural(m.chapters.length, "chapitre", "chapitres"), detail: "un thème chacun" },
     { value: String(totalLessons), unit: "leçons", detail: "explication, exemple, mini-exercice" },
     m.hasQcm
@@ -78,15 +86,23 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
           </div>
           <Container>
             <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center gap-1.5 text-sm text-fg-subtle">
-              <Link href="/commencer" className="transition-colors duration-200 hover:text-fg">
-                Tous les modules
+              <Link href={isProjet ? "/projets" : "/commencer"} className="transition-colors duration-200 hover:text-fg">
+                {isProjet ? "Projets" : "Tous les modules"}
               </Link>
               <ChevronRight className="size-4" aria-hidden="true" />
-              <Link href={`/commencer#etape-${m.etape.n}`} className="transition-colors duration-200 hover:text-fg">
-                Étape {m.etape.n}&nbsp;: {m.etape.title}
-              </Link>
+              {isProjet ? (
+                <Link href="/projets#grands-projets" className="transition-colors duration-200 hover:text-fg">
+                  {m.etape.title}
+                </Link>
+              ) : (
+                <Link href={`/commencer#etape-${m.etape.n}`} className="transition-colors duration-200 hover:text-fg">
+                  Étape {m.etape.n}&nbsp;: {m.etape.title}
+                </Link>
+              )}
               <ChevronRight className="size-4" aria-hidden="true" />
-              <span className="text-fg-muted">Module {m.id}</span>
+              <span className="text-fg-muted">
+                {isProjet ? "Famille" : "Module"} {m.id}
+              </span>
             </nav>
 
             <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-16">
@@ -102,7 +118,9 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                 {m.status !== "publie" && (
                   <p className="mt-6 inline-flex items-start gap-3 rounded-2xl border border-line-strong px-4 py-2.5 text-sm text-fg-muted">
                     <span className="mt-1.5 size-2 shrink-0 rounded-full bg-accent" />
-                    Le programme est fixé, les leçons sont en cours de rédaction.
+                    {isProjet
+                      ? "Les cahiers des charges sont fixés. Les énoncés détaillés, les données et les tests sont en préparation."
+                      : "Le programme est fixé, les leçons sont en cours de rédaction."}
                   </p>
                 )}
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -112,7 +130,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                     rel="noopener"
                     className="h-13 px-7 text-base"
                   >
-                    Commencer le chapitre 1
+                    {isProjet ? "Ouvrir le projet 1" : "Commencer le chapitre 1"}
                     <ArrowUpRight
                       className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       aria-hidden="true"
@@ -121,7 +139,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                   </ButtonLink>
                   {!single && (
                     <ButtonLink href="#programme" variant="secondary" className="h-13 px-7 text-base">
-                      Voir le programme
+                      {isProjet ? "Voir les projets" : "Voir le programme"}
                     </ButtonLink>
                   )}
                 </div>
@@ -167,16 +185,55 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                 </ul>
               </section>
 
+              {/* Comparatif des projets d'une famille */}
+              {m.comparison && (
+                <section aria-labelledby="titre-comparatif" className="pt-16 sm:pt-24">
+                  <h2 id="titre-comparatif" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
+                    Le même domaine, des approches différentes
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-fg-muted">
+                    Chaque projet pose un problème différent, et l&apos;expert ne le résout pas de la même façon. Ce tableau
+                    t&apos;apprend à choisir l&apos;approche selon le problème.
+                  </p>
+                  <div className="mt-8 overflow-x-auto">
+                    <table className="w-full min-w-[46rem] border-collapse text-left text-sm lg:min-w-0">
+                      <thead>
+                        <tr className="border-b border-line text-fg-subtle">
+                          {m.comparison.headers.map((h) => (
+                            <th key={h} scope="col" className="py-3 pr-4 font-semibold">
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {m.comparison.rows.map((r) => (
+                          <tr key={r[0]} className="border-b border-line align-top">
+                            {r.map((cell, k) => (
+                              <td key={k} className={cn("py-3.5 pr-4", k === 0 ? "font-semibold text-fg" : "text-fg-muted")}>
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              )}
+
               {/* Programme : chapitres et leçons */}
               <section id="programme" aria-labelledby="titre-programme" className="scroll-mt-24 pt-16 sm:pt-24">
                 <div className="flex flex-wrap items-end justify-between gap-4">
                   <h2 id="titre-programme" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
-                    Le programme
+                    {isProjet ? "Les projets" : "Le programme"}
                   </h2>
                   <p className="text-sm text-fg-subtle">
                     {single
                       ? `${totalLessons} leçons, à suivre dans l'ordre.`
-                      : "Ouvre un chapitre pour voir ses leçons."}
+                      : isProjet
+                        ? "Ouvre un projet pour voir son client et ses étapes."
+                        : "Ouvre un chapitre pour voir ses leçons."}
                   </p>
                 </div>
                 <ol className="relative mt-8">
@@ -218,13 +275,13 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                                 </span>
                               )}
                               <h3 className="text-xl font-bold tracking-tight text-fg sm:text-2xl">
-                                {!single && <span className="text-fg-subtle">Chapitre {c.n}. </span>}
+                                {!single && <span className="text-fg-subtle">{isProjet ? "Projet" : "Chapitre"} {c.n}. </span>}
                                 {c.title}
                               </h3>
                               <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-fg-subtle">
                                 <span className="flex items-center gap-1.5">
                                   <BookOpen className="size-4" aria-hidden="true" />
-                                  {c.lessons.length} leçons
+                                  {c.lessons.length} {isProjet ? "étapes" : "leçons"}
                                 </span>
                                 {c.exercises > 0 && (
                                   <span className="flex items-center gap-1.5">
@@ -246,6 +303,9 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                           </summary>
 
                           <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+                            {c.project && (
+                              <p className="mb-4 border-t border-line pt-4 leading-relaxed text-fg-muted">{c.project.client}</p>
+                            )}
                             <ol className="border-t border-line">
                               {c.lessons.map((l, j) => (
                                 <li
@@ -275,7 +335,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                               rel="noopener"
                               className="group/open mt-5 inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-semibold text-fg transition-[border-color,background-color,color] duration-200 hover:border-accent/60 hover:bg-accent/[0.08] hover:text-accent-1"
                             >
-                              Ouvrir le chapitre
+                              {isProjet ? "Ouvrir le projet" : "Ouvrir le chapitre"}
                               <ArrowUpRight
                                 className="size-4 transition-transform duration-200 group-hover/open:translate-x-0.5 group-hover/open:-translate-y-0.5"
                                 aria-hidden="true"
@@ -291,6 +351,18 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
               </section>
 
               {/* Pratiquer */}
+              {isProjet ? (
+                <section aria-labelledby="titre-livrer" className="pt-16 sm:pt-24">
+                  <h2 id="titre-livrer" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
+                    Livrer, puis montrer
+                  </h2>
+                  <p className="mt-4 max-w-2xl leading-relaxed text-fg-muted">
+                    {m.keyExercise}. Chaque projet se valide par ses tests, la grille de l&apos;agent correcteur (14/20 au
+                    moins) et un examen oral avec l&apos;IA. Pour un portfolio équilibré, livre des projets dans plusieurs
+                    familles.
+                  </p>
+                </section>
+              ) : (
               <section aria-labelledby="titre-pratiquer" className="pt-16 sm:pt-24">
                 <h2 id="titre-pratiquer" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
                   Pratiquer sur ton PC
@@ -327,6 +399,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                   )}
                 </div>
               </section>
+              )}
 
               {/* Épreuve de niveau expert */}
               {m.expert && (
@@ -420,7 +493,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                 <div className="rounded-3xl border border-line bg-surface p-5">
                   <p className="flex items-center gap-2 text-sm font-semibold text-fg">
                     <ListChecks className="size-4 text-accent" aria-hidden="true" />
-                    Avant ce module
+                    {isProjet ? "Avant cette famille" : "Avant ce module"}
                   </p>
                   {m.prerequisites.length === 0 ? (
                     <p className="mt-2 text-sm leading-relaxed text-fg-muted">
@@ -459,7 +532,9 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                     {m.skipQuestion}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                    {m.hasQcm
+                    {isProjet
+                      ? "Choisis directement le projet qui te parle : chaque projet est indépendant des autres."
+                      : m.hasQcm
                       ? "Passe le QCM et l'exercice clé. S'ils sont réussis, passe directement au module suivant."
                       : "Lance la vérification. Si tout est au vert, passe directement au module suivant."}
                   </p>
@@ -471,8 +546,9 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                     À ton rythme
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                    Aucune durée imposée. Prends le temps de comprendre chaque leçon, et passe à la suite quand tes
-                    exercices sont réussis.
+                    {isProjet
+                      ? "Aucune durée imposée. Un projet se mène étape par étape ; ton code, tes données et tes résultats restent dans ton dépôt."
+                      : "Aucune durée imposée. Prends le temps de comprendre chaque leçon, et passe à la suite quand tes exercices sont réussis."}
                   </p>
                 </div>
               </div>
@@ -482,8 +558,20 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
           {/* Navigation entre modules */}
           <Container>
             <nav aria-label="Modules voisins" className="mt-20 grid gap-3 border-t border-line pt-10 sm:grid-cols-2">
-              {prev ? <ModuleNav voisin={prev} direction="prev" /> : <span className="hidden sm:block" />}
-              {next && <ModuleNav voisin={next} direction="next" />}
+              {prev ? <ModuleNav voisin={prev} direction="prev" famille={isProjet} /> : <span className="hidden sm:block" />}
+              {next ? (
+                <ModuleNav voisin={next} direction="next" famille={isProjet} />
+              ) : (
+                isProjet && (
+                  <Link
+                    href="/projets"
+                    className="group rounded-3xl border border-line bg-surface p-6 transition-[border-color,background-color,transform] duration-200 hover:border-accent/50 hover:bg-surface-2 motion-safe:hover:-translate-y-0.5 sm:text-right"
+                  >
+                    <p className="text-sm text-fg-subtle">Dernière famille</p>
+                    <p className="mt-2 text-xl font-bold text-fg group-hover:text-accent-1">Tous les projets</p>
+                  </Link>
+                )
+              )}
             </nav>
           </Container>
         </section>
@@ -494,9 +582,18 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
   );
 }
 
-function ModuleNav({ voisin, direction }: { voisin: Voisin; direction: "prev" | "next" }) {
+function ModuleNav({ voisin, direction, famille = false }: { voisin: Voisin; direction: "prev" | "next"; famille?: boolean }) {
   const next = direction === "next";
-  const label = voisin.kind === "projet" ? "Pour finir l'étape" : next ? "Module suivant" : "Module précédent";
+  const label =
+    voisin.kind === "projet"
+      ? "Pour finir l'étape"
+      : famille
+        ? next
+          ? "Famille suivante"
+          : "Famille précédente"
+        : next
+          ? "Module suivant"
+          : "Module précédent";
   if (!voisin.slug) {
     return (
       <div className={cn("rounded-3xl border border-dashed border-line-strong p-6", next && "sm:text-right")}>
