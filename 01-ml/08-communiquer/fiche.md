@@ -22,12 +22,12 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Adapter son message au public : décideur, technicien, grand public. | ex01 à ex02, exercice clé (ex11), qcm |
+| O1 | Adapter son message au public : décideur, technicien, grand public. | ex01 à ex02, exercice clé (ex12), qcm |
 | O2 | Construire un graphique qui transmet une seule idée. | ex03 à ex05, qcm |
 | O3 | Écrire un rapport d'analyse de 2 pages, du problème à la recommandation. | ex01 à ex02, ex06 à ex07, qcm |
 | O4 | Construire un tableau de bord Streamlit et le mettre en ligne gratuitement. | ex08 à ex09, qcm |
-| O5 | Présenter l'incertitude et les limites d'un modèle. | ex06 à ex07, exercice clé (ex11), qcm |
-| O6 | Présenter son travail en 5 minutes, en vidéo. | ex10, exercice clé (ex11), qcm |
+| O5 | Présenter l'incertitude et les limites d'un modèle. | ex06 à ex07, exercice clé (ex12), qcm |
+| O6 | Présenter son travail en 5 minutes, en vidéo. | ex10 à ex11, exercice clé (ex12), qcm |
 
 ## Chapitres
 
@@ -37,7 +37,7 @@ mise_a_jour: 2026-11-25
 | 2 | Montrer | 3 |
 | 3 | Écrire | 2 |
 | 4 | Un tableau de bord en ligne | 2 |
-| 5 | Présenter | 2 |
+| 5 | Présenter | 3 |
 
 ## Notions, dans l'ordre
 
@@ -56,7 +56,8 @@ mise_a_jour: 2026-11-25
 | 4 | `streamlit-interactif` | Rendre le tableau de bord interactif : filtres et cache | O4 |
 | 4 | `deployer-streamlit` | Mettre une app Streamlit en ligne, gratuitement | O4 |
 | 5 | `slides` | Un support de présentation simple | O6 |
-| 5 | `presenter-video` | Présenter en 5 minutes et te filmer | O6 |
+| 5 | `presenter-video` | Préparer une présentation de 5 minutes | O6 |
+| 5 | `se-filmer` | Te filmer et partager ta vidéo | O6 |
 | 5 | `questions-difficiles` | Répondre aux questions difficiles | O6 |
 
 ## Vocabulaire du module
@@ -70,6 +71,11 @@ mise_a_jour: 2026-11-25
 | déployer (deploy) | A | `deployer-streamlit` |
 | intervalle, marge d'erreur | B | `incertitude` |
 | pitch | A | `presenter-video` |
+| ordre de grandeur | B | `chiffres` |
+| accessibilité, daltonisme | B | `accessibilite` |
+| README | A | `readme-anglais` |
+| cache de Streamlit, filtre | A | `streamlit-interactif` |
+| diapositive (slide) | A | `slides` |
 
 ## Fil rouge et ancrage local
 
@@ -85,8 +91,8 @@ mise_a_jour: 2026-11-25
 | 1.8-ex03 à ex05 | Montrer | O2 | 2 | non |
 | 1.8-ex06 à ex07 | Écrire | O3, O5 | 2 | oui → GRILLE.md |
 | 1.8-ex08 à ex09 | Un tableau de bord en ligne | O4 | 2–3 | non |
-| 1.8-ex10 | Présenter | O6 | 2–3 | non |
-| 1.8-ex11 | Exercice clé : vidéo de présentation de 5 minutes du projet 1 | O1, O5, O6 | 3 | oui → GRILLE.md |
+| 1.8-ex10 à ex11 | Présenter | O6 | 2–3 | non |
+| 1.8-ex12 | Exercice clé : vidéo de présentation de 5 minutes du projet 1 | O1, O5, O6 | 3 | oui → GRILLE.md |
 
 ## Ressources matérielles
 
@@ -128,4 +134,3 @@ mise_a_jour: 2026-11-25
 
 - TODO(vérifier) : l'exercice clé porte sur le projet 1, réalisé après le module selon le programme ; préciser avec le mainteneur s'il se fait sur une version intermédiaire du projet ou en fin d'étape.
 - TODO(vérifier) : limites de ressources de Streamlit Community Cloud (mémoire, mise en veille des apps).
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

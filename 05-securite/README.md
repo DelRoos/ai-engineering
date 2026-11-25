@@ -47,4 +47,4 @@ Les textes de loi évoluent. Chaque référence juridique est citée avec son nu
 
 ## État
 
-Aucun module rédigé pour l'instant.
+Les fiches des modules 5.1 à 5.3 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`.

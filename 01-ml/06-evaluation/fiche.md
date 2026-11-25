@@ -73,6 +73,14 @@ mise_a_jour: 2026-11-25
 | validation croisée (cross-validation), fold | A | `validation-croisee` |
 | hyperparamètre, grid search | A | `hyperparametres` |
 | classes déséquilibrées (imbalanced), rééchantillonnage | A | `desequilibre` |
+| résidu | B | `residus` |
+| courbe précision-rappel | A | `courbe-pr` |
+| moyenne macro, moyenne micro | A | `metriques-multiclasses` |
+| calibration | B | `calibration` |
+| bootstrap, intervalle de confiance | A | `incertitude-metrique` |
+| recherche aléatoire, Optuna | A | `optuna` |
+| analyse d'erreurs (error analysis) | A | `analyse-erreurs` |
+| métrique par groupe | B | `metriques-groupes` |
 
 ## Fil rouge et ancrage local
 
@@ -131,4 +139,3 @@ mise_a_jour: 2026-11-25
 
 - TODO(vérifier) : relecture du cas paludisme par un professionnel de santé (vraisemblance des symptômes et des saisons).
 - TODO(vérifier) : licence et sous-titres français du Machine Learning Crash Course de Google.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

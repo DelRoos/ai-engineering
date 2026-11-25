@@ -23,7 +23,7 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Représenter des données par des vecteurs NumPy et calculer norme, produit scalaire et similarité. | ex01 à ex04, ex05 à ex08, qcm |
-| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex01 à ex04, ex09 à ex13, ex14 à ex16, qcm |
+| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex09 à ex13, ex14 à ex16, qcm |
 | O3 | Calculer une dérivée, à la main et numériquement, et l'interpréter comme une pente. | ex17 à ex21, ex22 à ex25, qcm |
 | O4 | Calculer un gradient et coder une descente de gradient. | ex26 à ex29, ex30 à ex33, exercice clé (ex34), qcm |
 | O5 | Calculer des probabilités, dont des probabilités conditionnelles avec le théorème de Bayes. | ex35 à ex39, ex40 à ex42, qcm |
@@ -54,12 +54,12 @@ mise_a_jour: 2026-11-25
 | 1 | `notation-somme` | Lire les formules : indices et notation Σ | O1 |
 | 1 | `numpy-tableaux` | Tes premiers tableaux NumPy | O1 |
 | 1 | `calcul-vectorise` | Calculer sur tout un tableau d'un coup | O1 |
-| 1 | `forme-indices` | Forme, indices et découpage d'une matrice | O2 |
 | 2 | `operations-vecteurs` | Additionner des vecteurs, les multiplier par un nombre | O1 |
 | 2 | `norme` | La longueur d'un vecteur : la norme | O1 |
 | 2 | `produit-scalaire` | Le produit scalaire | O1 |
 | 2 | `similarite-cosinus` | Mesurer la ressemblance : la similarité cosinus | O1 |
 | 3 | `matrice` | Une matrice, c'est un tableau de données | O2 |
+| 3 | `forme-indices` | Forme, indices et découpage d'une matrice | O2 |
 | 3 | `broadcasting` | Opérations élément par élément et broadcasting | O2 |
 | 3 | `matrice-vecteur` | Le produit d'une matrice par un vecteur | O2 |
 | 3 | `produit-matrices` | Le produit de deux matrices | O2 |
@@ -89,7 +89,8 @@ mise_a_jour: 2026-11-25
 | 8 | `ajuster-droite` | Ajuster une droite aux données par descente de gradient | O4 |
 | 9 | `probabilite` | Le hasard en chiffres : la probabilité d'un événement | O5 |
 | 9 | `simuler-hasard` | Simuler le hasard avec NumPy | O5 |
-| 9 | `probabilite-conditionnelle` | Indépendance et probabilité conditionnelle | O5 |
+| 9 | `probabilite-conditionnelle` | La probabilité conditionnelle | O5 |
+| 9 | `independance` | Des événements indépendants | O5 |
 | 9 | `bayes` | Le théorème de Bayes | O5 |
 | 10 | `esperance` | Variables aléatoires et espérance | O5 |
 | 10 | `binomiale` | Les lois de Bernoulli et binomiale | O5 |
@@ -130,6 +131,21 @@ mise_a_jour: 2026-11-25
 | quantile, outlier | A | `quantiles` |
 | corrélation | B | `correlation` |
 | normalisation, z-score | A | `normaliser` |
+| indice, somme (Σ) | B | `notation-somme` |
+| inverse d'une matrice, système d'équations | B | `inverse` |
+| tenseur (tensor) | A | `tenseurs` |
+| valeur propre, vecteur propre (eigenvalue) | A | `valeurs-propres` |
+| exponentielle, logarithme | B | `exp-log` |
+| sigmoïde | B | `sigmoide` |
+| minimum local, minimum global | B | `minima-locaux` |
+| descente de gradient stochastique (SGD), mini-batch | A | `sgd` |
+| événements indépendants | B | `independance` |
+| densité de probabilité | B | `densite` |
+| entropie | B | `entropie` |
+| covariance | B | `covariance` |
+| théorème central limite | B | `tcl` |
+| marge d'erreur, intervalle de confiance | B | `marge-erreur` |
+| test d'hypothèse, p-value | A | `test-hypothese` |
 
 ## Fil rouge et ancrage local
 
@@ -141,7 +157,7 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 0.4-ex01 à ex04 | Les données en nombres, avec NumPy | O1, O2 | 1 | non |
+| 0.4-ex01 à ex04 | Les données en nombres, avec NumPy | O1 | 1 | non |
 | 0.4-ex05 à ex08 | Les vecteurs | O1 | 1 | non |
 | 0.4-ex09 à ex13 | Les matrices | O2 | 1 | non |
 | 0.4-ex14 à ex16 | Les matrices au cœur de l'IA | O2 | 1 | non |
@@ -160,7 +176,7 @@ mise_a_jour: 2026-11-25
 - **RAM maximale** : moins de 300 Mo.
 - **Téléchargements** : NumPy et matplotlib, environ 60 Mo installés. TODO(vérifier).
 - **Temps de calcul le plus long** : quelques secondes (simulations de 100 000 tirages).
-- **Dépendances nouvelles** : numpy, matplotlib ; scipy, pour le test d'hypothèse (environ 100 Mo installés, TODO(vérifier)).
+- **Dépendances nouvelles** : numpy, matplotlib, et scipy pour le test d'hypothèse (environ 100 Mo installés, TODO(vérifier)).
 - **API payante** : aucune.
 
 ## Point de contrôle sécurité et éthique
@@ -197,4 +213,3 @@ Une moyenne peut cacher des inégalités entre planteurs : la notion `moyenne-me
 - TODO(vérifier) : taille installée de NumPy et matplotlib.
 - TODO(vérifier) : disponibilité des sous-titres français des vidéos de 3Blue1Brown.
 - TODO(vérifier) : chiffres réalistes de récolte de cacao par hectare dans la région de Daloa, pour le jeu de données fictif.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

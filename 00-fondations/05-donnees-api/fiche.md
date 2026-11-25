@@ -23,12 +23,12 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Lire et écrire des données JSON et CSV en Python, sans se faire piéger par les encodages et les séparateurs. | ex01 à ex03, qcm |
-| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex04 à ex07, exercice clé (ex20), qcm |
-| O3 | Respecter les limites d'une API et éviter de la rappeler inutilement. | ex08 à ex10, qcm |
-| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex11 à ex14, ex15 à ex18, qcm |
-| O5 | Relier deux tables avec JOIN. | ex15 à ex18, qcm |
-| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex19, exercice clé (ex20), qcm |
-| O7 | Récupérer les données d'une page web quand aucune API n'existe, en respectant le droit et le site. | ex08 à ex10, qcm |
+| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex04 à ex07, exercice clé (ex21), qcm |
+| O3 | Respecter les limites d'une API et éviter de la rappeler inutilement. | ex08 à ex11, qcm |
+| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex12 à ex15, ex16 à ex19, qcm |
+| O5 | Relier deux tables avec JOIN. | ex16 à ex19, qcm |
+| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex20, exercice clé (ex21), qcm |
+| O7 | Récupérer les données d'une page web quand aucune API n'existe, en respectant le droit et le site. | ex08 à ex11, qcm |
 
 ## Chapitres
 
@@ -36,7 +36,7 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Les formats de données | 3 |
 | 2 | Le web et HTTP | 4 |
-| 3 | Utiliser une API sérieusement | 3 |
+| 3 | Utiliser une API sérieusement | 4 |
 | 4 | Une base de données | 4 |
 | 5 | Interroger plusieurs tables | 4 |
 | 6 | Python et SQLite | 2 |
@@ -51,9 +51,11 @@ mise_a_jour: 2026-11-25
 | 2 | `http` | Comment marche le web : requêtes et réponses HTTP | O2 |
 | 2 | `url-parametres` | Lire une URL et ses paramètres | O2 |
 | 2 | `requests` | Appeler une API avec requests | O2 |
-| 2 | `statut-erreurs` | Paramètres, codes de statut et erreurs réseau | O2 |
+| 2 | `statut-erreurs` | Lire un code de statut HTTP | O2 |
+| 2 | `erreurs-reseau` | Les erreurs réseau : délais et nouvelles tentatives | O2 |
 | 2 | `post` | Envoyer des données : la méthode POST | O2 |
-| 3 | `limites-cache` | Respecter une API : limites, clés et cache | O3 |
+| 3 | `limites-cache` | Respecter les limites d'une API | O3 |
+| 3 | `cache` | Ne pas rappeler l'API pour rien : le cache | O3 |
 | 3 | `pagination` | Récupérer beaucoup de données : la pagination | O3 |
 | 3 | `en-tetes` | Les en-têtes HTTP et l'authentification | O3 |
 | 3 | `cle-secrete` | Garder une clé d'API secrète | O3 |
@@ -89,6 +91,20 @@ mise_a_jour: 2026-11-25
 | requête SQL (query) | A | `select-where` |
 | jointure (JOIN) | A | `join` |
 | injection SQL, requête paramétrée | A | `sqlite-python` |
+| paramètre d'URL (query string) | A | `url-parametres` |
+| POST, corps de requête (body) | A | `post` |
+| timeout, nouvelle tentative (retry) | A | `erreurs-reseau` |
+| cache | A | `cache` |
+| pagination | B | `pagination` |
+| en-tête (header), jeton (token) | A | `en-tetes` |
+| variable d'environnement, .env | A | `cle-secrete` |
+| scraping, robots.txt | A | `scraping` |
+| NULL | A | `null-sql` |
+| UPDATE, DELETE | A | `update-delete` |
+| clé primaire, clé étrangère | B | `concevoir-tables` |
+| sous-requête (subquery) | A | `sous-requetes` |
+| index | B | `index` |
+| transaction, commit, rollback | A | `transactions` |
 
 ## Fil rouge et ancrage local
 
@@ -102,11 +118,11 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 0.5-ex01 à ex03 | Les formats de données | O1 | 1 | non |
 | 0.5-ex04 à ex07 | Le web et HTTP | O2 | 1 | non |
-| 0.5-ex08 à ex10 | Utiliser une API sérieusement | O3, O7 | 2 | non |
-| 0.5-ex11 à ex14 | Une base de données | O4 | 2 | non |
-| 0.5-ex15 à ex18 | Interroger plusieurs tables | O4, O5 | 2–3 | non |
-| 0.5-ex19 | Python et SQLite | O6 | 2–3 | non |
-| 0.5-ex20 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | non |
+| 0.5-ex08 à ex11 | Utiliser une API sérieusement | O3, O7 | 2 | non |
+| 0.5-ex12 à ex15 | Une base de données | O4 | 2 | non |
+| 0.5-ex16 à ex19 | Interroger plusieurs tables | O4, O5 | 2–3 | non |
+| 0.5-ex20 | Python et SQLite | O6 | 2–3 | non |
+| 0.5-ex21 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -150,4 +166,3 @@ mise_a_jour: 2026-11-25
 
 - TODO(vérifier) : format exact d'attribution demandé par Open-Meteo pour la licence CC BY 4.0.
 - TODO(vérifier) : prix des céréales réalistes au marché de Ouagadougou, pour le fichier fictif.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

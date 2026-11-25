@@ -49,13 +49,16 @@ mise_a_jour: 2026-11-25
 | 1 | `dataframe` | Charger un fichier : DataFrame et Series | O1 |
 | 1 | `lire-formats` | Lire un fichier Excel, JSON ou une base SQL | O1 |
 | 1 | `explorer` | Explorer un tableau : head, info, describe | O1 |
-| 2 | `selectionner` | Sélectionner des lignes et des colonnes | O2 |
+| 2 | `selectionner` | Sélectionner des colonnes et des lignes : loc et iloc | O2 |
+| 2 | `filtrer` | Filtrer des lignes avec une condition | O2 |
 | 2 | `types-colonnes` | Les types de colonnes et leurs conversions | O2 |
 | 2 | `nouvelles-colonnes` | Créer de nouvelles colonnes | O4 |
 | 2 | `apply` | Appliquer une fonction à une colonne | O2 |
 | 2 | `vectoriser-pandas` | Calculer vite : éviter les boucles avec pandas | O2 |
 | 3 | `valeurs-manquantes` | Valeurs manquantes : les trouver, décider quoi en faire | O3 |
-| 3 | `doublons-aberrantes` | Doublons, fautes de saisie et valeurs aberrantes | O3 |
+| 3 | `doublons-aberrantes` | Repérer et supprimer les doublons | O3 |
+| 3 | `incoherences` | Corriger les fautes de saisie et les valeurs incohérentes | O3 |
+| 3 | `aberrantes` | Les valeurs aberrantes : erreur ou vrai cas rare ? | O3 |
 | 3 | `nettoyer-texte` | Nettoyer du texte : casse, espaces, accents | O3 |
 | 4 | `groupby` | Regrouper et agréger avec groupby | O4 |
 | 4 | `crosstab` | Croiser deux variables : les tableaux croisés | O4 |
@@ -86,6 +89,14 @@ mise_a_jour: 2026-11-25
 | jointure (merge, join) | A | `merge` |
 | format long, format large | B | `pivot-melt` |
 | analyse exploratoire (EDA) | A | `eda` |
+| loc, iloc | A | `selectionner` |
+| masque booléen (boolean mask) | A | `filtrer` |
+| apply | A | `apply` |
+| vectorisation | B | `vectoriser-pandas` |
+| crosstab | A | `crosstab` |
+| index, reset_index | A | `index-pandas` |
+| rééchantillonnage (resample), moyenne mobile | A | `reechantillonner` |
+| export, Parquet | A | `exporter` |
 
 ## Fil rouge et ancrage local
 
@@ -111,7 +122,7 @@ mise_a_jour: 2026-11-25
 - **RAM maximale** : moins de 1 Go.
 - **Téléchargements** : pandas, matplotlib, seaborn et Jupyter, environ 150 Mo installés. TODO(vérifier). Données : quelques Mo, dans le dépôt.
 - **Temps de calcul le plus long** : quelques secondes.
-- **Dépendances nouvelles** : pandas, seaborn, jupyter (ipykernel) ; openpyxl, pour lire les fichiers Excel (quelques Mo).
+- **Dépendances nouvelles** : pandas, seaborn, jupyter (ipykernel), et openpyxl pour lire les fichiers Excel.
 - **API payante** : aucune.
 
 ## Point de contrôle sécurité et éthique
@@ -147,4 +158,3 @@ Un graphique peut tromper (axe tronqué, moyenne qui cache les écarts) : la not
 - TODO(vérifier) : licence des prix alimentaires du WFP sur HDX et conditions de redistribution d'une copie dans le dépôt.
 - TODO(vérifier) : couverture des données pour le Bénin (marchés, produits, années) ; sinon prendre un pays voisin.
 - TODO(vérifier) : tailles installées de pandas, seaborn et Jupyter.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

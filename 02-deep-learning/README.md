@@ -39,4 +39,4 @@ README et commentaires de code en anglais.
 
 ## État
 
-Aucun module rédigé pour l'instant.
+Les fiches des modules 2.1 à 2.5 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`.

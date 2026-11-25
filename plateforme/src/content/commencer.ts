@@ -70,7 +70,7 @@ export const etapes: Etape[] = [
     project: "Un assistant RAG sur des documents officiels et un agent avec outils, utilisables hors ligne",
     modules: [
       { id: "3.1", title: "Comprendre les LLM", content: "Pré-entraînement, tokens, contexte, température, coûts, modèles fermés et ouverts." },
-      { id: "3.2", title: "Prompts et sorties structurées", content: "Instructions, exemples, raisonnement, JSON validé, function calling." },
+      { id: "3.2", title: "Prompt engineering et sorties structurées", content: "Instructions, exemples, raisonnement, JSON validé, function calling." },
       { id: "3.3", title: "Embeddings et recherche vectorielle", content: "Similarité, bases vectorielles légères en local, recherche hybride." },
       { id: "3.4", title: "RAG en profondeur", content: "Découpage, reranking, citations, réponses « je ne sais pas », PDF et tableaux." },
       { id: "3.5", title: "Évaluation des systèmes LLM", content: "Jeux de test, fidélité, pertinence, LLM-as-a-judge, non-régression." },
@@ -78,7 +78,7 @@ export const etapes: Etape[] = [
       { id: "3.7", title: "Fine-tuning", content: "Quand fine-tuner, LoRA et QLoRA, préparation des données, évaluation." },
       { id: "3.8", title: "IA en local et sur appareil", content: "Choix du modèle selon le matériel, quantification, Ollama, llama.cpp, RAG 100 % local." },
       { id: "3.9", title: "Langues africaines peu dotées", content: "Tokenisation, jeux de données existants, traduction, reconnaissance vocale, évaluation." },
-      { id: "3.10", title: "Multimodal, voix et images", content: "Vision et texte, reconnaissance et synthèse vocales, génération d'images." },
+      { id: "3.10", title: "Multimodal, voix et génération d'images", content: "Vision et texte, reconnaissance et synthèse vocales, génération d'images." },
     ],
   },
   {

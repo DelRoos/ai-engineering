@@ -47,7 +47,8 @@ mise_a_jour: 2026-11-25
 | 2 | `installer-python` | Installer Python | O3 |
 | 2 | `installer-git` | Installer Git et te présenter à lui | O3 |
 | 2 | `installer-vscode` | Installer VS Code et ses extensions | O3 |
-| 3 | `cloner-depot` | Cloner le dépôt et installer les outils de la formation | O4 |
+| 3 | `cloner-depot` | Cloner le dépôt de la formation | O4 |
+| 3 | `installer-outils` | Installer les outils de la formation dans un environnement virtuel | O4 |
 | 3 | `mettre-a-jour` | Mettre à jour la formation avec git pull | O4 |
 | 3 | `hors-ligne` | Économiser tes données : tout télécharger une fois, travailler hors ligne | O4 |
 | 3 | `verification` | Lancer la vérification finale | O5 |
@@ -67,6 +68,8 @@ mise_a_jour: 2026-11-25
 | dépôt (repository) | A | `cloner-depot` |
 | cloner (clone) | A | `cloner-depot` |
 | environnement virtuel (venv) | A | `cloner-depot` |
+| forfait de données, hors ligne (offline) | A | `hors-ligne` |
+| mise à jour (update), git pull | A | `mettre-a-jour` |
 
 ## Fil rouge et ancrage local
 
@@ -122,4 +125,3 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : version de Python à installer (la plus récente prise en charge par toutes les dépendances de la formation) et version fournie par la distribution Ubuntu de WSL.
 - TODO(vérifier) : tailles de téléchargement de WSL, Ubuntu, Python, Git et VS Code.
 - TODO(vérifier) : la vérification finale (`python outils/check.py 00-fondations/00-preparer-son-pc`) doit fonctionner sur Linux, WSL et macOS.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

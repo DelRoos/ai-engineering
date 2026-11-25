@@ -24,9 +24,9 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Expliquer ce qu'un assistant de code sait faire et ce qu'il ne sait pas faire. | ex01 à ex02, qcm |
 | O2 | Installer et utiliser un assistant gratuit dans VS Code. | ex01 à ex02, ex03 à ex04, qcm |
-| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex05 à ex07, exercice clé (ex12), qcm |
-| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex08 à ex10, exercice clé (ex12), qcm |
-| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex11, exercice clé (ex12), qcm |
+| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex05 à ex07, exercice clé (ex14), qcm |
+| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex08 à ex11, exercice clé (ex14), qcm |
+| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex12 à ex13, exercice clé (ex14), qcm |
 
 ## Chapitres
 
@@ -35,8 +35,8 @@ mise_a_jour: 2026-11-25
 | 1 | Comprendre les assistants de code | 2 |
 | 2 | T'équiper | 2 |
 | 3 | Bien demander | 3 |
-| 4 | Vérifier ce qui est produit | 3 |
-| 5 | Travailler avec méthode | 2 |
+| 4 | Vérifier ce qui est produit | 4 |
+| 5 | Travailler avec méthode | 3 |
 
 ## Notions, dans l'ordre
 
@@ -56,8 +56,11 @@ mise_a_jour: 2026-11-25
 | 4 | `tester-genere` | Tester avant de faire confiance | O4 |
 | 4 | `tests-assistant` | Faire écrire des tests, et les vérifier | O4 |
 | 4 | `deboguer-assistant` | Déboguer avec l'assistant sans perdre le fil | O4 |
-| 4 | `erreurs-failles` | Les erreurs et les failles les plus fréquentes | O4 |
-| 5 | `risques` | Licences, secrets et dépendance : les risques à connaître | O5 |
+| 4 | `erreurs-failles` | Les erreurs fréquentes du code généré | O4 |
+| 4 | `failles` | Les failles de sécurité du code généré | O4 |
+| 5 | `risques` | Le code généré et les licences | O5 |
+| 5 | `secrets-assistant` | Ne jamais confier un secret à un assistant | O5 |
+| 5 | `dependance` | Garder tes compétences : le risque de dépendance | O5 |
 | 5 | `quand-pas` | Quand ne pas utiliser l'assistant | O5 |
 
 ## Vocabulaire du module
@@ -73,6 +76,11 @@ mise_a_jour: 2026-11-25
 | modèle local | B | `options` |
 | injection, faille | A | `erreurs-failles` |
 | licence, secret | B | `risques` |
+| modèle de langage (LLM), token | A | `comment-ca-marche` |
+| Ollama, modèle local | A | `modele-local` |
+| fichier de règles (AGENTS.md, CLAUDE.md) | A | `contexte-projet` |
+| itérer | B | `iterer` |
+| dette technique | B | `dependance` |
 
 ## Fil rouge et ancrage local
 
@@ -87,9 +95,9 @@ mise_a_jour: 2026-11-25
 | 1.1-ex01 à ex02 | Comprendre les assistants de code | O1, O2 | 1 | non |
 | 1.1-ex03 à ex04 | T'équiper | O2 | 2 | non |
 | 1.1-ex05 à ex07 | Bien demander | O3 | 2 | non |
-| 1.1-ex08 à ex10 | Vérifier ce qui est produit | O4 | 2–3 | non |
-| 1.1-ex11 | Travailler avec méthode | O5 | 2–3 | non |
-| 1.1-ex12 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
+| 1.1-ex08 à ex11 | Vérifier ce qui est produit | O4 | 2–3 | non |
+| 1.1-ex12 à ex13 | Travailler avec méthode | O5 | 2–3 | non |
+| 1.1-ex14 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
 
 ## Ressources matérielles
 
@@ -134,4 +142,3 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : offres gratuites des assistants (Copilot Free, étudiants), qui changent souvent ; revoir à chaque mise à jour trimestrielle.
 - TODO(vérifier) : le petit modèle de code local recommandé et sa vitesse sur la machine minimale.
 - TODO(vérifier) : les exercices ex01 à ex07 doivent rester vérifiables par des tests même si chacun utilise un assistant différent.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

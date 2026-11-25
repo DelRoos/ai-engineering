@@ -24,10 +24,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Reconnaître le type d'un problème : régression, classification, clustering. | ex01 à ex03, qcm |
 | O2 | Entraîner un premier modèle avec scikit-learn et le comparer à un modèle de référence. | ex04 à ex05, qcm |
-| O3 | Découper des données en train, validation et test, sans tricher. | ex06 à ex08, exercice clé (ex09), qcm |
-| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex06 à ex08, exercice clé (ex09), qcm |
-| O5 | Repérer et corriger une fuite de données. | ex06 à ex08, exercice clé (ex09), qcm |
-| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex06 à ex08, qcm |
+| O3 | Découper des données en train, validation et test, sans tricher. | ex06 à ex09, exercice clé (ex10), qcm |
+| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex06 à ex09, exercice clé (ex10), qcm |
+| O5 | Repérer et corriger une fuite de données. | ex06 à ex09, exercice clé (ex10), qcm |
+| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex06 à ex09, qcm |
 
 ## Chapitres
 
@@ -35,7 +35,7 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Qu'est-ce qu'apprendre | 3 |
 | 2 | Un premier modèle | 2 |
-| 3 | Ne pas se mentir | 4 |
+| 3 | Ne pas se mentir | 5 |
 
 ## Notions, dans l'ordre
 
@@ -50,7 +50,8 @@ mise_a_jour: 2026-11-25
 | 2 | `reference` | Le modèle de référence : faire mieux que le hasard | O2 |
 | 3 | `decoupage` | Découper les données : train, validation, test | O3 |
 | 3 | `decoupage-avance` | Découper quand les données sont groupées ou datées | O3 |
-| 3 | `biais-variance` | Surapprentissage, sous-apprentissage : biais et variance | O4 |
+| 3 | `biais-variance` | Surapprentissage et sous-apprentissage | O4 |
+| 3 | `compromis-biais-variance` | Le compromis biais-variance | O4 |
 | 3 | `courbes-apprentissage` | Lire une courbe d'apprentissage | O4 |
 | 3 | `fuite` | La fuite de données | O5 |
 | 3 | `biais-donnees` | Quand les données sont injustes : les biais | O6 |
@@ -69,6 +70,10 @@ mise_a_jour: 2026-11-25
 | surapprentissage (overfitting), sous-apprentissage (underfitting) | A | `biais-variance` |
 | biais, variance | B | `biais-variance` |
 | fuite de données (data leakage) | A | `fuite` |
+| fonction de perte (loss), optimisation | A | `apprendre-perte` |
+| découpage stratifié, GroupKFold | A | `decoupage-avance` |
+| courbe d'apprentissage (learning curve) | A | `courbes-apprentissage` |
+| biais historique, équité (fairness) | A | `biais-donnees` |
 
 ## Fil rouge et ancrage local
 
@@ -82,8 +87,8 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 1.4-ex01 à ex03 | Qu'est-ce qu'apprendre | O1 | 1 | non |
 | 1.4-ex04 à ex05 | Un premier modèle | O2 | 2 | non |
-| 1.4-ex06 à ex08 | Ne pas se mentir | O3, O4, O5, O6 | 2–3 | non |
-| 1.4-ex09 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
+| 1.4-ex06 à ex09 | Ne pas se mentir | O3, O4, O5, O6 | 2–3 | non |
+| 1.4-ex10 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -124,4 +129,3 @@ Un modèle de crédit décide de la vie des gens : la notion `reference` montre 
 ## Points à vérifier
 
 - TODO(vérifier) : l'exercice clé est un notebook : prévoir comment les tests vérifient les 5 corrections (fonctions extraites du notebook ou script équivalent).
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

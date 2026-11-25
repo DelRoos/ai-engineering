@@ -80,6 +80,14 @@ mise_a_jour: 2026-11-25
 | PCA, composante principale | A | `pca` |
 | k plus proches voisins (k-NN) | A | `knn` |
 | système de recommandation, filtrage collaboratif | A | `recommandation` |
+| régression polynomiale | B | `polynomiale` |
+| multiclasse, one-vs-rest | A | `multiclasse` |
+| Naive Bayes | A | `naive-bayes` |
+| SVM, noyau (kernel), marge | A | `svm` |
+| DBSCAN, densité | A | `dbscan` |
+| détection d'anomalies, Isolation Forest | A | `anomalies` |
+| recommandation basée sur le contenu | B | `reco-contenu` |
+| précision@k (precision at k) | A | `reco-evaluer` |
 
 ## Fil rouge et ancrage local
 
@@ -138,4 +146,3 @@ Une recommandation enferme parfois les clients dans les mêmes produits et favor
 
 - TODO(vérifier) : tailles et temps d'entraînement de XGBoost et LightGBM sur la machine minimale.
 - TODO(vérifier) : les k plus proches voisins ne sont pas cités par le programme ; ils sont ajoutés comme base de la recommandation, à valider par le mainteneur.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

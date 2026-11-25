@@ -23,12 +23,12 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Écrire des tests pytest qui couvrent les cas normaux, les cas limites et les erreurs. | ex01 à ex05, ex06 à ex08, qcm |
-| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex08, exercice clé (ex22), qcm |
+| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex08, exercice clé (ex23), qcm |
 | O3 | Trouver et corriger un bug avec méthode (trace d'erreur, débogueur). | ex09 à ex11, qcm |
-| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex12 à ex14, qcm |
-| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex15 à ex19, qcm |
-| O6 | Modifier un code sans le casser, grâce aux tests. | ex20 à ex21, exercice clé (ex22), qcm |
-| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex23 à ex25, qcm |
+| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex12 à ex15, qcm |
+| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex16 à ex20, qcm |
+| O6 | Modifier un code sans le casser, grâce aux tests. | ex21 à ex22, exercice clé (ex23), qcm |
+| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex24 à ex26, qcm |
 
 ## Chapitres
 
@@ -37,7 +37,7 @@ mise_a_jour: 2026-11-25
 | 1 | Tester avec pytest | 5 |
 | 2 | Des tests utiles | 3 |
 | 3 | Déboguer | 3 |
-| 4 | Un code lisible | 3 |
+| 4 | Un code lisible | 4 |
 | 5 | Algorithmique | 5 |
 | 6 | Améliorer sans casser | 3 |
 | 7 | Livrer un projet Python | 3 |
@@ -50,7 +50,8 @@ mise_a_jour: 2026-11-25
 | 1 | `premier-test` | Ton premier test avec pytest | O1 |
 | 1 | `bons-tests` | Cas normaux, cas limites, cas d'erreur | O1 |
 | 1 | `pytest-raises` | Vérifier qu'une erreur est levée | O1 |
-| 1 | `fixtures-parametrize` | Fixtures et tests paramétrés | O1 |
+| 1 | `fixtures-parametrize` | Préparer les données d'un test : les fixtures | O1 |
+| 1 | `parametrize` | Un test, plusieurs cas : parametrize | O1 |
 | 2 | `couverture` | Mesurer la couverture de tests | O2 |
 | 2 | `tester-fichiers` | Tester du code qui lit des fichiers | O1 |
 | 2 | `monkeypatch` | Remplacer une dépendance pendant un test | O1 |
@@ -62,7 +63,8 @@ mise_a_jour: 2026-11-25
 | 4 | `nommer` | Bien nommer variables et fonctions | O4 |
 | 4 | `fonctions-courtes` | Des fonctions courtes, sans répétition | O4 |
 | 4 | `gerer-erreurs` | Gérer les erreurs : quand lever, quand attraper | O4 |
-| 4 | `documenter` | Documenter : docstrings et README | O4 |
+| 4 | `documenter` | Documenter le code : docstrings et commentaires utiles | O4 |
+| 4 | `readme` | Écrire un bon README | O4 |
 | 4 | `mypy` | Vérifier les types avec mypy | O4 |
 | 5 | `mesurer-temps` | Mesurer le temps d'un programme | O5 |
 | 5 | `complexite` | La complexité : O(1), O(n), O(n²) | O5 |
@@ -71,7 +73,7 @@ mise_a_jour: 2026-11-25
 | 5 | `algos-tri` | Comment trier : les algorithmes de tri | O5 |
 | 5 | `recursivite` | La récursivité | O5 |
 | 5 | `piles-files` | Les piles et les files | O5 |
-| 5 | `structures` | Trier et choisir la bonne structure de données | O5 |
+| 5 | `structures` | Choisir la bonne structure de données | O5 |
 | 6 | `refactoriser` | Refactoriser sans casser grâce aux tests | O6 |
 | 6 | `revue-code` | Relire ton code comme un relecteur | O6 |
 | 7 | `pyproject` | Décrire ton projet : pyproject.toml | O7 |
@@ -93,6 +95,21 @@ mise_a_jour: 2026-11-25
 | docstring, README | A | `documenter` |
 | complexité, notation O | B | `complexite` |
 | refactoriser (refactoring) | A | `refactoriser` |
+| paramétrer (parametrize) | A | `parametrize` |
+| tmp_path | A | `tester-fichiers` |
+| monkeypatch, double de test (mock) | A | `monkeypatch` |
+| TDD (développement piloté par les tests) | A | `tdd` |
+| logging, niveau de log | A | `logging` |
+| mypy, vérification de types | A | `mypy` |
+| dichotomie (binary search) | A | `dichotomie` |
+| algorithme de tri | B | `algos-tri` |
+| récursivité, cas de base | B | `recursivite` |
+| pile (stack), file (queue) | A | `piles-files` |
+| pyproject.toml, paquet (package) | A | `pyproject` |
+| point d'entrée (entry point) | A | `point-entree` |
+| pre-commit, hook | A | `pre-commit` |
+| intégration continue (CI) | A | `ci-tests` |
+| tag, release, version sémantique | A | `release` |
 
 ## Fil rouge et ancrage local
 
@@ -107,18 +124,18 @@ mise_a_jour: 2026-11-25
 | 0.3-ex01 à ex05 | Tester avec pytest | O1 | 1 | non |
 | 0.3-ex06 à ex08 | Des tests utiles | O1, O2 | 1 | non |
 | 0.3-ex09 à ex11 | Déboguer | O3 | 2 | non |
-| 0.3-ex12 à ex14 | Un code lisible | O4 | 2 | non |
-| 0.3-ex15 à ex19 | Algorithmique | O5 | 2–3 | non |
-| 0.3-ex20 à ex21 | Améliorer sans casser | O6 | 2–3 | non |
-| 0.3-ex22 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
-| 0.3-ex23 à ex25 | Livrer un projet Python | O7 | 2–3 | non |
+| 0.3-ex12 à ex15 | Un code lisible | O4 | 2 | non |
+| 0.3-ex16 à ex20 | Algorithmique | O5 | 2–3 | non |
+| 0.3-ex21 à ex22 | Améliorer sans casser | O6 | 2–3 | non |
+| 0.3-ex23 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
+| 0.3-ex24 à ex26 | Livrer un projet Python | O7 | 2–3 | non |
 
 ## Ressources matérielles
 
 - **RAM maximale** : moins de 300 Mo.
 - **Téléchargements** : aucun en dehors de la formation.
 - **Temps de calcul le plus long** : quelques secondes pour comparer deux algorithmes sur 10 000 lignes.
-- **Dépendances nouvelles** : pytest-cov (moins de 1 Mo) ; mypy, pre-commit (quelques Mo).
+- **Dépendances nouvelles** : pytest-cov, mypy et pre-commit (quelques Mo en tout).
 - **API payante** : aucune.
 
 ## Point de contrôle sécurité et éthique
@@ -151,4 +168,3 @@ Un calcul d'argent faux fait du tort à de vraies personnes : la notion `pourquo
 ## Points à vérifier
 
 - TODO(vérifier) : choisir le « module existant » de l'exercice clé (code du fil rouge, d'environ 150 lignes, sans tests).
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

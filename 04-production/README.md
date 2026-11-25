@@ -42,4 +42,4 @@ Rapports de projet en anglais. Examen oral avec l'IA à moitié en anglais.
 
 ## État
 
-Aucun module rédigé pour l'instant.
+Les fiches des modules 4.1 à 4.9 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`.

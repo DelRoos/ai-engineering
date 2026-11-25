@@ -48,7 +48,8 @@ mise_a_jour: 2026-11-25
 | 1 | `questions` | Poser de bonnes questions dans un formulaire | O1 |
 | 1 | `biais-collecte` | Les biais de collecte et comment les limiter | O1 |
 | 2 | `formulaire-mobile` | Un formulaire mobile avec KoboToolbox | O2 |
-| 2 | `consentement` | Consentement éclairé et anonymisation | O3 |
+| 2 | `consentement` | Le consentement éclairé | O3 |
+| 2 | `anonymisation` | Anonymiser les données | O3 |
 | 2 | `stocker-securiser` | Stocker et protéger les données collectées | O3 |
 | 2 | `qualite-terrain` | Contrôler la qualité pendant la collecte | O5 |
 | 3 | `label-studio` | Annoter des données avec Label Studio | O4 |
@@ -73,6 +74,11 @@ mise_a_jour: 2026-11-25
 | guide d'annotation (guidelines) | A | `guide-annotation` |
 | accord inter-annotateurs, kappa de Cohen | A | `accord-annotateurs` |
 | données synthétiques (synthetic data) | A | `donnees-synthetiques` |
+| données ouvertes (open data), licence | A | `sources-publiques` |
+| question fermée, question ouverte | B | `questions` |
+| pré-annotation, apprentissage actif (active learning) | A | `pre-annotation` |
+| augmentation de données (data augmentation) | A | `augmentation` |
+| fiche de données (datasheet) | A | `fiche-donnees` |
 
 ## Fil rouge et ancrage local
 
@@ -133,4 +139,3 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : limites de l'offre gratuite de KoboToolbox (nombre de soumissions par mois, stockage).
 - TODO(vérifier) : textes de loi sur les données personnelles cités, et leur date.
 - TODO(vérifier) : l'apprenant sans smartphone Android peut-il faire la collecte avec le formulaire web de KoboToolbox ?
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

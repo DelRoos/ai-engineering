@@ -1,0 +1,128 @@
+---
+id: "4.4"
+titre: "Déploiement cloud"
+parcours: "04-production"
+promesse: "Mettre ton service en ligne pour de vrai, et pour 0 € : comprendre le cloud, déployer, sécuriser, et comparer les coûts avant de payer quoi que ce soit."
+question_saut: "Tu as déjà déployé un service en ligne en maîtrisant ses coûts ?"
+qcm: true
+prerequis: ["4.3"]
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-25
+---
+
+# Fiche du module 4.4 — Déploiement cloud
+
+## Extrait du programme
+
+- **Contenu** : Offres gratuites ou peu chères (Render, Fly.io, Hugging Face Spaces), notions AWS / GCP / Azure, GPU à la demande, serverless
+- **Exercice clé** : Déployer le même service sur 2 plateformes et comparer les coûts
+
+## Objectifs vérifiables
+
+| Id | À la fin, l'apprenant sait… | Évalué par |
+| --- | --- | --- |
+| O1 | Expliquer les modèles du cloud et leurs coûts. | ex01 à ex02, qcm |
+| O2 | Déployer un service sur une offre gratuite. | ex03 à ex04, exercice clé (ex12), qcm |
+| O3 | Configurer un domaine, HTTPS, des secrets et un retour arrière en production. | ex05 à ex06, exercice clé (ex12), qcm |
+| O4 | Connaître AWS, GCP et Azure, le serverless et le GPU à la demande. | ex07 à ex09, qcm |
+| O5 | Comparer le coût et la performance de plusieurs plateformes. | ex10 à ex11, exercice clé (ex12), qcm |
+
+## Chapitres
+
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Le cloud | 2 |
+| 2 | Déployer gratuitement | 2 |
+| 3 | En production | 2 |
+| 4 | Les grands clouds | 3 |
+| 5 | Comparer et maîtriser | 3 |
+
+## Notions, dans l'ordre
+
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `cloud` | Le cloud, simplement | O1 |
+| 1 | `iaas-paas` | IaaS et PaaS : louer une machine ou une plateforme | O1 |
+| 1 | `facture-cloud` | Lire une facture de cloud | O1 |
+| 2 | `render` | Déployer sur Render | O2 |
+| 2 | `flyio` | Déployer sur Fly.io | O2 |
+| 2 | `hf-spaces` | Déployer sur Hugging Face Spaces | O2 |
+| 3 | `domaine-https` | Un nom de domaine et HTTPS | O3 |
+| 3 | `secrets-prod` | Les secrets en production | O3 |
+| 3 | `retour-arriere` | Revenir à la version précédente | O3 |
+| 4 | `grands-clouds` | AWS, GCP, Azure : l'essentiel | O4 |
+| 4 | `gpu-location` | Louer un GPU à l'heure | O4 |
+| 4 | `serverless` | Le serverless | O4 |
+| 4 | `localisation-donnees` | Où sont tes données ? Localisation et souveraineté | O4 |
+| 5 | `comparer-plateformes` | Comparer deux plateformes | O5 |
+| 5 | `budget-alertes` | Fixer un budget et des alertes | O5 |
+
+## Vocabulaire du module
+
+| Terme | Catégorie (A anglais / B transparent) | Notion où il apparaît |
+| --- | --- | --- |
+| cloud, région | A | `cloud` |
+| IaaS, PaaS | A | `iaas-paas` |
+| serverless | A | `serverless` |
+| déploiement (deploy) | A | `render` |
+| HTTPS, certificat, DNS | A | `domaine-https` |
+| retour arrière (rollback) | A | `retour-arriere` |
+| souveraineté des données | B | `localisation-donnees` |
+
+## Fil rouge et ancrage local
+
+- **Situation** : l'association de Bafoussam n'a aucun budget : son assistant juridique doit être en ligne pour 0 € par mois, rester joignable, et ne jamais envoyer de facture surprise.
+- **Personnages** : Awa, bénévole, et le trésorier de l'association, très attentif aux dépenses.
+- **Données utilisées** : l'assistant du projet 3 de l'apprenant, conteneurisé en 4.3.
+
+## Exercices prévus
+
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 4.4-ex01 à ex02 | Le cloud | O1 | 1–2 | non |
+| 4.4-ex03 à ex04 | Déployer gratuitement | O2 | 2 | non |
+| 4.4-ex05 à ex06 | En production | O3 | 2 | non |
+| 4.4-ex07 à ex09 | Les grands clouds | O4 | 2 | non |
+| 4.4-ex10 à ex11 | Comparer et maîtriser | O5 | 2–3 | non |
+| 4.4-ex12 | Exercice clé : déployer le même service sur 2 plateformes et comparer les coûts | O2, O3, O5 | 3 | oui → GRILLE.md (rapport de comparaison) |
+
+## Ressources matérielles
+
+- **RAM maximale** : selon l'offre gratuite choisie.
+- **Téléchargements** : les outils en ligne de commande des plateformes (quelques dizaines de Mo).
+- **Temps de calcul le plus long** : négligeable.
+- **Dépendances nouvelles** : aucune nouvelle dépendance Python.
+- **API payante** : aucune obligatoire. Les offres gratuites changent souvent : conditions et limites datées à la rédaction, TODO(vérifier). Aucune carte bancaire exigée dans les exercices obligatoires.
+
+## Point de contrôle sécurité et éthique
+
+Point de contrôle du projet 4 : localisation des données conforme à la loi, secrets hors du code, alertes de budget activées.
+
+## Ressources externes gratuites
+
+| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| --- | --- | --- | --- | --- |
+| [Documentation de Hugging Face Spaces](https://huggingface.co/docs/hub/spaces) | anglais | référence | gratuit en ligne | Héberger gratuitement une démo d'IA. |
+
+## Circuit
+
+- [ ] 1. Fiche validée par le mainteneur — date :
+- [ ] 2. Solution et tests (passent sur solution, échouent sur starter) — date :
+- [ ] 3. Cours — date :
+- [ ] 4. Exercices (énoncés, indices, starters) — date :
+- [ ] 5. QCM (valide contre le schéma) — date :
+- [ ] 6. Grille — date :
+- [ ] 7. Relecture élève — date :
+- [ ] 8. Relecture expert — date :
+
+## Journal des relectures
+
+| Date | Étape | Fichier et ligne | Problème | Correction |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+## Points à vérifier
+
+- TODO(vérifier) : offres gratuites de Render, Fly.io et Hugging Face Spaces (limites, carte bancaire exigée ou non) à vérifier et dater.
+- TODO(vérifier) : localisation des serveurs et lois sur les données des pays visés.

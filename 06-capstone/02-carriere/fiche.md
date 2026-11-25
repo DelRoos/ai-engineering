@@ -1,0 +1,132 @@
+---
+id: "6.2"
+titre: "Carrière"
+parcours: "06-capstone"
+promesse: "Transformer ton parcours en métier : un portfolio qui prouve ton niveau, un anglais technique solide, des entretiens réussis et une stratégie pour trouver ton premier poste ou ta première mission."
+question_saut: "Tu as déjà un portfolio et tu passes des entretiens en anglais ?"
+qcm: true
+prerequis: ["4.1"]
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-25
+---
+
+# Fiche du module 6.2 — Carrière
+
+## Extrait du programme
+
+- **Contenu** : Portfolio, anglais technique, entretiens techniques (code, conception de systèmes d'IA, questions ML et LLM, entretiens comportementaux avec la méthode STAR), visibilité, stratégies d'emploi, réseau
+- **Exercice clé** : Un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA
+
+## Objectifs vérifiables
+
+| Id | À la fin, l'apprenant sait… | Évalué par |
+| --- | --- | --- |
+| O1 | Présenter ses projets dans un portfolio convaincant, avec des résultats chiffrés. | ex01 à ex03, exercice clé (ex14), qcm |
+| O2 | Communiquer en anglais technique, à l'écrit et à l'oral. | ex04 à ex05, exercice clé (ex14), qcm |
+| O3 | Réussir des entretiens techniques et comportementaux. | ex06 à ex08, exercice clé (ex14), qcm |
+| O4 | Se rendre visible : articles, open source, compétitions. | ex09 à ex10, qcm |
+| O5 | Choisir une stratégie d'emploi et construire son réseau. | ex11 à ex13, qcm |
+
+## Chapitres
+
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Le portfolio | 3 |
+| 2 | L'anglais technique | 2 |
+| 3 | Les entretiens | 3 |
+| 4 | La visibilité | 2 |
+| 5 | Trouver du travail | 4 |
+
+## Notions, dans l'ordre
+
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `portfolio` | Un portfolio qui prouve | O1 |
+| 1 | `profil-github` | Ton profil GitHub | O1 |
+| 1 | `resultats-chiffres` | Présenter des résultats chiffrés | O1 |
+| 1 | `cv` | Un CV d'une page | O1 |
+| 2 | `ecrire-anglais` | Écrire en anglais technique | O2 |
+| 2 | `presenter-anglais` | Présenter à l'oral en anglais | O2 |
+| 2 | `reunions-anglais` | Suivre une réunion en anglais | O2 |
+| 3 | `entretien-code` | L'entretien de code | O3 |
+| 3 | `entretien-conception` | L'entretien de conception de système | O3 |
+| 3 | `questions-ml` | Les questions ML et LLM | O3 |
+| 3 | `star` | L'entretien comportemental : la méthode STAR | O3 |
+| 3 | `entretien-simule` | S'entraîner avec l'agent IA | O3 |
+| 4 | `article-technique` | Écrire un article technique | O4 |
+| 4 | `contributions-visibles` | Des contributions open source qui se voient | O4 |
+| 4 | `competitions` | Kaggle et Zindi | O4 |
+| 5 | `strategies-emploi` | Les stratégies : distance, freelance, start-up, poste local | O5 |
+| 5 | `freelance` | Démarrer en freelance | O5 |
+| 5 | `reseau` | Construire son réseau | O5 |
+| 5 | `negocier` | Négocier une offre | O5 |
+
+## Vocabulaire du module
+
+| Terme | Catégorie (A anglais / B transparent) | Notion où il apparaît |
+| --- | --- | --- |
+| portfolio | A | `portfolio` |
+| CV (resume) | A | `cv` |
+| entretien technique | B | `entretien-code` |
+| méthode STAR | A | `star` |
+| freelance | A | `freelance` |
+| réseau (networking) | A | `reseau` |
+| négociation | B | `negocier` |
+
+## Fil rouge et ancrage local
+
+- **Situation** : tu as terminé le parcours. Une entreprise de Montréal, une start-up de Dakar et un client freelance en Belgique pourraient t'intéresser. Il faut te présenter, convaincre en anglais, et choisir.
+- **Personnages** : Awa (persona apprenante), qui prépare ses premiers entretiens.
+- **Données utilisées** : les projets du portfolio de l'apprenant, et des exemples de questions d'entretien fournis.
+
+## Exercices prévus
+
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 6.2-ex01 à ex03 | Le portfolio | O1 | 1–2 | non |
+| 6.2-ex04 à ex05 | L'anglais technique | O2 | 2 | non |
+| 6.2-ex06 à ex08 | Les entretiens | O3 | 2 | non |
+| 6.2-ex09 à ex10 | La visibilité | O4 | 2 | non |
+| 6.2-ex11 à ex13 | Trouver du travail | O5 | 2–3 | non |
+| 6.2-ex14 | Exercice clé : un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA | O1 à O3 | 3 | oui → GRILLE.md (portfolio et entretien) |
+
+## Ressources matérielles
+
+- **RAM maximale** : négligeable.
+- **Téléchargements** : aucun.
+- **Temps de calcul le plus long** : négligeable.
+- **Dépendances nouvelles** : aucune.
+- **API payante** : facultative pour l'entretien simulé, ou modèle local gratuit.
+
+## Point de contrôle sécurité et éthique
+
+Un portfolio est public : aucune donnée personnelle de tiers, aucun secret, et des droits vérifiés sur tout ce qui est montré.
+
+## Ressources externes gratuites
+
+| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| --- | --- | --- | --- | --- |
+| [Zindi](https://zindi.africa/) | anglais | plateforme | gratuit en ligne | Des compétitions de data science sur des problèmes africains. |
+| [Kaggle](https://www.kaggle.com/) | anglais | plateforme | gratuit en ligne | Des compétitions et des jeux de données pour se faire connaître. |
+
+## Circuit
+
+- [ ] 1. Fiche validée par le mainteneur — date :
+- [ ] 2. Solution et tests (passent sur solution, échouent sur starter) — date :
+- [ ] 3. Cours — date :
+- [ ] 4. Exercices (énoncés, indices, starters) — date :
+- [ ] 5. QCM (valide contre le schéma) — date :
+- [ ] 6. Grille — date :
+- [ ] 7. Relecture élève — date :
+- [ ] 8. Relecture expert — date :
+
+## Journal des relectures
+
+| Date | Étape | Fichier et ligne | Problème | Correction |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+## Points à vérifier
+
+- TODO(vérifier) : le programme ne précise pas d'exercice clé pour ce module : l'exercice clé ci-dessus est une proposition, à valider par le mainteneur puis à reporter dans docs/programme.md.

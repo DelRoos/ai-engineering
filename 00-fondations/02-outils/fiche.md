@@ -22,19 +22,19 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex04, ex05 à ex08, qcm |
-| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex01 à ex04, ex05 à ex08, qcm |
-| O3 | Utiliser VS Code et écrire un README en Markdown. | ex09 à ex10, qcm |
-| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex11 à ex13, qcm |
-| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex14 à ex16, qcm |
-| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex17 à ex20, exercice clé (ex21), qcm |
+| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex04, ex05 à ex09, qcm |
+| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex01 à ex04, ex05 à ex09, qcm |
+| O3 | Utiliser VS Code et écrire un README en Markdown. | ex10 à ex11, qcm |
+| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex12 à ex14, qcm |
+| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex15 à ex17, qcm |
+| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex18 à ex21, exercice clé (ex22), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Le terminal | 4 |
-| 2 | Le système Linux | 4 |
+| 2 | Le système Linux | 5 |
 | 3 | VS Code et Markdown | 2 |
 | 4 | Git sur ton PC | 3 |
 | 5 | Les branches | 3 |
@@ -48,8 +48,10 @@ mise_a_jour: 2026-11-25
 | 1 | `gerer-fichiers` | Créer, copier, déplacer et supprimer | O1 |
 | 1 | `jokers` | Agir sur plusieurs fichiers : les jokers | O1 |
 | 1 | `lire-chercher` | Lire un fichier et chercher dedans avec grep | O2 |
-| 1 | `pipes` | Rediriger et enchaîner des commandes | O2 |
-| 2 | `sudo-apt` | Droits, sudo et installation de logiciels | O1 |
+| 1 | `redirections` | Envoyer la sortie dans un fichier : les redirections | O2 |
+| 1 | `pipes` | Enchaîner des commandes avec | | O2 |
+| 2 | `droits` | Les droits sur les fichiers | O1 |
+| 2 | `sudo-apt` | Installer des logiciels avec sudo et apt | O1 |
 | 2 | `path` | Variables d'environnement et PATH | O1 |
 | 2 | `processus` | Voir et arrêter un programme : les processus | O1 |
 | 2 | `nano` | Modifier un fichier sans quitter le terminal : nano | O1 |
@@ -63,11 +65,13 @@ mise_a_jour: 2026-11-25
 | 4 | `annuler` | Revenir en arrière sans rien casser | O4 |
 | 4 | `gitignore` | Ignorer des fichiers : .gitignore | O4 |
 | 5 | `branches` | Travailler sur une branche | O5 |
-| 5 | `conflits` | Fusionner et résoudre un conflit | O5 |
+| 5 | `fusionner` | Fusionner deux branches | O5 |
+| 5 | `conflits` | Résoudre un conflit | O5 |
 | 5 | `stash` | Mettre ton travail de côté : git stash | O5 |
 | 5 | `messages-commit` | Écrire de bons messages de commit | O5 |
 | 6 | `compte-github` | Créer et sécuriser ton compte GitHub | O6 |
-| 6 | `github` | GitHub : clé SSH, push et pull | O6 |
+| 6 | `cle-ssh` | Se connecter à GitHub avec une clé SSH | O6 |
+| 6 | `github` | Envoyer et récupérer ton travail : push et pull | O6 |
 | 6 | `fork-pr` | Fork et pull request | O6 |
 | 6 | `revue-pr` | Relire une pull request sur GitHub | O6 |
 | 6 | `upstream` | Garder ton fork à jour avec le dépôt d'origine | O6 |
@@ -91,6 +95,23 @@ mise_a_jour: 2026-11-25
 | conflit (merge conflict) | A | `conflits` |
 | remote, push, pull, clé SSH | A | `github` |
 | fork, pull request, GitHub Actions, CI | A | `fork-pr` |
+| joker (wildcard) | A | `jokers` |
+| redirection, sortie standard (stdout) | A | `redirections` |
+| droits (permissions), chmod | A | `droits` |
+| processus, PID | A | `processus` |
+| nano, éditeur | A | `nano` |
+| archive, curl | A | `archives` |
+| script shell, bash | A | `script-shell` |
+| .gitignore | A | `gitignore` |
+| merge, fusion | A | `fusionner` |
+| stash | A | `stash` |
+| message de commit | B | `messages-commit` |
+| authentification à deux facteurs (2FA) | A | `compte-github` |
+| clé SSH | A | `cle-ssh` |
+| revue de code (code review) | A | `revue-pr` |
+| upstream | A | `upstream` |
+| issue | A | `issues` |
+| workflow, badge | A | `github-actions` |
 
 ## Fil rouge et ancrage local
 
@@ -103,12 +124,12 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 0.2-ex01 à ex04 | Le terminal | O1, O2 | 1 | non |
-| 0.2-ex05 à ex08 | Le système Linux | O1, O2 | 1 | non |
-| 0.2-ex09 à ex10 | VS Code et Markdown | O3 | 2 | non |
-| 0.2-ex11 à ex13 | Git sur ton PC | O4 | 2 | non |
-| 0.2-ex14 à ex16 | Les branches | O5 | 2–3 | non |
-| 0.2-ex17 à ex20 | GitHub | O6 | 2–3 | non |
-| 0.2-ex21 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | non |
+| 0.2-ex05 à ex09 | Le système Linux | O1, O2 | 1 | non |
+| 0.2-ex10 à ex11 | VS Code et Markdown | O3 | 2 | non |
+| 0.2-ex12 à ex14 | Git sur ton PC | O4 | 2 | non |
+| 0.2-ex15 à ex17 | Les branches | O5 | 2–3 | non |
+| 0.2-ex18 à ex21 | GitHub | O6 | 2–3 | non |
+| 0.2-ex22 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -152,4 +173,3 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : comment tester automatiquement les exercices de terminal et de Git (état d'un dossier, historique d'un dépôt local) sans accès réseau.
 - TODO(vérifier) : l'exercice clé dépend de GitHub ; prévoir une vérification locale du badge (lecture de l'état du workflow) ou une capture.
 - TODO(vérifier) : licences de Pro Git et de The Missing Semester.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

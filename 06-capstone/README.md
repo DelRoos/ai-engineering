@@ -43,4 +43,4 @@ Un script génère ta page de portfolio : étapes validées, lien vers chaque pr
 
 ## État
 
-Aucun module rédigé pour l'instant. Prévu dans ce dossier : la liste des cas réalistes pour le capstone et le modèle de fiche de cadrage.
+Les fiches des modules 6.1 et 6.2 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`. Prévu aussi dans ce dossier : la liste des cas réalistes pour le capstone et le modèle de fiche de cadrage.

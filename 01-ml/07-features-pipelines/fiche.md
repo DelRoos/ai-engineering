@@ -24,9 +24,9 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Encoder des catégories et mettre des valeurs à la même échelle. | ex01 à ex04, qcm |
 | O2 | Créer des features utiles à partir de la connaissance du métier. | ex01 à ex04, qcm |
-| O3 | Assembler un pipeline scikit-learn reproductible, de la donnée brute à la prédiction. | ex05 à ex07, exercice clé (ex14), qcm |
-| O4 | Prévoir une série temporelle et la valider dans le temps. | ex08 à ex11, exercice clé (ex14), qcm |
-| O5 | Expliquer les prédictions d'un modèle avec SHAP. | ex12 à ex13, qcm |
+| O3 | Assembler un pipeline scikit-learn reproductible, de la donnée brute à la prédiction. | ex05 à ex07, exercice clé (ex15), qcm |
+| O4 | Prévoir une série temporelle et la valider dans le temps. | ex08 à ex12, exercice clé (ex15), qcm |
+| O5 | Expliquer les prédictions d'un modèle avec SHAP. | ex13 à ex14, qcm |
 
 ## Chapitres
 
@@ -34,7 +34,7 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Préparer les features | 4 |
 | 2 | Des pipelines reproductibles | 3 |
-| 3 | Les séries temporelles | 4 |
+| 3 | Les séries temporelles | 5 |
 | 4 | Expliquer un modèle | 3 |
 
 ## Notions, dans l'ordre
@@ -55,8 +55,10 @@ mise_a_jour: 2026-11-25
 | 3 | `series-temporelles` | Les séries temporelles : tendance et saisonnalité | O4 |
 | 3 | `baseline-temps` | Les prévisions naïves à battre | O4 |
 | 3 | `features-temps` | Des features tirées du temps : décalages et moyennes mobiles | O4 |
-| 3 | `prevoir` | Prévoir et valider dans le temps | O4 |
-| 3 | `arima` | Les modèles classiques : lissage exponentiel et ARIMA | O4 |
+| 3 | `prevoir` | Prévoir une série avec un modèle de ML | O4 |
+| 3 | `validation-temps` | Valider dans le temps : la validation glissante | O4 |
+| 3 | `lissage-exponentiel` | Le lissage exponentiel | O4 |
+| 3 | `arima` | Le modèle ARIMA | O4 |
 | 3 | `horizon` | Prévoir plusieurs mois à l'avance | O4 |
 | 4 | `importance-permutation` | L'importance des features par permutation | O5 |
 | 4 | `dependance-partielle` | L'effet d'une feature : la dépendance partielle | O5 |
@@ -76,6 +78,17 @@ mise_a_jour: 2026-11-25
 | lag, moyenne mobile | A | `prevoir` |
 | validation dans le temps (time series split) | A | `prevoir` |
 | interprétabilité, valeurs SHAP | A | `shap` |
+| imputation, SimpleImputer | A | `imputer` |
+| sac de mots (bag of words), TF-IDF | A | `texte-tfidf` |
+| sélection de features | A | `selection-features` |
+| ColumnTransformer | A | `column-transformer` |
+| graine aléatoire (random seed) | A | `reproductibilite` |
+| prévision naïve, saisonnière | B | `baseline-temps` |
+| lissage exponentiel | B | `lissage-exponentiel` |
+| ARIMA | A | `arima` |
+| horizon de prévision | B | `horizon` |
+| importance par permutation | A | `importance-permutation` |
+| dépendance partielle (partial dependence) | A | `dependance-partielle` |
 
 ## Fil rouge et ancrage local
 
@@ -89,16 +102,16 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 1.7-ex01 à ex04 | Préparer les features | O1, O2 | 1 | non |
 | 1.7-ex05 à ex07 | Des pipelines reproductibles | O3 | 2 | non |
-| 1.7-ex08 à ex11 | Les séries temporelles | O4 | 2–3 | non |
-| 1.7-ex12 à ex13 | Expliquer un modèle | O5 | 2–3 | non |
-| 1.7-ex14 | Exercice clé : pipeline reproductible de bout en bout (une commande, mêmes résultats sur un autre PC) | O3, O4 | 3 | non |
+| 1.7-ex08 à ex12 | Les séries temporelles | O4 | 2–3 | non |
+| 1.7-ex13 à ex14 | Expliquer un modèle | O5 | 2–3 | non |
+| 1.7-ex15 | Exercice clé : pipeline reproductible de bout en bout (une commande, mêmes résultats sur un autre PC) | O3, O4 | 3 | non |
 
 ## Ressources matérielles
 
 - **RAM maximale** : moins de 2 Go (SHAP sur un échantillon).
 - **Téléchargements** : shap et joblib, environ 50 Mo installés. TODO(vérifier). Données : quelques Mo, dans le dépôt.
 - **Temps de calcul le plus long** : 1 à 2 minutes pour les valeurs SHAP d'un gradient boosting sur 1 000 lignes. TODO(vérifier).
-- **Dépendances nouvelles** : shap ; statsmodels, pour le lissage exponentiel et ARIMA (environ 40 Mo installés, TODO(vérifier)).
+- **Dépendances nouvelles** : shap, et statsmodels pour le lissage exponentiel et ARIMA (environ 40 Mo installés, TODO(vérifier)).
 - **API payante** : aucune.
 
 ## Point de contrôle sécurité et éthique
@@ -134,4 +147,3 @@ Ne jamais charger un fichier de modèle (pickle, joblib) reçu d'une source inco
 
 - TODO(vérifier) : couverture des prix WFP pour le Niger (marchés, mil, années) et source de pluie libre et légère.
 - TODO(vérifier) : le livre FPP3 utilise R ; garder seulement les chapitres de concepts et le signaler aux apprenants.
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

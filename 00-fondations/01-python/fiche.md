@@ -74,7 +74,7 @@ mise_a_jour: 2026-11-25
 | 4 | `boucles-imbriquees` | Des boucles dans des boucles | O2 |
 | 5 | `listes` | Ranger plusieurs valeurs : les listes | O2 |
 | 5 | `slicing` | Découper une liste et une chaîne | O3 |
-| 5 | `methodes-listes` | Ajouter, retirer, trier : les méthodes de liste | O3 |
+| 5 | `methodes-listes` | Ajouter et retirer des éléments : les méthodes de liste | O3 |
 | 5 | `copie-listes` | Deux noms pour une même liste : copier sans surprise | O3 |
 | 5 | `enumerate-zip` | Parcourir avec enumerate et zip | O3 |
 | 5 | `trier` | Trier avec sorted et une clé | O3 |
@@ -148,6 +148,24 @@ mise_a_jour: 2026-11-25
 | module, package, import | A | `import` |
 | pip, venv | A | `venv-pip` |
 | PEP 8, linter | A | `pep8-ruff` |
+| help(), documentation | B | `aide` |
+| opérateur, modulo | B | `operateurs` |
+| None | A | `none` |
+| match, case | A | `match` |
+| break, continue | A | `break-continue` |
+| enumerate, zip | A | `enumerate-zip` |
+| copie superficielle (shallow copy) | A | `copie-listes` |
+| clé de tri (key) | A | `trier` |
+| unpacking | A | `unpacking` |
+| *args, **kwargs | A | `args-kwargs` |
+| lambda | A | `lambda` |
+| décorateur (decorator) | A | `decorateurs` |
+| générateur (generator), yield | A | `generateurs` |
+| encodage, UTF-8 | A | `encodage` |
+| héritage (inheritance) | A | `heritage` |
+| composition | B | `composition` |
+| argparse, argument de ligne de commande | A | `argparse` |
+| requirements.txt, dépendance | A | `requirements` |
 
 ## Fil rouge et ancrage local
 
@@ -212,4 +230,3 @@ Sans objet. Une seule règle, rappelée dans la notion `input` : ne jamais utili
 ## Points à vérifier
 
 - TODO(vérifier) : version minimale de Python visée par les exemples (syntaxe des annotations `list[int]`, `X | None`).
-- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

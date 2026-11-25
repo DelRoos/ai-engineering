@@ -44,4 +44,4 @@ Cette étape et la liste des API recommandées sont revues tous les 3 à 6 mois 
 
 ## État
 
-Aucun module rédigé pour l'instant.
+Les fiches des modules 3.1 à 3.10 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`.
