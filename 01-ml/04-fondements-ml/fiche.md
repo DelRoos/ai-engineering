@@ -22,22 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Reconnaître le type d'un problème : régression, classification, clustering. | ex01 à ex03, ex04 à ex05, qcm |
-| O2 | Entraîner un premier modèle avec scikit-learn et le comparer à un modèle de référence. | ex06 à ex08, qcm |
-| O3 | Découper des données en train, validation et test, sans tricher. | ex09 à ex12, exercice clé (ex15), qcm |
-| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex09 à ex12, ex13 à ex14, exercice clé (ex15), qcm |
-| O5 | Repérer et corriger une fuite de données. | ex09 à ex12, ex13 à ex14, exercice clé (ex15), qcm |
-| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex13 à ex14, qcm |
+| O1 | Reconnaître le type d'un problème : régression, classification, clustering. | ex01 à ex03, ex04 à ex06, qcm |
+| O2 | Entraîner un premier modèle avec scikit-learn et le comparer à un modèle de référence. | ex07 à ex09, qcm |
+| O3 | Découper des données en train, validation et test, sans tricher. | ex10 à ex13, exercice clé (ex17), qcm |
+| O4 | Diagnostiquer un surapprentissage ou un sous-apprentissage. | ex10 à ex13, ex14 à ex16, exercice clé (ex17), qcm |
+| O5 | Repérer et corriger une fuite de données. | ex10 à ex13, ex14 à ex16, exercice clé (ex17), qcm |
+| O6 | Repérer un biais dans des données d'entraînement et en mesurer l'effet. | ex14 à ex16, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Qu'est-ce qu'apprendre | 3 |
-| 2 | Le cycle d'un projet de ML | 2 |
+| 2 | Le cycle d'un projet de ML | 3 |
 | 3 | Un premier modèle | 3 |
 | 4 | Ne pas se mentir | 4 |
-| 5 | Quand le monde change | 3 |
+| 5 | Quand le monde change | 4 |
 
 ## Notions, dans l'ordre
 
@@ -50,10 +50,14 @@ mise_a_jour: 2026-11-25
 | 1 | `features-cible` | Les features et la cible | O1 |
 | 2 | `cycle-ml` | Les étapes d'un projet de machine learning | O1 |
 | 2 | `formuler-probleme` | Formuler un problème de ML | O1 |
+| 2 | `metrique-succes` | Définir le succès avant de coder | O1 |
+| 2 | `donnees-disponibles` | Faire l'inventaire des données disponibles | O1 |
+| 2 | `risques-projet-ml` | Les risques d'un projet de ML | O1 |
 | 3 | `premier-modele` | Ton premier modèle avec scikit-learn | O2 |
 | 3 | `api-sklearn` | La logique de scikit-learn : fit, predict, transform | O2 |
 | 3 | `apprendre-perte` | Comment un modèle apprend : la perte et l'optimisation | O2 |
 | 3 | `reference` | Le modèle de référence : faire mieux que le hasard | O2 |
+| 3 | `predire-probabilites` | Prédire une classe ou une probabilité | O2 |
 | 4 | `decoupage` | Découper les données : train, validation, test | O3 |
 | 4 | `decoupage-avance` | Découper quand les données sont groupées ou datées | O3 |
 | 4 | `biais-variance` | Surapprentissage et sous-apprentissage | O4 |
@@ -63,6 +67,8 @@ mise_a_jour: 2026-11-25
 | 5 | `derive-distribution` | Quand les données de demain ne ressemblent pas à celles d'hier | O5 |
 | 5 | `malediction-dimension` | Trop de colonnes : la malédiction de la dimension | O4 |
 | 5 | `biais-donnees` | Quand les données sont injustes : les biais | O6 |
+| 5 | `generalisation` | Ce que veut dire généraliser | O4 |
+| 5 | `donnees-hors-distribution` | Reconnaître une donnée jamais vue | O5 |
 
 ## Vocabulaire du module
 
@@ -94,11 +100,11 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 1.4-ex01 à ex03 | Qu'est-ce qu'apprendre | O1 | 1 | non |
-| 1.4-ex04 à ex05 | Le cycle d'un projet de ML | O1 | 2 | non |
-| 1.4-ex06 à ex08 | Un premier modèle | O2 | 2 | non |
-| 1.4-ex09 à ex12 | Ne pas se mentir | O3, O4, O5 | 2–3 | non |
-| 1.4-ex13 à ex14 | Quand le monde change | O4, O5, O6 | 2–3 | non |
-| 1.4-ex15 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
+| 1.4-ex04 à ex06 | Le cycle d'un projet de ML | O1 | 2 | non |
+| 1.4-ex07 à ex09 | Un premier modèle | O2 | 2 | non |
+| 1.4-ex10 à ex13 | Ne pas se mentir | O3, O4, O5 | 2–3 | non |
+| 1.4-ex14 à ex16 | Quand le monde change | O4, O5, O6 | 2–3 | non |
+| 1.4-ex17 | Exercice clé : repérer et corriger 5 erreurs dans un notebook piégé | O3 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -114,10 +120,13 @@ Un modèle de crédit décide de la vie des gens : la notion `reference` montre 
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [An Introduction to Statistical Learning, version Python](https://www.statlearning.com/) | anglais | livre de 600 pages | gratuit en ligne | La référence du programme : chapitres 2 et 5 pour ce module. |
-| [Kaggle Learn : Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) | anglais | 3 h | gratuit en ligne | Un premier modèle et la validation, avec exercices. |
+| [MOOC scikit-learn (Inria)](https://inria.github.io/scikit-learn-mooc/) | anglais | cours | CC BY | Le cours des créateurs de scikit-learn, très progressif. |
+| [Machine Learning Crash Course (Google)](https://developers.google.com/machine-learning/crash-course?hl=fr) | français | cours | CC BY 4.0 | Les fondements du ML, avec des schémas interactifs. |
+| [An Introduction to Statistical Learning](https://www.statlearning.com/) | anglais | livre en PDF | gratuit en ligne | La référence théorique, avec des exercices en Python. |
+| [Rules of Machine Learning (Google)](https://developers.google.com/machine-learning/guides/rules-of-ml) | anglais | guide | CC BY 4.0 | 43 règles tirées de projets réels. |
+| [Kaggle Learn : Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) | anglais | cours interactif | gratuit | Un premier modèle et sa validation. |
 
 ## Circuit
 

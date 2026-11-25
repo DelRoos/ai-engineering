@@ -22,27 +22,27 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex05, ex09 à ex13, ex14 à ex16, qcm |
-| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex01 à ex05, ex06 à ex08, ex14 à ex16, qcm |
-| O3 | Utiliser VS Code et écrire un README en Markdown. | ex17 à ex19, qcm |
-| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex20 à ex24, ex30 à ex31, qcm |
-| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex25 à ex29, qcm |
-| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex32 à ex36, ex37 à ex38, exercice clé (ex39), qcm |
+| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex05, ex10 à ex14, ex15 à ex18, qcm |
+| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex01 à ex05, ex06 à ex09, ex15 à ex18, qcm |
+| O3 | Utiliser VS Code et écrire un README en Markdown. | ex19 à ex21, qcm |
+| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex22 à ex26, ex32 à ex34, qcm |
+| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex27 à ex31, qcm |
+| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex35 à ex39, ex40 à ex42, exercice clé (ex43), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Le terminal | 5 |
-| 2 | Traiter du texte au terminal | 3 |
+| 2 | Traiter du texte au terminal | 4 |
 | 3 | Le système Linux | 5 |
-| 4 | Scripts shell | 3 |
+| 4 | Scripts shell | 4 |
 | 5 | VS Code et Markdown | 3 |
 | 6 | Git sur ton PC | 5 |
 | 7 | Les branches | 5 |
-| 8 | Enquêter avec Git | 2 |
+| 8 | Enquêter avec Git | 3 |
 | 9 | GitHub | 5 |
-| 10 | Automatiser avec GitHub | 3 |
+| 10 | Automatiser avec GitHub | 4 |
 
 ## Notions, dans l'ordre
 
@@ -59,6 +59,8 @@ mise_a_jour: 2026-11-25
 | 2 | `couper-colonnes` | Extraire des colonnes : cut | O2 |
 | 2 | `sed` | Remplacer du texte : sed | O2 |
 | 2 | `awk` | Calculer sur des colonnes : les bases d'awk | O2 |
+| 2 | `tr-head-tail` | Transformer et parcourir : tr, head, tail | O2 |
+| 2 | `jq` | Lire du JSON au terminal : jq | O2 |
 | 3 | `droits` | Les droits sur les fichiers | O1 |
 | 3 | `sudo-apt` | Installer des logiciels avec sudo et apt | O1 |
 | 3 | `path` | Variables d'environnement et PATH | O1 |
@@ -70,6 +72,8 @@ mise_a_jour: 2026-11-25
 | 4 | `variables-shell` | Variables et arguments dans un script | O2 |
 | 4 | `conditions-shell` | Conditions et boucles en shell | O2 |
 | 4 | `ssh-distant` | Travailler sur une machine distante : ssh | O1 |
+| 4 | `fonctions-shell` | Des fonctions dans un script | O2 |
+| 4 | `planifier-cron` | Lancer un script à heure fixe : cron | O1 |
 | 5 | `vscode` | VS Code au quotidien : projet, terminal intégré, raccourcis | O3 |
 | 5 | `vscode-extensions` | Les extensions et réglages utiles de VS Code | O3 |
 | 5 | `vscode-git` | Git dans VS Code | O3 |
@@ -94,6 +98,8 @@ mise_a_jour: 2026-11-25
 | 8 | `blame` | Qui a écrit cette ligne ? git blame | O4 |
 | 8 | `bisect` | Trouver le commit qui a tout cassé : git bisect | O4 |
 | 8 | `reflog` | Récupérer un travail perdu : reflog | O4 |
+| 8 | `git-log-avance` | Fouiller l'historique : log, show et les filtres | O4 |
+| 8 | `git-grep` | Chercher dans tout un dépôt : git grep | O4 |
 | 9 | `compte-github` | Créer et sécuriser ton compte GitHub | O6 |
 | 9 | `cle-ssh` | Se connecter à GitHub avec une clé SSH | O6 |
 | 9 | `github` | Envoyer et récupérer ton travail : push et pull | O6 |
@@ -105,6 +111,8 @@ mise_a_jour: 2026-11-25
 | 10 | `github-actions` | GitHub Actions et le badge vert | O6 |
 | 10 | `github-pages` | Publier un site gratuit : GitHub Pages | O6 |
 | 10 | `proteger-depot` | Protéger ton dépôt : branche protégée et secrets | O6 |
+| 10 | `workflow-tests` | Lancer tes tests à chaque push avec GitHub Actions | O6 |
+| 10 | `dependabot` | Tenir ses dépendances à jour : Dependabot | O6 |
 
 ## Vocabulaire du module
 
@@ -152,16 +160,16 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 0.2-ex01 à ex05 | Le terminal | O1, O2 | 1 | non |
-| 0.2-ex06 à ex08 | Traiter du texte au terminal | O2 | 1 | non |
-| 0.2-ex09 à ex13 | Le système Linux | O1 | 1 | non |
-| 0.2-ex14 à ex16 | Scripts shell | O1, O2 | 2 | non |
-| 0.2-ex17 à ex19 | VS Code et Markdown | O3 | 2 | non |
-| 0.2-ex20 à ex24 | Git sur ton PC | O4 | 2 | non |
-| 0.2-ex25 à ex29 | Les branches | O5 | 2–3 | non |
-| 0.2-ex30 à ex31 | Enquêter avec Git | O4 | 2–3 | non |
-| 0.2-ex32 à ex36 | GitHub | O6 | 2–3 | non |
-| 0.2-ex37 à ex38 | Automatiser avec GitHub | O6 | 2–3 | non |
-| 0.2-ex39 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | non |
+| 0.2-ex06 à ex09 | Traiter du texte au terminal | O2 | 1 | non |
+| 0.2-ex10 à ex14 | Le système Linux | O1 | 1 | non |
+| 0.2-ex15 à ex18 | Scripts shell | O1, O2 | 2 | non |
+| 0.2-ex19 à ex21 | VS Code et Markdown | O3 | 2 | non |
+| 0.2-ex22 à ex26 | Git sur ton PC | O4 | 2 | non |
+| 0.2-ex27 à ex31 | Les branches | O5 | 2–3 | non |
+| 0.2-ex32 à ex34 | Enquêter avec Git | O4 | 2–3 | non |
+| 0.2-ex35 à ex39 | GitHub | O6 | 2–3 | non |
+| 0.2-ex40 à ex42 | Automatiser avec GitHub | O6 | 2–3 | non |
+| 0.2-ex43 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -178,10 +186,14 @@ mise_a_jour: 2026-11-25
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Pro Git, le livre](https://git-scm.com/book/fr/v2) | français | livre complet | CC BY-NC-SA 3.0 | Les chapitres 1 à 3 reprennent tout le module, en détail. |
-| [The Missing Semester](https://missing.csail.mit.edu/) | anglais | 11 vidéos d'1 h | CC BY-NC-SA 4.0 | Le terminal et Git expliqués par des enseignants du MIT. |
+| [Pro Git, le livre](https://git-scm.com/book/fr/v2) | français | livre en ligne | CC BY-NC-SA 3.0 | Toute la théorie et la pratique de Git. |
+| [Learn Git Branching](https://learngitbranching.js.org/?locale=fr_FR) | français | exercices interactifs | MIT | Comprendre les branches en jouant. |
+| [The Linux Command Line](https://linuxcommand.org/tlcl.php) | anglais | livre en PDF | CC BY-NC-ND | Le livre de référence sur le terminal Linux. |
+| [The Missing Semester](https://missing.csail.mit.edu/) | anglais | cours en vidéo | CC BY-NC-SA 4.0 | Le terminal, les scripts, Git et les outils du quotidien, par le MIT. |
+| [GitHub Skills](https://skills.github.com/) | anglais | cours interactifs | gratuit | Des exercices guidés directement sur GitHub. |
+| [Écrire sur GitHub (Markdown)](https://docs.github.com/fr/get-started/writing-on-github) | français | documentation | CC BY 4.0 | La syntaxe Markdown de GitHub. |
 
 ## Circuit
 

@@ -24,10 +24,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Coder une régression linéaire de zéro et la retrouver avec scikit-learn. | ex01 à ex05, exercice clé (ex06), qcm |
 | O2 | Entraîner et régulariser des modèles linéaires, pour prédire un nombre ou une classe. | ex01 à ex05, ex07 à ex11, qcm |
-| O3 | Expliquer et utiliser les arbres, les forêts aléatoires et le gradient boosting. | ex12 à ex13, ex14 à ex16, qcm |
-| O4 | Regrouper des données sans étiquette avec k-means et réduire leurs dimensions avec PCA. | ex17 à ex20, ex21 à ex23, qcm |
-| O5 | Construire une recommandation simple à partir de voisins. | ex07 à ex11, ex24 à ex26, qcm |
-| O6 | Choisir un algorithme adapté à un problème et à ses contraintes. | ex24 à ex26, qcm |
+| O3 | Expliquer et utiliser les arbres, les forêts aléatoires et le gradient boosting. | ex12 à ex14, ex15 à ex17, qcm |
+| O4 | Regrouper des données sans étiquette avec k-means et réduire leurs dimensions avec PCA. | ex18 à ex21, ex22 à ex24, qcm |
+| O5 | Construire une recommandation simple à partir de voisins. | ex07 à ex11, ex25 à ex27, qcm |
+| O6 | Choisir un algorithme adapté à un problème et à ses contraintes. | ex25 à ex27, qcm |
 
 ## Chapitres
 
@@ -35,7 +35,7 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | La régression linéaire | 6 |
 | 2 | Classer | 5 |
-| 3 | Les arbres | 2 |
+| 3 | Les arbres | 3 |
 | 4 | Les ensembles | 3 |
 | 5 | Regrouper sans étiquette | 4 |
 | 6 | Réduire et détecter | 3 |
@@ -62,6 +62,8 @@ mise_a_jour: 2026-11-25
 | 3 | `arbres` | Les arbres de décision | O3 |
 | 3 | `elagage` | Élaguer un arbre | O3 |
 | 3 | `importance-arbres` | Ce que les arbres jugent important | O3 |
+| 3 | `criteres-separation` | Comment un arbre choisit ses questions : Gini et entropie | O3 |
+| 3 | `arbres-regression` | Les arbres de régression | O3 |
 | 4 | `bagging` | Le bagging | O3 |
 | 4 | `random-forest` | Random forest : la force du nombre | O3 |
 | 4 | `adaboost` | Le boosting, d'AdaBoost au gradient boosting | O3 |
@@ -77,6 +79,7 @@ mise_a_jour: 2026-11-25
 | 6 | `visualiser-2d` | Voir des données à beaucoup de colonnes en 2D | O4 |
 | 6 | `nmf-sujets` | Trouver des sujets dans des textes : NMF | O4 |
 | 6 | `anomalies` | Repérer l'inhabituel : la détection d'anomalies | O4 |
+| 6 | `tsne-umap` | Cartographier des données : t-SNE et UMAP | O4 |
 | 7 | `recommandation` | Premiers pas en recommandation | O5 |
 | 7 | `factorisation-matrices` | La factorisation de matrices | O5 |
 | 7 | `reco-contenu` | Recommander à partir du contenu | O5 |
@@ -119,11 +122,11 @@ mise_a_jour: 2026-11-25
 | 1.5-ex01 à ex05 | La régression linéaire | O1, O2 | 1 | non |
 | 1.5-ex06 | Exercice clé : régression linéaire codée de zéro, puis avec scikit-learn | O1 | 3 | non |
 | 1.5-ex07 à ex11 | Classer | O2, O5 | 1 | non |
-| 1.5-ex12 à ex13 | Les arbres | O3 | 2 | non |
-| 1.5-ex14 à ex16 | Les ensembles | O3 | 2 | non |
-| 1.5-ex17 à ex20 | Regrouper sans étiquette | O4 | 2–3 | non |
-| 1.5-ex21 à ex23 | Réduire et détecter | O4 | 2–3 | non |
-| 1.5-ex24 à ex26 | Recommander et choisir | O5, O6 | 2–3 | non |
+| 1.5-ex12 à ex14 | Les arbres | O3 | 2 | non |
+| 1.5-ex15 à ex17 | Les ensembles | O3 | 2 | non |
+| 1.5-ex18 à ex21 | Regrouper sans étiquette | O4 | 2–3 | non |
+| 1.5-ex22 à ex24 | Réduire et détecter | O4 | 2–3 | non |
+| 1.5-ex25 à ex27 | Recommander et choisir | O5, O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -139,10 +142,13 @@ Une recommandation enferme parfois les clients dans les mêmes produits et favor
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Guide utilisateur de scikit-learn](https://scikit-learn.org/stable/user_guide.html) | anglais | référence | BSD | Chaque algorithme du module, avec ses paramètres et des exemples. |
-| [An Introduction to Statistical Learning, version Python](https://www.statlearning.com/) | anglais | livre | gratuit en ligne | Chapitres 3, 4, 8 et 12 pour ce module. |
+| [Guide utilisateur de scikit-learn](https://scikit-learn.org/stable/user_guide.html) | anglais | documentation | BSD | Chaque algorithme, avec ses paramètres et des exemples. |
+| [MOOC scikit-learn (Inria)](https://inria.github.io/scikit-learn-mooc/) | anglais | cours | CC BY | Modèles linéaires, arbres et ensembles, avec quiz. |
+| [An Introduction to Statistical Learning](https://www.statlearning.com/) | anglais | livre en PDF | gratuit en ligne | Les chapitres 3 à 8 et 12 pour ce module. |
+| [StatQuest](https://statquest.org/) | anglais | vidéos | gratuit | Chaque algorithme expliqué simplement. |
+| [Systèmes de recommandation (Google)](https://developers.google.com/machine-learning/recommendation) | anglais | cours | CC BY 4.0 | Recommandation par contenu et filtrage collaboratif. |
 
 ## Circuit
 

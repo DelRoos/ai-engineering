@@ -16,7 +16,7 @@ mise_a_jour: 2026-11-25
 ## Extrait du programme
 
 - **Contenu** : Types, fonctions, classes, modules, fichiers, exceptions, environnements virtuels, typage, style PEP 8
-- **Exercice clé** : 72 exercices progressifs corrigés automatiquement
+- **Exercice clé** : 75 exercices progressifs corrigés automatiquement
 
 ## Objectifs vérifiables
 
@@ -25,10 +25,10 @@ mise_a_jour: 2026-11-25
 | O1 | Écrire un script qui manipule des nombres, du texte et des valeurs saisies par l'utilisateur. | ex01 à ex05, ex06 à ex10, qcm |
 | O2 | Contrôler un programme avec des conditions et des boucles. | ex11 à ex15, ex16 à ex20, ex21 à ex25, qcm |
 | O3 | Choisir la bonne collection (liste, tuple, dictionnaire, ensemble) et la parcourir. | ex21 à ex25, ex26 à ex30, ex31 à ex34, qcm |
-| O4 | Découper un programme en fonctions typées et documentées. | ex35 à ex39, ex40 à ex44, ex45 à ex46, qcm |
-| O5 | Lire et écrire des fichiers texte et CSV, et gérer les erreurs avec des exceptions. | ex47 à ex51, ex52 à ex56, qcm |
-| O6 | Représenter un problème avec des classes et organiser son code en modules. | ex31 à ex34, ex57 à ex60, ex61 à ex63, ex64 à ex66, ex67 à ex69, qcm |
-| O7 | Isoler un projet dans un environnement virtuel et écrire du code conforme à PEP 8. | ex70 à ex72, qcm |
+| O4 | Découper un programme en fonctions typées et documentées. | ex35 à ex39, ex40 à ex44, ex45 à ex47, qcm |
+| O5 | Lire et écrire des fichiers texte et CSV, et gérer les erreurs avec des exceptions. | ex48 à ex52, ex53 à ex57, qcm |
+| O6 | Représenter un problème avec des classes et organiser son code en modules. | ex31 à ex34, ex58 à ex61, ex62 à ex65, ex66 à ex68, ex69 à ex71, qcm |
+| O7 | Isoler un projet dans un environnement virtuel et écrire du code conforme à PEP 8. | ex72 à ex75, qcm |
 
 ## Chapitres
 
@@ -43,14 +43,14 @@ mise_a_jour: 2026-11-25
 | 7 | Des collections bien outillées | 4 |
 | 8 | Les fonctions | 5 |
 | 9 | Aller plus loin avec les fonctions | 5 |
-| 10 | Itérateurs et générateurs | 2 |
+| 10 | Itérateurs et générateurs | 3 |
 | 11 | Les fichiers | 5 |
 | 12 | Les erreurs | 5 |
 | 13 | Les classes | 4 |
-| 14 | Concevoir avec des objets | 3 |
+| 14 | Concevoir avec des objets | 4 |
 | 15 | Modules et paquets | 3 |
 | 16 | La bibliothèque standard | 3 |
-| 17 | Un vrai projet Python | 3 |
+| 17 | Un vrai projet Python | 4 |
 
 ## Notions, dans l'ordre
 
@@ -125,6 +125,8 @@ mise_a_jour: 2026-11-25
 | 10 | `iterateurs` | Comprendre l'itération : iter et next | O4 |
 | 10 | `generateurs` | Produire des valeurs une à une : les générateurs et yield | O4 |
 | 10 | `expressions-generatrices` | Les expressions génératrices | O4 |
+| 10 | `protocole-iteration` | Rendre tes objets parcourables : __iter__ et __next__ | O4 |
+| 10 | `pipelines-generateurs` | Enchaîner des générateurs pour traiter de gros fichiers | O4 |
 | 11 | `lire-fichier` | Lire un fichier texte | O5 |
 | 11 | `with` | Ouvrir proprement avec with | O5 |
 | 11 | `encodage` | Les accents dans les fichiers : l'encodage UTF-8 | O5 |
@@ -149,10 +151,13 @@ mise_a_jour: 2026-11-25
 | 14 | `composition` | Assembler des objets : la composition | O6 |
 | 14 | `property` | Des attributs calculés : property | O6 |
 | 14 | `classes-abstraites` | Des interfaces : les classes abstraites | O6 |
+| 14 | `polymorphisme` | Le polymorphisme : une même méthode, des comportements différents | O6 |
+| 14 | `concevoir-classes` | Concevoir ses classes : responsabilités et modélisation | O6 |
 | 15 | `plusieurs-fichiers` | Découper ton code en plusieurs fichiers | O6 |
 | 15 | `paquets` | Créer un paquet : __init__.py | O6 |
 | 15 | `chemin-import` | Où Python cherche les modules | O6 |
 | 15 | `main` | Lancer un script : if __name__ == "__main__" | O6 |
+| 15 | `installer-paquet-local` | Installer ton propre paquet en mode développement | O6 |
 | 16 | `bibliotheque-standard` | La bibliothèque standard : math et random | O6 |
 | 16 | `dates-heures` | Les dates et les heures : datetime | O6 |
 | 16 | `decimal` | Compter l'argent sans erreur : decimal | O6 |
@@ -162,6 +167,8 @@ mise_a_jour: 2026-11-25
 | 17 | `venv-pip` | Environnement virtuel et pip | O7 |
 | 17 | `requirements` | Noter ses dépendances : requirements.txt | O7 |
 | 17 | `pep8-ruff` | Le style PEP 8, vérifié par ruff | O7 |
+| 17 | `structure-projet` | La structure d'un projet Python : src, tests, docs | O7 |
+| 17 | `ruff-format` | Formater automatiquement ton code avec ruff | O7 |
 
 ## Vocabulaire du module
 
@@ -224,16 +231,16 @@ mise_a_jour: 2026-11-25
 | 0.1-ex31 à ex34 | Des collections bien outillées | O3, O6 | 2 | non |
 | 0.1-ex35 à ex39 | Les fonctions | O4 | 2 | non |
 | 0.1-ex40 à ex44 | Aller plus loin avec les fonctions | O4 | 2 | non |
-| 0.1-ex45 à ex46 | Itérateurs et générateurs | O4 | 2 | non |
-| 0.1-ex47 à ex51 | Les fichiers | O5 | 2 | non |
-| 0.1-ex52 à ex56 | Les erreurs | O5 | 2–3 | non |
-| 0.1-ex57 à ex60 | Les classes | O6 | 2–3 | non |
-| 0.1-ex61 à ex63 | Concevoir avec des objets | O6 | 2–3 | non |
-| 0.1-ex64 à ex66 | Modules et paquets | O6 | 2–3 | non |
-| 0.1-ex67 à ex69 | La bibliothèque standard | O6 | 2–3 | non |
-| 0.1-ex70 à ex72 | Un vrai projet Python | O7 | 2–3 | non |
+| 0.1-ex45 à ex47 | Itérateurs et générateurs | O4 | 2 | non |
+| 0.1-ex48 à ex52 | Les fichiers | O5 | 2 | non |
+| 0.1-ex53 à ex57 | Les erreurs | O5 | 2–3 | non |
+| 0.1-ex58 à ex61 | Les classes | O6 | 2–3 | non |
+| 0.1-ex62 à ex65 | Concevoir avec des objets | O6 | 2–3 | non |
+| 0.1-ex66 à ex68 | Modules et paquets | O6 | 2–3 | non |
+| 0.1-ex69 à ex71 | La bibliothèque standard | O6 | 2–3 | non |
+| 0.1-ex72 à ex75 | Un vrai projet Python | O7 | 2–3 | non |
 
-Exercice clé : les 72 exercices, tous validés par `python outils/check.py`.
+Exercice clé : les 75 exercices, tous validés par `python outils/check.py`.
 
 ## Ressources matérielles
 
@@ -249,9 +256,14 @@ Sans objet. Une seule règle, rappelée dans la notion `input` : ne jamais utili
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Le tutoriel officiel de Python](https://docs.python.org/fr/3/tutorial/) | français | 10 h environ | PSF | La référence, traduite en français, pour revoir chaque notion. |
+| [Le tutoriel officiel de Python](https://docs.python.org/fr/3/tutorial/) | français | documentation | PSF | La référence, traduite en français, pour revoir chaque notion. |
+| [Think Python, 3e édition](https://allendowney.github.io/ThinkPython/) | anglais | livre en ligne | CC BY-NC-SA 4.0 | Un livre complet et progressif, avec des notebooks à exécuter. |
+| [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) | anglais | livre en ligne | CC BY-NC-SA 3.0 | Python appliqué à des tâches concrètes : fichiers, tableurs, web. |
+| [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/) | anglais | cours en vidéo | gratuit en ligne | Le cours de Harvard, avec exercices corrigés. |
+| [France-IOI](https://www.france-ioi.org/) | français | exercices en ligne | gratuit | Des centaines d'exercices progressifs d'algorithmique en Python. |
+| [Python Tutor](https://pythontutor.com/) | anglais | outil en ligne | gratuit | Voir pas à pas ce que fait ton programme en mémoire. |
 
 ## Circuit
 

@@ -24,9 +24,9 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Expliquer ce qu'un assistant de code sait faire et ce qu'il ne sait pas faire. | ex01 à ex03, qcm |
 | O2 | Installer et utiliser un assistant gratuit dans VS Code. | ex01 à ex03, ex04 à ex06, qcm |
-| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex07 à ex09, ex10 à ex11, exercice clé (ex19), qcm |
-| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex10 à ex11, ex12 à ex15, exercice clé (ex19), qcm |
-| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex16 à ex18, exercice clé (ex19), qcm |
+| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex07 à ex09, ex10 à ex12, exercice clé (ex20), qcm |
+| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex10 à ex12, ex13 à ex16, exercice clé (ex20), qcm |
+| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex17 à ex19, exercice clé (ex20), qcm |
 
 ## Chapitres
 
@@ -35,7 +35,7 @@ mise_a_jour: 2026-11-25
 | 1 | Comprendre les assistants de code | 3 |
 | 2 | T'équiper | 3 |
 | 3 | Bien demander | 3 |
-| 4 | Faire travailler l'assistant | 2 |
+| 4 | Faire travailler l'assistant | 3 |
 | 5 | Vérifier ce qui est produit | 4 |
 | 6 | Travailler avec méthode | 4 |
 
@@ -47,10 +47,12 @@ mise_a_jour: 2026-11-25
 | 1 | `comment-ca-marche` | Comment un assistant prédit du code | O1 |
 | 1 | `modes-assistant` | Complétion, chat, agent : trois façons de travailler | O1 |
 | 1 | `options` | Copilot, Claude Code, Cursor et les options gratuites ou locales | O2 |
+| 1 | `limites-modeles-code` | Ce que les modèles de code ignorent : dates, versions, ton projet | O1 |
 | 2 | `installer-assistant` | Installer un assistant gratuit dans VS Code | O2 |
 | 2 | `modele-local` | Un assistant avec un modèle local, sans Internet | O2 |
 | 2 | `assistant-terminal` | Un assistant dans le terminal | O2 |
 | 2 | `agents-code` | Les agents de code : confier une tâche entière, sous contrôle | O2 |
+| 2 | `regler-assistant` | Régler l'assistant : modèle, contexte, permissions | O2 |
 | 3 | `decrire-tache` | Bien décrire une tâche : contexte, contraintes, exemple | O3 |
 | 3 | `contexte-projet` | Donner le bon contexte : fichiers et règles du projet | O3 |
 | 3 | `planifier-avant` | Faire planifier avant de faire coder | O3 |
@@ -59,6 +61,8 @@ mise_a_jour: 2026-11-25
 | 4 | `refactoriser-assistant` | Refactoriser avec l'assistant | O3 |
 | 4 | `documenter-assistant` | Faire écrire la documentation | O3 |
 | 4 | `revue-assistant` | Faire relire ton code par l'assistant | O4 |
+| 4 | `ecrire-tests-avant` | Écrire les tests d'abord, puis faire coder | O3 |
+| 4 | `migrer-code` | Faire migrer un code vers une nouvelle version | O3 |
 | 5 | `relire` | Relire le code généré ligne à ligne | O4 |
 | 5 | `tester-genere` | Tester avant de faire confiance | O4 |
 | 5 | `tests-assistant` | Faire écrire des tests, et les vérifier | O4 |
@@ -103,10 +107,10 @@ mise_a_jour: 2026-11-25
 | 1.1-ex01 à ex03 | Comprendre les assistants de code | O1, O2 | 1 | non |
 | 1.1-ex04 à ex06 | T'équiper | O2 | 1 | non |
 | 1.1-ex07 à ex09 | Bien demander | O3 | 2 | non |
-| 1.1-ex10 à ex11 | Faire travailler l'assistant | O3, O4 | 2 | non |
-| 1.1-ex12 à ex15 | Vérifier ce qui est produit | O4 | 2–3 | non |
-| 1.1-ex16 à ex18 | Travailler avec méthode | O5 | 2–3 | non |
-| 1.1-ex19 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
+| 1.1-ex10 à ex12 | Faire travailler l'assistant | O3, O4 | 2 | non |
+| 1.1-ex13 à ex16 | Vérifier ce qui est produit | O4 | 2–3 | non |
+| 1.1-ex17 à ex19 | Travailler avec méthode | O5 | 2–3 | non |
+| 1.1-ex20 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
 
 ## Ressources matérielles
 
@@ -124,10 +128,12 @@ mise_a_jour: 2026-11-25
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation d'Aider](https://aider.chat/docs/) | anglais | référence | Apache 2.0 | L'assistant open source en ligne de commande, utilisable avec un modèle local. |
-| [Documentation de Continue](https://docs.continue.dev/) | anglais | référence | Apache 2.0 | L'extension open source de VS Code, branchée sur un modèle local via Ollama. |
+| [Documentation de GitHub Copilot](https://docs.github.com/fr/copilot) | français | documentation | CC BY 4.0 | Installer et utiliser Copilot, y compris l'offre gratuite. |
+| [Documentation d'Aider](https://aider.chat/docs/) | anglais | documentation | Apache 2.0 | L'assistant open source en ligne de commande, avec un modèle local. |
+| [Documentation de Continue](https://docs.continue.dev/) | anglais | documentation | Apache 2.0 | L'extension open source de VS Code, branchée sur Ollama. |
+| [Le blog de Simon Willison](https://simonwillison.net/) | anglais | blog | accès libre | Des retours concrets et prudents sur le code écrit avec des LLM. |
 
 ## Circuit
 

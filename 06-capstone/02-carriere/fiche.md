@@ -22,19 +22,19 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Présenter ses projets dans un portfolio convaincant, avec des résultats chiffrés. | ex01 à ex03, exercice clé (ex18), qcm |
-| O2 | Communiquer en anglais technique, à l'écrit et à l'oral. | ex04 à ex05, exercice clé (ex18), qcm |
-| O3 | Réussir des entretiens techniques et comportementaux. | ex06 à ex07, ex08 à ex10, exercice clé (ex18), qcm |
-| O4 | Se rendre visible : articles, open source, compétitions. | ex11 à ex13, qcm |
-| O5 | Choisir une stratégie d'emploi et construire son réseau. | ex06 à ex07, ex14 à ex17, qcm |
+| O1 | Présenter ses projets dans un portfolio convaincant, avec des résultats chiffrés. | ex01 à ex03, exercice clé (ex20), qcm |
+| O2 | Communiquer en anglais technique, à l'écrit et à l'oral. | ex04 à ex06, exercice clé (ex20), qcm |
+| O3 | Réussir des entretiens techniques et comportementaux. | ex07 à ex09, ex10 à ex12, exercice clé (ex20), qcm |
+| O4 | Se rendre visible : articles, open source, compétitions. | ex13 à ex15, qcm |
+| O5 | Choisir une stratégie d'emploi et construire son réseau. | ex07 à ex09, ex16 à ex19, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Le portfolio | 3 |
-| 2 | L'anglais technique | 2 |
-| 3 | Postuler | 2 |
+| 2 | L'anglais technique | 3 |
+| 3 | Postuler | 3 |
 | 4 | Les entretiens | 3 |
 | 5 | La visibilité | 3 |
 | 6 | Trouver du travail | 5 |
@@ -51,9 +51,13 @@ mise_a_jour: 2026-11-25
 | 2 | `ecrire-anglais` | Écrire en anglais technique | O2 |
 | 2 | `presenter-anglais` | Présenter à l'oral en anglais | O2 |
 | 2 | `reunions-anglais` | Suivre une réunion en anglais | O2 |
+| 2 | `vocabulaire-technique` | Le vocabulaire technique qui revient tout le temps | O2 |
+| 2 | `ecrire-courriels` | Écrire un courriel professionnel en anglais | O2 |
 | 3 | `trouver-offres` | Trouver les offres : sites, réseaux, recrutement à distance | O5 |
 | 3 | `candidature` | Une candidature personnalisée | O5 |
 | 3 | `exercice-maison` | Réussir un exercice à faire chez soi | O3 |
+| 3 | `lire-offre` | Lire une offre d'emploi entre les lignes | O5 |
+| 3 | `suivre-candidatures` | Suivre ses candidatures | O5 |
 | 4 | `entretien-code` | L'entretien de code | O3 |
 | 4 | `entretien-conception` | L'entretien de conception de système | O3 |
 | 4 | `questions-ml` | Les questions ML et LLM | O3 |
@@ -63,6 +67,7 @@ mise_a_jour: 2026-11-25
 | 5 | `contributions-visibles` | Des contributions open source qui se voient | O4 |
 | 5 | `competitions` | Kaggle et Zindi | O4 |
 | 5 | `parler-evenements` | Parler dans un meetup ou une conférence | O4 |
+| 5 | `marque-personnelle` | Une présence en ligne cohérente | O4 |
 | 6 | `strategies-emploi` | Les stratégies : distance, freelance, start-up, poste local | O5 |
 | 6 | `freelance` | Démarrer en freelance | O5 |
 | 6 | `contrats-freelance` | Contrats, factures et paiements internationaux | O5 |
@@ -93,12 +98,12 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 6.2-ex01 à ex03 | Le portfolio | O1 | 1 | non |
-| 6.2-ex04 à ex05 | L'anglais technique | O2 | 1 | non |
-| 6.2-ex06 à ex07 | Postuler | O3, O5 | 2 | non |
-| 6.2-ex08 à ex10 | Les entretiens | O3 | 2 | non |
-| 6.2-ex11 à ex13 | La visibilité | O4 | 2–3 | non |
-| 6.2-ex14 à ex17 | Trouver du travail | O5 | 2–3 | non |
-| 6.2-ex18 | Exercice clé : un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA | O1 à O3 | 3 | oui → GRILLE.md (portfolio et entretien) |
+| 6.2-ex04 à ex06 | L'anglais technique | O2 | 1 | non |
+| 6.2-ex07 à ex09 | Postuler | O3, O5 | 2 | non |
+| 6.2-ex10 à ex12 | Les entretiens | O3 | 2 | non |
+| 6.2-ex13 à ex15 | La visibilité | O4 | 2–3 | non |
+| 6.2-ex16 à ex19 | Trouver du travail | O5 | 2–3 | non |
+| 6.2-ex20 | Exercice clé : un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA | O1 à O3 | 3 | oui → GRILLE.md (portfolio et entretien) |
 
 ## Ressources matérielles
 
@@ -114,10 +119,13 @@ Un portfolio est public : aucune donnée personnelle de tiers, aucun secret, et 
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Zindi](https://zindi.africa/) | anglais | plateforme | gratuit en ligne | Des compétitions de data science sur des problèmes africains. |
-| [Kaggle](https://www.kaggle.com/) | anglais | plateforme | gratuit en ligne | Des compétitions et des jeux de données pour se faire connaître. |
+| [Machine Learning Interviews (Chip Huyen)](https://huyenchip.com/ml-interviews-book/) | anglais | livre en ligne | gratuit en ligne | Le processus d'entretien et des centaines de questions. |
+| [Tech Interview Handbook](https://www.techinterviewhandbook.org/) | anglais | guide | gratuit | CV, algorithmes, entretiens comportementaux. |
+| [Roadmap AI Engineer (roadmap.sh)](https://roadmap.sh/ai-engineer) | anglais | feuille de route | gratuit | Situer tes compétences sur le métier. |
+| [Zindi](https://zindi.africa/) | anglais | compétitions | gratuit | Des compétitions sur des problèmes africains. |
+| [Kaggle](https://www.kaggle.com/) | anglais | compétitions | gratuit | Des compétitions et des jeux de données pour te faire connaître. |
 
 ## Circuit
 

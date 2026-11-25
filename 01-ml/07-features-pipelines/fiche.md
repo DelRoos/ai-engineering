@@ -138,11 +138,13 @@ Ne jamais charger un fichier de modèle (pickle, joblib) reçu d'une source inco
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [scikit-learn : pipelines et transformations](https://scikit-learn.org/stable/modules/compose.html) | anglais | référence | BSD | Pipeline, ColumnTransformer et leurs pièges. |
-| [Forecasting: Principles and Practice](https://otexts.com/fpp3/) | anglais | livre | gratuit en ligne | La référence pour comprendre la prévision des séries temporelles. |
-| [Documentation de SHAP](https://shap.readthedocs.io/) | anglais | référence | MIT | Lire et tracer les explications d'un modèle. |
+| [Feature Engineering and Selection](https://bookdown.org/max/FES/) | anglais | livre en ligne | gratuit en ligne | Créer et choisir de bonnes features. |
+| [Forecasting: Principles and Practice](https://otexts.com/fpp3/) | anglais | livre en ligne | gratuit en ligne | La référence de la prévision des séries temporelles. |
+| [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/) | anglais | livre en ligne | CC BY-NC-SA 4.0 | PDP, ICE, LIME, SHAP et leurs limites. |
+| [Kaggle Learn : Feature Engineering et Time Series](https://www.kaggle.com/learn) | anglais | cours interactifs | gratuit | Des exercices courts sur les features et les séries. |
+| [Documentation de SHAP](https://shap.readthedocs.io/) | anglais | documentation | MIT | Lire et tracer les explications d'un modèle. |
 
 ## Circuit
 

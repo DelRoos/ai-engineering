@@ -23,10 +23,10 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Expliquer les modèles du cloud et leurs coûts. | ex01 à ex03, qcm |
-| O2 | Déployer un service sur une offre gratuite. | ex04 à ex06, exercice clé (ex17), qcm |
-| O3 | Configurer un domaine, HTTPS, des secrets et un retour arrière en production. | ex07 à ex09, exercice clé (ex17), qcm |
-| O4 | Connaître AWS, GCP et Azure, le serverless et le GPU à la demande. | ex10 à ex12, ex13 à ex14, qcm |
-| O5 | Comparer le coût et la performance de plusieurs plateformes. | ex15 à ex16, exercice clé (ex17), qcm |
+| O2 | Déployer un service sur une offre gratuite. | ex04 à ex06, exercice clé (ex19), qcm |
+| O3 | Configurer un domaine, HTTPS, des secrets et un retour arrière en production. | ex07 à ex09, exercice clé (ex19), qcm |
+| O4 | Connaître AWS, GCP et Azure, le serverless et le GPU à la demande. | ex10 à ex12, ex13 à ex15, qcm |
+| O5 | Comparer le coût et la performance de plusieurs plateformes. | ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
@@ -36,8 +36,8 @@ mise_a_jour: 2026-11-25
 | 2 | Déployer gratuitement | 3 |
 | 3 | En production | 3 |
 | 4 | Les grands clouds | 3 |
-| 5 | L'infrastructure en code | 2 |
-| 6 | Comparer et maîtriser | 3 |
+| 5 | L'infrastructure en code | 3 |
+| 6 | Comparer et maîtriser | 4 |
 
 ## Notions, dans l'ordre
 
@@ -47,10 +47,12 @@ mise_a_jour: 2026-11-25
 | 1 | `iaas-paas` | IaaS et PaaS : louer une machine ou une plateforme | O1 |
 | 1 | `facture-cloud` | Lire une facture de cloud | O1 |
 | 1 | `pieges-gratuit` | Les pièges des offres gratuites | O1 |
+| 1 | `regions-latence` | Choisir une région proche des utilisateurs | O1 |
 | 2 | `render` | Déployer sur Render | O2 |
 | 2 | `flyio` | Déployer sur Fly.io | O2 |
 | 2 | `hf-spaces` | Déployer sur Hugging Face Spaces | O2 |
 | 2 | `demarrage-froid` | Le démarrage à froid, et comment le limiter | O2 |
+| 2 | `deployer-github` | Déployer automatiquement depuis GitHub | O2 |
 | 3 | `domaine-https` | Un nom de domaine et HTTPS | O3 |
 | 3 | `secrets-prod` | Les secrets en production | O3 |
 | 3 | `bases-gerees` | Une base de données gérée | O3 |
@@ -63,9 +65,14 @@ mise_a_jour: 2026-11-25
 | 4 | `localisation-donnees` | Où sont tes données ? Localisation et souveraineté | O4 |
 | 5 | `iac` | Décrire son infrastructure en code : notions de Terraform | O4 |
 | 5 | `cdn` | Servir vite au loin : le CDN | O4 |
+| 5 | `terraform-premier` | Un premier fichier Terraform | O4 |
+| 5 | `etat-terraform` | L'état de l'infrastructure | O4 |
+| 5 | `environnements-iac` | Plusieurs environnements avec le même code | O4 |
 | 6 | `comparer-plateformes` | Comparer deux plateformes | O5 |
 | 6 | `estimer-couts` | Estimer un coût avant de déployer | O5 |
 | 6 | `budget-alertes` | Fixer un budget et des alertes | O5 |
+| 6 | `optimiser-couts-cloud` | Réduire une facture de cloud | O5 |
+| 6 | `sortir-fournisseur` | Ne pas rester prisonnier d'un fournisseur | O5 |
 
 ## Vocabulaire du module
 
@@ -93,9 +100,9 @@ mise_a_jour: 2026-11-25
 | 4.4-ex04 à ex06 | Déployer gratuitement | O2 | 1 | non |
 | 4.4-ex07 à ex09 | En production | O3 | 2 | non |
 | 4.4-ex10 à ex12 | Les grands clouds | O4 | 2 | non |
-| 4.4-ex13 à ex14 | L'infrastructure en code | O4 | 2–3 | non |
-| 4.4-ex15 à ex16 | Comparer et maîtriser | O5 | 2–3 | non |
-| 4.4-ex17 | Exercice clé : déployer le même service sur 2 plateformes et comparer les coûts | O2, O3, O5 | 3 | oui → GRILLE.md (rapport de comparaison) |
+| 4.4-ex13 à ex15 | L'infrastructure en code | O4 | 2–3 | non |
+| 4.4-ex16 à ex18 | Comparer et maîtriser | O5 | 2–3 | non |
+| 4.4-ex19 | Exercice clé : déployer le même service sur 2 plateformes et comparer les coûts | O2, O3, O5 | 3 | oui → GRILLE.md (rapport de comparaison) |
 
 ## Ressources matérielles
 
@@ -111,9 +118,12 @@ Point de contrôle du projet 4 : localisation des données conforme à la loi, s
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de Hugging Face Spaces](https://huggingface.co/docs/hub/spaces) | anglais | référence | gratuit en ligne | Héberger gratuitement une démo d'IA. |
+| [Documentation de Hugging Face Spaces](https://huggingface.co/docs/hub/spaces) | anglais | documentation | accès libre | Héberger gratuitement une démo d'IA. |
+| [Documentation de Render](https://render.com/docs) | anglais | documentation | accès libre | Déployer un service depuis GitHub. |
+| [Documentation de Fly.io](https://fly.io/docs/) | anglais | documentation | accès libre | Déployer des conteneurs près des utilisateurs. |
+| [Tutoriels Terraform](https://developer.hashicorp.com/terraform/tutorials) | anglais | tutoriels | accès libre | Décrire son infrastructure en code. |
 
 ## Circuit
 

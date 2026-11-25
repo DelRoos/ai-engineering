@@ -25,8 +25,8 @@ mise_a_jour: 2026-11-25
 | O1 | Transformer du texte en tokens et en embeddings. | ex01 à ex03, exercice clé (ex15), qcm |
 | O2 | Expliquer ce qu'est un modèle de langue et pourquoi les réseaux récurrents ont été dépassés. | ex04 à ex06, qcm |
 | O3 | Calculer un mécanisme d'attention, à la main puis en code. | ex07 à ex09, exercice clé (ex15), qcm |
-| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex10 à ex14, exercice clé (ex15), ex16 à ex17, qcm |
-| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex18 à ex21, qcm |
+| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex10 à ex14, exercice clé (ex15), ex16 à ex18, qcm |
+| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex19 à ex22, qcm |
 
 ## Chapitres
 
@@ -36,7 +36,7 @@ mise_a_jour: 2026-11-25
 | 2 | Les séquences | 3 |
 | 3 | L'attention | 3 |
 | 4 | Le Transformer | 6 |
-| 5 | Pré-entraîner | 2 |
+| 5 | Pré-entraîner | 3 |
 | 6 | Hugging Face | 4 |
 
 ## Notions, dans l'ordre
@@ -47,10 +47,12 @@ mise_a_jour: 2026-11-25
 | 1 | `bpe` | Découper en sous-mots : BPE | O1 |
 | 1 | `embeddings` | Les embeddings : des mots dans un espace | O1 |
 | 1 | `word2vec` | Apprendre des embeddings : word2vec | O1 |
+| 1 | `analogies` | Les analogies dans l'espace des mots | O1 |
 | 2 | `modele-langue` | Prédire le mot suivant : le modèle de langue | O2 |
 | 2 | `rnn` | Les réseaux récurrents et leurs limites | O2 |
 | 2 | `lstm-gru` | Retenir plus longtemps : LSTM et GRU | O2 |
 | 2 | `seq2seq` | Encoder puis décoder : seq2seq | O2 |
+| 2 | `retropropagation-temps` | La rétropropagation dans le temps | O2 |
 | 3 | `attention-intuition` | L'attention : regarder les bons mots | O3 |
 | 3 | `requetes-cles-valeurs` | Requêtes, clés et valeurs | O3 |
 | 3 | `attention-calcul` | Calculer l'attention, à la main puis en code | O3 |
@@ -66,6 +68,9 @@ mise_a_jour: 2026-11-25
 | 4 | `kv-cache` | Générer vite : le cache des clés et des valeurs | O4 |
 | 5 | `bert` | BERT : apprendre en devinant les mots cachés | O4 |
 | 5 | `gpt-preentrainement` | GPT : apprendre en prédisant la suite | O4 |
+| 5 | `objectifs-preentrainement` | Les objectifs de pré-entraînement | O4 |
+| 5 | `donnees-preentrainement` | Les données de pré-entraînement | O4 |
+| 5 | `adapter-preentraine` | Adapter un modèle pré-entraîné à une tâche | O4 |
 | 6 | `hub-hf` | Le Hub de Hugging Face | O5 |
 | 6 | `pipelines-hf` | Utiliser un modèle en trois lignes : pipeline | O5 |
 | 6 | `tokenizers-hf` | Les tokenizers de Hugging Face | O5 |
@@ -102,8 +107,8 @@ mise_a_jour: 2026-11-25
 | 2.4-ex07 à ex09 | L'attention | O3 | 2 | non |
 | 2.4-ex10 à ex14 | Le Transformer | O4 | 2 | non |
 | 2.4-ex15 | Exercice clé : un mini-Transformer qui génère du texte, entraîné sur processeur | O1, O3, O4 | 3 | non |
-| 2.4-ex16 à ex17 | Pré-entraîner | O4 | 2–3 | non |
-| 2.4-ex18 à ex21 | Hugging Face | O5 | 2–3 | non |
+| 2.4-ex16 à ex18 | Pré-entraîner | O4 | 2–3 | non |
+| 2.4-ex19 à ex22 | Hugging Face | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -119,11 +124,13 @@ Un modèle génératif reproduit ce qu'il a lu : vérifier les droits du corpus 
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Let's build GPT, par Andrej Karpathy](https://karpathy.ai/zero-to-hero.html) | anglais | vidéo | gratuit en ligne | Construire un mini-GPT de zéro, ligne par ligne. |
-| [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | anglais | article | gratuit en ligne | Le Transformer expliqué avec des schémas. |
+| [Let's build GPT (Karpathy)](https://karpathy.ai/zero-to-hero.html) | anglais | vidéo | gratuit | Construire un mini-GPT de zéro. |
+| [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | anglais | article | accès libre | Le Transformer expliqué avec des schémas. |
 | [Le cours LLM de Hugging Face](https://huggingface.co/learn/llm-course) | anglais | cours | Apache 2.0 | Utiliser et adapter les modèles du Hub. |
+| [Le blog de Lilian Weng](https://lilianweng.github.io/) | anglais | blog | accès libre | Des synthèses de référence sur l'attention et les modèles de langue. |
+| [Attention Is All You Need](https://arxiv.org/abs/1706.03762) | anglais | article | accès libre | L'article fondateur du Transformer. |
 
 ## Circuit
 

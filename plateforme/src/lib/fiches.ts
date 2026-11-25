@@ -132,6 +132,7 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
   for (const c of chapters) {
     if (c.lessons.length === 0) fail(`le chapitre ${c.n} n'a aucune notion`);
     if (c.lessons.length > 8) fail(`le chapitre ${c.n} a ${c.lessons.length} notions (8 au plus) : découpe-le en deux chapitres`);
+    if (c.lessons.length < 5 && !id.startsWith("0.0")) fail(`le chapitre ${c.n} n'a que ${c.lessons.length} notions (5 au moins) : complète-le ou regroupe-le`);
     if (!Number.isFinite(c.exercises)) fail(`nombre d'exercices illisible au chapitre ${c.n}`);
   }
   const chapterSlugs = chapters.map((c) => c.slug);
@@ -145,9 +146,9 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
   if (objectives.length === 0) fail("tableau « Objectifs vérifiables » vide");
 
   const resources: Ressource[] = tableRows(s.get("Ressources externes gratuites"))
-    .map(([res, langue]) => {
+    .map(([res, langue, type]) => {
       const link = res.match(/^\[(.+)\]\((https?:\/\/[^)]+)\)$/);
-      return link ? { label: typo(link[1]), href: link[2], meta: langue } : null;
+      return link ? { label: typo(link[1]), href: link[2], meta: [langue, type].filter(Boolean).join(", ") } : null;
     })
     .filter((r): r is Ressource => r !== null);
 

@@ -22,22 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Choisir un problème qui vaut la peine, et dire quand l'IA n'est pas utile. | ex01 à ex03, ex04 à ex05, exercice clé (ex18), qcm |
-| O2 | Concevoir l'expérience utilisateur d'un produit d'IA. | ex06 à ex07, exercice clé (ex18), qcm |
-| O3 | Calculer un coût de revient par utilisateur et fixer un prix. | ex08 à ex10, exercice clé (ex18), qcm |
-| O4 | Estimer le retour sur investissement pour un client. | ex08 à ex10, exercice clé (ex18), qcm |
-| O5 | Connaître les financements et les modèles économiques. | ex11 à ex12, ex13 à ex14, ex15 à ex17, exercice clé (ex18), qcm |
+| O1 | Choisir un problème qui vaut la peine, et dire quand l'IA n'est pas utile. | ex01 à ex03, ex04 à ex06, exercice clé (ex22), qcm |
+| O2 | Concevoir l'expérience utilisateur d'un produit d'IA. | ex07 à ex09, exercice clé (ex22), qcm |
+| O3 | Calculer un coût de revient par utilisateur et fixer un prix. | ex10 à ex12, exercice clé (ex22), qcm |
+| O4 | Estimer le retour sur investissement pour un client. | ex10 à ex12, exercice clé (ex22), qcm |
+| O5 | Connaître les financements et les modèles économiques. | ex13 à ex15, ex16 à ex18, ex19 à ex21, exercice clé (ex22), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Le bon problème | 3 |
-| 2 | Du prototype au produit | 2 |
-| 3 | L'expérience utilisateur | 2 |
+| 2 | Du prototype au produit | 3 |
+| 3 | L'expérience utilisateur | 3 |
 | 4 | Les chiffres | 3 |
-| 5 | Vendre | 2 |
-| 6 | Créer son entreprise | 2 |
+| 5 | Vendre | 3 |
+| 6 | Créer son entreprise | 3 |
 | 7 | Financer et présenter | 4 |
 
 ## Notions, dans l'ordre
@@ -48,23 +48,37 @@ mise_a_jour: 2026-11-25
 | 1 | `parler-utilisateurs` | Parler aux utilisateurs | O1 |
 | 1 | `concurrence` | Regarder ce qui existe déjà | O1 |
 | 1 | `pas-besoin-ia` | Ici, pas besoin d'IA | O1 |
+| 1 | `valider-probleme` | Vérifier que le problème existe vraiment | O1 |
 | 2 | `mvp` | Le produit minimum viable | O1 |
 | 2 | `mesurer-usage` | Mesurer l'usage : activation et rétention | O1 |
+| 2 | `prototype-rapide` | Prototyper vite, sans coder tout | O1 |
+| 2 | `tester-utilisateurs` | Faire tester par de vrais utilisateurs | O1 |
+| 2 | `iterer-produit` | Décider quoi améliorer ensuite | O1 |
 | 3 | `ux-ia` | L'expérience d'un produit d'IA | O2 |
 | 3 | `erreurs-confiance` | Gérer les erreurs et la confiance | O2 |
 | 3 | `expliquer-sans-jargon` | Expliquer sans jargon | O2 |
+| 3 | `attentes` | Régler les attentes des utilisateurs | O2 |
+| 3 | `retours-dans-produit` | Recueillir des retours dans le produit | O2 |
 | 4 | `cout-revient` | Le coût de revient par utilisateur | O3 |
 | 4 | `fixer-prix` | Fixer un prix | O3 |
 | 4 | `prix-usage` | Faire payer à l'usage | O3 |
 | 4 | `roi` | Le retour sur investissement pour un client | O4 |
+| 4 | `seuil-rentabilite` | Le seuil de rentabilité | O3 |
 | 5 | `vendre-organisations` | Vendre à une coopérative, une ONG ou une administration | O5 |
 | 5 | `paiement-mobile` | Se faire payer : le mobile money | O5 |
+| 5 | `proposition-valeur` | Formuler sa proposition de valeur | O5 |
+| 5 | `premiers-clients` | Trouver ses premiers clients | O5 |
+| 5 | `repondre-appel-offres` | Répondre à un appel d'offres | O5 |
 | 6 | `statut-juridique` | Choisir un statut d'entreprise (OHADA) | O5 |
 | 6 | `proteger-travail` | Protéger son travail : marque et contrats | O5 |
+| 6 | `fiscalite` | Les bases de la fiscalité d'une jeune entreprise | O5 |
+| 6 | `contrats-clients` | Les contrats avec les clients | O5 |
+| 6 | `associes` | S'associer, ou rester seul | O5 |
 | 7 | `modeles-economiques` | Les modèles économiques : SaaS, service, licence | O5 |
 | 7 | `financements` | Incubateurs, subventions et concours | O5 |
 | 7 | `pitch-deck` | Le pitch deck | O5 |
 | 7 | `dossier-une-page` | Le dossier d'une page | O5 |
+| 7 | `investisseurs` | Parler à des investisseurs | O5 |
 
 ## Vocabulaire du module
 
@@ -89,13 +103,13 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 6.1-ex01 à ex03 | Le bon problème | O1 | 1 | non |
-| 6.1-ex04 à ex05 | Du prototype au produit | O1 | 1 | non |
-| 6.1-ex06 à ex07 | L'expérience utilisateur | O2 | 2 | non |
-| 6.1-ex08 à ex10 | Les chiffres | O3, O4 | 2 | non |
-| 6.1-ex11 à ex12 | Vendre | O5 | 2–3 | non |
-| 6.1-ex13 à ex14 | Créer son entreprise | O5 | 2–3 | non |
-| 6.1-ex15 à ex17 | Financer et présenter | O5 | 2–3 | non |
-| 6.1-ex18 | Exercice clé : un dossier d'une page pour transformer le capstone en produit | O1 à O5 | 3 | oui → GRILLE.md (dossier d'une page) |
+| 6.1-ex04 à ex06 | Du prototype au produit | O1 | 1 | non |
+| 6.1-ex07 à ex09 | L'expérience utilisateur | O2 | 2 | non |
+| 6.1-ex10 à ex12 | Les chiffres | O3, O4 | 2 | non |
+| 6.1-ex13 à ex15 | Vendre | O5 | 2–3 | non |
+| 6.1-ex16 à ex18 | Créer son entreprise | O5 | 2–3 | non |
+| 6.1-ex19 à ex21 | Financer et présenter | O5 | 2–3 | non |
+| 6.1-ex22 | Exercice clé : un dossier d'une page pour transformer le capstone en produit | O1 à O5 | 3 | oui → GRILLE.md (dossier d'une page) |
 
 ## Ressources matérielles
 
@@ -111,9 +125,12 @@ Un produit d'IA doit dire honnêtement ce qu'il sait faire : pas de promesses ex
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Y Combinator Startup School](https://www.startupschool.org/) | anglais | cours | gratuit en ligne | Les bases pour lancer un produit. |
+| [Startup School (Y Combinator)](https://www.startupschool.org/) | anglais | cours | gratuit | Les bases pour lancer un produit. |
+| [People + AI Guidebook (Google PAIR)](https://pair.withgoogle.com/guidebook/) | anglais | guide | CC BY-SA 4.0 | Concevoir l'expérience d'un produit d'IA. |
+| [Les essais de Paul Graham](https://paulgraham.com/articles.html) | anglais | essais | accès libre | Trouver une idée, des clients et grandir. |
+| [OHADA](https://www.ohada.org/) | français | site officiel | accès libre | Le droit des affaires commun à 17 pays africains. |
 
 ## Circuit
 

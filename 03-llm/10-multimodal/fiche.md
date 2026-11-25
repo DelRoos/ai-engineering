@@ -23,10 +23,10 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Utiliser un modèle qui comprend à la fois les images et le texte. | ex01 à ex03, qcm |
-| O2 | Transcrire la parole avec Whisper, en local. | ex04 à ex06, exercice clé (ex14), qcm |
-| O3 | Synthétiser de la voix. | ex07 à ex08, exercice clé (ex14), qcm |
-| O4 | Générer des images avec un modèle de diffusion en connaissant ses risques. | ex09 à ex11, qcm |
-| O5 | Concevoir un service d'IA pour des personnes peu alphabétisées. | ex12 à ex13, exercice clé (ex14), qcm |
+| O2 | Transcrire la parole avec Whisper, en local. | ex04 à ex06, exercice clé (ex16), qcm |
+| O3 | Synthétiser de la voix. | ex07 à ex09, exercice clé (ex16), qcm |
+| O4 | Générer des images avec un modèle de diffusion en connaissant ses risques. | ex10 à ex12, qcm |
+| O5 | Concevoir un service d'IA pour des personnes peu alphabétisées. | ex13 à ex15, exercice clé (ex16), qcm |
 
 ## Chapitres
 
@@ -34,9 +34,9 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Voir et lire | 3 |
 | 2 | Écouter | 3 |
-| 3 | Parler | 2 |
+| 3 | Parler | 3 |
 | 4 | Créer des images | 3 |
-| 5 | Pour tous | 3 |
+| 5 | Pour tous | 4 |
 
 ## Notions, dans l'ordre
 
@@ -46,6 +46,7 @@ mise_a_jour: 2026-11-25
 | 1 | `clip` | Relier images et textes : CLIP | O1 |
 | 1 | `lire-document-vlm` | Lire un document avec un modèle vision-langage | O1 |
 | 1 | `questionner-image` | Décrire et questionner une image | O1 |
+| 1 | `graphiques-tableaux` | Lire des graphiques et des tableaux | O1 |
 | 2 | `audio-numerique` | Le son numérique en bref | O2 |
 | 2 | `nettoyer-audio` | Préparer un enregistrement : bruit, silences, découpage | O2 |
 | 2 | `whisper` | Transcrire avec Whisper | O2 |
@@ -54,6 +55,8 @@ mise_a_jour: 2026-11-25
 | 3 | `synthese-vocale` | La synthèse vocale | O3 |
 | 3 | `voix-locales` | Des voix en langues locales | O3 |
 | 3 | `voix-temps-reel` | Répondre vite : la voix en temps réel | O3 |
+| 3 | `cloner-voix` | Cloner une voix : possibilités et interdits | O3 |
+| 3 | `evaluer-voix` | Évaluer une voix de synthèse | O3 |
 | 4 | `diffusion` | Les modèles de diffusion | O4 |
 | 4 | `generer-image` | Générer une image sur un petit PC | O4 |
 | 4 | `prompts-images` | Bien décrire une image à générer | O4 |
@@ -62,6 +65,8 @@ mise_a_jour: 2026-11-25
 | 5 | `peu-alphabetises` | Concevoir pour les personnes peu alphabétisées | O5 |
 | 5 | `assistant-vocal` | Un assistant vocal de bout en bout | O5 |
 | 5 | `canaux-vocaux` | Atteindre les gens : téléphone, messagerie, appel | O5 |
+| 5 | `tester-terrain` | Tester avec les utilisateurs sur le terrain | O5 |
+| 5 | `accessibilite-handicap` | Pour les personnes en situation de handicap | O5 |
 
 ## Vocabulaire du module
 
@@ -86,10 +91,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 3.10-ex01 à ex03 | Voir et lire | O1 | 1 | non |
 | 3.10-ex04 à ex06 | Écouter | O2 | 2 | non |
-| 3.10-ex07 à ex08 | Parler | O3 | 2 | non |
-| 3.10-ex09 à ex11 | Créer des images | O4 | 2–3 | non |
-| 3.10-ex12 à ex13 | Pour tous | O5 | 2–3 | non |
-| 3.10-ex14 | Exercice clé : un assistant vocal simple en français ou en langue locale | O2, O3, O5 | 3 | oui → GRILLE.md (test avec des utilisateurs) |
+| 3.10-ex07 à ex09 | Parler | O3 | 2 | non |
+| 3.10-ex10 à ex12 | Créer des images | O4 | 2–3 | non |
+| 3.10-ex13 à ex15 | Pour tous | O5 | 2–3 | non |
+| 3.10-ex16 | Exercice clé : un assistant vocal simple en français ou en langue locale | O2, O3, O5 | 3 | oui → GRILLE.md (test avec des utilisateurs) |
 
 ## Ressources matérielles
 
@@ -105,10 +110,12 @@ Jamais de voix ou de visage d'une personne réelle sans son consentement. Les im
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Le cours audio de Hugging Face](https://huggingface.co/learn/audio-course) | anglais | cours | Apache 2.0 | Reconnaissance et synthèse vocales, pas à pas. |
-| [Whisper](https://github.com/openai/whisper) | anglais | référence | MIT | Le modèle de transcription du module. |
+| [Le cours audio de Hugging Face](https://huggingface.co/learn/audio-course) | anglais | cours | Apache 2.0 | Reconnaissance et synthèse vocales. |
+| [Le cours de diffusion de Hugging Face](https://huggingface.co/learn/diffusion-course) | anglais | cours | Apache 2.0 | Comprendre et utiliser les modèles de diffusion. |
+| [Whisper](https://github.com/openai/whisper) | anglais | documentation | MIT | Le modèle de transcription du module. |
+| [Piper](https://github.com/rhasspy/piper) | anglais | documentation | MIT | Une synthèse vocale légère, en local. |
 
 ## Circuit
 

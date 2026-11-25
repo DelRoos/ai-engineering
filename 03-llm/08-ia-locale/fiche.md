@@ -26,8 +26,8 @@ mise_a_jour: 2026-11-25
 | O2 | Choisir un format et un niveau de quantification en mesurant l'effet sur la qualité. | ex04 à ex06, exercice clé (ex13), qcm |
 | O3 | Faire tourner des modèles avec Ollama, llama.cpp et LM Studio. | ex07 à ex09, qcm |
 | O4 | Construire un RAG entièrement local et hors ligne. | ex10 à ex12, exercice clé (ex13), qcm |
-| O5 | Servir plusieurs utilisateurs et comparer local et cloud. | ex14 à ex15, qcm |
-| O6 | Viser les petits appareils : Raspberry Pi et téléphone. | ex16 à ex17, qcm |
+| O5 | Servir plusieurs utilisateurs et comparer local et cloud. | ex14 à ex16, qcm |
+| O6 | Viser les petits appareils : Raspberry Pi et téléphone. | ex17 à ex19, qcm |
 
 ## Chapitres
 
@@ -37,8 +37,8 @@ mise_a_jour: 2026-11-25
 | 2 | Formats et quantification | 3 |
 | 3 | Les outils | 3 |
 | 4 | Tout en local | 4 |
-| 5 | Servir et comparer | 2 |
-| 6 | Les petits appareils | 2 |
+| 5 | Servir et comparer | 3 |
+| 6 | Les petits appareils | 3 |
 
 ## Notions, dans l'ordre
 
@@ -53,19 +53,27 @@ mise_a_jour: 2026-11-25
 | 2 | `niveaux-quantification` | 4 bits, 8 bits : ce qu'on perd vraiment | O2 |
 | 2 | `mesurer-qualite-quant` | Mesurer l'effet sur la qualité | O2 |
 | 2 | `petits-modeles` | Les petits modèles et leurs forces | O1 |
+| 2 | `quantifier-soi-meme` | Quantifier un modèle toi-même | O2 |
 | 3 | `ollama-avance` | Ollama en profondeur | O3 |
 | 3 | `llama-cpp` | llama.cpp | O3 |
 | 3 | `lm-studio` | LM Studio | O3 |
 | 3 | `api-locale` | Une API compatible OpenAI, en local | O3 |
+| 3 | `modelfile` | Personnaliser un modèle : le Modelfile | O3 |
 | 4 | `rag-local` | Un RAG 100 % local | O4 |
 | 4 | `embeddings-locaux` | Des embeddings en local | O4 |
 | 4 | `sans-connexion` | Fonctionner sans aucune connexion | O4 |
 | 4 | `distribuer-hors-ligne` | Installer et mettre à jour sans Internet | O4 |
+| 4 | `agent-local` | Un agent avec un modèle local | O4 |
 | 5 | `vllm` | Servir plusieurs utilisateurs : notions de vLLM | O5 |
 | 5 | `decodage-speculatif` | Accélérer la génération : le décodage spéculatif | O5 |
 | 5 | `local-cloud` | Local ou cloud : le comparatif | O5 |
+| 5 | `concurrence-local` | Plusieurs utilisateurs sur une seule machine | O5 |
+| 5 | `cout-local` | Calculer le coût réel du local | O5 |
 | 6 | `raspberry-pi` | Sur un Raspberry Pi | O6 |
 | 6 | `telephone-llm` | Sur un téléphone | O6 |
+| 6 | `choisir-appareil` | Choisir un appareil pour l'IA embarquée | O6 |
+| 6 | `modeles-embarques` | Des modèles pensés pour l'embarqué | O6 |
+| 6 | `mettre-a-jour-appareils` | Mettre à jour des appareils dispersés | O6 |
 
 ## Vocabulaire du module
 
@@ -94,8 +102,8 @@ mise_a_jour: 2026-11-25
 | 3.8-ex07 à ex09 | Les outils | O3 | 2 | non |
 | 3.8-ex10 à ex12 | Tout en local | O4 | 2 | non |
 | 3.8-ex13 | Exercice clé : l'assistant RAG entièrement hors ligne sur un portable ordinaire | O1, O2, O4 | 3 | non |
-| 3.8-ex14 à ex15 | Servir et comparer | O5 | 2–3 | non |
-| 3.8-ex16 à ex17 | Les petits appareils | O6 | 2–3 | non |
+| 3.8-ex14 à ex16 | Servir et comparer | O5 | 2–3 | non |
+| 3.8-ex17 à ex19 | Les petits appareils | O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -111,10 +119,13 @@ Un assistant médical hors ligne ne remplace jamais un soignant : afficher clair
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [llama.cpp](https://github.com/ggml-org/llama.cpp) | anglais | référence | MIT | Faire tourner des modèles quantifiés sur processeur. |
-| [Documentation d'Ollama](https://github.com/ollama/ollama) | anglais | référence | MIT | Le moyen le plus simple de servir un modèle local. |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp) | anglais | documentation | MIT | Faire tourner des modèles quantifiés sur processeur. |
+| [Documentation d'Ollama](https://github.com/ollama/ollama) | anglais | documentation | MIT | Servir un modèle local simplement. |
+| [Documentation de LM Studio](https://lmstudio.ai/docs) | anglais | documentation | gratuit | Une interface pour tester des modèles locaux. |
+| [Le format GGUF (Hugging Face)](https://huggingface.co/docs/hub/gguf) | anglais | documentation | Apache 2.0 | Trouver et comprendre les modèles GGUF. |
+| [Documentation de vLLM](https://docs.vllm.ai/) | anglais | documentation | Apache 2.0 | Servir plusieurs utilisateurs sur un serveur. |
 
 ## Circuit
 

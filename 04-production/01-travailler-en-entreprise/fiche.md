@@ -22,11 +22,11 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Organiser son travail en tickets sur un tableau Kanban. | ex01 à ex03, exercice clé (ex18), qcm |
-| O2 | Découper et estimer des tâches. | ex04 à ex06, ex10 à ex11, exercice clé (ex18), qcm |
+| O1 | Organiser son travail en tickets sur un tableau Kanban. | ex01 à ex03, exercice clé (ex19), qcm |
+| O2 | Découper et estimer des tâches. | ex04 à ex06, ex10 à ex12, exercice clé (ex19), qcm |
 | O3 | Produire des commits et des pull requests propres, et se relire. | ex07 à ex09, qcm |
-| O4 | Écrire une documentation technique en anglais. | ex10 à ex11, ex12 à ex14, qcm |
-| O5 | Contribuer à un projet open source existant. | ex15 à ex17, exercice clé (ex18), qcm |
+| O4 | Écrire une documentation technique en anglais. | ex10 à ex12, ex13 à ex15, qcm |
+| O5 | Contribuer à un projet open source existant. | ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
@@ -35,7 +35,7 @@ mise_a_jour: 2026-11-25
 | 1 | S'organiser | 3 |
 | 2 | Découper et estimer | 3 |
 | 3 | Livrer proprement | 3 |
-| 4 | Travailler à distance | 2 |
+| 4 | Travailler à distance | 3 |
 | 5 | Écrire en anglais | 3 |
 | 6 | L'open source | 4 |
 
@@ -61,14 +61,18 @@ mise_a_jour: 2026-11-25
 | 4 | `communication-ecrite` | Communiquer par écrit sans malentendu | O4 |
 | 4 | `reunions` | Des réunions courtes et utiles | O4 |
 | 4 | `retrospective` | Apprendre de chaque itération : la rétrospective | O2 |
+| 4 | `fuseaux-equipe` | Travailler avec une équipe sur plusieurs fuseaux horaires | O4 |
+| 4 | `outils-collaboration` | Les outils de collaboration | O4 |
 | 5 | `doc-anglais` | Une documentation technique en anglais | O4 |
 | 5 | `adr` | Noter une décision : l'ADR | O4 |
 | 5 | `changelog` | Tenir un changelog | O4 |
 | 5 | `docs-code` | La documentation à côté du code | O4 |
+| 5 | `rfc` | Proposer un changement : le document de conception | O4 |
 | 6 | `choisir-projet-os` | Choisir un projet où contribuer | O5 |
 | 6 | `contributing` | Lire CONTRIBUTING et le code de conduite | O5 |
 | 6 | `premiere-contribution` | Ta première contribution | O5 |
 | 6 | `accords-contribution` | Les accords de contribution | O5 |
+| 6 | `maintenir-projet` | Maintenir un petit projet open source | O5 |
 
 ## Vocabulaire du module
 
@@ -95,10 +99,10 @@ mise_a_jour: 2026-11-25
 | 4.1-ex01 à ex03 | S'organiser | O1 | 1 | non |
 | 4.1-ex04 à ex06 | Découper et estimer | O2 | 1 | non |
 | 4.1-ex07 à ex09 | Livrer proprement | O3 | 2 | non |
-| 4.1-ex10 à ex11 | Travailler à distance | O2, O4 | 2 | non |
-| 4.1-ex12 à ex14 | Écrire en anglais | O4 | 2–3 | non |
-| 4.1-ex15 à ex17 | L'open source | O5 | 2–3 | non |
-| 4.1-ex18 | Exercice clé : le projet 4 découpé en tickets, puis une issue ou une pull request utile sur un projet open source | O1, O2, O5 | 3 | oui → GRILLE.md (qualité des tickets et de la contribution) |
+| 4.1-ex10 à ex12 | Travailler à distance | O2, O4 | 2 | non |
+| 4.1-ex13 à ex15 | Écrire en anglais | O4 | 2–3 | non |
+| 4.1-ex16 à ex18 | L'open source | O5 | 2–3 | non |
+| 4.1-ex19 | Exercice clé : le projet 4 découpé en tickets, puis une issue ou une pull request utile sur un projet open source | O1, O2, O5 | 3 | oui → GRILLE.md (qualité des tickets et de la contribution) |
 
 ## Ressources matérielles
 
@@ -114,10 +118,13 @@ Une contribution open source est publique : ne jamais y laisser de secret, et re
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) | anglais | guide | CC BY 4.0 | Faire sa première contribution sans se tromper. |
-| [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects) | anglais | référence | gratuit en ligne | Organiser son travail en tickets. |
+| [How to Contribute to Open Source](https://opensource.guide/fr/how-to-contribute/) | français | guide | CC BY 4.0 | Faire sa première contribution sans se tromper. |
+| [Les pratiques d'ingénierie de Google](https://google.github.io/eng-practices/) | anglais | guide | CC BY 3.0 | Relire et faire relire du code. |
+| [Conventional Commits](https://www.conventionalcommits.org/fr/v1.0.0/) | français | spécification | CC BY 3.0 | Une convention claire pour les messages de commit. |
+| [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) | français | guide | MIT | Tenir un changelog utile. |
+| [Write the Docs](https://www.writethedocs.org/guide/) | anglais | guide | accès libre | Écrire une documentation que l'on lit. |
 
 ## Circuit
 

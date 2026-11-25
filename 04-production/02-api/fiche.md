@@ -62,14 +62,17 @@ mise_a_jour: 2026-11-25
 | 4 | `jetons` | Les jetons : notions de JWT et OAuth | O3 |
 | 4 | `cors` | CORS : qui a le droit d'appeler ton API | O3 |
 | 4 | `limiter-debit-api` | Limiter le débit d'une API | O3 |
+| 4 | `https-api` | HTTPS et les en-têtes de sécurité | O3 |
 | 5 | `async` | L'asynchrone : async et await | O4 |
 | 5 | `streaming` | Envoyer la réponse au fil de l'eau : le streaming | O4 |
 | 5 | `taches-fond` | Les tâches de fond | O4 |
 | 5 | `websockets` | Les WebSockets | O4 |
+| 5 | `concurrence-api` | Tenir plusieurs requêtes en même temps | O4 |
 | 6 | `openapi` | La documentation automatique : OpenAPI | O5 |
 | 6 | `tester-api` | Tester une API | O5 |
 | 6 | `versionner-api` | Faire évoluer une API sans casser ses clients | O5 |
 | 6 | `lancer-production` | Lancer l'API en production : serveur et workers | O5 |
+| 6 | `tests-charge-api` | Tester une API sous charge | O5 |
 
 ## Vocabulaire du module
 
@@ -116,9 +119,12 @@ Point de contrôle du projet 4 : authentification de l'API, gestion des secrets,
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de FastAPI](https://fastapi.tiangolo.com/) | anglais, en partie en français | référence | MIT | Le tutoriel officiel, très progressif. |
+| [Documentation de FastAPI](https://fastapi.tiangolo.com/fr/) | français et anglais | documentation | MIT | Le tutoriel officiel, en partie traduit. |
+| [The Twelve-Factor App](https://12factor.net/fr/) | français | guide | accès libre | Les principes d'une application prête pour la production. |
+| [HTTP (MDN)](https://developer.mozilla.org/fr/docs/Web/HTTP) | français | documentation | CC BY-SA 2.5 | CORS, authentification et en-têtes. |
+| [Documentation d'Uvicorn](https://uvicorn.dev/) | anglais | documentation | BSD | Lancer une API Python en production. |
 
 ## Circuit
 

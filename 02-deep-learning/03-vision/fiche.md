@@ -26,8 +26,8 @@ mise_a_jour: 2026-11-25
 | O2 | Construire et entraîner un réseau convolutif. | ex05 à ex07, qcm |
 | O3 | Augmenter et préparer un jeu d'images pour mieux généraliser. | ex08 à ex10, exercice clé (ex14), qcm |
 | O4 | Adapter un modèle pré-entraîné léger à un nouveau problème. | ex11 à ex13, exercice clé (ex14), qcm |
-| O5 | Évaluer un classifieur d'images et comprendre ses erreurs. | ex15 à ex16, qcm |
-| O6 | Expliquer le principe de la détection d'objets et de la segmentation. | ex17 à ex19, qcm |
+| O5 | Évaluer un classifieur d'images et comprendre ses erreurs. | ex15 à ex17, qcm |
+| O6 | Expliquer le principe de la détection d'objets et de la segmentation. | ex18 à ex20, qcm |
 
 ## Chapitres
 
@@ -37,7 +37,7 @@ mise_a_jour: 2026-11-25
 | 2 | Les réseaux convolutifs | 3 |
 | 3 | Mieux généraliser | 3 |
 | 4 | Partir d'un modèle existant | 4 |
-| 5 | Évaluer et expliquer | 2 |
+| 5 | Évaluer et expliquer | 3 |
 | 6 | Au-delà de la classification | 3 |
 
 ## Notions, dans l'ordre
@@ -59,6 +59,7 @@ mise_a_jour: 2026-11-25
 | 3 | `charger-images` | Charger un dossier d'images | O3 |
 | 3 | `augmentation-images` | L'augmentation de données d'images | O3 |
 | 3 | `etiquettes-bruitees` | Quand les étiquettes sont fausses | O3 |
+| 3 | `jeux-images-publics` | Les jeux d'images publics et leurs licences | O3 |
 | 4 | `transfer-learning` | Le transfer learning | O4 |
 | 4 | `extraction-caracteristiques` | Utiliser un modèle comme extracteur de caractéristiques | O4 |
 | 4 | `modeles-legers` | Les modèles légers : MobileNet et EfficientNet | O4 |
@@ -67,10 +68,13 @@ mise_a_jour: 2026-11-25
 | 5 | `erreurs-images` | Où le modèle se trompe : la matrice de confusion | O5 |
 | 5 | `grad-cam` | Voir ce que regarde le modèle : Grad-CAM | O5 |
 | 5 | `biais-images` | Les biais des jeux d'images | O5 |
+| 5 | `cartes-saillance` | Les cartes de saillance | O5 |
+| 5 | `exemples-adverses` | Tromper un modèle : les exemples adverses | O5 |
 | 6 | `detection-objets` | La détection d'objets : des boîtes et des classes | O6 |
 | 6 | `yolo` | Un détecteur moderne : YOLO | O6 |
 | 6 | `metriques-detection` | Mesurer un détecteur : IoU et mAP | O6 |
 | 6 | `segmentation` | Notions de segmentation | O6 |
+| 6 | `annoter-detection` | Préparer des données de détection | O6 |
 
 ## Vocabulaire du module
 
@@ -99,8 +103,8 @@ mise_a_jour: 2026-11-25
 | 2.3-ex08 à ex10 | Mieux généraliser | O3 | 2 | non |
 | 2.3-ex11 à ex13 | Partir d'un modèle existant | O4 | 2 | non |
 | 2.3-ex14 | Exercice clé : fine-tuning d'un modèle pré-entraîné sur 500 images, en moins de 30 minutes sur processeur | O3, O4 | 3 | non |
-| 2.3-ex15 à ex16 | Évaluer et expliquer | O5 | 2–3 | non |
-| 2.3-ex17 à ex19 | Au-delà de la classification | O6 | 2–3 | non |
+| 2.3-ex15 à ex17 | Évaluer et expliquer | O5 | 2–3 | non |
+| 2.3-ex18 à ex20 | Au-delà de la classification | O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -116,10 +120,12 @@ Point de contrôle du projet 2 : performance mesurée séparément par région o
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Practical Deep Learning for Coders (fast.ai)](https://course.fast.ai/) | anglais | cours complet | gratuit en ligne | Le transfer learning en vision, très concret. |
-| [Notes du cours CS231n](https://cs231n.github.io/) | anglais | notes de cours | gratuit en ligne | Les réseaux convolutifs expliqués en profondeur. |
+| [Practical Deep Learning for Coders (fast.ai)](https://course.fast.ai/) | anglais | cours en vidéo | gratuit | Le transfer learning en vision, très concret. |
+| [Notes du cours CS231n](https://cs231n.github.io/) | anglais | notes de cours | gratuit | Les réseaux convolutifs en profondeur. |
+| [Cours de vision de Hugging Face](https://huggingface.co/learn/computer-vision-course) | anglais | cours | Apache 2.0 | Du CNN aux Transformers de vision. |
+| [Documentation d'Ultralytics (YOLO)](https://docs.ultralytics.com/) | anglais | documentation | AGPL-3.0 | Entraîner un détecteur d'objets. |
 
 ## Circuit
 

@@ -23,12 +23,12 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Lire et écrire des données JSON et CSV en Python, sans se faire piéger par les encodages et les séparateurs. | ex01 à ex04, qcm |
-| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex05 à ex09, exercice clé (ex34), qcm |
+| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex05 à ex09, exercice clé (ex36), qcm |
 | O3 | Respecter les limites d'une API et éviter de la rappeler inutilement. | ex10 à ex13, qcm |
-| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex16 à ex20, ex21 à ex23, ex29 à ex30, qcm |
-| O5 | Relier deux tables avec JOIN. | ex24 à ex28, ex29 à ex30, qcm |
-| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex31 à ex33, exercice clé (ex34), qcm |
-| O7 | Récupérer les données d'une page web quand aucune API n'existe, en respectant le droit et le site. | ex14 à ex15, qcm |
+| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex17 à ex21, ex22 à ex24, ex30 à ex32, qcm |
+| O5 | Relier deux tables avec JOIN. | ex25 à ex29, ex30 à ex32, qcm |
+| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex33 à ex35, exercice clé (ex36), qcm |
+| O7 | Récupérer les données d'une page web quand aucune API n'existe, en respectant le droit et le site. | ex14 à ex16, qcm |
 
 ## Chapitres
 
@@ -37,11 +37,11 @@ mise_a_jour: 2026-11-25
 | 1 | Les formats de données | 4 |
 | 2 | Le web et HTTP | 5 |
 | 3 | Utiliser une API sérieusement | 4 |
-| 4 | Quand il n'y a pas d'API | 2 |
+| 4 | Quand il n'y a pas d'API | 3 |
 | 5 | Une base de données | 5 |
 | 6 | Calculer en SQL | 3 |
 | 7 | Interroger plusieurs tables | 5 |
-| 8 | SQL pour l'analyse | 2 |
+| 8 | SQL pour l'analyse | 3 |
 | 9 | Python et SQLite | 4 |
 
 ## Notions, dans l'ordre
@@ -70,6 +70,8 @@ mise_a_jour: 2026-11-25
 | 4 | `scraping` | Quand il n'y a pas d'API : lire une page web, et le droit de le faire | O7 |
 | 4 | `html-structure` | La structure d'une page HTML | O7 |
 | 4 | `beautifulsoup` | Extraire des données avec BeautifulSoup | O7 |
+| 4 | `selecteurs-css` | Désigner un élément : les sélecteurs CSS | O7 |
+| 4 | `robots-txt` | Lire robots.txt et les conditions d'un site | O7 |
 | 5 | `pourquoi-bdd` | Pourquoi une base de données | O4 |
 | 5 | `create-insert` | Créer une table et y insérer des lignes | O4 |
 | 5 | `contraintes` | Des données fiables : les contraintes | O4 |
@@ -93,10 +95,13 @@ mise_a_jour: 2026-11-25
 | 8 | `fenetres-sql` | Les fonctions de fenêtre | O5 |
 | 8 | `vues` | Les vues | O5 |
 | 8 | `modifier-schema` | Modifier une table : ALTER et DROP | O4 |
+| 8 | `classements-sql` | Classer et numéroter : RANK et ROW_NUMBER | O5 |
+| 8 | `cumuls-sql` | Totaux cumulés et moyennes mobiles en SQL | O5 |
 | 9 | `sqlite-python` | SQLite depuis Python, sans injection SQL | O6 |
 | 9 | `transactions` | Tout ou rien : les transactions | O6 |
 | 9 | `sql-pandas` | SQL et pandas ensemble | O6 |
 | 9 | `api-vers-base` | De l'API à la base : un petit pipeline de données | O6 |
+| 9 | `migrations` | Faire évoluer une base sans perdre de données : les migrations | O6 |
 
 ## Vocabulaire du module
 
@@ -142,13 +147,13 @@ mise_a_jour: 2026-11-25
 | 0.5-ex01 à ex04 | Les formats de données | O1 | 1 | non |
 | 0.5-ex05 à ex09 | Le web et HTTP | O2 | 1 | non |
 | 0.5-ex10 à ex13 | Utiliser une API sérieusement | O3 | 1 | non |
-| 0.5-ex14 à ex15 | Quand il n'y a pas d'API | O7 | 2 | non |
-| 0.5-ex16 à ex20 | Une base de données | O4 | 2 | non |
-| 0.5-ex21 à ex23 | Calculer en SQL | O4 | 2 | non |
-| 0.5-ex24 à ex28 | Interroger plusieurs tables | O5 | 2–3 | non |
-| 0.5-ex29 à ex30 | SQL pour l'analyse | O4, O5 | 2–3 | non |
-| 0.5-ex31 à ex33 | Python et SQLite | O6 | 2–3 | non |
-| 0.5-ex34 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | non |
+| 0.5-ex14 à ex16 | Quand il n'y a pas d'API | O7 | 2 | non |
+| 0.5-ex17 à ex21 | Une base de données | O4 | 2 | non |
+| 0.5-ex22 à ex24 | Calculer en SQL | O4 | 2 | non |
+| 0.5-ex25 à ex29 | Interroger plusieurs tables | O5 | 2–3 | non |
+| 0.5-ex30 à ex32 | SQL pour l'analyse | O4, O5 | 2–3 | non |
+| 0.5-ex33 à ex35 | Python et SQLite | O6 | 2–3 | non |
+| 0.5-ex36 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -166,10 +171,14 @@ mise_a_jour: 2026-11-25
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de l'API Open-Meteo](https://open-meteo.com/en/docs) | anglais | référence | données CC BY 4.0 | Construire tes propres requêtes météo. |
-| [Le langage SQL de SQLite](https://www.sqlite.org/lang.html) | anglais | référence | domaine public | Toutes les commandes SQL comprises par SQLite. |
+| [HTTP (MDN)](https://developer.mozilla.org/fr/docs/Web/HTTP) | français | documentation | CC BY-SA 2.5 | Méthodes, codes de statut, en-têtes, cache et CORS. |
+| [SQLBolt](https://sqlbolt.com/) | anglais | exercices interactifs | gratuit | Apprendre SQL leçon par leçon, dans le navigateur. |
+| [Select Star SQL](https://selectstarsql.com/) | anglais | livre interactif | gratuit | SQL appliqué à un vrai jeu de données. |
+| [Documentation de requests](https://requests.readthedocs.io/) | anglais | documentation | Apache 2.0 | Appeler une API en Python. |
+| [Documentation de Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) | anglais | documentation | MIT | Extraire des données d'une page web. |
+| [Le langage SQL de SQLite](https://www.sqlite.org/lang.html) | anglais | documentation | domaine public | Toutes les commandes comprises par SQLite. |
 
 ## Circuit
 

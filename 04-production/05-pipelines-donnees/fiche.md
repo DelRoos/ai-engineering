@@ -22,11 +22,11 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Concevoir un pipeline ETL ou ELT qu'on peut relancer sans risque. | ex01 à ex03, ex13 à ex14, exercice clé (ex15), qcm |
-| O2 | Orchestrer et planifier des tâches. | ex04 à ex06, exercice clé (ex15), qcm |
-| O3 | Contrôler automatiquement la qualité des données. | ex07 à ex09, exercice clé (ex15), qcm |
+| O1 | Concevoir un pipeline ETL ou ELT qu'on peut relancer sans risque. | ex01 à ex03, ex13 à ex15, exercice clé (ex16), qcm |
+| O2 | Orchestrer et planifier des tâches. | ex04 à ex06, exercice clé (ex16), qcm |
+| O3 | Contrôler automatiquement la qualité des données. | ex07 à ex09, ex13 à ex15, exercice clé (ex16), qcm |
 | O4 | Stocker et interroger efficacement avec Parquet et DuckDB. | ex10 à ex12, qcm |
-| O5 | Savoir quand un traitement distribué devient nécessaire. | ex16 à ex17, qcm |
+| O5 | Savoir quand un traitement distribué devient nécessaire. | ex17 à ex19, qcm |
 
 ## Chapitres
 
@@ -36,8 +36,8 @@ mise_a_jour: 2026-11-25
 | 2 | Orchestrer | 3 |
 | 3 | La qualité des données | 3 |
 | 4 | Stocker et interroger | 3 |
-| 5 | Alimenter un RAG | 3 |
-| 6 | Passer à l'échelle | 2 |
+| 5 | Alimenter un RAG | 4 |
+| 6 | Passer à l'échelle | 3 |
 
 ## Notions, dans l'ordre
 
@@ -65,8 +65,14 @@ mise_a_jour: 2026-11-25
 | 4 | `lac-entrepot` | Lac de données et entrepôt : les notions | O4 |
 | 5 | `ingestion-documents` | Un pipeline d'ingestion de documents | O1 |
 | 5 | `reindexer` | Mettre à jour l'index sans tout refaire | O1 |
+| 5 | `detecter-changements` | Détecter les documents nouveaux ou modifiés | O1 |
+| 5 | `versionner-index` | Versionner l'index | O1 |
+| 5 | `controler-ingestion` | Contrôler la qualité de l'ingestion | O3 |
 | 6 | `spark` | Notions de traitement distribué : Spark | O5 |
 | 6 | `quand-distribuer` | Quand en a-t-on vraiment besoin ? | O5 |
+| 6 | `spark-dataframes` | Les DataFrames de Spark | O5 |
+| 6 | `streaming-kafka` | Le flux continu : notions de Kafka | O5 |
+| 6 | `alternatives-spark` | Les alternatives légères : DuckDB et Polars | O5 |
 
 ## Vocabulaire du module
 
@@ -96,9 +102,9 @@ mise_a_jour: 2026-11-25
 | 4.5-ex04 à ex06 | Orchestrer | O2 | 1 | non |
 | 4.5-ex07 à ex09 | La qualité des données | O3 | 2 | non |
 | 4.5-ex10 à ex12 | Stocker et interroger | O4 | 2 | non |
-| 4.5-ex13 à ex14 | Alimenter un RAG | O1 | 2–3 | non |
-| 4.5-ex15 | Exercice clé : un pipeline qui met à jour chaque nuit la base documentaire du RAG | O1 à O3 | 3 | non |
-| 4.5-ex16 à ex17 | Passer à l'échelle | O5 | 2–3 | non |
+| 4.5-ex13 à ex15 | Alimenter un RAG | O1, O3 | 2–3 | non |
+| 4.5-ex16 | Exercice clé : un pipeline qui met à jour chaque nuit la base documentaire du RAG | O1 à O3 | 3 | non |
+| 4.5-ex17 à ex19 | Passer à l'échelle | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -114,10 +120,12 @@ Un pipeline lit des fichiers venus de l'extérieur : valider leur format et leur
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de Prefect](https://docs.prefect.io/) | anglais | référence | Apache 2.0 | Orchestrer et planifier des pipelines en Python. |
-| [Documentation de DuckDB](https://duckdb.org/docs/) | anglais | référence | MIT | Analyser des fichiers Parquet très vite, sans serveur. |
+| [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) | anglais | cours | gratuit | Orchestration, entrepôt, dbt, Spark et streaming. |
+| [Documentation de Prefect](https://docs.prefect.io/) | anglais | documentation | Apache 2.0 | Orchestrer et planifier des pipelines. |
+| [Documentation de DuckDB](https://duckdb.org/docs/) | anglais | documentation | MIT | Analyser des fichiers Parquet très vite. |
+| [Documentation de dbt](https://docs.getdbt.com/) | anglais | documentation | Apache 2.0 | Transformer des données en SQL, avec des tests. |
 
 ## Circuit
 

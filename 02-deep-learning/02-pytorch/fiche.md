@@ -59,6 +59,7 @@ mise_a_jour: 2026-11-25
 | 3 | `dataloader` | Des mini-batchs avec DataLoader | O3 |
 | 3 | `transformations` | Transformer les données au chargement | O3 |
 | 3 | `samplers` | Équilibrer les batchs : les samplers | O3 |
+| 3 | `collate` | Assembler des exemples de tailles différentes : collate_fn | O3 |
 | 4 | `boucle-pytorch` | La boucle d'entraînement en PyTorch | O4 |
 | 4 | `evaluation-pytorch` | Évaluer : model.eval et no_grad | O4 |
 | 4 | `metriques-pytorch` | Calculer des métriques pendant l'entraînement | O4 |
@@ -70,6 +71,7 @@ mise_a_jour: 2026-11-25
 | 5 | `profiler` | Trouver ce qui ralentit l'entraînement | O5 |
 | 5 | `precision-mixte` | Calculer en demi-précision | O5 |
 | 5 | `colab-kaggle` | Un GPU gratuit : Colab et Kaggle | O5 |
+| 5 | `compiler-modele` | Compiler un modèle pour aller plus vite | O5 |
 
 ## Vocabulaire du module
 
@@ -114,10 +116,11 @@ Ne jamais charger un modèle reçu d'une source inconnue avec torch.load sans pr
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Tutoriels officiels de PyTorch](https://pytorch.org/tutorials/) | anglais | référence | BSD | Chaque brique du module, avec du code à exécuter. |
-| [Learn PyTorch for Deep Learning](https://www.learnpytorch.io/) | anglais | livre en ligne | gratuit en ligne | Un cours complet, très progressif. |
+| [Tutoriels officiels de PyTorch](https://pytorch.org/tutorials/) | anglais | documentation | BSD | Chaque brique de PyTorch, avec du code. |
+| [Learn PyTorch for Deep Learning](https://www.learnpytorch.io/) | anglais | livre en ligne | gratuit en ligne | Un cours complet et progressif. |
+| [Dive into Deep Learning (PyTorch)](https://d2l.ai/) | anglais | livre en ligne | CC BY-SA 4.0 | Le chapitre « Builders' Guide » pour ce module. |
 
 ## Circuit
 

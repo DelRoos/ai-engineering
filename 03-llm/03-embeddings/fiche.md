@@ -22,11 +22,11 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Représenter des textes par des embeddings et mesurer leur similarité. | ex01 à ex04, ex12 à ex13, exercice clé (ex16), qcm |
-| O2 | Choisir un modèle d'embeddings adapté à la langue, à la taille et au coût. | ex01 à ex04, exercice clé (ex16), qcm |
-| O3 | Stocker et interroger des vecteurs dans une base vectorielle locale. | ex05 à ex09, exercice clé (ex16), qcm |
-| O4 | Combiner recherche par mots-clés et recherche vectorielle. | ex10 à ex11, exercice clé (ex16), qcm |
-| O5 | Mesurer la qualité d'un moteur de recherche. | ex14 à ex15, exercice clé (ex16), qcm |
+| O1 | Représenter des textes par des embeddings et mesurer leur similarité. | ex01 à ex04, ex13 à ex15, exercice clé (ex19), qcm |
+| O2 | Choisir un modèle d'embeddings adapté à la langue, à la taille et au coût. | ex01 à ex04, exercice clé (ex19), qcm |
+| O3 | Stocker et interroger des vecteurs dans une base vectorielle locale. | ex05 à ex09, exercice clé (ex19), qcm |
+| O4 | Combiner recherche par mots-clés et recherche vectorielle. | ex10 à ex12, exercice clé (ex19), qcm |
+| O5 | Mesurer la qualité d'un moteur de recherche. | ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
@@ -34,9 +34,9 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Les embeddings de texte | 4 |
 | 2 | Les bases vectorielles | 5 |
-| 3 | La recherche hybride | 2 |
-| 4 | D'autres usages des embeddings | 2 |
-| 5 | Mesurer la recherche | 3 |
+| 3 | La recherche hybride | 3 |
+| 4 | D'autres usages des embeddings | 3 |
+| 5 | Mesurer la recherche | 4 |
 
 ## Notions, dans l'ordre
 
@@ -58,11 +58,18 @@ mise_a_jour: 2026-11-25
 | 3 | `bm25` | La recherche par mots-clés : BM25 | O4 |
 | 3 | `hybride` | Combiner mots-clés et vecteurs | O4 |
 | 3 | `filtres-metadonnees` | Filtrer par métadonnées | O4 |
+| 3 | `fusion-rangs` | Fusionner deux classements : la fusion de rangs | O4 |
+| 3 | `recherche-floue` | Tolérer les fautes de frappe | O4 |
 | 4 | `doublons-semantiques` | Trouver les doublons par le sens | O1 |
 | 4 | `regrouper-textes` | Regrouper des textes par sujet | O1 |
 | 4 | `classer-embeddings` | Classer des textes avec des embeddings | O1 |
+| 4 | `recommander-embeddings` | Recommander avec des embeddings | O1 |
+| 4 | `visualiser-embeddings` | Visualiser un espace d'embeddings | O1 |
 | 5 | `metriques-recherche` | Mesurer une recherche : rappel@k et MRR | O5 |
 | 5 | `jeu-requetes` | Construire un jeu de requêtes de test | O5 |
+| 5 | `ndcg` | Tenir compte de l'ordre : le nDCG | O5 |
+| 5 | `analyser-echecs-recherche` | Analyser les recherches ratées | O5 |
+| 5 | `comparer-modeles-embeddings` | Comparer des modèles d'embeddings sur tes données | O5 |
 
 ## Vocabulaire du module
 
@@ -89,10 +96,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 3.3-ex01 à ex04 | Les embeddings de texte | O1, O2 | 1 | non |
 | 3.3-ex05 à ex09 | Les bases vectorielles | O3 | 2 | non |
-| 3.3-ex10 à ex11 | La recherche hybride | O4 | 2 | non |
-| 3.3-ex12 à ex13 | D'autres usages des embeddings | O1 | 2–3 | non |
-| 3.3-ex14 à ex15 | Mesurer la recherche | O5 | 2–3 | non |
-| 3.3-ex16 | Exercice clé : un moteur de recherche sémantique sur 1 000 documents | O1 à O5 | 3 | non |
+| 3.3-ex10 à ex12 | La recherche hybride | O4 | 2 | non |
+| 3.3-ex13 à ex15 | D'autres usages des embeddings | O1 | 2–3 | non |
+| 3.3-ex16 à ex18 | Mesurer la recherche | O5 | 2–3 | non |
+| 3.3-ex19 | Exercice clé : un moteur de recherche sémantique sur 1 000 documents | O1 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -108,11 +115,13 @@ Un index contient le texte des documents : ne pas y mettre de données personnel
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de Chroma](https://docs.trychroma.com/) | anglais | référence | Apache 2.0 | La base vectorielle locale du module. |
-| [sqlite-vec](https://github.com/asg017/sqlite-vec) | anglais | référence | MIT et Apache 2.0 | Des vecteurs dans une simple base SQLite. |
-| [Classement MTEB des modèles d'embeddings](https://huggingface.co/spaces/mteb/leaderboard) | anglais | tableau | gratuit en ligne | Comparer les modèles d'embeddings, y compris en français. |
+| [Documentation de Sentence Transformers](https://sbert.net/) | anglais | documentation | Apache 2.0 | Calculer et entraîner des embeddings. |
+| [Pinecone Learn](https://www.pinecone.io/learn/) | anglais | articles | accès libre | La recherche vectorielle et ses index, expliqués. |
+| [Documentation de Chroma](https://docs.trychroma.com/) | anglais | documentation | Apache 2.0 | La base vectorielle locale du module. |
+| [Wiki de FAISS](https://github.com/facebookresearch/faiss/wiki) | anglais | documentation | MIT | La recherche rapide de plus proches voisins. |
+| [Classement MTEB](https://huggingface.co/spaces/mteb/leaderboard) | anglais | classement | gratuit | Comparer les modèles d'embeddings, y compris en français. |
 
 ## Circuit
 

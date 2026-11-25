@@ -23,10 +23,10 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Calculer la sortie d'un neurone et d'un perceptron. | ex01 à ex03, qcm |
-| O2 | Construire un réseau à couches denses avec des fonctions d'activation. | ex04 à ex07, exercice clé (ex17), qcm |
-| O3 | Choisir une fonction de perte adaptée au problème. | ex08 à ex09, exercice clé (ex17), qcm |
-| O4 | Calculer les gradients d'un réseau par rétropropagation. | ex10 à ex12, exercice clé (ex17), qcm |
-| O5 | Entraîner un mini-réseau et diagnostiquer son entraînement. | ex13 à ex16, exercice clé (ex17), qcm |
+| O2 | Construire un réseau à couches denses avec des fonctions d'activation. | ex04 à ex07, exercice clé (ex18), qcm |
+| O3 | Choisir une fonction de perte adaptée au problème. | ex08 à ex10, exercice clé (ex18), qcm |
+| O4 | Calculer les gradients d'un réseau par rétropropagation. | ex11 à ex13, exercice clé (ex18), qcm |
+| O5 | Entraîner un mini-réseau et diagnostiquer son entraînement. | ex14 à ex17, exercice clé (ex18), qcm |
 
 ## Chapitres
 
@@ -34,7 +34,7 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Du neurone au perceptron | 3 |
 | 2 | Les réseaux à couches | 4 |
-| 3 | Mesurer l'erreur | 2 |
+| 3 | Mesurer l'erreur | 3 |
 | 4 | La rétropropagation | 3 |
 | 5 | Entraîner le réseau | 5 |
 
@@ -46,6 +46,7 @@ mise_a_jour: 2026-11-25
 | 1 | `perceptron` | Le perceptron : classer avec une droite | O1 |
 | 1 | `regle-perceptron` | Comment le perceptron apprend | O1 |
 | 1 | `limites-perceptron` | Ce que le perceptron ne sait pas faire : le XOR | O1 |
+| 1 | `neurone-biologique` | Ce que le neurone artificiel emprunte au cerveau, et ce qu'il n'emprunte pas | O1 |
 | 2 | `couches-denses` | Empiler des neurones : les couches denses | O2 |
 | 2 | `calcul-matriciel-reseau` | Toute une couche en un produit de matrices | O2 |
 | 2 | `activations` | Les fonctions d'activation : sigmoïde, tanh, ReLU | O2 |
@@ -55,10 +56,13 @@ mise_a_jour: 2026-11-25
 | 3 | `perte-regression` | La perte d'une régression : l'erreur quadratique | O3 |
 | 3 | `entropie-croisee` | La perte d'une classification : l'entropie croisée | O3 |
 | 3 | `stabilite-numerique` | Éviter les débordements : la stabilité numérique | O3 |
+| 3 | `perte-binaire` | La perte d'une classification à deux classes | O3 |
+| 3 | `choisir-perte` | Choisir la bonne perte pour chaque problème | O3 |
 | 4 | `graphe-calcul` | Le graphe de calcul | O4 |
 | 4 | `retropropagation` | La rétropropagation, pas à pas | O4 |
 | 4 | `retropropagation-matrices` | La rétropropagation en matrices | O4 |
 | 4 | `verifier-gradient` | Vérifier un gradient numériquement | O4 |
+| 4 | `derivees-activations` | Les dérivées des fonctions d'activation | O4 |
 | 5 | `boucle-entrainement` | La boucle d'entraînement | O5 |
 | 5 | `mini-batch` | Apprendre par mini-batchs | O5 |
 | 5 | `initialisation` | Bien initialiser les poids | O5 |
@@ -91,10 +95,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 2.1-ex01 à ex03 | Du neurone au perceptron | O1 | 1 | non |
 | 2.1-ex04 à ex07 | Les réseaux à couches | O2 | 2 | non |
-| 2.1-ex08 à ex09 | Mesurer l'erreur | O3 | 2 | non |
-| 2.1-ex10 à ex12 | La rétropropagation | O4 | 2–3 | non |
-| 2.1-ex13 à ex16 | Entraîner le réseau | O5 | 2–3 | non |
-| 2.1-ex17 | Exercice clé : un mini-réseau en NumPy pur, sans bibliothèque | O2 à O5 | 3 | non |
+| 2.1-ex08 à ex10 | Mesurer l'erreur | O3 | 2 | non |
+| 2.1-ex11 à ex13 | La rétropropagation | O4 | 2–3 | non |
+| 2.1-ex14 à ex17 | Entraîner le réseau | O5 | 2–3 | non |
+| 2.1-ex18 | Exercice clé : un mini-réseau en NumPy pur, sans bibliothèque | O2 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -110,11 +114,13 @@ Sans objet pour ce module. Les biais des modèles sont traités dès le projet 2
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Neural Networks: Zero to Hero, par Andrej Karpathy](https://karpathy.ai/zero-to-hero.html) | anglais | série de vidéos | gratuit en ligne | Construire la rétropropagation à la main, pas à pas. |
-| [Les réseaux de neurones en vidéos, par 3Blue1Brown](https://www.3blue1brown.com/topics/neural-networks) | anglais, sous-titres français | 4 vidéos | gratuit en ligne | Voir ce que calcule un réseau et ce que fait la rétropropagation. |
-| [Dive into Deep Learning](https://d2l.ai/) | anglais | livre | CC BY-SA 4.0 | Le livre de référence du programme, avec du code exécutable. |
+| [Neural Networks: Zero to Hero (Karpathy)](https://karpathy.ai/zero-to-hero.html) | anglais | vidéos | gratuit | Construire la rétropropagation à la main. |
+| [Neural Networks and Deep Learning (Nielsen)](http://neuralnetworksanddeeplearning.com/) | anglais | livre en ligne | CC BY-NC 3.0 | Un réseau de zéro, expliqué très clairement. |
+| [Dive into Deep Learning](https://d2l.ai/) | anglais | livre en ligne | CC BY-SA 4.0 | Le livre de référence du programme, avec du code. |
+| [Understanding Deep Learning](https://udlbook.github.io/udlbook/) | anglais | livre en PDF | gratuit en ligne | Un livre récent et très illustré. |
+| [3Blue1Brown : réseaux de neurones](https://www.3blue1brown.com/topics/neural-networks) | anglais, sous-titres français | vidéos | gratuit | Ce que calcule un réseau, en images. |
 
 ## Circuit
 

@@ -23,11 +23,11 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Représenter des données par des vecteurs NumPy et calculer norme, produit scalaire et similarité. | ex01 à ex04, ex05 à ex09, qcm |
-| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex10 à ex14, ex15 à ex17, ex18 à ex19, ex20 à ex21, qcm |
-| O3 | Calculer une dérivée, à la main et numériquement, et l'interpréter comme une pente. | ex22 à ex26, ex27 à ex29, qcm |
-| O4 | Calculer un gradient et coder une descente de gradient. | ex30 à ex32, ex33 à ex37, exercice clé (ex38), qcm |
-| O5 | Calculer des probabilités, dont des probabilités conditionnelles avec le théorème de Bayes. | ex39 à ex42, ex43 à ex46, ex47 à ex48, qcm |
-| O6 | Décrire un jeu de données avec des statistiques et repérer ce qui cloche. | ex49 à ex51, ex52 à ex56, ex57 à ex58, qcm |
+| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex10 à ex14, ex15 à ex17, ex18 à ex20, ex21 à ex23, qcm |
+| O3 | Calculer une dérivée, à la main et numériquement, et l'interpréter comme une pente. | ex24 à ex28, ex29 à ex31, qcm |
+| O4 | Calculer un gradient et coder une descente de gradient. | ex32 à ex34, ex35 à ex39, exercice clé (ex40), qcm |
+| O5 | Calculer des probabilités, dont des probabilités conditionnelles avec le théorème de Bayes. | ex41 à ex44, ex45 à ex48, ex49 à ex51, qcm |
+| O6 | Décrire un jeu de données avec des statistiques et repérer ce qui cloche. | ex52 à ex54, ex55 à ex59, ex60 à ex62, qcm |
 
 ## Chapitres
 
@@ -37,18 +37,18 @@ mise_a_jour: 2026-11-25
 | 2 | Les vecteurs | 5 |
 | 3 | Les matrices | 5 |
 | 4 | Systèmes et transformations | 3 |
-| 5 | Décomposer une matrice | 2 |
-| 6 | Les matrices au cœur de l'IA | 2 |
+| 5 | Décomposer une matrice | 3 |
+| 6 | Les matrices au cœur de l'IA | 3 |
 | 7 | Fonctions et dérivées | 5 |
 | 8 | Composer et chercher un minimum | 3 |
 | 9 | Le gradient | 3 |
 | 10 | La descente de gradient | 6 |
 | 11 | Les probabilités | 4 |
 | 12 | Variables aléatoires et lois | 4 |
-| 13 | Information et vraisemblance | 2 |
+| 13 | Information et vraisemblance | 3 |
 | 14 | Décrire des données | 3 |
 | 15 | Relations et échantillons | 5 |
-| 16 | Tester des hypothèses | 2 |
+| 16 | Tester des hypothèses | 3 |
 
 ## Notions, dans l'ordre
 
@@ -82,8 +82,13 @@ mise_a_jour: 2026-11-25
 | 5 | `valeurs-propres` | Valeurs propres et vecteurs propres : l'intuition | O2 |
 | 5 | `svd` | La décomposition en valeurs singulières (SVD) | O2 |
 | 5 | `pca-maths` | Ce que calcule une ACP | O2 |
+| 5 | `diagonalisation` | Diagonaliser une matrice | O2 |
+| 5 | `matrices-symetriques` | Les matrices symétriques et définies positives | O2 |
 | 6 | `couche-neurones` | Une couche de neurones, c'est un produit de matrices | O2 |
 | 6 | `tenseurs` | Au-delà de 2 dimensions : les tenseurs | O2 |
+| 6 | `embeddings-maths` | Des mots aux vecteurs : l'idée des embeddings | O2 |
+| 6 | `convolution-maths` | La convolution, vue comme un calcul de matrices | O2 |
+| 6 | `attention-maths` | L'attention, vue comme des produits scalaires | O2 |
 | 7 | `tracer-fonction` | Tracer une fonction avec matplotlib | O3 |
 | 7 | `exp-log` | Exponentielle et logarithme | O3 |
 | 7 | `sigmoide` | La sigmoïde : transformer un score en probabilité | O3 |
@@ -123,6 +128,8 @@ mise_a_jour: 2026-11-25
 | 13 | `entropie` | Mesurer l'incertitude : l'entropie | O5 |
 | 13 | `entropie-croisee-kl` | L'entropie croisée et la divergence KL | O5 |
 | 13 | `vraisemblance` | La vraisemblance et son maximum | O5 |
+| 13 | `log-vraisemblance` | Pourquoi travailler avec le logarithme de la vraisemblance | O5 |
+| 13 | `perte-et-vraisemblance` | Des pertes qui viennent de la vraisemblance | O5 |
 | 14 | `moyenne-mediane` | Résumer des données : moyenne, médiane, mode | O6 |
 | 14 | `variance` | Mesurer la dispersion : variance et écart type | O6 |
 | 14 | `quantiles` | Quantiles et valeurs aberrantes | O6 |
@@ -139,6 +146,8 @@ mise_a_jour: 2026-11-25
 | 16 | `test-hypothese` | Une différence est-elle due au hasard ? Le test d'hypothèse | O6 |
 | 16 | `test-ab` | Comparer deux versions : le test A/B | O6 |
 | 16 | `tests-multiples` | Le piège des tests multiples | O6 |
+| 16 | `p-value` | Lire une p-value sans se tromper | O6 |
+| 16 | `taille-effet` | L'effet est-il important ? La taille d'effet | O6 |
 
 ## Vocabulaire du module
 
@@ -192,19 +201,19 @@ mise_a_jour: 2026-11-25
 | 0.4-ex05 à ex09 | Les vecteurs | O1 | 1 | non |
 | 0.4-ex10 à ex14 | Les matrices | O2 | 1 | non |
 | 0.4-ex15 à ex17 | Systèmes et transformations | O2 | 1 | non |
-| 0.4-ex18 à ex19 | Décomposer une matrice | O2 | 1 | non |
-| 0.4-ex20 à ex21 | Les matrices au cœur de l'IA | O2 | 2 | non |
-| 0.4-ex22 à ex26 | Fonctions et dérivées | O3 | 2 | non |
-| 0.4-ex27 à ex29 | Composer et chercher un minimum | O3 | 2 | non |
-| 0.4-ex30 à ex32 | Le gradient | O4 | 2 | non |
-| 0.4-ex33 à ex37 | La descente de gradient | O4 | 2 | non |
-| 0.4-ex38 | Exercice clé : coder une descente de gradient à la main (sans bibliothèque de ML) | O4 | 3 | non |
-| 0.4-ex39 à ex42 | Les probabilités | O5 | 2–3 | non |
-| 0.4-ex43 à ex46 | Variables aléatoires et lois | O5 | 2–3 | non |
-| 0.4-ex47 à ex48 | Information et vraisemblance | O5 | 2–3 | non |
-| 0.4-ex49 à ex51 | Décrire des données | O6 | 2–3 | non |
-| 0.4-ex52 à ex56 | Relations et échantillons | O6 | 2–3 | non |
-| 0.4-ex57 à ex58 | Tester des hypothèses | O6 | 2–3 | non |
+| 0.4-ex18 à ex20 | Décomposer une matrice | O2 | 1 | non |
+| 0.4-ex21 à ex23 | Les matrices au cœur de l'IA | O2 | 2 | non |
+| 0.4-ex24 à ex28 | Fonctions et dérivées | O3 | 2 | non |
+| 0.4-ex29 à ex31 | Composer et chercher un minimum | O3 | 2 | non |
+| 0.4-ex32 à ex34 | Le gradient | O4 | 2 | non |
+| 0.4-ex35 à ex39 | La descente de gradient | O4 | 2 | non |
+| 0.4-ex40 | Exercice clé : coder une descente de gradient à la main (sans bibliothèque de ML) | O4 | 3 | non |
+| 0.4-ex41 à ex44 | Les probabilités | O5 | 2–3 | non |
+| 0.4-ex45 à ex48 | Variables aléatoires et lois | O5 | 2–3 | non |
+| 0.4-ex49 à ex51 | Information et vraisemblance | O5 | 2–3 | non |
+| 0.4-ex52 à ex54 | Décrire des données | O6 | 2–3 | non |
+| 0.4-ex55 à ex59 | Relations et échantillons | O6 | 2–3 | non |
+| 0.4-ex60 à ex62 | Tester des hypothèses | O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -220,11 +229,14 @@ Une moyenne peut cacher des inégalités entre planteurs : la notion `moyenne-me
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Mathematics for Machine Learning](https://mml-book.github.io/) | anglais | livre de 400 pages | gratuit en ligne, droits des auteurs | La référence du programme pour approfondir chaque chapitre. |
-| [L'algèbre linéaire en vidéos, par 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) | anglais, sous-titres français | 16 vidéos de 10 à 20 min | gratuit en ligne | Voir les vecteurs et les matrices comme des transformations. |
-| [NumPy pour les grands débutants](https://numpy.org/doc/stable/user/absolute_beginners.html) | anglais | 1 h | BSD | La documentation officielle, pas à pas. |
+| [Mathematics for Machine Learning](https://mml-book.github.io/) | anglais | livre en PDF | gratuit en ligne | La référence du programme pour chaque chapitre. |
+| [Khan Academy : algèbre linéaire](https://fr.khanacademy.org/math/linear-algebra) | français | cours en vidéo | gratuit | Les vecteurs et les matrices, avec exercices. |
+| [3Blue1Brown : algèbre linéaire et calcul](https://www.3blue1brown.com/topics/linear-algebra) | anglais, sous-titres français | vidéos | gratuit | Voir les idées avant les formules. |
+| [Seeing Theory](https://seeing-theory.brown.edu/) | anglais | outil interactif | gratuit | Les probabilités et les statistiques en animations. |
+| [OpenIntro Statistics](https://www.openintro.org/book/os/) | anglais | livre en PDF | CC BY-SA | Un manuel de statistique complet et gratuit. |
+| [NumPy pour les grands débutants](https://numpy.org/doc/stable/user/absolute_beginners.html) | anglais | documentation | BSD | Le guide officiel de NumPy, pas à pas. |
 
 ## Circuit
 

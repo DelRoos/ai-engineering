@@ -22,11 +22,11 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Écrire des instructions claires et vérifiables. | ex01 à ex04, ex08 à ex10, exercice clé (ex18), qcm |
+| O1 | Écrire des instructions claires et vérifiables. | ex01 à ex04, ex08 à ex10, exercice clé (ex20), qcm |
 | O2 | Guider un modèle avec des exemples et un raisonnement étape par étape. | ex05 à ex07, qcm |
-| O3 | Gérer le contexte d'une conversation. | ex11 à ex12, qcm |
-| O4 | Obtenir des sorties JSON validées avec Pydantic. | ex13 à ex15, ex16 à ex17, exercice clé (ex18), qcm |
-| O5 | Faire appeler des fonctions par un modèle. | ex16 à ex17, qcm |
+| O3 | Gérer le contexte d'une conversation. | ex11 à ex13, qcm |
+| O4 | Obtenir des sorties JSON validées avec Pydantic. | ex14 à ex16, ex17 à ex19, exercice clé (ex20), qcm |
+| O5 | Faire appeler des fonctions par un modèle. | ex17 à ex19, qcm |
 
 ## Chapitres
 
@@ -35,9 +35,9 @@ mise_a_jour: 2026-11-25
 | 1 | Bien demander | 4 |
 | 2 | Exemples et raisonnement | 3 |
 | 3 | Les tâches courantes | 3 |
-| 4 | Le contexte | 2 |
+| 4 | Le contexte | 3 |
 | 5 | Des sorties structurées | 3 |
-| 6 | Appeler des fonctions | 3 |
+| 6 | Appeler des fonctions | 4 |
 
 ## Notions, dans l'ordre
 
@@ -58,16 +58,22 @@ mise_a_jour: 2026-11-25
 | 3 | `prompt-resume` | Résumer fidèlement | O1 |
 | 3 | `prompt-traduction` | Traduire et adapter | O1 |
 | 3 | `prompt-langues` | Bien demander en français et en langues locales | O1 |
+| 3 | `prompt-extraction` | Extraire des informations précises | O1 |
 | 4 | `conversation` | Une conversation : l'historique des messages | O3 |
 | 4 | `contexte-deborde` | Quand le contexte déborde : résumer et trier | O3 |
 | 4 | `gabarits` | Les gabarits de prompts | O3 |
+| 4 | `ordre-contexte` | L'ordre compte : où placer les informations | O3 |
+| 4 | `memoire-conversation` | Garder une mémoire de la conversation | O3 |
 | 5 | `json-llm` | Demander du JSON | O4 |
 | 5 | `pydantic` | Valider avec Pydantic | O4 |
 | 5 | `reparer-sortie` | Quand la sortie est invalide : réessayer et réparer | O4 |
 | 5 | `generation-contrainte` | Forcer le format : la génération contrainte | O4 |
+| 5 | `schemas-complexes` | Des schémas imbriqués et des listes | O4 |
 | 6 | `function-calling` | Le function calling | O5 |
 | 6 | `schema-outil` | Décrire un outil avec un schéma | O5 |
 | 6 | `extraire-documents` | Extraire des données de documents | O4 |
+| 6 | `plusieurs-outils` | Plusieurs outils et des appels en parallèle | O5 |
+| 6 | `valider-arguments` | Valider les arguments avant d'exécuter | O5 |
 
 ## Vocabulaire du module
 
@@ -95,10 +101,10 @@ mise_a_jour: 2026-11-25
 | 3.2-ex01 à ex04 | Bien demander | O1 | 1 | non |
 | 3.2-ex05 à ex07 | Exemples et raisonnement | O2 | 1 | non |
 | 3.2-ex08 à ex10 | Les tâches courantes | O1 | 2 | non |
-| 3.2-ex11 à ex12 | Le contexte | O3 | 2 | non |
-| 3.2-ex13 à ex15 | Des sorties structurées | O4 | 2–3 | non |
-| 3.2-ex16 à ex17 | Appeler des fonctions | O4, O5 | 2–3 | non |
-| 3.2-ex18 | Exercice clé : extraire des données structurées de 100 factures ou reçus | O1, O4 | 3 | non |
+| 3.2-ex11 à ex13 | Le contexte | O3 | 2 | non |
+| 3.2-ex14 à ex16 | Des sorties structurées | O4 | 2–3 | non |
+| 3.2-ex17 à ex19 | Appeler des fonctions | O4, O5 | 2–3 | non |
+| 3.2-ex20 | Exercice clé : extraire des données structurées de 100 factures ou reçus | O1, O4 | 3 | non |
 
 ## Ressources matérielles
 
@@ -114,10 +120,12 @@ Une facture peut contenir une instruction cachée destinée au modèle : premier
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Prompt Engineering Guide](https://www.promptingguide.ai/) | anglais | guide | MIT | Les techniques de prompt, avec des exemples. |
-| [Documentation de Pydantic](https://docs.pydantic.dev/) | anglais | référence | MIT | Décrire et valider des données structurées. |
+| [Prompt Engineering Guide](https://www.promptingguide.ai/fr) | français | guide | MIT | Les techniques de prompt, avec des exemples. |
+| [OpenAI Cookbook](https://cookbook.openai.com/) | anglais | recettes | MIT | Des exemples de prompts, de sorties structurées et d'outils. |
+| [Documentation de Pydantic](https://docs.pydantic.dev/) | anglais | documentation | MIT | Décrire et valider des données structurées. |
+| [Documentation d'Instructor](https://python.useinstructor.com/) | anglais | documentation | MIT | Des sorties structurées validées, avec plusieurs fournisseurs. |
 
 ## Circuit
 

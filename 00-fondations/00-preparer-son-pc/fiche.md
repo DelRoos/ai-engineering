@@ -102,10 +102,13 @@ mise_a_jour: 2026-11-25
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Installer WSL (Microsoft Learn)](https://learn.microsoft.com/fr-fr/windows/wsl/install) | français | 10 min | documentation Microsoft | La procédure officielle, à jour, si une étape du cours bloque sous Windows. |
-| [VS Code et WSL](https://code.visualstudio.com/docs/remote/wsl-tutorial) | anglais | 15 min | documentation Microsoft | Pas à pas illustré pour ouvrir un projet WSL dans VS Code. |
+| [Installer WSL (Microsoft Learn)](https://learn.microsoft.com/fr-fr/windows/wsl/install) | français | documentation | accès libre | La procédure officielle pour installer Linux sous Windows. |
+| [Utiliser Python sous Windows](https://docs.python.org/fr/3/using/windows.html) | français | documentation | PSF | Les options d'installation de Python, expliquées par ses auteurs. |
+| [Installer Git (Pro Git)](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git) | français | livre en ligne | CC BY-NC-SA 3.0 | L'installation de Git sur chaque système. |
+| [Python dans VS Code](https://code.visualstudio.com/docs/python/python-tutorial) | anglais | documentation | accès libre | Configurer VS Code pour Python pas à pas. |
+| [VS Code et WSL](https://code.visualstudio.com/docs/remote/wsl-tutorial) | anglais | documentation | accès libre | Ouvrir un projet Linux depuis VS Code sous Windows. |
 
 ## Circuit
 

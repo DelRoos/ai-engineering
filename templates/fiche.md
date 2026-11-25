@@ -34,7 +34,7 @@ mise_a_jour: 2026-11-24
 
 ## Chapitres
 
-<!-- CONSIGNE : un chapitre = un thème cohérent (un fichier cours/NN-slug.mdx), avec autant de chapitres que le sujet l'exige. Aucune durée : c'est la connaissance qui décide du découpage, pas le temps. La plateforme lit ce tableau : garde ses colonnes. -->
+<!-- CONSIGNE : un chapitre = un thème cohérent (un fichier cours/NN-slug.mdx) de 5 à 8 leçons, avec autant de chapitres que le sujet l'exige. Aucune durée : c'est la connaissance qui décide du découpage, pas le temps. La plateforme lit ce tableau : garde ses colonnes. -->
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ mise_a_jour: 2026-11-24
 
 ## Notions, dans l'ordre
 
-<!-- CONSIGNE : une notion = une leçon (explication, exemple, mini-exercice). Une idée nouvelle par notion, 8 notions au plus par chapitre : au-delà, crée un chapitre de plus. N'enlève jamais une notion utile pour gagner du temps. L'identifiant sert d'ancre et de lien avec le QCM : il ne change plus une fois publié. La plateforme lit ce tableau : garde ses colonnes. -->
+<!-- CONSIGNE : une notion = une leçon (explication, exemple, mini-exercice). Une idée nouvelle par notion, 5 à 8 notions par chapitre : au-delà, crée un chapitre de plus ; en deçà, complète le chapitre ou regroupe-le avec un voisin. N'enlève jamais une notion utile pour gagner du temps. L'identifiant sert d'ancre et de lien avec le QCM : il ne change plus une fois publié. La plateforme lit ce tableau : garde ses colonnes. -->
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
@@ -92,11 +92,11 @@ mise_a_jour: 2026-11-24
 
 ## Ressources externes gratuites
 
-<!-- CONSIGNE : écris la ressource sous forme de lien Markdown [Nom](https://…). La plateforme affiche ce tableau sur la page du module. -->
+<!-- CONSIGNE : 4 à 7 ressources gratuites, en français quand elles existent : plateformes de cours, livres en accès libre, documentations, blogs d'experts. Écris la ressource sous forme de lien Markdown [Nom](https://…) et vérifie que le lien répond. La plateforme affiche ce tableau sur la page du module. -->
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| … | anglais | … | … | … |
+| [Nom](https://…) | français | livre en ligne | CC BY-SA 4.0 | … |
 
 ## Circuit
 

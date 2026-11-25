@@ -23,10 +23,10 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Expliquer ce qu'est un conteneur et installer Docker. | ex01 à ex03, qcm |
-| O2 | Écrire un Dockerfile pour une application Python. | ex04 à ex06, exercice clé (ex17), qcm |
-| O3 | Produire des images légères et sûres. | ex07 à ex09, qcm |
-| O4 | Assembler plusieurs services avec docker-compose. | ex10 à ex12, ex13 à ex14, exercice clé (ex17), qcm |
-| O5 | Gérer secrets et variables d'environnement. | ex15 à ex16, exercice clé (ex17), qcm |
+| O2 | Écrire un Dockerfile pour une application Python. | ex04 à ex06, exercice clé (ex19), qcm |
+| O3 | Produire des images légères et sûres. | ex07 à ex09, ex13 à ex15, qcm |
+| O4 | Assembler plusieurs services avec docker-compose. | ex10 à ex12, ex13 à ex15, exercice clé (ex19), qcm |
+| O5 | Gérer secrets et variables d'environnement. | ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
@@ -36,8 +36,8 @@ mise_a_jour: 2026-11-25
 | 2 | Le Dockerfile | 3 |
 | 3 | Des images légères et sûres | 3 |
 | 4 | Plusieurs services | 3 |
-| 5 | Partager ses images | 2 |
-| 6 | Configuration et secrets | 3 |
+| 5 | Partager ses images | 3 |
+| 6 | Configuration et secrets | 4 |
 
 ## Notions, dans l'ordre
 
@@ -47,6 +47,7 @@ mise_a_jour: 2026-11-25
 | 1 | `installer-docker` | Installer Docker, avec WSL sous Windows | O1 |
 | 1 | `images-conteneurs` | Images et conteneurs | O1 |
 | 1 | `commandes-docker` | Les commandes du quotidien : run, ps, logs, exec | O1 |
+| 1 | `conteneur-vs-vm` | Conteneur ou machine virtuelle ? | O1 |
 | 2 | `dockerfile` | Ton premier Dockerfile | O2 |
 | 2 | `couches` | Les couches et le cache | O2 |
 | 2 | `dockerignore` | Ne pas tout envoyer : .dockerignore | O2 |
@@ -61,10 +62,17 @@ mise_a_jour: 2026-11-25
 | 4 | `reseaux-docker` | Faire parler les conteneurs entre eux | O4 |
 | 4 | `llm-conteneur` | Un modèle local dans un conteneur | O4 |
 | 4 | `dev-prod` | Une configuration pour développer, une autre pour la production | O4 |
+| 4 | `base-conteneur` | Une base de données dans un conteneur | O4 |
 | 5 | `registres` | Publier une image : les registres | O4 |
 | 5 | `versionner-images` | Nommer et versionner ses images | O4 |
+| 5 | `ghcr` | Le registre de GitHub | O4 |
+| 5 | `images-multi-plateformes` | Des images pour plusieurs processeurs | O4 |
+| 5 | `signer-images` | Vérifier l'origine d'une image | O3 |
 | 6 | `env-docker` | Les variables d'environnement | O5 |
 | 6 | `secrets-docker` | Les secrets | O5 |
+| 6 | `fichiers-env` | Les fichiers .env, et pourquoi on ne les publie pas | O5 |
+| 6 | `config-12-facteurs` | La configuration selon les 12 facteurs | O5 |
+| 6 | `rotation-secrets` | Changer un secret sans tout arrêter | O5 |
 
 ## Vocabulaire du module
 
@@ -92,9 +100,9 @@ mise_a_jour: 2026-11-25
 | 4.3-ex04 à ex06 | Le Dockerfile | O2 | 1 | non |
 | 4.3-ex07 à ex09 | Des images légères et sûres | O3 | 2 | non |
 | 4.3-ex10 à ex12 | Plusieurs services | O4 | 2 | non |
-| 4.3-ex13 à ex14 | Partager ses images | O4 | 2–3 | non |
-| 4.3-ex15 à ex16 | Configuration et secrets | O5 | 2–3 | non |
-| 4.3-ex17 | Exercice clé : lancer toute l'application en une commande | O2, O4, O5 | 3 | non |
+| 4.3-ex13 à ex15 | Partager ses images | O3, O4 | 2–3 | non |
+| 4.3-ex16 à ex18 | Configuration et secrets | O5 | 2–3 | non |
+| 4.3-ex19 | Exercice clé : lancer toute l'application en une commande | O2, O4, O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -110,9 +118,12 @@ Aucun secret dans une image ou dans le dépôt ; images scannées ; conteneurs q
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Bien démarrer avec Docker](https://docs.docker.com/get-started/) | anglais | guide | gratuit en ligne | Le guide officiel, du premier conteneur à docker-compose. |
+| [Bien démarrer avec Docker](https://docs.docker.com/get-started/) | anglais | documentation | accès libre | Du premier conteneur à docker-compose. |
+| [Bonnes pratiques de construction (Docker)](https://docs.docker.com/build/building/best-practices/) | anglais | documentation | accès libre | Des images légères et sûres. |
+| [The Twelve-Factor App](https://12factor.net/fr/) | français | guide | accès libre | Configuration, logs et processus d'une application conteneurisée. |
+| [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) | anglais | cours | gratuit | Le module 1 : Docker et Docker Compose en pratique. |
 
 ## Circuit
 

@@ -52,14 +52,17 @@ mise_a_jour: 2026-11-25
 | 2 | `fenetre-contexte` | La fenêtre de contexte | O2 |
 | 2 | `cout-tokens` | Ce que coûte un token | O2 |
 | 2 | `langues-tokens` | Pourquoi certaines langues coûtent plus cher | O2 |
+| 2 | `compter-tokens` | Compter les tokens avant d'envoyer | O2 |
 | 3 | `temperature` | La température | O3 |
 | 3 | `top-p` | Top-p, top-k et les autres réglages | O3 |
 | 3 | `sorties-reproductibles` | Des réponses reproductibles | O3 |
 | 3 | `hallucinations` | Pourquoi un LLM invente : les hallucinations | O3 |
+| 3 | `arret-generation` | Arrêter la génération : longueur et séquences d'arrêt | O3 |
 | 4 | `ouverts-fermes` | Modèles fermés et modèles ouverts | O5 |
 | 4 | `familles` | Les familles de modèles ouverts : Llama, Mistral, Qwen, Gemma | O5 |
 | 4 | `benchmarks-llm` | Lire un classement de modèles sans se faire avoir | O5 |
 | 4 | `licences-modeles` | Les licences des modèles | O5 |
+| 4 | `choisir-modele` | Choisir un modèle pour une tâche | O5 |
 | 5 | `ollama` | Installer Ollama et un petit modèle | O4 |
 | 5 | `quantification-llm` | Pourquoi un modèle quantifié tient dans 8 Go | O4 |
 | 5 | `api-llm` | Appeler un modèle par API | O5 |
@@ -112,11 +115,13 @@ Ne jamais envoyer de données confidentielles de clients à une API externe sans
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Intro to Large Language Models, par Andrej Karpathy](https://www.youtube.com/watch?v=zjkBMFhNj_g) | anglais | vidéo d'une heure | gratuit en ligne | Une vue d'ensemble claire des LLM. |
-| [Le cours LLM de Hugging Face](https://huggingface.co/learn/llm-course) | anglais | cours | Apache 2.0 | Approfondir le fonctionnement des modèles. |
-| [Documentation d'Ollama](https://github.com/ollama/ollama) | anglais | référence | MIT | Installer et utiliser des modèles en local. |
+| [Intro to Large Language Models (Karpathy)](https://www.youtube.com/watch?v=zjkBMFhNj_g) | anglais | vidéo | gratuit | Une vue d'ensemble claire des LLM. |
+| [Le cours LLM de Hugging Face](https://huggingface.co/learn/llm-course) | anglais | cours | Apache 2.0 | Le fonctionnement des modèles, en profondeur. |
+| [Le blog de Chip Huyen](https://huyenchip.com/blog/) | anglais | blog | accès libre | L'ingénierie des systèmes à base de LLM. |
+| [Documentation d'Ollama](https://github.com/ollama/ollama) | anglais | documentation | MIT | Installer et utiliser des modèles en local. |
+| [LMArena](https://lmarena.ai/) | anglais | classement | gratuit | Comparer des modèles jugés par des humains. |
 
 ## Circuit
 

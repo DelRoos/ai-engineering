@@ -47,6 +47,7 @@ mise_a_jour: 2026-11-25
 | 1 | `message-cle` | Trouver ton message clé | O1 |
 | 1 | `raconter` | Raconter une analyse : du problème à la recommandation | O3 |
 | 1 | `pyramide` | Commencer par la conclusion : la pyramide | O1 |
+| 1 | `vocabulaire-public` | Traduire le jargon pour chaque public | O1 |
 | 2 | `graphique-message` | Un graphique, une idée | O2 |
 | 2 | `annoter-graphique` | Annoter un graphique pour guider l'œil | O2 |
 | 2 | `chiffres` | Présenter des chiffres : ordres de grandeur, arrondis, unités | O2 |
@@ -120,9 +121,12 @@ mise_a_jour: 2026-11-25
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de Streamlit](https://docs.streamlit.io/) | anglais | référence | Apache 2.0 | Composants, mise en page et mise en ligne sur Community Cloud. |
+| [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) | anglais | livre en ligne | CC BY-NC-ND 4.0 | Les principes d'une figure claire et honnête. |
+| [Le blog de Datawrapper](https://www.datawrapper.de/blog) | anglais | blog | accès libre | Des conseils concrets pour des graphiques lisibles. |
+| [Documentation de Streamlit](https://docs.streamlit.io/) | anglais | documentation | Apache 2.0 | Construire et publier un tableau de bord. |
+| [People + AI Guidebook (Google PAIR)](https://pair.withgoogle.com/guidebook/) | anglais | guide | CC BY-SA 4.0 | Expliquer un système d'IA à ses utilisateurs. |
 
 ## Circuit
 

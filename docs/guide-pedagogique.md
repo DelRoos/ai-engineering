@@ -60,7 +60,7 @@ Chaque `<Notion>` suit toujours ce rythme :
 Règles :
 
 - **Une seule idée nouvelle par notion.** Si l'exemple utilise une idée pas encore vue, réordonne les notions.
-- Pas plus de **8 notions** par fichier de cours.
+- **5 à 8 notions** par fichier de cours (un chapitre).
 - Pour une notion abstraite (maths, attention, gradient), montre d'abord un calcul à la main sur de petits nombres, puis le code NumPy.
 
 ### 1.5 Erreurs fréquentes

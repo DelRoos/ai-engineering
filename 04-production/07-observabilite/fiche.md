@@ -23,10 +23,10 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Écrire des logs utiles et structurés, sans données personnelles. | ex01 à ex03, qcm |
-| O2 | Mesurer avec des métriques et des traces. | ex04 à ex06, exercice clé (ex17), qcm |
-| O3 | Suivre les appels de LLM : coût, latence et qualité. | ex09 à ex11, exercice clé (ex17), qcm |
-| O4 | Détecter la dérive des données et des réponses. | ex12 à ex14, qcm |
-| O5 | Construire des tableaux de bord, des alertes, et gérer un incident. | ex07 à ex08, ex15 à ex16, exercice clé (ex17), qcm |
+| O2 | Mesurer avec des métriques et des traces. | ex04 à ex06, exercice clé (ex19), qcm |
+| O3 | Suivre les appels de LLM : coût, latence et qualité. | ex10 à ex12, exercice clé (ex19), qcm |
+| O4 | Détecter la dérive des données et des réponses. | ex13 à ex15, qcm |
+| O5 | Construire des tableaux de bord, des alertes, et gérer un incident. | ex07 à ex09, ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
@@ -34,10 +34,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Les logs | 3 |
 | 2 | Métriques et traces | 3 |
-| 3 | Des objectifs de service | 2 |
+| 3 | Des objectifs de service | 3 |
 | 4 | Suivre un LLM | 3 |
 | 5 | La dérive | 3 |
-| 6 | Voir et réagir | 3 |
+| 6 | Voir et réagir | 4 |
 
 ## Notions, dans l'ordre
 
@@ -47,12 +47,17 @@ mise_a_jour: 2026-11-25
 | 1 | `que-logger` | Que logger, et que ne jamais logger | O1 |
 | 1 | `correlation-requetes` | Suivre une requête dans les logs : l'identifiant de corrélation | O1 |
 | 1 | `centraliser-logs` | Centraliser ses logs | O1 |
+| 1 | `niveaux-retention` | Combien de temps garder ses logs | O1 |
 | 2 | `metriques-service` | Les métriques : latence, erreurs, trafic | O2 |
 | 2 | `prometheus-grafana` | Prometheus et Grafana | O2 |
 | 2 | `traces` | Suivre une requête : les traces | O2 |
 | 2 | `opentelemetry` | OpenTelemetry | O2 |
+| 2 | `percentiles` | Lire une latence : moyenne et percentiles | O2 |
 | 3 | `slo` | Fixer des objectifs : SLI et SLO | O5 |
 | 3 | `surveiller-dehors` | Surveiller la disponibilité de l'extérieur | O5 |
+| 3 | `budget-erreur` | Le budget d'erreur | O5 |
+| 3 | `sla` | Les engagements de service | O5 |
+| 3 | `pages-statut` | Informer les utilisateurs : la page de statut | O5 |
 | 4 | `suivi-llm` | Suivre les appels de LLM | O3 |
 | 4 | `langfuse` | Langfuse en local | O3 |
 | 4 | `cout-utilisateur` | Suivre le coût par utilisateur | O3 |
@@ -62,9 +67,12 @@ mise_a_jour: 2026-11-25
 | 5 | `performance-tardive` | Suivre la performance quand la vérité arrive tard | O4 |
 | 5 | `derive-reponses` | Quand les réponses changent | O4 |
 | 5 | `evidently` | Détecter la dérive avec Evidently | O4 |
+| 5 | `reagir-derive` | Que faire quand la dérive est là | O4 |
 | 6 | `tableau-bord` | Un tableau de bord utile | O5 |
 | 6 | `alertes` | Des alertes qui sonnent pour de bonnes raisons | O5 |
 | 6 | `incidents` | Gérer un incident | O5 |
+| 6 | `post-mortem` | Le post-mortem sans reproche | O5 |
+| 6 | `astreinte` | Être d'astreinte sans s'épuiser | O5 |
 
 ## Vocabulaire du module
 
@@ -91,11 +99,11 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 4.7-ex01 à ex03 | Les logs | O1 | 1 | non |
 | 4.7-ex04 à ex06 | Métriques et traces | O2 | 1 | non |
-| 4.7-ex07 à ex08 | Des objectifs de service | O5 | 2 | non |
-| 4.7-ex09 à ex11 | Suivre un LLM | O3 | 2 | non |
-| 4.7-ex12 à ex14 | La dérive | O4 | 2–3 | non |
-| 4.7-ex15 à ex16 | Voir et réagir | O5 | 2–3 | non |
-| 4.7-ex17 | Exercice clé : un tableau de bord de la latence, des erreurs et du coût par jour | O2, O3, O5 | 3 | non |
+| 4.7-ex07 à ex09 | Des objectifs de service | O5 | 2 | non |
+| 4.7-ex10 à ex12 | Suivre un LLM | O3 | 2 | non |
+| 4.7-ex13 à ex15 | La dérive | O4 | 2–3 | non |
+| 4.7-ex16 à ex18 | Voir et réagir | O5 | 2–3 | non |
+| 4.7-ex19 | Exercice clé : un tableau de bord de la latence, des erreurs et du coût par jour | O2, O3, O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -111,10 +119,13 @@ Point de contrôle du projet 4 : journalisation sans données personnelles. Les 
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de Langfuse](https://langfuse.com/docs) | anglais | référence | MIT (version open source) | Suivre les appels de LLM en local. |
-| [Documentation d'OpenTelemetry](https://opentelemetry.io/docs/) | anglais | référence | Apache 2.0 | Le standard des métriques et des traces. |
+| [Site Reliability Engineering (Google)](https://sre.google/sre-book/table-of-contents/) | anglais | livre en ligne | CC BY-NC-ND 4.0 | SLO, alertes, incidents et post-mortems. |
+| [Documentation d'OpenTelemetry](https://opentelemetry.io/docs/) | anglais | documentation | CC BY 4.0 | Le standard des métriques et des traces. |
+| [Documentation de Langfuse](https://langfuse.com/docs) | anglais | documentation | MIT | Suivre les appels de LLM en local. |
+| [Documentation d'Evidently](https://docs.evidentlyai.com/) | anglais | documentation | Apache 2.0 | Détecter la dérive des données et des modèles. |
+| [Documentation de Prometheus](https://prometheus.io/docs/introduction/overview/) | anglais | documentation | Apache 2.0 | Collecter et interroger des métriques. |
 
 ## Circuit
 

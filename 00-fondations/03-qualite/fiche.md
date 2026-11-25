@@ -23,12 +23,12 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Écrire des tests pytest qui couvrent les cas normaux, les cas limites et les erreurs. | ex01 à ex05, ex06 à ex10, qcm |
-| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex10, exercice clé (ex31), qcm |
+| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex10, exercice clé (ex33), qcm |
 | O3 | Trouver et corriger un bug avec méthode (trace d'erreur, débogueur). | ex11 à ex13, qcm |
-| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex16 à ex20, qcm |
-| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex14 à ex15, ex21 à ex24, ex25 à ex28, qcm |
-| O6 | Modifier un code sans le casser, grâce aux tests. | ex29 à ex30, exercice clé (ex31), qcm |
-| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex32 à ex36, qcm |
+| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex17 à ex21, qcm |
+| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex14 à ex16, ex22 à ex25, ex26 à ex29, qcm |
+| O6 | Modifier un code sans le casser, grâce aux tests. | ex30 à ex32, exercice clé (ex33), qcm |
+| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex34 à ex38, qcm |
 
 ## Chapitres
 
@@ -37,11 +37,11 @@ mise_a_jour: 2026-11-25
 | 1 | Tester avec pytest | 5 |
 | 2 | Des tests utiles | 5 |
 | 3 | Déboguer | 3 |
-| 4 | Mesurer les performances | 2 |
+| 4 | Mesurer les performances | 3 |
 | 5 | Un code lisible | 5 |
 | 6 | Algorithmique | 4 |
 | 7 | Structures de données | 4 |
-| 8 | Améliorer sans casser | 3 |
+| 8 | Améliorer sans casser | 4 |
 | 9 | Livrer un projet Python | 5 |
 
 ## Notions, dans l'ordre
@@ -72,6 +72,8 @@ mise_a_jour: 2026-11-25
 | 4 | `mesurer-temps` | Mesurer le temps d'un programme | O5 |
 | 4 | `profiler-code` | Trouver ce qui ralentit : cProfile | O5 |
 | 4 | `memoire-programme` | Mesurer la mémoire d'un programme | O5 |
+| 4 | `timeit` | Comparer deux versions d'un code : timeit | O5 |
+| 4 | `optimiser-boucles` | Accélérer une boucle : les bons réflexes | O5 |
 | 5 | `nommer` | Bien nommer variables et fonctions | O4 |
 | 5 | `fonctions-courtes` | Des fonctions courtes, sans répétition | O4 |
 | 5 | `odeurs-code` | Reconnaître du code difficile à maintenir | O4 |
@@ -93,6 +95,9 @@ mise_a_jour: 2026-11-25
 | 7 | `structures` | Choisir la bonne structure de données | O5 |
 | 8 | `refactoriser` | Refactoriser sans casser grâce aux tests | O6 |
 | 8 | `revue-code` | Relire ton code comme un relecteur | O6 |
+| 8 | `tests-avant-refactoriser` | Poser des tests avant de modifier un code ancien | O6 |
+| 8 | `extraire-fonction` | Extraire une fonction, renommer, déplacer : les gestes sûrs | O6 |
+| 8 | `dette-technique` | La dette technique : la repérer et la rembourser | O6 |
 | 9 | `pyproject` | Décrire ton projet : pyproject.toml | O7 |
 | 9 | `point-entree` | Une commande installable en une ligne | O7 |
 | 9 | `pre-commit` | Vérifier avant chaque commit : pre-commit | O7 |
@@ -144,13 +149,13 @@ mise_a_jour: 2026-11-25
 | 0.3-ex01 à ex05 | Tester avec pytest | O1 | 1 | non |
 | 0.3-ex06 à ex10 | Des tests utiles | O1, O2 | 1 | non |
 | 0.3-ex11 à ex13 | Déboguer | O3 | 1 | non |
-| 0.3-ex14 à ex15 | Mesurer les performances | O5 | 2 | non |
-| 0.3-ex16 à ex20 | Un code lisible | O4 | 2 | non |
-| 0.3-ex21 à ex24 | Algorithmique | O5 | 2 | non |
-| 0.3-ex25 à ex28 | Structures de données | O5 | 2–3 | non |
-| 0.3-ex29 à ex30 | Améliorer sans casser | O6 | 2–3 | non |
-| 0.3-ex31 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
-| 0.3-ex32 à ex36 | Livrer un projet Python | O7 | 2–3 | non |
+| 0.3-ex14 à ex16 | Mesurer les performances | O5 | 2 | non |
+| 0.3-ex17 à ex21 | Un code lisible | O4 | 2 | non |
+| 0.3-ex22 à ex25 | Algorithmique | O5 | 2 | non |
+| 0.3-ex26 à ex29 | Structures de données | O5 | 2–3 | non |
+| 0.3-ex30 à ex32 | Améliorer sans casser | O6 | 2–3 | non |
+| 0.3-ex33 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
+| 0.3-ex34 à ex38 | Livrer un projet Python | O7 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -166,9 +171,13 @@ Un calcul d'argent faux fait du tort à de vraies personnes : la notion `pourquo
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Documentation de pytest](https://docs.pytest.org/) | anglais | référence | MIT | Pour aller plus loin sur les fixtures et la paramétrisation. |
+| [Documentation de pytest](https://docs.pytest.org/) | anglais | documentation | MIT | Les fixtures, la paramétrisation et toutes les options. |
+| [Problem Solving with Algorithms and Data Structures](https://runestone.academy/ns/books/published/pythonds3/index.html) | anglais | livre interactif | gratuit en ligne | Les algorithmes et structures de données, en Python. |
+| [VisuAlgo](https://visualgo.net/fr) | français | outil en ligne | gratuit | Voir les algorithmes de tri et de graphe en animation. |
+| [Python Packaging User Guide](https://packaging.python.org/en/latest/) | anglais | documentation | CC BY-SA 3.0 | Créer, construire et publier un paquet Python. |
+| [Choisir une licence](https://choosealicense.com/) | anglais | guide | CC BY 3.0 | Choisir la licence de son projet en trois questions. |
 
 ## Circuit
 

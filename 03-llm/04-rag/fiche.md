@@ -26,7 +26,7 @@ mise_a_jour: 2026-11-25
 | O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex08, exercice clé (ex16), qcm |
 | O3 | Améliorer la recherche par reformulation et reranking. | ex09 à ex12, exercice clé (ex16), ex17 à ex19, qcm |
 | O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex13 à ex15, exercice clé (ex16), ex17 à ex19, qcm |
-| O5 | Construire un RAG multilingue. | ex20 à ex21, qcm |
+| O5 | Construire un RAG multilingue. | ex20 à ex22, qcm |
 
 ## Chapitres
 
@@ -37,7 +37,7 @@ mise_a_jour: 2026-11-25
 | 3 | Mieux chercher | 4 |
 | 4 | Bien répondre | 4 |
 | 5 | Le RAG avancé | 3 |
-| 6 | Plusieurs langues | 2 |
+| 6 | Plusieurs langues | 3 |
 
 ## Notions, dans l'ordre
 
@@ -47,6 +47,7 @@ mise_a_jour: 2026-11-25
 | 1 | `chaine-rag` | La chaîne complète : indexer, chercher, répondre | O1 |
 | 1 | `premier-rag` | Ton premier RAG en local | O1 |
 | 1 | `rag-ou-contexte-long` | RAG ou long contexte ? | O1 |
+| 1 | `anatomie-echec-rag` | Pourquoi un RAG se trompe : les points de rupture | O1 |
 | 2 | `extraire-pdf` | Extraire le texte d'un PDF | O2 |
 | 2 | `tableaux` | Garder les tableaux lisibles | O2 |
 | 2 | `ocr` | Les documents scannés : l'OCR | O2 |
@@ -64,12 +65,17 @@ mise_a_jour: 2026-11-25
 | 4 | `citations` | Citer ses sources | O4 |
 | 4 | `je-ne-sais-pas` | Savoir dire « je ne sais pas » | O4 |
 | 4 | `hors-sujet` | Refuser les questions hors sujet | O4 |
+| 4 | `synthese-sources` | Faire la synthèse de plusieurs sources | O4 |
 | 5 | `rag-conversation` | Un RAG qui suit la conversation | O4 |
 | 5 | `texte-vers-sql` | Interroger des chiffres : du texte au SQL | O4 |
 | 5 | `graph-rag` | Relier les informations : notions de GraphRAG | O3 |
 | 5 | `droits-acces-rag` | Chacun ne voit que ses documents | O4 |
+| 5 | `rag-agentique` | Un RAG qui décide quand et quoi chercher | O4 |
 | 6 | `rag-multilingue` | Un RAG multilingue | O5 |
 | 6 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
+| 6 | `embeddings-multilingues-rag` | Des embeddings qui relient les langues | O5 |
+| 6 | `documents-bilingues` | Des documents en français et en anglais | O5 |
+| 6 | `repondre-langue-question` | Répondre dans la langue de la question | O5 |
 
 ## Vocabulaire du module
 
@@ -98,7 +104,7 @@ mise_a_jour: 2026-11-25
 | 3.4-ex13 à ex15 | Bien répondre | O4 | 2 | non |
 | 3.4-ex16 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
 | 3.4-ex17 à ex19 | Le RAG avancé | O3, O4 | 2–3 | non |
-| 3.4-ex20 à ex21 | Plusieurs langues | O5 | 2–3 | non |
+| 3.4-ex20 à ex22 | Plusieurs langues | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -114,9 +120,13 @@ Point de contrôle du projet 3 : refus des questions hors périmètre, tests d'i
 
 ## Ressources externes gratuites
 
-| Ressource | Langue | Durée ou taille | Licence | Pourquoi |
+| Ressource | Langue | Type | Licence ou accès | Pourquoi |
 | --- | --- | --- | --- | --- |
-| [Cookbook de Hugging Face : RAG](https://huggingface.co/learn/cookbook) | anglais | recettes | Apache 2.0 | Des RAG complets, avec des modèles ouverts. |
+| [Cookbook de Hugging Face](https://huggingface.co/learn/cookbook) | anglais | recettes | Apache 2.0 | Des RAG complets avec des modèles ouverts. |
+| [Contextual Retrieval (Anthropic)](https://www.anthropic.com/news/contextual-retrieval) | anglais | article | accès libre | Ajouter du contexte aux morceaux pour mieux chercher. |
+| [Patterns for Building LLM-based Systems (Eugene Yan)](https://eugeneyan.com/writing/llm-patterns/) | anglais | article | accès libre | Les grands schémas d'un système à base de LLM. |
+| [Documentation de LlamaIndex](https://docs.llamaindex.ai/) | anglais | documentation | MIT | Un framework pour construire des RAG. |
+| [GraphRAG (Microsoft)](https://microsoft.github.io/graphrag/) | anglais | documentation | MIT | Relier les informations dans un graphe. |
 
 ## Circuit
 
