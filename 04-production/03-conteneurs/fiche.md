@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer ce qu'est un conteneur et installer Docker. | ex01 à ex02, qcm |
-| O2 | Écrire un Dockerfile pour une application Python. | ex03 à ex04, exercice clé (ex12), qcm |
-| O3 | Produire des images légères et sûres. | ex05 à ex07, qcm |
-| O4 | Assembler plusieurs services avec docker-compose. | ex08 à ex09, exercice clé (ex12), qcm |
-| O5 | Gérer secrets et variables d'environnement. | ex10 à ex11, exercice clé (ex12), qcm |
+| O1 | Expliquer ce qu'est un conteneur et installer Docker. | ex01 à ex03, qcm |
+| O2 | Écrire un Dockerfile pour une application Python. | ex04 à ex06, exercice clé (ex17), qcm |
+| O3 | Produire des images légères et sûres. | ex07 à ex09, qcm |
+| O4 | Assembler plusieurs services avec docker-compose. | ex10 à ex12, ex13 à ex14, exercice clé (ex17), qcm |
+| O5 | Gérer secrets et variables d'environnement. | ex15 à ex16, exercice clé (ex17), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Les conteneurs | 2 |
-| 2 | Le Dockerfile | 2 |
+| 1 | Les conteneurs | 3 |
+| 2 | Le Dockerfile | 3 |
 | 3 | Des images légères et sûres | 3 |
-| 4 | Plusieurs services | 2 |
-| 5 | Configuration et secrets | 3 |
+| 4 | Plusieurs services | 3 |
+| 5 | Partager ses images | 2 |
+| 6 | Configuration et secrets | 3 |
 
 ## Notions, dans l'ordre
 
@@ -45,18 +46,25 @@ mise_a_jour: 2026-11-25
 | 1 | `pourquoi-conteneurs` | Pourquoi des conteneurs | O1 |
 | 1 | `installer-docker` | Installer Docker, avec WSL sous Windows | O1 |
 | 1 | `images-conteneurs` | Images et conteneurs | O1 |
+| 1 | `commandes-docker` | Les commandes du quotidien : run, ps, logs, exec | O1 |
 | 2 | `dockerfile` | Ton premier Dockerfile | O2 |
 | 2 | `couches` | Les couches et le cache | O2 |
+| 2 | `dockerignore` | Ne pas tout envoyer : .dockerignore | O2 |
 | 2 | `volumes` | Garder des données : les volumes | O2 |
+| 2 | `healthcheck` | Vérifier qu'un conteneur va bien : healthcheck | O2 |
 | 3 | `images-legeres` | Des images légères | O3 |
 | 3 | `multi-stage` | Les builds en plusieurs étapes | O3 |
 | 3 | `non-root` | Ne pas tourner en root | O3 |
 | 3 | `scanner-images` | Scanner une image | O3 |
+| 3 | `limites-ressources` | Limiter la mémoire et le processeur d'un conteneur | O3 |
 | 4 | `docker-compose` | docker-compose | O4 |
 | 4 | `reseaux-docker` | Faire parler les conteneurs entre eux | O4 |
 | 4 | `llm-conteneur` | Un modèle local dans un conteneur | O4 |
-| 5 | `env-docker` | Les variables d'environnement | O5 |
-| 5 | `secrets-docker` | Les secrets | O5 |
+| 4 | `dev-prod` | Une configuration pour développer, une autre pour la production | O4 |
+| 5 | `registres` | Publier une image : les registres | O4 |
+| 5 | `versionner-images` | Nommer et versionner ses images | O4 |
+| 6 | `env-docker` | Les variables d'environnement | O5 |
+| 6 | `secrets-docker` | Les secrets | O5 |
 
 ## Vocabulaire du module
 
@@ -80,12 +88,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 4.3-ex01 à ex02 | Les conteneurs | O1 | 1–2 | non |
-| 4.3-ex03 à ex04 | Le Dockerfile | O2 | 2 | non |
-| 4.3-ex05 à ex07 | Des images légères et sûres | O3 | 2 | non |
-| 4.3-ex08 à ex09 | Plusieurs services | O4 | 2 | non |
-| 4.3-ex10 à ex11 | Configuration et secrets | O5 | 2–3 | non |
-| 4.3-ex12 | Exercice clé : lancer toute l'application en une commande | O2, O4, O5 | 3 | non |
+| 4.3-ex01 à ex03 | Les conteneurs | O1 | 1 | non |
+| 4.3-ex04 à ex06 | Le Dockerfile | O2 | 1 | non |
+| 4.3-ex07 à ex09 | Des images légères et sûres | O3 | 2 | non |
+| 4.3-ex10 à ex12 | Plusieurs services | O4 | 2 | non |
+| 4.3-ex13 à ex14 | Partager ses images | O4 | 2–3 | non |
+| 4.3-ex15 à ex16 | Configuration et secrets | O5 | 2–3 | non |
+| 4.3-ex17 | Exercice clé : lancer toute l'application en une commande | O2, O4, O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -125,3 +134,4 @@ Aucun secret dans une image ou dans le dépôt ; images scannées ; conteneurs q
 ## Points à vérifier
 
 - TODO(vérifier) : installation de Docker sous WSL et consommation mémoire sur la machine minimale.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

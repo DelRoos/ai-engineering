@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Transformer du texte en tokens et en embeddings. | ex01 à ex02, exercice clé (ex11), qcm |
-| O2 | Expliquer ce qu'est un modèle de langue et pourquoi les réseaux récurrents ont été dépassés. | ex03 à ex04, qcm |
-| O3 | Calculer un mécanisme d'attention, à la main puis en code. | ex05 à ex07, exercice clé (ex11), qcm |
-| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex08 à ex10, exercice clé (ex11), qcm |
-| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex12 à ex14, qcm |
+| O1 | Transformer du texte en tokens et en embeddings. | ex01 à ex03, exercice clé (ex15), qcm |
+| O2 | Expliquer ce qu'est un modèle de langue et pourquoi les réseaux récurrents ont été dépassés. | ex04 à ex06, qcm |
+| O3 | Calculer un mécanisme d'attention, à la main puis en code. | ex07 à ex09, exercice clé (ex15), qcm |
+| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex10 à ex14, exercice clé (ex15), ex16 à ex17, qcm |
+| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex18 à ex21, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Le texte en nombres | 2 |
-| 2 | Les séquences | 2 |
+| 1 | Le texte en nombres | 3 |
+| 2 | Les séquences | 3 |
 | 3 | L'attention | 3 |
-| 4 | Le Transformer | 4 |
-| 5 | Hugging Face | 3 |
+| 4 | Le Transformer | 6 |
+| 5 | Pré-entraîner | 2 |
+| 6 | Hugging Face | 4 |
 
 ## Notions, dans l'ordre
 
@@ -45,8 +46,11 @@ mise_a_jour: 2026-11-25
 | 1 | `tokenisation` | La tokenisation : du texte aux tokens | O1 |
 | 1 | `bpe` | Découper en sous-mots : BPE | O1 |
 | 1 | `embeddings` | Les embeddings : des mots dans un espace | O1 |
+| 1 | `word2vec` | Apprendre des embeddings : word2vec | O1 |
 | 2 | `modele-langue` | Prédire le mot suivant : le modèle de langue | O2 |
 | 2 | `rnn` | Les réseaux récurrents et leurs limites | O2 |
+| 2 | `lstm-gru` | Retenir plus longtemps : LSTM et GRU | O2 |
+| 2 | `seq2seq` | Encoder puis décoder : seq2seq | O2 |
 | 3 | `attention-intuition` | L'attention : regarder les bons mots | O3 |
 | 3 | `requetes-cles-valeurs` | Requêtes, clés et valeurs | O3 |
 | 3 | `attention-calcul` | Calculer l'attention, à la main puis en code | O3 |
@@ -54,13 +58,20 @@ mise_a_jour: 2026-11-25
 | 3 | `masque-causal` | Ne pas regarder l'avenir : le masque causal | O3 |
 | 4 | `position` | Donner l'ordre des mots : l'encodage de position | O4 |
 | 4 | `bloc-transformer` | Un bloc Transformer complet | O4 |
+| 4 | `norme-residus` | Normalisation et connexions résiduelles | O4 |
 | 4 | `familles-transformers` | Encodeur, décodeur : les familles de modèles | O4 |
 | 4 | `mini-gpt` | Un mini-GPT qui génère du texte | O4 |
 | 4 | `echantillonnage` | Générer : température et échantillonnage | O4 |
-| 5 | `hub-hf` | Le Hub de Hugging Face | O5 |
-| 5 | `pipelines-hf` | Utiliser un modèle en trois lignes : pipeline | O5 |
-| 5 | `tokenizers-hf` | Les tokenizers de Hugging Face | O5 |
-| 5 | `adapter-hf` | Adapter un petit modèle à une tâche de texte | O5 |
+| 4 | `beam-search` | Chercher la meilleure suite : beam search | O4 |
+| 4 | `kv-cache` | Générer vite : le cache des clés et des valeurs | O4 |
+| 5 | `bert` | BERT : apprendre en devinant les mots cachés | O4 |
+| 5 | `gpt-preentrainement` | GPT : apprendre en prédisant la suite | O4 |
+| 6 | `hub-hf` | Le Hub de Hugging Face | O5 |
+| 6 | `pipelines-hf` | Utiliser un modèle en trois lignes : pipeline | O5 |
+| 6 | `tokenizers-hf` | Les tokenizers de Hugging Face | O5 |
+| 6 | `datasets-hf` | La bibliothèque datasets | O5 |
+| 6 | `adapter-hf` | Adapter un petit modèle à une tâche de texte | O5 |
+| 6 | `partager-hf` | Partager ton modèle sur le Hub | O5 |
 
 ## Vocabulaire du module
 
@@ -86,12 +97,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 2.4-ex01 à ex02 | Le texte en nombres | O1 | 1–2 | non |
-| 2.4-ex03 à ex04 | Les séquences | O2 | 2 | non |
-| 2.4-ex05 à ex07 | L'attention | O3 | 2 | non |
-| 2.4-ex08 à ex10 | Le Transformer | O4 | 2 | non |
-| 2.4-ex11 | Exercice clé : un mini-Transformer qui génère du texte, entraîné sur processeur | O1, O3, O4 | 3 | non |
-| 2.4-ex12 à ex14 | Hugging Face | O5 | 2–3 | non |
+| 2.4-ex01 à ex03 | Le texte en nombres | O1 | 1 | non |
+| 2.4-ex04 à ex06 | Les séquences | O2 | 1 | non |
+| 2.4-ex07 à ex09 | L'attention | O3 | 2 | non |
+| 2.4-ex10 à ex14 | Le Transformer | O4 | 2 | non |
+| 2.4-ex15 | Exercice clé : un mini-Transformer qui génère du texte, entraîné sur processeur | O1, O3, O4 | 3 | non |
+| 2.4-ex16 à ex17 | Pré-entraîner | O4 | 2–3 | non |
+| 2.4-ex18 à ex21 | Hugging Face | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -133,3 +145,4 @@ Un modèle génératif reproduit ce qu'il a lu : vérifier les droits du corpus 
 ## Points à vérifier
 
 - TODO(vérifier) : choix et statut juridique du corpus de contes (domaine public au Sénégal et en France).
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Mesurer les biais d'un modèle selon le genre, la langue et la région. | ex01 à ex02, ex03 à ex04, exercice clé (ex11), qcm |
-| O2 | Choisir une définition de l'équité adaptée au cas. | ex03 à ex04, exercice clé (ex11), qcm |
-| O3 | Réduire un biais mesuré, en connaissant les arbitrages. | ex05 à ex06, exercice clé (ex11), qcm |
-| O4 | Mesurer et limiter les hallucinations. | ex07 à ex08, qcm |
-| O5 | Expliquer une décision et organiser la supervision humaine et les recours. | ex09 à ex10, qcm |
+| O1 | Mesurer les biais d'un modèle selon le genre, la langue et la région. | ex01 à ex02, ex03 à ex05, exercice clé (ex06), qcm |
+| O2 | Choisir une définition de l'équité adaptée au cas. | ex03 à ex05, exercice clé (ex06), qcm |
+| O3 | Réduire un biais mesuré, en connaissant les arbitrages. | exercice clé (ex06), ex07 à ex08, qcm |
+| O4 | Mesurer et limiter les hallucinations. | ex09 à ex11, qcm |
+| O5 | Expliquer une décision et organiser la supervision humaine et les recours. | ex12 à ex14, ex15 à ex16, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | D'où viennent les biais | 2 |
-| 2 | Mesurer | 2 |
+| 2 | Mesurer | 4 |
 | 3 | Corriger | 2 |
-| 4 | La fiabilité | 2 |
+| 4 | La fiabilité | 3 |
 | 5 | L'humain | 3 |
+| 6 | Mesurer les impacts | 2 |
 
 ## Notions, dans l'ordre
 
@@ -44,18 +45,24 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `sources-biais` | D'où viennent les biais | O1 |
 | 1 | `biais-llm` | Les biais des LLM | O1 |
+| 1 | `stereotypes` | Les stéréotypes dans les textes générés | O1 |
 | 2 | `ecart-groupes` | Mesurer un écart entre groupes | O1 |
 | 2 | `definitions-equite` | Les définitions de l'équité, et pourquoi elles se contredisent | O2 |
 | 2 | `petits-groupes` | Mesurer quand un groupe est petit | O1 |
+| 2 | `biais-langues` | Mesurer les écarts entre langues | O1 |
 | 3 | `corriger-donnees` | Corriger les données | O3 |
 | 3 | `corriger-modele` | Corriger le modèle ou le seuil | O3 |
 | 3 | `arbitrages-equite` | Les arbitrages | O3 |
 | 4 | `mesurer-hallucinations` | Mesurer les hallucinations | O4 |
 | 4 | `limiter-hallucinations` | Limiter les hallucinations | O4 |
 | 4 | `exprimer-incertitude` | Exprimer l'incertitude | O4 |
+| 4 | `robustesse` | La robustesse : petites variations, grandes erreurs | O4 |
 | 5 | `expliquer-personnes` | Expliquer une décision aux personnes concernées | O5 |
 | 5 | `supervision-humaine` | La supervision humaine | O5 |
 | 5 | `recours` | Le droit de contester une décision | O5 |
+| 5 | `transparence` | Dire qu'on parle à une IA | O5 |
+| 6 | `etude-impact` | L'étude d'impact d'un système d'IA | O5 |
+| 6 | `impact-environnemental` | L'impact environnemental de l'IA | O5 |
 
 ## Vocabulaire du module
 
@@ -79,12 +86,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 5.2-ex01 à ex02 | D'où viennent les biais | O1 | 1–2 | non |
-| 5.2-ex03 à ex04 | Mesurer | O1, O2 | 2 | non |
-| 5.2-ex05 à ex06 | Corriger | O3 | 2 | non |
-| 5.2-ex07 à ex08 | La fiabilité | O4 | 2 | non |
-| 5.2-ex09 à ex10 | L'humain | O5 | 2–3 | non |
-| 5.2-ex11 | Exercice clé : mesurer les écarts de performance d'un modèle entre groupes | O1 à O3 | 3 | oui → GRILLE.md (analyse et recommandations) |
+| 5.2-ex01 à ex02 | D'où viennent les biais | O1 | 1 | non |
+| 5.2-ex03 à ex05 | Mesurer | O1, O2 | 1 | non |
+| 5.2-ex06 | Exercice clé : mesurer les écarts de performance d'un modèle entre groupes | O1 à O3 | 3 | oui → GRILLE.md (analyse et recommandations) |
+| 5.2-ex07 à ex08 | Corriger | O3 | 2 | non |
+| 5.2-ex09 à ex11 | La fiabilité | O4 | 2 | non |
+| 5.2-ex12 à ex14 | L'humain | O5 | 2–3 | non |
+| 5.2-ex15 à ex16 | Mesurer les impacts | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -124,3 +132,4 @@ Les variables sensibles (genre, ethnie, religion) servent à mesurer les biais, 
 ## Points à vérifier
 
 - TODO(vérifier) : cadre légal de l'usage de variables sensibles pour mesurer les biais dans les pays visés.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

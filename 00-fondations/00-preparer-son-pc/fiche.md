@@ -41,8 +41,11 @@ mise_a_jour: 2026-11-25
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `pc-pret` | Vérifier que ton PC est prêt | O1 |
+| 1 | `fichiers-dossiers` | Fichiers, dossiers et extensions : s'y retrouver dans ton PC | O1 |
 | 1 | `a-quoi-sert` | Python, Git, VS Code : à quoi sert chaque outil | O3 |
 | 1 | `terminal` | Ouvrir un terminal et taper ta première commande | O2 |
+| 1 | `terminal-bases` | Copier, coller et retrouver une commande dans le terminal | O2 |
+| 2 | `mettre-a-jour-systeme` | Mettre à jour ton système avant d'installer | O3 |
 | 2 | `wsl` | Sous Windows : installer WSL et Ubuntu | O3 |
 | 2 | `installer-python` | Installer Python | O3 |
 | 2 | `installer-git` | Installer Git et te présenter à lui | O3 |
@@ -51,6 +54,7 @@ mise_a_jour: 2026-11-25
 | 3 | `installer-outils` | Installer les outils de la formation dans un environnement virtuel | O4 |
 | 3 | `mettre-a-jour` | Mettre à jour la formation avec git pull | O4 |
 | 3 | `hors-ligne` | Économiser tes données : tout télécharger une fois, travailler hors ligne | O4 |
+| 3 | `sauvegarder` | Sauvegarder ton travail en dehors de ton PC | O4 |
 | 3 | `verification` | Lancer la vérification finale | O5 |
 | 3 | `depanner` | Quand une installation échoue : trouver de l'aide | O5 |
 
@@ -125,3 +129,4 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : version de Python à installer (la plus récente prise en charge par toutes les dépendances de la formation) et version fournie par la distribution Ubuntu de WSL.
 - TODO(vérifier) : tailles de téléchargement de WSL, Ubuntu, Python, Git et VS Code.
 - TODO(vérifier) : la vérification finale (`python outils/check.py 00-fondations/00-preparer-son-pc`) doit fonctionner sur Linux, WSL et macOS.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

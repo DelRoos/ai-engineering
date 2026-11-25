@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Mesurer le coût et la latence par requête, et trouver le goulet d'étranglement. | ex01 à ex02, exercice clé (ex12), qcm |
-| O2 | Réduire les coûts par le cache, le batching et des prompts plus courts. | ex03 à ex05, exercice clé (ex12), qcm |
-| O3 | Router les requêtes entre modèles locaux et distants. | ex06 à ex07, exercice clé (ex12), qcm |
-| O4 | Garder le service utilisable : limites de débit, mode dégradé, faible bande passante. | ex08 à ex09, qcm |
-| O5 | Faire fonctionner un service hors ligne et le resynchroniser. | ex10 à ex11, qcm |
+| O1 | Mesurer le coût et la latence par requête, et trouver le goulet d'étranglement. | ex01 à ex03, ex08 à ex09, exercice clé (ex12), qcm |
+| O2 | Réduire les coûts par le cache, le batching et des prompts plus courts. | ex04 à ex07, exercice clé (ex12), qcm |
+| O3 | Router les requêtes entre modèles locaux et distants. | ex10 à ex11, exercice clé (ex12), qcm |
+| O4 | Garder le service utilisable : limites de débit, mode dégradé, faible bande passante. | ex08 à ex09, ex13 à ex15, qcm |
+| O5 | Faire fonctionner un service hors ligne et le resynchroniser. | ex16 à ex17, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Mesurer | 2 |
-| 2 | Moins calculer | 3 |
-| 3 | Router | 2 |
-| 4 | Tenir dans les mauvaises conditions | 2 |
-| 5 | Hors ligne | 3 |
+| 1 | Mesurer | 3 |
+| 2 | Moins calculer | 4 |
+| 3 | Répondre plus vite | 2 |
+| 4 | Router | 3 |
+| 5 | Tenir dans les mauvaises conditions | 3 |
+| 6 | Hors ligne | 2 |
 
 ## Notions, dans l'ordre
 
@@ -45,17 +46,25 @@ mise_a_jour: 2026-11-25
 | 1 | `cout-requete` | Le coût par requête | O1 |
 | 1 | `latence` | D'où vient la latence | O1 |
 | 1 | `goulet` | Trouver le goulet d'étranglement | O1 |
+| 1 | `test-charge` | Tester la montée en charge : les tests de charge | O1 |
 | 2 | `cache-reponses` | Le cache des réponses | O2 |
 | 2 | `cache-semantique` | Le cache sémantique | O2 |
+| 2 | `cache-prompt` | Le cache de prompt des fournisseurs | O2 |
 | 2 | `batching` | Regrouper les requêtes : le batching | O2 |
 | 2 | `prompts-courts` | Des prompts plus courts | O2 |
-| 3 | `routage` | Le routage entre modèles | O3 |
-| 3 | `cascade` | Commencer petit, monter si besoin : la cascade | O3 |
-| 4 | `limites-debit` | Les limites de débit | O4 |
-| 4 | `mode-degrade` | Le mode dégradé | O4 |
-| 4 | `faible-bande` | Servir avec une faible bande passante | O4 |
-| 5 | `hors-ligne-service` | Un service qui marche sans connexion | O5 |
-| 5 | `synchronisation` | Synchroniser au retour du réseau | O5 |
+| 2 | `modele-plus-petit` | Un modèle plus petit pour les tâches simples | O2 |
+| 3 | `latence-ressentie` | La latence ressentie : afficher au fil de l'eau | O1 |
+| 3 | `delais-relances` | Délais, relances et abandon | O4 |
+| 3 | `inference-cpu` | Accélérer l'inférence sur processeur | O1 |
+| 4 | `routage` | Le routage entre modèles | O3 |
+| 4 | `cascade` | Commencer petit, monter si besoin : la cascade | O3 |
+| 5 | `limites-debit` | Les limites de débit | O4 |
+| 5 | `mode-degrade` | Le mode dégradé | O4 |
+| 5 | `faible-bande` | Servir avec une faible bande passante | O4 |
+| 5 | `compresser` | Envoyer moins d'octets : compression et formats légers | O4 |
+| 5 | `sms-ussd` | Quand il n'y a pas Internet : SMS et USSD | O4 |
+| 6 | `hors-ligne-service` | Un service qui marche sans connexion | O5 |
+| 6 | `synchronisation` | Synchroniser au retour du réseau | O5 |
 
 ## Vocabulaire du module
 
@@ -80,12 +89,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 4.8-ex01 à ex02 | Mesurer | O1 | 1–2 | non |
-| 4.8-ex03 à ex05 | Moins calculer | O2 | 2 | non |
-| 4.8-ex06 à ex07 | Router | O3 | 2 | non |
-| 4.8-ex08 à ex09 | Tenir dans les mauvaises conditions | O4 | 2 | non |
-| 4.8-ex10 à ex11 | Hors ligne | O5 | 2–3 | non |
+| 4.8-ex01 à ex03 | Mesurer | O1 | 1 | non |
+| 4.8-ex04 à ex07 | Moins calculer | O2 | 1 | non |
+| 4.8-ex08 à ex09 | Répondre plus vite | O1, O4 | 2 | non |
+| 4.8-ex10 à ex11 | Router | O3 | 2 | non |
 | 4.8-ex12 | Exercice clé : diviser par 2 le coût par requête sans perte de qualité | O1 à O3 | 3 | non |
+| 4.8-ex13 à ex15 | Tenir dans les mauvaises conditions | O4 | 2–3 | non |
+| 4.8-ex16 à ex17 | Hors ligne | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -125,3 +135,4 @@ Un cache peut servir la réponse d'un utilisateur à un autre : ne jamais mettre
 ## Points à vérifier
 
 - TODO(vérifier) : aucun point en suspens à la création de la fiche.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

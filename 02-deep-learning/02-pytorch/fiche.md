@@ -22,21 +22,21 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Manipuler des tenseurs PyTorch. | ex01 à ex03, exercice clé (ex13), qcm |
-| O2 | Calculer des gradients automatiquement et décrire un modèle avec nn.Module. | ex04 à ex05, exercice clé (ex13), qcm |
-| O3 | Charger des données avec Dataset et DataLoader. | ex06 à ex07, exercice clé (ex13), qcm |
-| O4 | Écrire une boucle d'entraînement et d'évaluation complète. | ex08 à ex10, exercice clé (ex13), qcm |
-| O5 | Entraîner efficacement sur processeur, et utiliser un GPU gratuit en option. | ex01 à ex03, ex11 à ex12, exercice clé (ex13), qcm |
+| O1 | Manipuler des tenseurs PyTorch. | ex01 à ex04, exercice clé (ex21), qcm |
+| O2 | Calculer des gradients automatiquement et décrire un modèle avec nn.Module. | ex05 à ex09, exercice clé (ex21), qcm |
+| O3 | Charger des données avec Dataset et DataLoader. | ex10 à ex12, exercice clé (ex21), qcm |
+| O4 | Écrire une boucle d'entraînement et d'évaluation complète. | ex13 à ex17, exercice clé (ex21), qcm |
+| O5 | Entraîner efficacement sur processeur, et utiliser un GPU gratuit en option. | ex01 à ex04, ex18 à ex20, exercice clé (ex21), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Les tenseurs | 3 |
-| 2 | Les gradients automatiques | 2 |
-| 3 | Les données | 2 |
-| 4 | Entraîner et évaluer | 3 |
-| 5 | Aller vite sur un petit PC | 3 |
+| 1 | Les tenseurs | 4 |
+| 2 | Les gradients automatiques | 5 |
+| 3 | Les données | 3 |
+| 4 | Entraîner et évaluer | 5 |
+| 5 | Aller vite sur un petit PC | 4 |
 
 ## Notions, dans l'ordre
 
@@ -44,20 +44,31 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `installer-pytorch` | Installer PyTorch en version processeur | O1 |
 | 1 | `tenseurs` | Créer et manipuler des tenseurs | O1 |
+| 1 | `formes-tenseurs` | Changer la forme d'un tenseur : view, reshape, permute | O1 |
+| 1 | `indexer-tenseurs` | Indexer et découper des tenseurs | O1 |
 | 1 | `tenseurs-numpy` | Passer de NumPy à PyTorch, et retour | O1 |
 | 1 | `device` | Processeur ou GPU : le device | O5 |
 | 2 | `autograd` | Les gradients automatiques : autograd | O2 |
+| 2 | `graphe-autograd` | Ce qu'autograd retient : graphe, detach, no_grad | O2 |
 | 2 | `nn-module` | Décrire un modèle avec nn.Module | O2 |
+| 2 | `couches-pytorch` | Les couches toutes faites : Linear, Sequential et les autres | O2 |
+| 2 | `parametres-pytorch` | Accéder aux paramètres d'un modèle | O2 |
+| 2 | `pertes-pytorch` | Les fonctions de perte de PyTorch | O2 |
 | 2 | `optimiseurs` | Les optimiseurs : SGD et Adam | O2 |
 | 3 | `dataset` | Ta propre classe Dataset | O3 |
 | 3 | `dataloader` | Des mini-batchs avec DataLoader | O3 |
 | 3 | `transformations` | Transformer les données au chargement | O3 |
+| 3 | `samplers` | Équilibrer les batchs : les samplers | O3 |
 | 4 | `boucle-pytorch` | La boucle d'entraînement en PyTorch | O4 |
 | 4 | `evaluation-pytorch` | Évaluer : model.eval et no_grad | O4 |
+| 4 | `metriques-pytorch` | Calculer des métriques pendant l'entraînement | O4 |
 | 4 | `sauvegarder-modele` | Sauvegarder et recharger un modèle | O4 |
+| 4 | `checkpoints` | Reprendre un entraînement interrompu : les checkpoints | O4 |
 | 4 | `early-stopping` | S'arrêter au bon moment : l'early stopping | O4 |
+| 4 | `deboguer-formes` | Déboguer les erreurs de forme | O4 |
 | 5 | `threads-cpu` | Tirer le meilleur du processeur | O5 |
 | 5 | `profiler` | Trouver ce qui ralentit l'entraînement | O5 |
+| 5 | `precision-mixte` | Calculer en demi-précision | O5 |
 | 5 | `colab-kaggle` | Un GPU gratuit : Colab et Kaggle | O5 |
 
 ## Vocabulaire du module
@@ -82,12 +93,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 2.2-ex01 à ex03 | Les tenseurs | O1, O5 | 1–2 | non |
-| 2.2-ex04 à ex05 | Les gradients automatiques | O2 | 2 | non |
-| 2.2-ex06 à ex07 | Les données | O3 | 2 | non |
-| 2.2-ex08 à ex10 | Entraîner et évaluer | O4 | 2 | non |
-| 2.2-ex11 à ex12 | Aller vite sur un petit PC | O5 | 2–3 | non |
-| 2.2-ex13 | Exercice clé : reproduire le réseau de 2.1 en PyTorch et comparer | O1 à O5 | 3 | non |
+| 2.2-ex01 à ex04 | Les tenseurs | O1, O5 | 1 | non |
+| 2.2-ex05 à ex09 | Les gradients automatiques | O2 | 2 | non |
+| 2.2-ex10 à ex12 | Les données | O3 | 2 | non |
+| 2.2-ex13 à ex17 | Entraîner et évaluer | O4 | 2–3 | non |
+| 2.2-ex18 à ex20 | Aller vite sur un petit PC | O5 | 2–3 | non |
+| 2.2-ex21 | Exercice clé : reproduire le réseau de 2.1 en PyTorch et comparer | O1 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -128,3 +139,4 @@ Ne jamais charger un modèle reçu d'une source inconnue avec torch.load sans pr
 ## Points à vérifier
 
 - TODO(vérifier) : taille installée de PyTorch processeur et compatibilité avec la machine minimale.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

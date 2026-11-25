@@ -22,43 +22,54 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Adapter son message au public : décideur, technicien, grand public. | ex01 à ex02, exercice clé (ex12), qcm |
-| O2 | Construire un graphique qui transmet une seule idée. | ex03 à ex05, qcm |
-| O3 | Écrire un rapport d'analyse de 2 pages, du problème à la recommandation. | ex01 à ex02, ex06 à ex07, qcm |
-| O4 | Construire un tableau de bord Streamlit et le mettre en ligne gratuitement. | ex08 à ex09, qcm |
-| O5 | Présenter l'incertitude et les limites d'un modèle. | ex06 à ex07, exercice clé (ex12), qcm |
-| O6 | Présenter son travail en 5 minutes, en vidéo. | ex10 à ex11, exercice clé (ex12), qcm |
+| O1 | Adapter son message au public : décideur, technicien, grand public. | ex01 à ex03, exercice clé (ex19), qcm |
+| O2 | Construire un graphique qui transmet une seule idée. | ex04 à ex07, qcm |
+| O3 | Écrire un rapport d'analyse de 2 pages, du problème à la recommandation. | ex01 à ex03, ex08 à ex11, qcm |
+| O4 | Construire un tableau de bord Streamlit et le mettre en ligne gratuitement. | ex12 à ex14, qcm |
+| O5 | Présenter l'incertitude et les limites d'un modèle. | ex08 à ex11, exercice clé (ex19), qcm |
+| O6 | Présenter son travail en 5 minutes, en vidéo. | ex15 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Penser à ton public | 2 |
-| 2 | Montrer | 3 |
-| 3 | Écrire | 2 |
-| 4 | Un tableau de bord en ligne | 2 |
-| 5 | Présenter | 3 |
+| 1 | Penser à ton public | 3 |
+| 2 | Montrer | 4 |
+| 3 | Écrire | 4 |
+| 4 | Un tableau de bord en ligne | 3 |
+| 5 | Présenter | 5 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `public` | Connaître son public | O1 |
+| 1 | `message-cle` | Trouver ton message clé | O1 |
 | 1 | `raconter` | Raconter une analyse : du problème à la recommandation | O3 |
+| 1 | `pyramide` | Commencer par la conclusion : la pyramide | O1 |
 | 2 | `graphique-message` | Un graphique, une idée | O2 |
+| 2 | `annoter-graphique` | Annoter un graphique pour guider l'œil | O2 |
 | 2 | `chiffres` | Présenter des chiffres : ordres de grandeur, arrondis, unités | O2 |
 | 2 | `tableau-lisible` | Un tableau qui se lit en 5 secondes | O2 |
 | 2 | `accessibilite` | Des graphiques lisibles par tous : couleurs et contrastes | O2 |
+| 2 | `graphiques-trompeurs` | Les graphiques qui trompent | O2 |
 | 3 | `rapport` | Écrire un rapport de 2 pages | O3 |
+| 3 | `resume-decideur` | Le résumé pour décideur | O3 |
 | 3 | `incertitude` | Dire l'incertitude et les limites | O5 |
+| 3 | `montrer-incertitude` | Montrer l'incertitude sur un graphique | O5 |
 | 3 | `readme-anglais` | Écrire le README de ton projet en anglais | O3 |
+| 3 | `notebook-rapport` | Transformer un notebook en rapport | O3 |
+| 4 | `concevoir-tableau-bord` | Concevoir un tableau de bord utile | O4 |
 | 4 | `streamlit` | Un tableau de bord avec Streamlit | O4 |
 | 4 | `streamlit-interactif` | Rendre le tableau de bord interactif : filtres et cache | O4 |
+| 4 | `streamlit-pages` | Plusieurs pages et une mise en page soignée | O4 |
 | 4 | `deployer-streamlit` | Mettre une app Streamlit en ligne, gratuitement | O4 |
 | 5 | `slides` | Un support de présentation simple | O6 |
 | 5 | `presenter-video` | Préparer une présentation de 5 minutes | O6 |
+| 5 | `repeter` | Répéter et minuter sa présentation | O6 |
 | 5 | `se-filmer` | Te filmer et partager ta vidéo | O6 |
 | 5 | `questions-difficiles` | Répondre aux questions difficiles | O6 |
+| 5 | `retours` | Demander des retours et s'en servir | O6 |
 
 ## Vocabulaire du module
 
@@ -87,12 +98,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 1.8-ex01 à ex02 | Penser à ton public | O1, O3 | 1 | oui → GRILLE.md |
-| 1.8-ex03 à ex05 | Montrer | O2 | 2 | non |
-| 1.8-ex06 à ex07 | Écrire | O3, O5 | 2 | oui → GRILLE.md |
-| 1.8-ex08 à ex09 | Un tableau de bord en ligne | O4 | 2–3 | non |
-| 1.8-ex10 à ex11 | Présenter | O6 | 2–3 | non |
-| 1.8-ex12 | Exercice clé : vidéo de présentation de 5 minutes du projet 1 | O1, O5, O6 | 3 | oui → GRILLE.md |
+| 1.8-ex01 à ex03 | Penser à ton public | O1, O3 | 1 | oui → GRILLE.md |
+| 1.8-ex04 à ex07 | Montrer | O2 | 2 | non |
+| 1.8-ex08 à ex11 | Écrire | O3, O5 | 2 | oui → GRILLE.md |
+| 1.8-ex12 à ex14 | Un tableau de bord en ligne | O4 | 2–3 | non |
+| 1.8-ex15 à ex18 | Présenter | O6 | 2–3 | non |
+| 1.8-ex19 | Exercice clé : vidéo de présentation de 5 minutes du projet 1 | O1, O5, O6 | 3 | oui → GRILLE.md |
 
 ## Ressources matérielles
 
@@ -134,3 +145,4 @@ mise_a_jour: 2026-11-25
 
 - TODO(vérifier) : l'exercice clé porte sur le projet 1, réalisé après le module selon le programme ; préciser avec le mainteneur s'il se fait sur une version intermédiaire du projet ou en fin d'étape.
 - TODO(vérifier) : limites de ressources de Streamlit Community Cloud (mémoire, mise en veille des apps).
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

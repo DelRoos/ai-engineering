@@ -22,20 +22,20 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Utiliser un modèle qui comprend à la fois les images et le texte. | ex01 à ex02, qcm |
-| O2 | Transcrire la parole avec Whisper, en local. | ex03 à ex04, exercice clé (ex11), qcm |
-| O3 | Synthétiser de la voix. | ex05 à ex06, exercice clé (ex11), qcm |
-| O4 | Générer des images avec un modèle de diffusion en connaissant ses risques. | ex07 à ex08, qcm |
-| O5 | Concevoir un service d'IA pour des personnes peu alphabétisées. | ex09 à ex10, exercice clé (ex11), qcm |
+| O1 | Utiliser un modèle qui comprend à la fois les images et le texte. | ex01 à ex03, qcm |
+| O2 | Transcrire la parole avec Whisper, en local. | ex04 à ex06, exercice clé (ex14), qcm |
+| O3 | Synthétiser de la voix. | ex07 à ex08, exercice clé (ex14), qcm |
+| O4 | Générer des images avec un modèle de diffusion en connaissant ses risques. | ex09 à ex11, qcm |
+| O5 | Concevoir un service d'IA pour des personnes peu alphabétisées. | ex12 à ex13, exercice clé (ex14), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Voir et lire | 2 |
-| 2 | Écouter | 2 |
+| 1 | Voir et lire | 3 |
+| 2 | Écouter | 3 |
 | 3 | Parler | 2 |
-| 4 | Créer des images | 2 |
+| 4 | Créer des images | 3 |
 | 5 | Pour tous | 3 |
 
 ## Notions, dans l'ordre
@@ -43,15 +43,21 @@ mise_a_jour: 2026-11-25
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `vlm` | Les modèles vision-langage | O1 |
+| 1 | `clip` | Relier images et textes : CLIP | O1 |
 | 1 | `lire-document-vlm` | Lire un document avec un modèle vision-langage | O1 |
 | 1 | `questionner-image` | Décrire et questionner une image | O1 |
 | 2 | `audio-numerique` | Le son numérique en bref | O2 |
+| 2 | `nettoyer-audio` | Préparer un enregistrement : bruit, silences, découpage | O2 |
 | 2 | `whisper` | Transcrire avec Whisper | O2 |
 | 2 | `whisper-local` | Whisper en local, sur processeur | O2 |
+| 2 | `diarisation` | Qui parle quand ? La diarisation | O2 |
 | 3 | `synthese-vocale` | La synthèse vocale | O3 |
 | 3 | `voix-locales` | Des voix en langues locales | O3 |
+| 3 | `voix-temps-reel` | Répondre vite : la voix en temps réel | O3 |
 | 4 | `diffusion` | Les modèles de diffusion | O4 |
 | 4 | `generer-image` | Générer une image sur un petit PC | O4 |
+| 4 | `prompts-images` | Bien décrire une image à générer | O4 |
+| 4 | `modifier-image` | Modifier une image existante | O4 |
 | 4 | `risques-images` | Deepfakes, droits et consentement | O4 |
 | 5 | `peu-alphabetises` | Concevoir pour les personnes peu alphabétisées | O5 |
 | 5 | `assistant-vocal` | Un assistant vocal de bout en bout | O5 |
@@ -78,12 +84,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.10-ex01 à ex02 | Voir et lire | O1 | 1–2 | non |
-| 3.10-ex03 à ex04 | Écouter | O2 | 2 | non |
-| 3.10-ex05 à ex06 | Parler | O3 | 2 | non |
-| 3.10-ex07 à ex08 | Créer des images | O4 | 2 | non |
-| 3.10-ex09 à ex10 | Pour tous | O5 | 2–3 | non |
-| 3.10-ex11 | Exercice clé : un assistant vocal simple en français ou en langue locale | O2, O3, O5 | 3 | oui → GRILLE.md (test avec des utilisateurs) |
+| 3.10-ex01 à ex03 | Voir et lire | O1 | 1 | non |
+| 3.10-ex04 à ex06 | Écouter | O2 | 2 | non |
+| 3.10-ex07 à ex08 | Parler | O3 | 2 | non |
+| 3.10-ex09 à ex11 | Créer des images | O4 | 2–3 | non |
+| 3.10-ex12 à ex13 | Pour tous | O5 | 2–3 | non |
+| 3.10-ex14 | Exercice clé : un assistant vocal simple en français ou en langue locale | O2, O3, O5 | 3 | oui → GRILLE.md (test avec des utilisateurs) |
 
 ## Ressources matérielles
 
@@ -125,3 +131,4 @@ Jamais de voix ou de visage d'une personne réelle sans son consentement. Les im
 
 - TODO(vérifier) : moteur de synthèse vocale recommandé et voix disponibles en langues africaines.
 - TODO(vérifier) : modèle vision-langage assez petit pour la machine minimale.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

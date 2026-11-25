@@ -22,22 +22,24 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Coder une régression linéaire de zéro et la retrouver avec scikit-learn. | ex01 à ex02, exercice clé (ex03), qcm |
-| O2 | Entraîner et régulariser des modèles linéaires, pour prédire un nombre ou une classe. | ex01 à ex02, ex04 à ex06, qcm |
-| O3 | Expliquer et utiliser les arbres, les forêts aléatoires et le gradient boosting. | ex07 à ex09, qcm |
-| O4 | Regrouper des données sans étiquette avec k-means et réduire leurs dimensions avec PCA. | ex10 à ex13, qcm |
-| O5 | Construire une recommandation simple à partir de voisins. | ex04 à ex06, ex14 à ex16, qcm |
-| O6 | Choisir un algorithme adapté à un problème et à ses contraintes. | ex14 à ex16, qcm |
+| O1 | Coder une régression linéaire de zéro et la retrouver avec scikit-learn. | ex01 à ex05, exercice clé (ex06), qcm |
+| O2 | Entraîner et régulariser des modèles linéaires, pour prédire un nombre ou une classe. | ex01 à ex05, ex07 à ex11, qcm |
+| O3 | Expliquer et utiliser les arbres, les forêts aléatoires et le gradient boosting. | ex12 à ex13, ex14 à ex16, qcm |
+| O4 | Regrouper des données sans étiquette avec k-means et réduire leurs dimensions avec PCA. | ex17 à ex20, ex21 à ex23, qcm |
+| O5 | Construire une recommandation simple à partir de voisins. | ex07 à ex11, ex24 à ex26, qcm |
+| O6 | Choisir un algorithme adapté à un problème et à ses contraintes. | ex24 à ex26, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | La régression linéaire | 3 |
-| 2 | Classer | 3 |
-| 3 | Les arbres et leurs ensembles | 3 |
-| 4 | Sans étiquette | 4 |
-| 5 | Recommander et choisir | 3 |
+| 1 | La régression linéaire | 6 |
+| 2 | Classer | 5 |
+| 3 | Les arbres | 2 |
+| 4 | Les ensembles | 3 |
+| 5 | Regrouper sans étiquette | 4 |
+| 6 | Réduire et détecter | 3 |
+| 7 | Recommander et choisir | 3 |
 
 ## Notions, dans l'ordre
 
@@ -45,26 +47,41 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `regression-zero` | La régression linéaire, de zéro | O1 |
 | 1 | `regression-sklearn` | La régression linéaire avec scikit-learn | O1 |
+| 1 | `interpreter-coefficients` | Lire les coefficients d'un modèle | O1 |
 | 1 | `polynomiale` | Des courbes avec un modèle linéaire : la régression polynomiale | O2 |
 | 1 | `regularisation` | Régulariser : Ridge et Lasso | O2 |
+| 1 | `elastic-net` | Combiner Ridge et Lasso : Elastic Net | O2 |
+| 1 | `regression-robuste` | Résister aux valeurs aberrantes : la régression robuste | O2 |
 | 2 | `logistique` | La régression logistique, pour classer | O2 |
 | 2 | `multiclasse` | Plus de deux classes | O2 |
+| 2 | `multilabel` | Plusieurs étiquettes à la fois | O2 |
 | 2 | `knn` | Les k plus proches voisins | O5 |
 | 2 | `naive-bayes` | Naive Bayes : classer avec le théorème de Bayes | O2 |
 | 2 | `svm` | Les machines à vecteurs de support (SVM) | O2 |
+| 2 | `noyaux` | L'astuce du noyau | O2 |
 | 3 | `arbres` | Les arbres de décision | O3 |
-| 3 | `random-forest` | Random forest : la force du nombre | O3 |
-| 3 | `gradient-boosting` | Le gradient boosting : XGBoost et LightGBM | O3 |
-| 4 | `kmeans` | Regrouper sans étiquette : k-means | O4 |
-| 4 | `nombre-groupes` | Choisir le nombre de groupes | O4 |
-| 4 | `dbscan` | Des groupes de toutes les formes : DBSCAN | O4 |
-| 4 | `anomalies` | Repérer l'inhabituel : la détection d'anomalies | O4 |
-| 4 | `pca` | Réduire les dimensions : la PCA | O4 |
-| 4 | `visualiser-2d` | Voir des données à beaucoup de colonnes en 2D | O4 |
-| 5 | `recommandation` | Premiers pas en recommandation | O5 |
-| 5 | `reco-contenu` | Recommander à partir du contenu | O5 |
-| 5 | `reco-evaluer` | Évaluer une recommandation | O5 |
-| 5 | `choisir-algorithme` | Choisir un algorithme | O6 |
+| 3 | `elagage` | Élaguer un arbre | O3 |
+| 3 | `importance-arbres` | Ce que les arbres jugent important | O3 |
+| 4 | `bagging` | Le bagging | O3 |
+| 4 | `random-forest` | Random forest : la force du nombre | O3 |
+| 4 | `adaboost` | Le boosting, d'AdaBoost au gradient boosting | O3 |
+| 4 | `gradient-boosting` | Le gradient boosting : XGBoost et LightGBM | O3 |
+| 4 | `stacking` | Voter et empiler : voting et stacking | O3 |
+| 5 | `kmeans` | Regrouper sans étiquette : k-means | O4 |
+| 5 | `nombre-groupes` | Choisir le nombre de groupes | O4 |
+| 5 | `hierarchique` | Le clustering hiérarchique | O4 |
+| 5 | `dbscan` | Des groupes de toutes les formes : DBSCAN | O4 |
+| 5 | `melanges-gaussiens` | Les mélanges gaussiens | O4 |
+| 5 | `evaluer-clusters` | Évaluer des groupes sans étiquette | O4 |
+| 6 | `pca` | Réduire les dimensions : la PCA | O4 |
+| 6 | `visualiser-2d` | Voir des données à beaucoup de colonnes en 2D | O4 |
+| 6 | `nmf-sujets` | Trouver des sujets dans des textes : NMF | O4 |
+| 6 | `anomalies` | Repérer l'inhabituel : la détection d'anomalies | O4 |
+| 7 | `recommandation` | Premiers pas en recommandation | O5 |
+| 7 | `factorisation-matrices` | La factorisation de matrices | O5 |
+| 7 | `reco-contenu` | Recommander à partir du contenu | O5 |
+| 7 | `reco-evaluer` | Évaluer une recommandation | O5 |
+| 7 | `choisir-algorithme` | Choisir un algorithme | O6 |
 
 ## Vocabulaire du module
 
@@ -99,12 +116,14 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 1.5-ex01 à ex02 | La régression linéaire | O1, O2 | 1 | non |
-| 1.5-ex03 | Exercice clé : régression linéaire codée de zéro, puis avec scikit-learn | O1 | 3 | non |
-| 1.5-ex04 à ex06 | Classer | O2, O5 | 2 | non |
-| 1.5-ex07 à ex09 | Les arbres et leurs ensembles | O3 | 2 | non |
-| 1.5-ex10 à ex13 | Sans étiquette | O4 | 2–3 | non |
-| 1.5-ex14 à ex16 | Recommander et choisir | O5, O6 | 2–3 | non |
+| 1.5-ex01 à ex05 | La régression linéaire | O1, O2 | 1 | non |
+| 1.5-ex06 | Exercice clé : régression linéaire codée de zéro, puis avec scikit-learn | O1 | 3 | non |
+| 1.5-ex07 à ex11 | Classer | O2, O5 | 1 | non |
+| 1.5-ex12 à ex13 | Les arbres | O3 | 2 | non |
+| 1.5-ex14 à ex16 | Les ensembles | O3 | 2 | non |
+| 1.5-ex17 à ex20 | Regrouper sans étiquette | O4 | 2–3 | non |
+| 1.5-ex21 à ex23 | Réduire et détecter | O4 | 2–3 | non |
+| 1.5-ex24 à ex26 | Recommander et choisir | O5, O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -146,3 +165,4 @@ Une recommandation enferme parfois les clients dans les mêmes produits et favor
 
 - TODO(vérifier) : tailles et temps d'entraînement de XGBoost et LightGBM sur la machine minimale.
 - TODO(vérifier) : les k plus proches voisins ne sont pas cités par le programme ; ils sont ajoutés comme base de la recommandation, à valider par le mainteneur.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

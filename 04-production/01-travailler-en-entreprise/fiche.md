@@ -22,42 +22,53 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Organiser son travail en tickets sur un tableau Kanban. | ex01 à ex02, exercice clé (ex12), qcm |
-| O2 | Découper et estimer des tâches. | ex03 à ex04, exercice clé (ex12), qcm |
-| O3 | Produire des commits et des pull requests propres, et se relire. | ex05 à ex07, qcm |
-| O4 | Écrire une documentation technique en anglais. | ex08 à ex09, qcm |
-| O5 | Contribuer à un projet open source existant. | ex10 à ex11, exercice clé (ex12), qcm |
+| O1 | Organiser son travail en tickets sur un tableau Kanban. | ex01 à ex03, exercice clé (ex18), qcm |
+| O2 | Découper et estimer des tâches. | ex04 à ex06, ex10 à ex11, exercice clé (ex18), qcm |
+| O3 | Produire des commits et des pull requests propres, et se relire. | ex07 à ex09, qcm |
+| O4 | Écrire une documentation technique en anglais. | ex10 à ex11, ex12 à ex14, qcm |
+| O5 | Contribuer à un projet open source existant. | ex15 à ex17, exercice clé (ex18), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | S'organiser | 2 |
-| 2 | Découper et estimer | 2 |
+| 1 | S'organiser | 3 |
+| 2 | Découper et estimer | 3 |
 | 3 | Livrer proprement | 3 |
-| 4 | Écrire en anglais | 2 |
-| 5 | L'open source | 3 |
+| 4 | Travailler à distance | 2 |
+| 5 | Écrire en anglais | 3 |
+| 6 | L'open source | 4 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `kanban` | Le tableau Kanban | O1 |
+| 1 | `agile` | Les méthodes agiles en bref | O1 |
 | 1 | `github-projects` | GitHub Issues et Projects | O1 |
 | 1 | `bon-ticket` | Écrire un bon ticket | O1 |
+| 1 | `signaler-bug` | Signaler un bug que l'on peut reproduire | O1 |
+| 2 | `histoires-utilisateur` | Les histoires utilisateur | O2 |
 | 2 | `decouper-taches` | Découper une fonctionnalité en tâches | O2 |
 | 2 | `estimer` | Estimer sans se mentir | O2 |
 | 2 | `prioriser` | Prioriser : l'essentiel d'abord | O2 |
+| 2 | `definition-termine` | Quand une tâche est-elle finie ? | O2 |
 | 3 | `petits-commits` | Des commits petits et clairs | O3 |
 | 3 | `pr-propre` | Une pull request facile à relire | O3 |
 | 3 | `auto-revue` | Se relire avant de demander une revue | O3 |
+| 3 | `donner-revue` | Relire le code d'un autre avec bienveillance | O3 |
 | 3 | `conventions-equipe` | Les conventions d'une équipe | O3 |
-| 4 | `doc-anglais` | Une documentation technique en anglais | O4 |
-| 4 | `adr` | Noter une décision : l'ADR | O4 |
-| 4 | `changelog` | Tenir un changelog | O4 |
-| 5 | `choisir-projet-os` | Choisir un projet où contribuer | O5 |
-| 5 | `contributing` | Lire CONTRIBUTING et le code de conduite | O5 |
-| 5 | `premiere-contribution` | Ta première contribution | O5 |
+| 4 | `communication-ecrite` | Communiquer par écrit sans malentendu | O4 |
+| 4 | `reunions` | Des réunions courtes et utiles | O4 |
+| 4 | `retrospective` | Apprendre de chaque itération : la rétrospective | O2 |
+| 5 | `doc-anglais` | Une documentation technique en anglais | O4 |
+| 5 | `adr` | Noter une décision : l'ADR | O4 |
+| 5 | `changelog` | Tenir un changelog | O4 |
+| 5 | `docs-code` | La documentation à côté du code | O4 |
+| 6 | `choisir-projet-os` | Choisir un projet où contribuer | O5 |
+| 6 | `contributing` | Lire CONTRIBUTING et le code de conduite | O5 |
+| 6 | `premiere-contribution` | Ta première contribution | O5 |
+| 6 | `accords-contribution` | Les accords de contribution | O5 |
 
 ## Vocabulaire du module
 
@@ -81,12 +92,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 4.1-ex01 à ex02 | S'organiser | O1 | 1–2 | non |
-| 4.1-ex03 à ex04 | Découper et estimer | O2 | 2 | non |
-| 4.1-ex05 à ex07 | Livrer proprement | O3 | 2 | non |
-| 4.1-ex08 à ex09 | Écrire en anglais | O4 | 2 | non |
-| 4.1-ex10 à ex11 | L'open source | O5 | 2–3 | non |
-| 4.1-ex12 | Exercice clé : le projet 4 découpé en tickets, puis une issue ou une pull request utile sur un projet open source | O1, O2, O5 | 3 | oui → GRILLE.md (qualité des tickets et de la contribution) |
+| 4.1-ex01 à ex03 | S'organiser | O1 | 1 | non |
+| 4.1-ex04 à ex06 | Découper et estimer | O2 | 1 | non |
+| 4.1-ex07 à ex09 | Livrer proprement | O3 | 2 | non |
+| 4.1-ex10 à ex11 | Travailler à distance | O2, O4 | 2 | non |
+| 4.1-ex12 à ex14 | Écrire en anglais | O4 | 2–3 | non |
+| 4.1-ex15 à ex17 | L'open source | O5 | 2–3 | non |
+| 4.1-ex18 | Exercice clé : le projet 4 découpé en tickets, puis une issue ou une pull request utile sur un projet open source | O1, O2, O5 | 3 | oui → GRILLE.md (qualité des tickets et de la contribution) |
 
 ## Ressources matérielles
 
@@ -127,3 +139,4 @@ Une contribution open source est publique : ne jamais y laisser de secret, et re
 ## Points à vérifier
 
 - TODO(vérifier) : liste de projets open source accueillants pour une première contribution (bonnes « good first issues »).
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

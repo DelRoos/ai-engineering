@@ -22,20 +22,21 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Construire un pipeline d'intégration continue complet. | ex01 à ex03, exercice clé (ex10), qcm |
-| O2 | Déployer automatiquement et progressivement. | ex04 à ex05, qcm |
-| O3 | Intégrer des évaluations de LLM dans la CI en maîtrisant leur coût. | ex06 à ex07, exercice clé (ex10), qcm |
-| O4 | Versionner modèles et données avec DVC. | ex08 à ex09, qcm |
-| O5 | Bloquer une mise en production qui dégrade la qualité. | ex06 à ex07, exercice clé (ex10), qcm |
+| O1 | Construire un pipeline d'intégration continue complet. | ex01 à ex04, exercice clé (ex15), qcm |
+| O2 | Déployer automatiquement et progressivement. | ex05 à ex06, ex07 à ex09, qcm |
+| O3 | Intégrer des évaluations de LLM dans la CI en maîtrisant leur coût. | ex10 à ex12, exercice clé (ex15), qcm |
+| O4 | Versionner modèles et données avec DVC. | ex13 à ex14, qcm |
+| O5 | Bloquer une mise en production qui dégrade la qualité. | ex10 à ex12, exercice clé (ex15), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | L'intégration continue | 3 |
-| 2 | Le déploiement continu | 2 |
-| 3 | Évaluer dans la CI | 2 |
-| 4 | Versionner modèles et données | 3 |
+| 1 | L'intégration continue | 4 |
+| 2 | Construire et publier | 2 |
+| 3 | Le déploiement continu | 3 |
+| 4 | Évaluer dans la CI | 3 |
+| 5 | Versionner modèles et données | 3 |
 
 ## Notions, dans l'ordre
 
@@ -45,15 +46,21 @@ mise_a_jour: 2026-11-25
 | 1 | `workflows` | Écrire des workflows GitHub Actions | O1 |
 | 1 | `matrices-ci` | Tester plusieurs versions : les matrices | O1 |
 | 1 | `cache-ci` | Accélérer la CI : le cache | O1 |
-| 2 | `cd` | Le déploiement continu | O2 |
-| 2 | `environnements` | Préproduction et production | O2 |
-| 2 | `deploiement-progressif` | Déployer progressivement | O2 |
-| 3 | `eval-ci` | Lancer les évaluations dans la CI | O3 |
-| 3 | `seuils-qualite` | Fixer des seuils de qualité | O5 |
-| 3 | `cout-eval` | Maîtriser le coût des évaluations | O3 |
-| 4 | `dvc` | Versionner les données avec DVC | O4 |
-| 4 | `registre-modeles` | Versionner les modèles | O4 |
-| 4 | `tracabilite` | Savoir quel modèle tourne en production | O4 |
+| 1 | `qualite-ci` | Lint, types et tests dans la CI | O1 |
+| 1 | `securite-ci` | Analyser les dépendances et les secrets | O1 |
+| 2 | `image-ci` | Construire et publier une image dans la CI | O2 |
+| 2 | `automatiser-versions` | Automatiser les versions | O2 |
+| 3 | `cd` | Le déploiement continu | O2 |
+| 3 | `environnements` | Préproduction et production | O2 |
+| 3 | `deploiement-progressif` | Déployer progressivement | O2 |
+| 3 | `feature-flags` | Activer une fonctionnalité sans redéployer | O2 |
+| 4 | `eval-ci` | Lancer les évaluations dans la CI | O3 |
+| 4 | `seuils-qualite` | Fixer des seuils de qualité | O5 |
+| 4 | `cout-eval` | Maîtriser le coût des évaluations | O3 |
+| 4 | `rapport-pr` | Afficher les résultats dans la pull request | O3 |
+| 5 | `dvc` | Versionner les données avec DVC | O4 |
+| 5 | `registre-modeles` | Versionner les modèles | O4 |
+| 5 | `tracabilite` | Savoir quel modèle tourne en production | O4 |
 
 ## Vocabulaire du module
 
@@ -78,11 +85,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 4.6-ex01 à ex03 | L'intégration continue | O1 | 1–2 | non |
-| 4.6-ex04 à ex05 | Le déploiement continu | O2 | 2 | non |
-| 4.6-ex06 à ex07 | Évaluer dans la CI | O3, O5 | 2 | non |
-| 4.6-ex08 à ex09 | Versionner modèles et données | O4 | 2–3 | non |
-| 4.6-ex10 | Exercice clé : un pipeline qui bloque un déploiement si le score d'évaluation baisse | O1, O3, O5 | 3 | non |
+| 4.6-ex01 à ex04 | L'intégration continue | O1 | 1 | non |
+| 4.6-ex05 à ex06 | Construire et publier | O2 | 2 | non |
+| 4.6-ex07 à ex09 | Le déploiement continu | O2 | 2 | non |
+| 4.6-ex10 à ex12 | Évaluer dans la CI | O3, O5 | 2–3 | non |
+| 4.6-ex13 à ex14 | Versionner modèles et données | O4 | 2–3 | non |
+| 4.6-ex15 | Exercice clé : un pipeline qui bloque un déploiement si le score d'évaluation baisse | O1, O3, O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -123,3 +131,4 @@ Les secrets de la CI (clés d'API) sont stockés dans les secrets de GitHub, jam
 ## Points à vérifier
 
 - TODO(vérifier) : quotas gratuits de GitHub Actions à la rédaction.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

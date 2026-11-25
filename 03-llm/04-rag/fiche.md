@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex02, exercice clé (ex11), qcm |
-| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex03 à ex05, exercice clé (ex11), qcm |
-| O3 | Améliorer la recherche par reformulation et reranking. | ex06 à ex07, exercice clé (ex11), qcm |
-| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex08 à ex10, exercice clé (ex11), qcm |
-| O5 | Construire un RAG multilingue. | ex12 à ex13, qcm |
+| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex03, exercice clé (ex16), qcm |
+| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex08, exercice clé (ex16), qcm |
+| O3 | Améliorer la recherche par reformulation et reranking. | ex09 à ex12, exercice clé (ex16), ex17 à ex19, qcm |
+| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex13 à ex15, exercice clé (ex16), ex17 à ex19, qcm |
+| O5 | Construire un RAG multilingue. | ex20 à ex21, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Le principe | 2 |
-| 2 | Préparer les documents | 3 |
-| 3 | Mieux chercher | 2 |
+| 1 | Le principe | 3 |
+| 2 | Préparer les documents | 5 |
+| 3 | Mieux chercher | 4 |
 | 4 | Bien répondre | 4 |
-| 5 | Plusieurs langues | 2 |
+| 5 | Le RAG avancé | 3 |
+| 6 | Plusieurs langues | 2 |
 
 ## Notions, dans l'ordre
 
@@ -45,20 +46,30 @@ mise_a_jour: 2026-11-25
 | 1 | `pourquoi-rag` | Pourquoi le RAG : un LLM qui lit tes documents | O1 |
 | 1 | `chaine-rag` | La chaîne complète : indexer, chercher, répondre | O1 |
 | 1 | `premier-rag` | Ton premier RAG en local | O1 |
+| 1 | `rag-ou-contexte-long` | RAG ou long contexte ? | O1 |
 | 2 | `extraire-pdf` | Extraire le texte d'un PDF | O2 |
 | 2 | `tableaux` | Garder les tableaux lisibles | O2 |
 | 2 | `ocr` | Les documents scannés : l'OCR | O2 |
 | 2 | `chunking` | Découper en morceaux : le chunking | O2 |
+| 2 | `chunking-structure` | Découper selon la structure : titres, articles, paragraphes | O2 |
 | 2 | `metadonnees-docs` | Garder la source : les métadonnées | O2 |
+| 2 | `contexte-chunks` | Ajouter du contexte à chaque morceau | O2 |
 | 3 | `reformulation` | Reformuler la question | O3 |
+| 3 | `multi-requetes` | Chercher avec plusieurs reformulations | O3 |
+| 3 | `hyde` | Chercher avec une réponse imaginée : HyDE | O3 |
 | 3 | `reranking` | Reclasser les résultats : le reranking | O3 |
 | 3 | `nombre-passages` | Combien de passages donner au modèle | O3 |
+| 3 | `routage-requetes` | Envoyer la question au bon index | O3 |
 | 4 | `prompt-rag` | Le prompt du RAG | O4 |
 | 4 | `citations` | Citer ses sources | O4 |
 | 4 | `je-ne-sais-pas` | Savoir dire « je ne sais pas » | O4 |
 | 4 | `hors-sujet` | Refuser les questions hors sujet | O4 |
-| 5 | `rag-multilingue` | Un RAG multilingue | O5 |
-| 5 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
+| 5 | `rag-conversation` | Un RAG qui suit la conversation | O4 |
+| 5 | `texte-vers-sql` | Interroger des chiffres : du texte au SQL | O4 |
+| 5 | `graph-rag` | Relier les informations : notions de GraphRAG | O3 |
+| 5 | `droits-acces-rag` | Chacun ne voit que ses documents | O4 |
+| 6 | `rag-multilingue` | Un RAG multilingue | O5 |
+| 6 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
 
 ## Vocabulaire du module
 
@@ -81,12 +92,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.4-ex01 à ex02 | Le principe | O1 | 1–2 | non |
-| 3.4-ex03 à ex05 | Préparer les documents | O2 | 2 | non |
-| 3.4-ex06 à ex07 | Mieux chercher | O3 | 2 | non |
-| 3.4-ex08 à ex10 | Bien répondre | O4 | 2 | non |
-| 3.4-ex11 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
-| 3.4-ex12 à ex13 | Plusieurs langues | O5 | 2–3 | non |
+| 3.4-ex01 à ex03 | Le principe | O1 | 1 | non |
+| 3.4-ex04 à ex08 | Préparer les documents | O2 | 1 | non |
+| 3.4-ex09 à ex12 | Mieux chercher | O3 | 2 | non |
+| 3.4-ex13 à ex15 | Bien répondre | O4 | 2 | non |
+| 3.4-ex16 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
+| 3.4-ex17 à ex19 | Le RAG avancé | O3, O4 | 2–3 | non |
+| 3.4-ex20 à ex21 | Plusieurs langues | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -127,3 +139,4 @@ Point de contrôle du projet 3 : refus des questions hors périmètre, tests d'i
 
 - TODO(vérifier) : statut juridique et source officielle des textes du code du travail camerounais.
 - TODO(vérifier) : outil d'OCR recommandé pour les documents scannés en français.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

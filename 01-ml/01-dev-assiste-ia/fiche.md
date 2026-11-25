@@ -22,21 +22,22 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer ce qu'un assistant de code sait faire et ce qu'il ne sait pas faire. | ex01 à ex02, qcm |
-| O2 | Installer et utiliser un assistant gratuit dans VS Code. | ex01 à ex02, ex03 à ex04, qcm |
-| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex05 à ex07, exercice clé (ex14), qcm |
-| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex08 à ex11, exercice clé (ex14), qcm |
-| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex12 à ex13, exercice clé (ex14), qcm |
+| O1 | Expliquer ce qu'un assistant de code sait faire et ce qu'il ne sait pas faire. | ex01 à ex03, qcm |
+| O2 | Installer et utiliser un assistant gratuit dans VS Code. | ex01 à ex03, ex04 à ex06, qcm |
+| O3 | Décrire une tâche avec son contexte, ses contraintes et un exemple attendu. | ex07 à ex09, ex10 à ex11, exercice clé (ex19), qcm |
+| O4 | Relire et tester le code généré, et y trouver les erreurs et les failles. | ex10 à ex11, ex12 à ex15, exercice clé (ex19), qcm |
+| O5 | Identifier les risques : licence du code, fuite de secrets, dépendance à l'outil. | ex16 à ex18, exercice clé (ex19), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Comprendre les assistants de code | 2 |
-| 2 | T'équiper | 2 |
+| 1 | Comprendre les assistants de code | 3 |
+| 2 | T'équiper | 3 |
 | 3 | Bien demander | 3 |
-| 4 | Vérifier ce qui est produit | 4 |
-| 5 | Travailler avec méthode | 3 |
+| 4 | Faire travailler l'assistant | 2 |
+| 5 | Vérifier ce qui est produit | 4 |
+| 6 | Travailler avec méthode | 4 |
 
 ## Notions, dans l'ordre
 
@@ -44,24 +45,31 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `assistant-code` | Ce qu'est un assistant de code, et ce qu'il n'est pas | O1 |
 | 1 | `comment-ca-marche` | Comment un assistant prédit du code | O1 |
+| 1 | `modes-assistant` | Complétion, chat, agent : trois façons de travailler | O1 |
 | 1 | `options` | Copilot, Claude Code, Cursor et les options gratuites ou locales | O2 |
 | 2 | `installer-assistant` | Installer un assistant gratuit dans VS Code | O2 |
 | 2 | `modele-local` | Un assistant avec un modèle local, sans Internet | O2 |
+| 2 | `assistant-terminal` | Un assistant dans le terminal | O2 |
 | 2 | `agents-code` | Les agents de code : confier une tâche entière, sous contrôle | O2 |
 | 3 | `decrire-tache` | Bien décrire une tâche : contexte, contraintes, exemple | O3 |
 | 3 | `contexte-projet` | Donner le bon contexte : fichiers et règles du projet | O3 |
+| 3 | `planifier-avant` | Faire planifier avant de faire coder | O3 |
 | 3 | `iterer` | Corriger le tir : avancer par petites demandes | O3 |
 | 3 | `expliquer-code` | Faire expliquer un code que tu ne connais pas | O3 |
-| 4 | `relire` | Relire le code généré ligne à ligne | O4 |
-| 4 | `tester-genere` | Tester avant de faire confiance | O4 |
-| 4 | `tests-assistant` | Faire écrire des tests, et les vérifier | O4 |
-| 4 | `deboguer-assistant` | Déboguer avec l'assistant sans perdre le fil | O4 |
-| 4 | `erreurs-failles` | Les erreurs fréquentes du code généré | O4 |
-| 4 | `failles` | Les failles de sécurité du code généré | O4 |
-| 5 | `risques` | Le code généré et les licences | O5 |
-| 5 | `secrets-assistant` | Ne jamais confier un secret à un assistant | O5 |
-| 5 | `dependance` | Garder tes compétences : le risque de dépendance | O5 |
-| 5 | `quand-pas` | Quand ne pas utiliser l'assistant | O5 |
+| 4 | `refactoriser-assistant` | Refactoriser avec l'assistant | O3 |
+| 4 | `documenter-assistant` | Faire écrire la documentation | O3 |
+| 4 | `revue-assistant` | Faire relire ton code par l'assistant | O4 |
+| 5 | `relire` | Relire le code généré ligne à ligne | O4 |
+| 5 | `tester-genere` | Tester avant de faire confiance | O4 |
+| 5 | `tests-assistant` | Faire écrire des tests, et les vérifier | O4 |
+| 5 | `deboguer-assistant` | Déboguer avec l'assistant sans perdre le fil | O4 |
+| 5 | `erreurs-failles` | Les erreurs fréquentes du code généré | O4 |
+| 5 | `failles` | Les failles de sécurité du code généré | O4 |
+| 6 | `risques` | Le code généré et les licences | O5 |
+| 6 | `secrets-assistant` | Ne jamais confier un secret à un assistant | O5 |
+| 6 | `dependance` | Garder tes compétences : le risque de dépendance | O5 |
+| 6 | `mesurer-gain` | Mesurer ce que l'assistant te fait vraiment gagner | O5 |
+| 6 | `quand-pas` | Quand ne pas utiliser l'assistant | O5 |
 
 ## Vocabulaire du module
 
@@ -92,12 +100,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 1.1-ex01 à ex02 | Comprendre les assistants de code | O1, O2 | 1 | non |
-| 1.1-ex03 à ex04 | T'équiper | O2 | 2 | non |
-| 1.1-ex05 à ex07 | Bien demander | O3 | 2 | non |
-| 1.1-ex08 à ex11 | Vérifier ce qui est produit | O4 | 2–3 | non |
-| 1.1-ex12 à ex13 | Travailler avec méthode | O5 | 2–3 | non |
-| 1.1-ex14 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
+| 1.1-ex01 à ex03 | Comprendre les assistants de code | O1, O2 | 1 | non |
+| 1.1-ex04 à ex06 | T'équiper | O2 | 1 | non |
+| 1.1-ex07 à ex09 | Bien demander | O3 | 2 | non |
+| 1.1-ex10 à ex11 | Faire travailler l'assistant | O3, O4 | 2 | non |
+| 1.1-ex12 à ex15 | Vérifier ce qui est produit | O4 | 2–3 | non |
+| 1.1-ex16 à ex18 | Travailler avec méthode | O5 | 2–3 | non |
+| 1.1-ex19 | Exercice clé : la même fonctionnalité avec et sans assistant, puis un rapport qui compare temps, qualité et bugs | O3 à O5 | 3 | oui → GRILLE.md (le rapport) |
 
 ## Ressources matérielles
 
@@ -142,3 +151,4 @@ mise_a_jour: 2026-11-25
 - TODO(vérifier) : offres gratuites des assistants (Copilot Free, étudiants), qui changent souvent ; revoir à chaque mise à jour trimestrielle.
 - TODO(vérifier) : le petit modèle de code local recommandé et sa vitesse sur la machine minimale.
 - TODO(vérifier) : les exercices ex01 à ex07 doivent rester vérifiables par des tests même si chacun utilise un assistant différent.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

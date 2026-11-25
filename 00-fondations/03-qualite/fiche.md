@@ -22,25 +22,27 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Écrire des tests pytest qui couvrent les cas normaux, les cas limites et les erreurs. | ex01 à ex05, ex06 à ex08, qcm |
-| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex08, exercice clé (ex23), qcm |
-| O3 | Trouver et corriger un bug avec méthode (trace d'erreur, débogueur). | ex09 à ex11, qcm |
-| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex12 à ex15, qcm |
-| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex16 à ex20, qcm |
-| O6 | Modifier un code sans le casser, grâce aux tests. | ex21 à ex22, exercice clé (ex23), qcm |
-| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex24 à ex26, qcm |
+| O1 | Écrire des tests pytest qui couvrent les cas normaux, les cas limites et les erreurs. | ex01 à ex05, ex06 à ex10, qcm |
+| O2 | Mesurer la couverture de tests d'un module. | ex06 à ex10, exercice clé (ex31), qcm |
+| O3 | Trouver et corriger un bug avec méthode (trace d'erreur, débogueur). | ex11 à ex13, qcm |
+| O4 | Rendre un code lisible : noms, fonctions courtes, documentation. | ex16 à ex20, qcm |
+| O5 | Estimer la complexité d'un algorithme et choisir la bonne structure de données. | ex14 à ex15, ex21 à ex24, ex25 à ex28, qcm |
+| O6 | Modifier un code sans le casser, grâce aux tests. | ex29 à ex30, exercice clé (ex31), qcm |
+| O7 | Livrer un projet installable en une commande, vérifié automatiquement à chaque push. | ex32 à ex36, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Tester avec pytest | 5 |
-| 2 | Des tests utiles | 3 |
+| 2 | Des tests utiles | 5 |
 | 3 | Déboguer | 3 |
-| 4 | Un code lisible | 4 |
-| 5 | Algorithmique | 5 |
-| 6 | Améliorer sans casser | 3 |
-| 7 | Livrer un projet Python | 3 |
+| 4 | Mesurer les performances | 2 |
+| 5 | Un code lisible | 5 |
+| 6 | Algorithmique | 4 |
+| 7 | Structures de données | 4 |
+| 8 | Améliorer sans casser | 3 |
+| 9 | Livrer un projet Python | 5 |
 
 ## Notions, dans l'ordre
 
@@ -48,39 +50,57 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `pourquoi-tester` | Pourquoi tester : le bug qui coûte cher | O1 |
 | 1 | `premier-test` | Ton premier test avec pytest | O1 |
+| 1 | `lancer-pytest` | Lancer pytest : options et choix des tests | O1 |
 | 1 | `bons-tests` | Cas normaux, cas limites, cas d'erreur | O1 |
 | 1 | `pytest-raises` | Vérifier qu'une erreur est levée | O1 |
 | 1 | `fixtures-parametrize` | Préparer les données d'un test : les fixtures | O1 |
+| 1 | `conftest` | Partager des fixtures : conftest.py | O1 |
 | 1 | `parametrize` | Un test, plusieurs cas : parametrize | O1 |
 | 2 | `couverture` | Mesurer la couverture de tests | O2 |
 | 2 | `tester-fichiers` | Tester du code qui lit des fichiers | O1 |
+| 2 | `capsys` | Tester ce qu'un programme affiche | O1 |
 | 2 | `monkeypatch` | Remplacer une dépendance pendant un test | O1 |
+| 2 | `marqueurs` | Marquer, sauter et accepter un échec : mark, skip, xfail | O1 |
+| 2 | `doctest` | Des exemples qui sont aussi des tests : doctest | O1 |
+| 2 | `organiser-tests` | Organiser ses tests | O1 |
 | 2 | `tdd` | Écrire le test avant le code | O1 |
 | 3 | `trace-erreur` | Lire une trace d'erreur et localiser un bug | O3 |
 | 3 | `debogueur` | Le débogueur de VS Code : points d'arrêt et pas à pas | O3 |
+| 3 | `pdb` | Déboguer dans le terminal : pdb et breakpoint() | O3 |
 | 3 | `logging` | Garder une trace avec logging | O3 |
 | 3 | `methode-debogage` | Une méthode pour trouver n'importe quel bug | O3 |
-| 4 | `nommer` | Bien nommer variables et fonctions | O4 |
-| 4 | `fonctions-courtes` | Des fonctions courtes, sans répétition | O4 |
-| 4 | `gerer-erreurs` | Gérer les erreurs : quand lever, quand attraper | O4 |
-| 4 | `documenter` | Documenter le code : docstrings et commentaires utiles | O4 |
-| 4 | `readme` | Écrire un bon README | O4 |
-| 4 | `mypy` | Vérifier les types avec mypy | O4 |
-| 5 | `mesurer-temps` | Mesurer le temps d'un programme | O5 |
-| 5 | `complexite` | La complexité : O(1), O(n), O(n²) | O5 |
-| 5 | `chercher` | Chercher dans une liste ou dans un dictionnaire | O5 |
-| 5 | `dichotomie` | Chercher vite dans une liste triée : la dichotomie | O5 |
-| 5 | `algos-tri` | Comment trier : les algorithmes de tri | O5 |
-| 5 | `recursivite` | La récursivité | O5 |
-| 5 | `piles-files` | Les piles et les files | O5 |
-| 5 | `structures` | Choisir la bonne structure de données | O5 |
-| 6 | `refactoriser` | Refactoriser sans casser grâce aux tests | O6 |
-| 6 | `revue-code` | Relire ton code comme un relecteur | O6 |
-| 7 | `pyproject` | Décrire ton projet : pyproject.toml | O7 |
-| 7 | `point-entree` | Une commande installable en une ligne | O7 |
-| 7 | `pre-commit` | Vérifier avant chaque commit : pre-commit | O7 |
-| 7 | `ci-tests` | Lancer tes tests à chaque push : l'intégration continue | O7 |
-| 7 | `release` | Publier une version : tags et releases | O7 |
+| 4 | `mesurer-temps` | Mesurer le temps d'un programme | O5 |
+| 4 | `profiler-code` | Trouver ce qui ralentit : cProfile | O5 |
+| 4 | `memoire-programme` | Mesurer la mémoire d'un programme | O5 |
+| 5 | `nommer` | Bien nommer variables et fonctions | O4 |
+| 5 | `fonctions-courtes` | Des fonctions courtes, sans répétition | O4 |
+| 5 | `odeurs-code` | Reconnaître du code difficile à maintenir | O4 |
+| 5 | `gerer-erreurs` | Gérer les erreurs : quand lever, quand attraper | O4 |
+| 5 | `documenter` | Documenter le code : docstrings et commentaires utiles | O4 |
+| 5 | `readme` | Écrire un bon README | O4 |
+| 5 | `mypy` | Vérifier les types avec mypy | O4 |
+| 6 | `complexite` | La complexité : O(1), O(n), O(n²) | O5 |
+| 6 | `complexite-memoire` | La complexité en mémoire | O5 |
+| 6 | `chercher` | Chercher dans une liste ou dans un dictionnaire | O5 |
+| 6 | `dichotomie` | Chercher vite dans une liste triée : la dichotomie | O5 |
+| 6 | `algos-tri` | Comment trier : les algorithmes de tri | O5 |
+| 6 | `recursivite` | La récursivité | O5 |
+| 7 | `tables-hachage` | Comment marche un dictionnaire : les tables de hachage | O5 |
+| 7 | `piles-files` | Les piles et les files | O5 |
+| 7 | `tas` | Garder le plus petit sous la main : le tas (heapq) | O5 |
+| 7 | `graphes` | Les graphes : des nœuds et des liens | O5 |
+| 7 | `parcours-graphe` | Parcourir un graphe en largeur et en profondeur | O5 |
+| 7 | `structures` | Choisir la bonne structure de données | O5 |
+| 8 | `refactoriser` | Refactoriser sans casser grâce aux tests | O6 |
+| 8 | `revue-code` | Relire ton code comme un relecteur | O6 |
+| 9 | `pyproject` | Décrire ton projet : pyproject.toml | O7 |
+| 9 | `point-entree` | Une commande installable en une ligne | O7 |
+| 9 | `pre-commit` | Vérifier avant chaque commit : pre-commit | O7 |
+| 9 | `ci-tests` | Lancer tes tests à chaque push : l'intégration continue | O7 |
+| 9 | `versions-semantiques` | Numéroter ses versions : le versionnage sémantique | O7 |
+| 9 | `release` | Publier une version : tags et releases | O7 |
+| 9 | `licence-projet` | Choisir une licence pour ton projet | O7 |
+| 9 | `publier-pypi` | Publier un paquet sur PyPI | O7 |
 
 ## Vocabulaire du module
 
@@ -122,13 +142,15 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 0.3-ex01 à ex05 | Tester avec pytest | O1 | 1 | non |
-| 0.3-ex06 à ex08 | Des tests utiles | O1, O2 | 1 | non |
-| 0.3-ex09 à ex11 | Déboguer | O3 | 2 | non |
-| 0.3-ex12 à ex15 | Un code lisible | O4 | 2 | non |
-| 0.3-ex16 à ex20 | Algorithmique | O5 | 2–3 | non |
-| 0.3-ex21 à ex22 | Améliorer sans casser | O6 | 2–3 | non |
-| 0.3-ex23 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
-| 0.3-ex24 à ex26 | Livrer un projet Python | O7 | 2–3 | non |
+| 0.3-ex06 à ex10 | Des tests utiles | O1, O2 | 1 | non |
+| 0.3-ex11 à ex13 | Déboguer | O3 | 1 | non |
+| 0.3-ex14 à ex15 | Mesurer les performances | O5 | 2 | non |
+| 0.3-ex16 à ex20 | Un code lisible | O4 | 2 | non |
+| 0.3-ex21 à ex24 | Algorithmique | O5 | 2 | non |
+| 0.3-ex25 à ex28 | Structures de données | O5 | 2–3 | non |
+| 0.3-ex29 à ex30 | Améliorer sans casser | O6 | 2–3 | non |
+| 0.3-ex31 | Exercice clé : couvrir un module existant à 80 % de tests | O2, O6 | 3 | non |
+| 0.3-ex32 à ex36 | Livrer un projet Python | O7 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -168,3 +190,4 @@ Un calcul d'argent faux fait du tort à de vraies personnes : la notion `pourquo
 ## Points à vérifier
 
 - TODO(vérifier) : choisir le « module existant » de l'exercice clé (code du fil rouge, d'environ 150 lignes, sans tests).
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

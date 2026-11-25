@@ -22,39 +22,47 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Représenter des textes par des embeddings et mesurer leur similarité. | ex01 à ex03, exercice clé (ex11), qcm |
-| O2 | Choisir un modèle d'embeddings adapté à la langue, à la taille et au coût. | ex01 à ex03, exercice clé (ex11), qcm |
-| O3 | Stocker et interroger des vecteurs dans une base vectorielle locale. | ex04 à ex06, exercice clé (ex11), qcm |
-| O4 | Combiner recherche par mots-clés et recherche vectorielle. | ex07 à ex08, exercice clé (ex11), qcm |
-| O5 | Mesurer la qualité d'un moteur de recherche. | ex09 à ex10, exercice clé (ex11), qcm |
+| O1 | Représenter des textes par des embeddings et mesurer leur similarité. | ex01 à ex04, ex12 à ex13, exercice clé (ex16), qcm |
+| O2 | Choisir un modèle d'embeddings adapté à la langue, à la taille et au coût. | ex01 à ex04, exercice clé (ex16), qcm |
+| O3 | Stocker et interroger des vecteurs dans une base vectorielle locale. | ex05 à ex09, exercice clé (ex16), qcm |
+| O4 | Combiner recherche par mots-clés et recherche vectorielle. | ex10 à ex11, exercice clé (ex16), qcm |
+| O5 | Mesurer la qualité d'un moteur de recherche. | ex14 à ex15, exercice clé (ex16), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Les embeddings de texte | 3 |
-| 2 | Les bases vectorielles | 3 |
+| 1 | Les embeddings de texte | 4 |
+| 2 | Les bases vectorielles | 5 |
 | 3 | La recherche hybride | 2 |
-| 4 | Mesurer la recherche | 3 |
+| 4 | D'autres usages des embeddings | 2 |
+| 5 | Mesurer la recherche | 3 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `embeddings-texte` | Un texte, un vecteur | O1 |
+| 1 | `entrainer-embeddings` | Comment on entraîne un modèle d'embeddings | O1 |
 | 1 | `similarite-textes` | Mesurer la proximité de deux textes | O1 |
 | 1 | `modeles-embeddings` | Choisir un modèle d'embeddings | O2 |
 | 1 | `multilingue` | Des embeddings multilingues | O2 |
+| 1 | `dimensions-normalisation` | Dimensions, normalisation et compression | O2 |
 | 2 | `plus-proches-voisins` | Chercher les plus proches voisins | O3 |
 | 2 | `index-ann` | Chercher vite : les index approximatifs | O3 |
+| 2 | `faiss` | Une bibliothèque de recherche rapide : FAISS | O3 |
 | 2 | `chroma` | Une base vectorielle locale : Chroma | O3 |
 | 2 | `sqlite-vec` | Des vecteurs dans SQLite : sqlite-vec | O3 |
 | 2 | `pgvector-qdrant` | Notions de pgvector et de Qdrant | O3 |
+| 2 | `tenir-index` | Ajouter, modifier, supprimer : tenir un index à jour | O3 |
 | 3 | `bm25` | La recherche par mots-clés : BM25 | O4 |
 | 3 | `hybride` | Combiner mots-clés et vecteurs | O4 |
 | 3 | `filtres-metadonnees` | Filtrer par métadonnées | O4 |
-| 4 | `metriques-recherche` | Mesurer une recherche : rappel@k et MRR | O5 |
-| 4 | `jeu-requetes` | Construire un jeu de requêtes de test | O5 |
+| 4 | `doublons-semantiques` | Trouver les doublons par le sens | O1 |
+| 4 | `regrouper-textes` | Regrouper des textes par sujet | O1 |
+| 4 | `classer-embeddings` | Classer des textes avec des embeddings | O1 |
+| 5 | `metriques-recherche` | Mesurer une recherche : rappel@k et MRR | O5 |
+| 5 | `jeu-requetes` | Construire un jeu de requêtes de test | O5 |
 
 ## Vocabulaire du module
 
@@ -79,11 +87,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.3-ex01 à ex03 | Les embeddings de texte | O1, O2 | 1–2 | non |
-| 3.3-ex04 à ex06 | Les bases vectorielles | O3 | 2 | non |
-| 3.3-ex07 à ex08 | La recherche hybride | O4 | 2 | non |
-| 3.3-ex09 à ex10 | Mesurer la recherche | O5 | 2–3 | non |
-| 3.3-ex11 | Exercice clé : un moteur de recherche sémantique sur 1 000 documents | O1 à O5 | 3 | non |
+| 3.3-ex01 à ex04 | Les embeddings de texte | O1, O2 | 1 | non |
+| 3.3-ex05 à ex09 | Les bases vectorielles | O3 | 2 | non |
+| 3.3-ex10 à ex11 | La recherche hybride | O4 | 2 | non |
+| 3.3-ex12 à ex13 | D'autres usages des embeddings | O1 | 2–3 | non |
+| 3.3-ex14 à ex15 | Mesurer la recherche | O5 | 2–3 | non |
+| 3.3-ex16 | Exercice clé : un moteur de recherche sémantique sur 1 000 documents | O1 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -125,3 +134,4 @@ Un index contient le texte des documents : ne pas y mettre de données personnel
 ## Points à vérifier
 
 - TODO(vérifier) : corpus de 1 000 documents administratifs : source publique et licence.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

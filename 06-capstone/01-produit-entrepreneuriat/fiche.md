@@ -22,20 +22,23 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Choisir un problème qui vaut la peine, et dire quand l'IA n'est pas utile. | ex01 à ex02, exercice clé (ex09), qcm |
-| O2 | Concevoir l'expérience utilisateur d'un produit d'IA. | ex03 à ex04, exercice clé (ex09), qcm |
-| O3 | Calculer un coût de revient par utilisateur et fixer un prix. | ex05 à ex06, exercice clé (ex09), qcm |
-| O4 | Estimer le retour sur investissement pour un client. | ex05 à ex06, exercice clé (ex09), qcm |
-| O5 | Connaître les financements et les modèles économiques. | ex07 à ex08, exercice clé (ex09), qcm |
+| O1 | Choisir un problème qui vaut la peine, et dire quand l'IA n'est pas utile. | ex01 à ex03, ex04 à ex05, exercice clé (ex18), qcm |
+| O2 | Concevoir l'expérience utilisateur d'un produit d'IA. | ex06 à ex07, exercice clé (ex18), qcm |
+| O3 | Calculer un coût de revient par utilisateur et fixer un prix. | ex08 à ex10, exercice clé (ex18), qcm |
+| O4 | Estimer le retour sur investissement pour un client. | ex08 à ex10, exercice clé (ex18), qcm |
+| O5 | Connaître les financements et les modèles économiques. | ex11 à ex12, ex13 à ex14, ex15 à ex17, exercice clé (ex18), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Le bon problème | 2 |
-| 2 | L'expérience utilisateur | 2 |
-| 3 | Les chiffres | 2 |
-| 4 | Financer et vendre | 3 |
+| 1 | Le bon problème | 3 |
+| 2 | Du prototype au produit | 2 |
+| 3 | L'expérience utilisateur | 2 |
+| 4 | Les chiffres | 3 |
+| 5 | Vendre | 2 |
+| 6 | Créer son entreprise | 2 |
+| 7 | Financer et présenter | 4 |
 
 ## Notions, dans l'ordre
 
@@ -43,16 +46,25 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `probleme` | Trouver un problème qui vaut la peine | O1 |
 | 1 | `parler-utilisateurs` | Parler aux utilisateurs | O1 |
+| 1 | `concurrence` | Regarder ce qui existe déjà | O1 |
 | 1 | `pas-besoin-ia` | Ici, pas besoin d'IA | O1 |
-| 2 | `ux-ia` | L'expérience d'un produit d'IA | O2 |
-| 2 | `erreurs-confiance` | Gérer les erreurs et la confiance | O2 |
-| 2 | `expliquer-sans-jargon` | Expliquer sans jargon | O2 |
-| 3 | `cout-revient` | Le coût de revient par utilisateur | O3 |
-| 3 | `fixer-prix` | Fixer un prix | O3 |
-| 3 | `roi` | Le retour sur investissement pour un client | O4 |
-| 4 | `modeles-economiques` | Les modèles économiques : SaaS, service, licence | O5 |
-| 4 | `financements` | Incubateurs, subventions et concours | O5 |
-| 4 | `dossier-une-page` | Le dossier d'une page | O5 |
+| 2 | `mvp` | Le produit minimum viable | O1 |
+| 2 | `mesurer-usage` | Mesurer l'usage : activation et rétention | O1 |
+| 3 | `ux-ia` | L'expérience d'un produit d'IA | O2 |
+| 3 | `erreurs-confiance` | Gérer les erreurs et la confiance | O2 |
+| 3 | `expliquer-sans-jargon` | Expliquer sans jargon | O2 |
+| 4 | `cout-revient` | Le coût de revient par utilisateur | O3 |
+| 4 | `fixer-prix` | Fixer un prix | O3 |
+| 4 | `prix-usage` | Faire payer à l'usage | O3 |
+| 4 | `roi` | Le retour sur investissement pour un client | O4 |
+| 5 | `vendre-organisations` | Vendre à une coopérative, une ONG ou une administration | O5 |
+| 5 | `paiement-mobile` | Se faire payer : le mobile money | O5 |
+| 6 | `statut-juridique` | Choisir un statut d'entreprise (OHADA) | O5 |
+| 6 | `proteger-travail` | Protéger son travail : marque et contrats | O5 |
+| 7 | `modeles-economiques` | Les modèles économiques : SaaS, service, licence | O5 |
+| 7 | `financements` | Incubateurs, subventions et concours | O5 |
+| 7 | `pitch-deck` | Le pitch deck | O5 |
+| 7 | `dossier-une-page` | Le dossier d'une page | O5 |
 
 ## Vocabulaire du module
 
@@ -76,11 +88,14 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 6.1-ex01 à ex02 | Le bon problème | O1 | 1–2 | non |
-| 6.1-ex03 à ex04 | L'expérience utilisateur | O2 | 2 | non |
-| 6.1-ex05 à ex06 | Les chiffres | O3, O4 | 2 | non |
-| 6.1-ex07 à ex08 | Financer et vendre | O5 | 2–3 | non |
-| 6.1-ex09 | Exercice clé : un dossier d'une page pour transformer le capstone en produit | O1 à O5 | 3 | oui → GRILLE.md (dossier d'une page) |
+| 6.1-ex01 à ex03 | Le bon problème | O1 | 1 | non |
+| 6.1-ex04 à ex05 | Du prototype au produit | O1 | 1 | non |
+| 6.1-ex06 à ex07 | L'expérience utilisateur | O2 | 2 | non |
+| 6.1-ex08 à ex10 | Les chiffres | O3, O4 | 2 | non |
+| 6.1-ex11 à ex12 | Vendre | O5 | 2–3 | non |
+| 6.1-ex13 à ex14 | Créer son entreprise | O5 | 2–3 | non |
+| 6.1-ex15 à ex17 | Financer et présenter | O5 | 2–3 | non |
+| 6.1-ex18 | Exercice clé : un dossier d'une page pour transformer le capstone en produit | O1 à O5 | 3 | oui → GRILLE.md (dossier d'une page) |
 
 ## Ressources matérielles
 
@@ -120,3 +135,4 @@ Un produit d'IA doit dire honnêtement ce qu'il sait faire : pas de promesses ex
 ## Points à vérifier
 
 - TODO(vérifier) : liste à jour des incubateurs, subventions et concours en Afrique francophone, avec leurs dates.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

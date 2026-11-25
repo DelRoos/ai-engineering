@@ -22,11 +22,11 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Présenter ses projets dans un portfolio convaincant, avec des résultats chiffrés. | ex01 à ex03, exercice clé (ex14), qcm |
-| O2 | Communiquer en anglais technique, à l'écrit et à l'oral. | ex04 à ex05, exercice clé (ex14), qcm |
-| O3 | Réussir des entretiens techniques et comportementaux. | ex06 à ex08, exercice clé (ex14), qcm |
-| O4 | Se rendre visible : articles, open source, compétitions. | ex09 à ex10, qcm |
-| O5 | Choisir une stratégie d'emploi et construire son réseau. | ex11 à ex13, qcm |
+| O1 | Présenter ses projets dans un portfolio convaincant, avec des résultats chiffrés. | ex01 à ex03, exercice clé (ex18), qcm |
+| O2 | Communiquer en anglais technique, à l'écrit et à l'oral. | ex04 à ex05, exercice clé (ex18), qcm |
+| O3 | Réussir des entretiens techniques et comportementaux. | ex06 à ex07, ex08 à ex10, exercice clé (ex18), qcm |
+| O4 | Se rendre visible : articles, open source, compétitions. | ex11 à ex13, qcm |
+| O5 | Choisir une stratégie d'emploi et construire son réseau. | ex06 à ex07, ex14 à ex17, qcm |
 
 ## Chapitres
 
@@ -34,9 +34,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Le portfolio | 3 |
 | 2 | L'anglais technique | 2 |
-| 3 | Les entretiens | 3 |
-| 4 | La visibilité | 2 |
-| 5 | Trouver du travail | 4 |
+| 3 | Postuler | 2 |
+| 4 | Les entretiens | 3 |
+| 5 | La visibilité | 3 |
+| 6 | Trouver du travail | 5 |
 
 ## Notions, dans l'ordre
 
@@ -46,21 +47,28 @@ mise_a_jour: 2026-11-25
 | 1 | `profil-github` | Ton profil GitHub | O1 |
 | 1 | `resultats-chiffres` | Présenter des résultats chiffrés | O1 |
 | 1 | `cv` | Un CV d'une page | O1 |
+| 1 | `profil-linkedin` | Un profil LinkedIn qui attire | O1 |
 | 2 | `ecrire-anglais` | Écrire en anglais technique | O2 |
 | 2 | `presenter-anglais` | Présenter à l'oral en anglais | O2 |
 | 2 | `reunions-anglais` | Suivre une réunion en anglais | O2 |
-| 3 | `entretien-code` | L'entretien de code | O3 |
-| 3 | `entretien-conception` | L'entretien de conception de système | O3 |
-| 3 | `questions-ml` | Les questions ML et LLM | O3 |
-| 3 | `star` | L'entretien comportemental : la méthode STAR | O3 |
-| 3 | `entretien-simule` | S'entraîner avec l'agent IA | O3 |
-| 4 | `article-technique` | Écrire un article technique | O4 |
-| 4 | `contributions-visibles` | Des contributions open source qui se voient | O4 |
-| 4 | `competitions` | Kaggle et Zindi | O4 |
-| 5 | `strategies-emploi` | Les stratégies : distance, freelance, start-up, poste local | O5 |
-| 5 | `freelance` | Démarrer en freelance | O5 |
-| 5 | `reseau` | Construire son réseau | O5 |
-| 5 | `negocier` | Négocier une offre | O5 |
+| 3 | `trouver-offres` | Trouver les offres : sites, réseaux, recrutement à distance | O5 |
+| 3 | `candidature` | Une candidature personnalisée | O5 |
+| 3 | `exercice-maison` | Réussir un exercice à faire chez soi | O3 |
+| 4 | `entretien-code` | L'entretien de code | O3 |
+| 4 | `entretien-conception` | L'entretien de conception de système | O3 |
+| 4 | `questions-ml` | Les questions ML et LLM | O3 |
+| 4 | `star` | L'entretien comportemental : la méthode STAR | O3 |
+| 4 | `entretien-simule` | S'entraîner avec l'agent IA | O3 |
+| 5 | `article-technique` | Écrire un article technique | O4 |
+| 5 | `contributions-visibles` | Des contributions open source qui se voient | O4 |
+| 5 | `competitions` | Kaggle et Zindi | O4 |
+| 5 | `parler-evenements` | Parler dans un meetup ou une conférence | O4 |
+| 6 | `strategies-emploi` | Les stratégies : distance, freelance, start-up, poste local | O5 |
+| 6 | `freelance` | Démarrer en freelance | O5 |
+| 6 | `contrats-freelance` | Contrats, factures et paiements internationaux | O5 |
+| 6 | `reseau` | Construire son réseau | O5 |
+| 6 | `negocier` | Négocier une offre | O5 |
+| 6 | `veille` | Continuer d'apprendre : la veille technique | O5 |
 
 ## Vocabulaire du module
 
@@ -84,12 +92,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 6.2-ex01 à ex03 | Le portfolio | O1 | 1–2 | non |
-| 6.2-ex04 à ex05 | L'anglais technique | O2 | 2 | non |
-| 6.2-ex06 à ex08 | Les entretiens | O3 | 2 | non |
-| 6.2-ex09 à ex10 | La visibilité | O4 | 2 | non |
-| 6.2-ex11 à ex13 | Trouver du travail | O5 | 2–3 | non |
-| 6.2-ex14 | Exercice clé : un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA | O1 à O3 | 3 | oui → GRILLE.md (portfolio et entretien) |
+| 6.2-ex01 à ex03 | Le portfolio | O1 | 1 | non |
+| 6.2-ex04 à ex05 | L'anglais technique | O2 | 1 | non |
+| 6.2-ex06 à ex07 | Postuler | O3, O5 | 2 | non |
+| 6.2-ex08 à ex10 | Les entretiens | O3 | 2 | non |
+| 6.2-ex11 à ex13 | La visibilité | O4 | 2–3 | non |
+| 6.2-ex14 à ex17 | Trouver du travail | O5 | 2–3 | non |
+| 6.2-ex18 | Exercice clé : un portfolio en ligne et un entretien simulé en anglais réussi avec l'agent IA | O1 à O3 | 3 | oui → GRILLE.md (portfolio et entretien) |
 
 ## Ressources matérielles
 
@@ -130,3 +139,4 @@ Un portfolio est public : aucune donnée personnelle de tiers, aucun secret, et 
 ## Points à vérifier
 
 - TODO(vérifier) : le programme ne précise pas d'exercice clé pour ce module : l'exercice clé ci-dessus est une proposition, à valider par le mainteneur puis à reporter dans docs/programme.md.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

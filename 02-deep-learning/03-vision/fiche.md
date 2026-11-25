@@ -22,23 +22,23 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer comment une convolution extrait des motifs d'une image. | ex01 à ex02, qcm |
-| O2 | Construire et entraîner un réseau convolutif. | ex03 à ex04, qcm |
-| O3 | Augmenter et préparer un jeu d'images pour mieux généraliser. | ex05 à ex06, exercice clé (ex09), qcm |
-| O4 | Adapter un modèle pré-entraîné léger à un nouveau problème. | ex07 à ex08, exercice clé (ex09), qcm |
-| O5 | Évaluer un classifieur d'images et comprendre ses erreurs. | ex10 à ex11, qcm |
-| O6 | Expliquer le principe de la détection d'objets et de la segmentation. | ex12 à ex13, qcm |
+| O1 | Expliquer comment une convolution extrait des motifs d'une image. | ex01 à ex04, qcm |
+| O2 | Construire et entraîner un réseau convolutif. | ex05 à ex07, qcm |
+| O3 | Augmenter et préparer un jeu d'images pour mieux généraliser. | ex08 à ex10, exercice clé (ex14), qcm |
+| O4 | Adapter un modèle pré-entraîné léger à un nouveau problème. | ex11 à ex13, exercice clé (ex14), qcm |
+| O5 | Évaluer un classifieur d'images et comprendre ses erreurs. | ex15 à ex16, qcm |
+| O6 | Expliquer le principe de la détection d'objets et de la segmentation. | ex17 à ex19, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Les images comme données | 2 |
-| 2 | Les réseaux convolutifs | 2 |
-| 3 | Mieux généraliser | 2 |
-| 4 | Partir d'un modèle existant | 3 |
+| 1 | Les images comme données | 4 |
+| 2 | Les réseaux convolutifs | 3 |
+| 3 | Mieux généraliser | 3 |
+| 4 | Partir d'un modèle existant | 4 |
 | 5 | Évaluer et expliquer | 2 |
-| 6 | Au-delà de la classification | 2 |
+| 6 | Au-delà de la classification | 3 |
 
 ## Notions, dans l'ordre
 
@@ -46,19 +46,30 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `images-tenseurs` | Une image, c'est un tableau de nombres | O1 |
 | 1 | `convolution` | La convolution : un filtre qui glisse | O1 |
+| 1 | `padding-stride` | Bords et pas : padding et stride | O1 |
+| 1 | `canaux` | Plusieurs canaux : couleurs et cartes de caractéristiques | O1 |
 | 1 | `pooling` | Réduire la taille : le pooling | O1 |
+| 1 | `champ-recepteur` | Ce que voit un neurone : le champ récepteur | O1 |
 | 2 | `cnn` | Ton premier réseau convolutif | O2 |
 | 2 | `architectures-cnn` | Les grandes architectures, de LeNet à ResNet | O2 |
+| 2 | `resnet` | Les connexions résiduelles (ResNet) | O2 |
 | 2 | `batchnorm` | Stabiliser l'entraînement : la batch normalization | O2 |
+| 2 | `vision-transformers` | Les Transformers pour la vision | O2 |
 | 3 | `jeu-images` | Constituer et nettoyer un jeu d'images | O3 |
+| 3 | `charger-images` | Charger un dossier d'images | O3 |
 | 3 | `augmentation-images` | L'augmentation de données d'images | O3 |
+| 3 | `etiquettes-bruitees` | Quand les étiquettes sont fausses | O3 |
 | 4 | `transfer-learning` | Le transfer learning | O4 |
+| 4 | `extraction-caracteristiques` | Utiliser un modèle comme extracteur de caractéristiques | O4 |
 | 4 | `modeles-legers` | Les modèles légers : MobileNet et EfficientNet | O4 |
 | 4 | `fine-tuning-vision` | Geler, puis dégeler : le fine-tuning | O4 |
+| 4 | `embeddings-images` | Chercher des images semblables : les embeddings d'images | O4 |
 | 5 | `erreurs-images` | Où le modèle se trompe : la matrice de confusion | O5 |
 | 5 | `grad-cam` | Voir ce que regarde le modèle : Grad-CAM | O5 |
 | 5 | `biais-images` | Les biais des jeux d'images | O5 |
 | 6 | `detection-objets` | La détection d'objets : des boîtes et des classes | O6 |
+| 6 | `yolo` | Un détecteur moderne : YOLO | O6 |
+| 6 | `metriques-detection` | Mesurer un détecteur : IoU et mAP | O6 |
 | 6 | `segmentation` | Notions de segmentation | O6 |
 
 ## Vocabulaire du module
@@ -83,13 +94,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 2.3-ex01 à ex02 | Les images comme données | O1 | 1–2 | non |
-| 2.3-ex03 à ex04 | Les réseaux convolutifs | O2 | 2 | non |
-| 2.3-ex05 à ex06 | Mieux généraliser | O3 | 2 | non |
-| 2.3-ex07 à ex08 | Partir d'un modèle existant | O4 | 2 | non |
-| 2.3-ex09 | Exercice clé : fine-tuning d'un modèle pré-entraîné sur 500 images, en moins de 30 minutes sur processeur | O3, O4 | 3 | non |
-| 2.3-ex10 à ex11 | Évaluer et expliquer | O5 | 2 | non |
-| 2.3-ex12 à ex13 | Au-delà de la classification | O6 | 2–3 | non |
+| 2.3-ex01 à ex04 | Les images comme données | O1 | 1 | non |
+| 2.3-ex05 à ex07 | Les réseaux convolutifs | O2 | 1 | non |
+| 2.3-ex08 à ex10 | Mieux généraliser | O3 | 2 | non |
+| 2.3-ex11 à ex13 | Partir d'un modèle existant | O4 | 2 | non |
+| 2.3-ex14 | Exercice clé : fine-tuning d'un modèle pré-entraîné sur 500 images, en moins de 30 minutes sur processeur | O3, O4 | 3 | non |
+| 2.3-ex15 à ex16 | Évaluer et expliquer | O5 | 2–3 | non |
+| 2.3-ex17 à ex19 | Au-delà de la classification | O6 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -131,3 +142,4 @@ Point de contrôle du projet 2 : performance mesurée séparément par région o
 
 - TODO(vérifier) : licence et taille du jeu de photos de manioc retenu.
 - TODO(vérifier) : vérifier que l'exercice clé tient en moins de 30 minutes sur la machine minimale.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

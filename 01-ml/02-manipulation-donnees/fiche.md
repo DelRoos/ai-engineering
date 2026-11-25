@@ -22,24 +22,26 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Charger un jeu de données avec pandas et en décrire le contenu. | ex01 à ex03, qcm |
-| O2 | Sélectionner, filtrer et convertir les colonnes d'un tableau. | ex04 à ex07, qcm |
-| O3 | Traiter les valeurs manquantes, les doublons et les valeurs aberrantes, en justifiant chaque choix. | ex08 à ex10, exercice clé (ex21), qcm |
-| O4 | Combiner et résumer des tables : groupby, merge, pivot. | ex04 à ex07, ex11 à ex14, ex15 à ex16, exercice clé (ex21), qcm |
-| O5 | Choisir et construire le bon graphique pour une question. | ex17 à ex18, exercice clé (ex21), qcm |
-| O6 | Mener une analyse exploratoire complète et en tirer des conclusions. | ex19 à ex20, exercice clé (ex21), qcm |
+| O1 | Charger un jeu de données avec pandas et en décrire le contenu. | ex01 à ex04, ex28 à ex29, qcm |
+| O2 | Sélectionner, filtrer et convertir les colonnes d'un tableau. | ex05 à ex09, qcm |
+| O3 | Traiter les valeurs manquantes, les doublons et les valeurs aberrantes, en justifiant chaque choix. | ex10 à ex14, exercice clé (ex33), qcm |
+| O4 | Combiner et résumer des tables : groupby, merge, pivot. | ex05 à ex09, ex15 à ex16, ex17 à ex20, ex21 à ex23, exercice clé (ex33), qcm |
+| O5 | Choisir et construire le bon graphique pour une question. | ex24 à ex27, exercice clé (ex33), qcm |
+| O6 | Mener une analyse exploratoire complète et en tirer des conclusions. | ex30 à ex32, exercice clé (ex33), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Jupyter et pandas | 3 |
-| 2 | Sélectionner et transformer | 4 |
-| 3 | Nettoyer | 3 |
-| 4 | Combiner et résumer | 4 |
-| 5 | Les données dans le temps | 2 |
-| 6 | Visualiser | 2 |
-| 7 | L'analyse exploratoire | 3 |
+| 1 | Jupyter et pandas | 4 |
+| 2 | Sélectionner et transformer | 5 |
+| 3 | Nettoyer | 5 |
+| 4 | Combiner | 2 |
+| 5 | Résumer et remodeler | 4 |
+| 6 | Les données dans le temps | 3 |
+| 7 | Visualiser | 4 |
+| 8 | Les gros fichiers | 2 |
+| 9 | L'analyse exploratoire | 4 |
 
 ## Notions, dans l'ordre
 
@@ -49,9 +51,13 @@ mise_a_jour: 2026-11-25
 | 1 | `dataframe` | Charger un fichier : DataFrame et Series | O1 |
 | 1 | `lire-formats` | Lire un fichier Excel, JSON ou une base SQL | O1 |
 | 1 | `explorer` | Explorer un tableau : head, info, describe | O1 |
+| 1 | `value-counts` | Compter les valeurs : value_counts | O1 |
+| 1 | `trier-pandas` | Trier un tableau | O1 |
 | 2 | `selectionner` | Sélectionner des colonnes et des lignes : loc et iloc | O2 |
 | 2 | `filtrer` | Filtrer des lignes avec une condition | O2 |
+| 2 | `query-isin` | Filtrer autrement : query et isin | O2 |
 | 2 | `types-colonnes` | Les types de colonnes et leurs conversions | O2 |
+| 2 | `categories` | Les données catégorielles | O2 |
 | 2 | `nouvelles-colonnes` | Créer de nouvelles colonnes | O4 |
 | 2 | `apply` | Appliquer une fonction à une colonne | O2 |
 | 2 | `vectoriser-pandas` | Calculer vite : éviter les boucles avec pandas | O2 |
@@ -60,20 +66,33 @@ mise_a_jour: 2026-11-25
 | 3 | `incoherences` | Corriger les fautes de saisie et les valeurs incohérentes | O3 |
 | 3 | `aberrantes` | Les valeurs aberrantes : erreur ou vrai cas rare ? | O3 |
 | 3 | `nettoyer-texte` | Nettoyer du texte : casse, espaces, accents | O3 |
-| 4 | `groupby` | Regrouper et agréger avec groupby | O4 |
-| 4 | `crosstab` | Croiser deux variables : les tableaux croisés | O4 |
+| 3 | `str-pandas` | Les méthodes de texte de pandas : .str | O3 |
+| 3 | `decouper-classes` | Découper en classes : cut et qcut | O3 |
+| 4 | `concat` | Empiler des tableaux : concat | O4 |
 | 4 | `merge` | Joindre deux tables avec merge | O4 |
-| 4 | `pivot-melt` | Changer la forme d'un tableau : pivot et melt | O4 |
-| 4 | `index-pandas` | Comprendre l'index, et le remettre à plat | O4 |
-| 5 | `dates` | Travailler avec des dates | O4 |
-| 5 | `reechantillonner` | Regrouper par semaine ou par mois, et lisser une série | O4 |
-| 6 | `choisir-graphique` | Choisir le bon graphique pour sa question | O5 |
-| 6 | `matplotlib` | Tracer un graphique avec matplotlib | O5 |
-| 6 | `seaborn` | Des graphiques statistiques avec seaborn | O5 |
-| 7 | `eda` | Mener une analyse exploratoire de bout en bout | O6 |
-| 7 | `notebook-propre` | Un notebook propre et reproductible | O6 |
-| 7 | `exporter` | Exporter tes résultats : CSV, Excel, images | O6 |
-| 7 | `conclusions` | Rédiger les conclusions d'une analyse | O6 |
+| 4 | `verifier-jointure` | Vérifier une jointure : lignes perdues et doublons | O4 |
+| 5 | `groupby` | Regrouper et agréger avec groupby | O4 |
+| 5 | `groupby-avance` | Aller plus loin avec groupby : agg, transform, filter | O4 |
+| 5 | `crosstab` | Croiser deux variables : les tableaux croisés | O4 |
+| 5 | `pivot-melt` | Changer la forme d'un tableau : pivot et melt | O4 |
+| 5 | `explode` | Déplier des listes : explode | O4 |
+| 5 | `index-pandas` | Comprendre l'index, et le remettre à plat | O4 |
+| 6 | `dates` | Travailler avec des dates | O4 |
+| 6 | `reechantillonner` | Regrouper par semaine ou par mois, et lisser une série | O4 |
+| 6 | `fenetres-glissantes` | Les fenêtres glissantes : rolling | O4 |
+| 6 | `fuseaux` | Fuseaux horaires et décalages | O4 |
+| 7 | `choisir-graphique` | Choisir le bon graphique pour sa question | O5 |
+| 7 | `matplotlib` | Tracer un graphique avec matplotlib | O5 |
+| 7 | `sous-graphiques` | Plusieurs graphiques côte à côte | O5 |
+| 7 | `seaborn` | Des graphiques statistiques avec seaborn | O5 |
+| 7 | `graphiques-temps` | Tracer une série dans le temps | O5 |
+| 7 | `graphiques-interactifs` | Des graphiques interactifs avec Plotly | O5 |
+| 8 | `memoire-pandas` | Réduire la mémoire d'un tableau | O1 |
+| 8 | `morceaux` | Lire un gros fichier par morceaux | O1 |
+| 9 | `eda` | Mener une analyse exploratoire de bout en bout | O6 |
+| 9 | `notebook-propre` | Un notebook propre et reproductible | O6 |
+| 9 | `exporter` | Exporter tes résultats : CSV, Excel, images | O6 |
+| 9 | `conclusions` | Rédiger les conclusions d'une analyse | O6 |
 
 ## Vocabulaire du module
 
@@ -108,14 +127,16 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 1.2-ex01 à ex03 | Jupyter et pandas | O1 | 1 | non |
-| 1.2-ex04 à ex07 | Sélectionner et transformer | O2, O4 | 1 | non |
-| 1.2-ex08 à ex10 | Nettoyer | O3 | 2 | non |
-| 1.2-ex11 à ex14 | Combiner et résumer | O4 | 2 | non |
-| 1.2-ex15 à ex16 | Les données dans le temps | O4 | 2–3 | non |
-| 1.2-ex17 à ex18 | Visualiser | O5 | 2–3 | non |
-| 1.2-ex19 à ex20 | L'analyse exploratoire | O6 | 2–3 | non |
-| 1.2-ex21 | Exercice clé : analyse exploratoire complète d'un jeu de données réel et sale (notebook commenté) | O3 à O6 | 3 | oui → GRILLE.md (conclusions et qualité du notebook) |
+| 1.2-ex01 à ex04 | Jupyter et pandas | O1 | 1 | non |
+| 1.2-ex05 à ex09 | Sélectionner et transformer | O2, O4 | 1 | non |
+| 1.2-ex10 à ex14 | Nettoyer | O3 | 1 | non |
+| 1.2-ex15 à ex16 | Combiner | O4 | 2 | non |
+| 1.2-ex17 à ex20 | Résumer et remodeler | O4 | 2 | non |
+| 1.2-ex21 à ex23 | Les données dans le temps | O4 | 2 | non |
+| 1.2-ex24 à ex27 | Visualiser | O5 | 2–3 | non |
+| 1.2-ex28 à ex29 | Les gros fichiers | O1 | 2–3 | non |
+| 1.2-ex30 à ex32 | L'analyse exploratoire | O6 | 2–3 | non |
+| 1.2-ex33 | Exercice clé : analyse exploratoire complète d'un jeu de données réel et sale (notebook commenté) | O3 à O6 | 3 | oui → GRILLE.md (conclusions et qualité du notebook) |
 
 ## Ressources matérielles
 
@@ -158,3 +179,4 @@ Un graphique peut tromper (axe tronqué, moyenne qui cache les écarts) : la not
 - TODO(vérifier) : licence des prix alimentaires du WFP sur HDX et conditions de redistribution d'une copie dans le dépôt.
 - TODO(vérifier) : couverture des données pour le Bénin (marchés, produits, années) ; sinon prendre un pays voisin.
 - TODO(vérifier) : tailles installées de pandas, seaborn et Jupyter.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

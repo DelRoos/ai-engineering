@@ -22,21 +22,21 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex02, exercice clé (ex12), qcm |
-| O2 | Mesurer la fidélité et la pertinence des réponses. | ex03 à ex05, exercice clé (ex12), qcm |
-| O3 | Utiliser un LLM comme juge en connaissant ses biais. | ex06 à ex07, qcm |
-| O4 | Organiser une évaluation humaine. | ex08 à ex09, qcm |
-| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex10 à ex11, exercice clé (ex12), qcm |
+| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex03, exercice clé (ex16), qcm |
+| O2 | Mesurer la fidélité et la pertinence des réponses. | ex04 à ex07, exercice clé (ex16), qcm |
+| O3 | Utiliser un LLM comme juge en connaissant ses biais. | ex08 à ex10, qcm |
+| O4 | Organiser une évaluation humaine. | ex11 à ex12, qcm |
+| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex13 à ex15, exercice clé (ex16), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Pourquoi évaluer | 2 |
-| 2 | Les métriques | 3 |
-| 3 | Le LLM juge | 2 |
+| 1 | Pourquoi évaluer | 3 |
+| 2 | Les métriques | 4 |
+| 3 | Le LLM juge | 3 |
 | 4 | Les humains | 2 |
-| 5 | Ne pas régresser | 3 |
+| 5 | Ne pas régresser | 4 |
 
 ## Notions, dans l'ordre
 
@@ -44,18 +44,24 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `evaluer-llm` | Pourquoi « ça a l'air bien » ne suffit pas | O1 |
 | 1 | `jeu-test-llm` | Construire un jeu de test | O1 |
+| 1 | `generer-tests` | Générer des questions de test, et les vérifier | O1 |
 | 1 | `cas-difficiles` | Les cas difficiles et les questions pièges | O1 |
+| 2 | `correspondance-exacte` | Les tâches à réponse unique : la correspondance exacte | O2 |
 | 2 | `fidelite` | La fidélité aux sources | O2 |
 | 2 | `pertinence` | La pertinence de la réponse | O2 |
 | 2 | `recherche-et-reponse` | Évaluer séparément la recherche et la réponse | O2 |
 | 2 | `metriques-texte` | Les métriques automatiques classiques et leurs limites | O2 |
+| 2 | `evaluer-securite` | Évaluer la sécurité et les refus | O2 |
 | 3 | `llm-juge` | Un LLM comme juge | O3 |
 | 3 | `grille-juge` | Écrire la grille du juge | O3 |
+| 3 | `comparaison-paires` | Comparer deux réponses plutôt que noter | O3 |
 | 3 | `biais-juge` | Les biais du juge, et comment les vérifier | O3 |
 | 4 | `evaluation-humaine` | L'évaluation humaine | O4 |
 | 4 | `juge-humain` | Le juge est-il d'accord avec les humains ? | O4 |
 | 5 | `non-regression` | Les tests de non-régression | O5 |
 | 5 | `comparer-variantes` | Comparer plusieurs variantes d'un système | O5 |
+| 5 | `significativite` | Une différence est-elle réelle ? | O5 |
+| 5 | `cout-latence-eval` | Mesurer aussi le coût et la latence | O5 |
 | 5 | `automatiser-eval` | Automatiser l'évaluation | O5 |
 
 ## Vocabulaire du module
@@ -80,12 +86,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.5-ex01 à ex02 | Pourquoi évaluer | O1 | 1–2 | non |
-| 3.5-ex03 à ex05 | Les métriques | O2 | 2 | non |
-| 3.5-ex06 à ex07 | Le LLM juge | O3 | 2 | non |
-| 3.5-ex08 à ex09 | Les humains | O4 | 2 | non |
-| 3.5-ex10 à ex11 | Ne pas régresser | O5 | 2–3 | non |
-| 3.5-ex12 | Exercice clé : un jeu d'évaluation de 50 questions, et la mesure de 3 variantes du RAG | O1, O2, O5 | 3 | oui → GRILLE.md (analyse des résultats) |
+| 3.5-ex01 à ex03 | Pourquoi évaluer | O1 | 1 | non |
+| 3.5-ex04 à ex07 | Les métriques | O2 | 2 | non |
+| 3.5-ex08 à ex10 | Le LLM juge | O3 | 2 | non |
+| 3.5-ex11 à ex12 | Les humains | O4 | 2–3 | non |
+| 3.5-ex13 à ex15 | Ne pas régresser | O5 | 2–3 | non |
+| 3.5-ex16 | Exercice clé : un jeu d'évaluation de 50 questions, et la mesure de 3 variantes du RAG | O1, O2, O5 | 3 | oui → GRILLE.md (analyse des résultats) |
 
 ## Ressources matérielles
 
@@ -126,3 +132,4 @@ Le jeu de test inclut des tentatives d'injection et des questions hors périmèt
 ## Points à vérifier
 
 - TODO(vérifier) : bibliothèque d'évaluation recommandée selon l'état des outils à la rédaction.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.

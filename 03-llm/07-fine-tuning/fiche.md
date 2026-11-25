@@ -23,20 +23,21 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Décider s'il faut fine-tuner ou non. | ex01 à ex02, qcm |
-| O2 | Préparer un jeu de données d'entraînement de qualité. | ex03 à ex04, exercice clé (ex10), qcm |
-| O3 | Fine-tuner un petit modèle avec LoRA ou QLoRA. | ex05 à ex07, exercice clé (ex10), qcm |
-| O4 | Évaluer un modèle avant et après fine-tuning. | ex08 à ex09, exercice clé (ex10), qcm |
-| O5 | Partager et utiliser le modèle obtenu. | ex11 à ex12, qcm |
+| O2 | Préparer un jeu de données d'entraînement de qualité. | ex03 à ex05, exercice clé (ex12), qcm |
+| O3 | Fine-tuner un petit modèle avec LoRA ou QLoRA. | ex06 à ex09, exercice clé (ex12), ex13 à ex14, qcm |
+| O4 | Évaluer un modèle avant et après fine-tuning. | ex10 à ex11, exercice clé (ex12), qcm |
+| O5 | Partager et utiliser le modèle obtenu. | ex15 à ex17, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Faut-il fine-tuner | 2 |
-| 2 | Les données | 2 |
-| 3 | LoRA et QLoRA | 3 |
+| 2 | Les données | 3 |
+| 3 | LoRA et QLoRA | 4 |
 | 4 | Évaluer | 3 |
-| 5 | Utiliser le modèle | 2 |
+| 5 | Aller plus loin | 2 |
+| 6 | Utiliser le modèle | 3 |
 
 ## Notions, dans l'ordre
 
@@ -44,19 +45,27 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `prompt-rag-finetune` | Prompt, RAG ou fine-tuning ? | O1 |
 | 1 | `cout-finetune` | Ce que coûte un fine-tuning | O1 |
+| 1 | `types-finetuning` | Instructions, préférences, classification : les sortes de fine-tuning | O1 |
 | 2 | `format-instructions` | Le format des données d'instruction | O2 |
+| 2 | `gabarits-chat` | Les gabarits de conversation (chat templates) | O2 |
 | 2 | `qualite-donnees-ft` | Peu d'exemples, mais bons | O2 |
+| 2 | `nettoyer-dedoublonner` | Nettoyer et dédoublonner | O2 |
 | 2 | `donnees-generees` | Générer des données avec un modèle, et les vérifier | O2 |
 | 3 | `finetuning-complet` | Le fine-tuning complet, et pourquoi on l'évite | O3 |
 | 3 | `lora` | LoRA : n'entraîner que de petites matrices | O3 |
 | 3 | `qlora` | QLoRA : LoRA sur un modèle quantifié | O3 |
 | 3 | `lancer-lora` | Lancer un fine-tuning LoRA sur processeur ou sur Colab | O3 |
 | 3 | `reglages-ft` | Les réglages qui comptent | O3 |
+| 3 | `surapprentissage-ft` | Repérer le surapprentissage pendant le fine-tuning | O3 |
 | 4 | `avant-apres` | Comparer avant et après | O4 |
 | 4 | `oubli` | L'oubli catastrophique | O4 |
-| 5 | `fusionner-lora` | Fusionner l'adaptateur | O5 |
-| 5 | `publier-modele` | Publier sur Hugging Face, avec sa fiche | O5 |
-| 5 | `servir-local` | Servir le modèle en local | O5 |
+| 5 | `dpo` | Apprendre des préférences : DPO | O3 |
+| 5 | `finetuner-embeddings` | Fine-tuner un modèle d'embeddings | O3 |
+| 5 | `distiller-llm` | Distiller un grand modèle dans un petit | O3 |
+| 6 | `fusionner-lora` | Fusionner l'adaptateur | O5 |
+| 6 | `publier-modele` | Publier sur Hugging Face, avec sa fiche | O5 |
+| 6 | `convertir-gguf` | Convertir en GGUF pour un usage local | O5 |
+| 6 | `servir-local` | Servir le modèle en local | O5 |
 
 ## Vocabulaire du module
 
@@ -80,12 +89,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.7-ex01 à ex02 | Faut-il fine-tuner | O1 | 1–2 | non |
-| 3.7-ex03 à ex04 | Les données | O2 | 2 | non |
-| 3.7-ex05 à ex07 | LoRA et QLoRA | O3 | 2 | non |
-| 3.7-ex08 à ex09 | Évaluer | O4 | 2 | non |
-| 3.7-ex10 | Exercice clé : fine-tuner avec LoRA un très petit modèle ouvert pour un domaine précis | O2, O3, O4 | 3 | non |
-| 3.7-ex11 à ex12 | Utiliser le modèle | O5 | 2–3 | non |
+| 3.7-ex01 à ex02 | Faut-il fine-tuner | O1 | 1 | non |
+| 3.7-ex03 à ex05 | Les données | O2 | 1 | non |
+| 3.7-ex06 à ex09 | LoRA et QLoRA | O3 | 2 | non |
+| 3.7-ex10 à ex11 | Évaluer | O4 | 2 | non |
+| 3.7-ex12 | Exercice clé : fine-tuner avec LoRA un très petit modèle ouvert pour un domaine précis | O2, O3, O4 | 3 | non |
+| 3.7-ex13 à ex14 | Aller plus loin | O3 | 2–3 | non |
+| 3.7-ex15 à ex17 | Utiliser le modèle | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -126,3 +136,4 @@ Un modèle fine-tuné peut perdre les protections de son modèle de base : retes
 ## Points à vérifier
 
 - TODO(vérifier) : modèle de base recommandé (environ 0,5 milliard de paramètres, licence permissive) et temps réel sur la machine minimale.
+- TODO(vérifier) : compléter le vocabulaire des notions ajoutées par la seconde passe d'audit (25/11/2026), en vérifiant chaque terme dans docs/glossaire.md.
