@@ -22,22 +22,24 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex03, exercice clé (ex16), qcm |
-| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex08, exercice clé (ex16), qcm |
-| O3 | Améliorer la recherche par reformulation et reranking. | ex09 à ex12, exercice clé (ex16), ex17 à ex19, qcm |
-| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex13 à ex15, exercice clé (ex16), ex17 à ex19, qcm |
-| O5 | Construire un RAG multilingue. | ex20 à ex22, qcm |
+| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex03, exercice clé (ex21), ex29 à ex31, qcm |
+| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex06, ex07 à ex10, exercice clé (ex21), ex22 à ex25, ex29 à ex31, qcm |
+| O3 | Améliorer la recherche par reformulation et reranking. | ex11 à ex15, exercice clé (ex21), ex22 à ex25, qcm |
+| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex16 à ex20, exercice clé (ex21), ex22 à ex25, ex29 à ex31, qcm |
+| O5 | Construire un RAG multilingue. | ex26 à ex28, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
 | 1 | Le principe | 3 |
-| 2 | Préparer les documents | 5 |
-| 3 | Mieux chercher | 4 |
-| 4 | Bien répondre | 4 |
-| 5 | Le RAG avancé | 3 |
-| 6 | Plusieurs langues | 3 |
+| 2 | Extraire le texte | 3 |
+| 3 | Découper et indexer | 4 |
+| 4 | Mieux chercher | 5 |
+| 5 | Bien répondre | 6 |
+| 6 | Le RAG avancé | 4 |
+| 7 | Plusieurs langues | 3 |
+| 8 | Un RAG en service | 3 |
 
 ## Notions, dans l'ordre
 
@@ -49,33 +51,46 @@ mise_a_jour: 2026-11-25
 | 1 | `rag-ou-contexte-long` | RAG ou long contexte ? | O1 |
 | 1 | `anatomie-echec-rag` | Pourquoi un RAG se trompe : les points de rupture | O1 |
 | 2 | `extraire-pdf` | Extraire le texte d'un PDF | O2 |
+| 2 | `autres-formats-rag` | Word, HTML et pages web : les autres formats | O2 |
 | 2 | `tableaux` | Garder les tableaux lisibles | O2 |
 | 2 | `ocr` | Les documents scannés : l'OCR | O2 |
-| 2 | `chunking` | Découper en morceaux : le chunking | O2 |
-| 2 | `chunking-structure` | Découper selon la structure : titres, articles, paragraphes | O2 |
-| 2 | `metadonnees-docs` | Garder la source : les métadonnées | O2 |
-| 2 | `contexte-chunks` | Ajouter du contexte à chaque morceau | O2 |
-| 3 | `reformulation` | Reformuler la question | O3 |
-| 3 | `multi-requetes` | Chercher avec plusieurs reformulations | O3 |
-| 3 | `hyde` | Chercher avec une réponse imaginée : HyDE | O3 |
-| 3 | `reranking` | Reclasser les résultats : le reranking | O3 |
-| 3 | `nombre-passages` | Combien de passages donner au modèle | O3 |
-| 3 | `routage-requetes` | Envoyer la question au bon index | O3 |
-| 4 | `prompt-rag` | Le prompt du RAG | O4 |
-| 4 | `citations` | Citer ses sources | O4 |
-| 4 | `je-ne-sais-pas` | Savoir dire « je ne sais pas » | O4 |
-| 4 | `hors-sujet` | Refuser les questions hors sujet | O4 |
-| 4 | `synthese-sources` | Faire la synthèse de plusieurs sources | O4 |
-| 5 | `rag-conversation` | Un RAG qui suit la conversation | O4 |
-| 5 | `texte-vers-sql` | Interroger des chiffres : du texte au SQL | O4 |
-| 5 | `graph-rag` | Relier les informations : notions de GraphRAG | O3 |
-| 5 | `droits-acces-rag` | Chacun ne voit que ses documents | O4 |
-| 5 | `rag-agentique` | Un RAG qui décide quand et quoi chercher | O4 |
-| 6 | `rag-multilingue` | Un RAG multilingue | O5 |
-| 6 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
-| 6 | `embeddings-multilingues-rag` | Des embeddings qui relient les langues | O5 |
-| 6 | `documents-bilingues` | Des documents en français et en anglais | O5 |
-| 6 | `repondre-langue-question` | Répondre dans la langue de la question | O5 |
+| 2 | `nettoyer-extraction` | Nettoyer le texte extrait : en-têtes, pieds de page, césures | O2 |
+| 3 | `chunking` | Découper en morceaux : le chunking | O2 |
+| 3 | `taille-chevauchement` | La taille des morceaux et leur chevauchement | O2 |
+| 3 | `chunking-structure` | Découper selon la structure : titres, articles, paragraphes | O2 |
+| 3 | `contexte-chunks` | Ajouter du contexte à chaque morceau | O2 |
+| 3 | `metadonnees-docs` | Garder la source : les métadonnées | O2 |
+| 3 | `indexer-corpus` | Indexer tout un corpus | O2 |
+| 4 | `reformulation` | Reformuler la question | O3 |
+| 4 | `multi-requetes` | Chercher avec plusieurs reformulations | O3 |
+| 4 | `hyde` | Chercher avec une réponse imaginée : HyDE | O3 |
+| 4 | `reranking` | Reclasser les résultats : le reranking | O3 |
+| 4 | `nombre-passages` | Combien de passages donner au modèle | O3 |
+| 4 | `compresser-contexte` | Ne garder que l'utile : compresser les passages | O3 |
+| 4 | `routage-requetes` | Envoyer la question au bon index | O3 |
+| 5 | `prompt-rag` | Le prompt du RAG | O4 |
+| 5 | `citations` | Citer ses sources | O4 |
+| 5 | `je-ne-sais-pas` | Savoir dire « je ne sais pas » | O4 |
+| 5 | `hors-sujet` | Refuser les questions hors sujet | O4 |
+| 5 | `synthese-sources` | Faire la synthèse de plusieurs sources | O4 |
+| 5 | `verifier-fondement` | Vérifier que la réponse s'appuie vraiment sur les sources | O4 |
+| 5 | `forme-reponse` | Répondre sous la bonne forme : courte, détaillée, en liste | O4 |
+| 6 | `rag-conversation` | Un RAG qui suit la conversation | O4 |
+| 6 | `texte-vers-sql` | Interroger des chiffres : du texte au SQL | O4 |
+| 6 | `graph-rag` | Relier les informations : notions de GraphRAG | O3 |
+| 6 | `rag-multimodal` | Des documents avec images et schémas | O2 |
+| 6 | `droits-acces-rag` | Chacun ne voit que ses documents | O4 |
+| 6 | `rag-agentique` | Un RAG qui décide quand et quoi chercher | O4 |
+| 7 | `rag-multilingue` | Un RAG multilingue | O5 |
+| 7 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
+| 7 | `embeddings-multilingues-rag` | Des embeddings qui relient les langues | O5 |
+| 7 | `documents-bilingues` | Des documents en français et en anglais | O5 |
+| 7 | `repondre-langue-question` | Répondre dans la langue de la question | O5 |
+| 8 | `latence-cout-rag` | Ce que coûte une question : latence et argent | O1 |
+| 8 | `cache-rag` | Mettre en cache les recherches et les réponses | O1 |
+| 8 | `fraicheur-index` | Des documents qui changent : garder l'index à jour | O2 |
+| 8 | `questions-sans-reponse` | Apprendre des questions restées sans réponse | O4 |
+| 8 | `documents-pieges` | Les documents piégés : l'injection indirecte dans un RAG | O4 |
 
 ## Vocabulaire du module
 
@@ -87,6 +102,14 @@ mise_a_jour: 2026-11-25
 | reranking, cross-encoder | A | `reranking` |
 | citation, source | B | `citations` |
 | hors périmètre (out of scope) | A | `hors-sujet` |
+| chevauchement (overlap) | A | `taille-chevauchement` |
+| indexation | B | `indexer-corpus` |
+| compression du contexte | B | `compresser-contexte` |
+| ancrage dans les sources (groundedness) | A | `verifier-fondement` |
+| HyDE | A | `hyde` |
+| GraphRAG | A | `graph-rag` |
+| texte vers SQL (text-to-SQL) | A | `texte-vers-sql` |
+| injection indirecte | B | `documents-pieges` |
 
 ## Fil rouge et ancrage local
 
@@ -99,12 +122,14 @@ mise_a_jour: 2026-11-25
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
 | 3.4-ex01 à ex03 | Le principe | O1 | 1 | non |
-| 3.4-ex04 à ex08 | Préparer les documents | O2 | 1 | non |
-| 3.4-ex09 à ex12 | Mieux chercher | O3 | 2 | non |
-| 3.4-ex13 à ex15 | Bien répondre | O4 | 2 | non |
-| 3.4-ex16 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
-| 3.4-ex17 à ex19 | Le RAG avancé | O3, O4 | 2–3 | non |
-| 3.4-ex20 à ex22 | Plusieurs langues | O5 | 2–3 | non |
+| 3.4-ex04 à ex06 | Extraire le texte | O2 | 1 | non |
+| 3.4-ex07 à ex10 | Découper et indexer | O2 | 2 | non |
+| 3.4-ex11 à ex15 | Mieux chercher | O3 | 2 | non |
+| 3.4-ex16 à ex20 | Bien répondre | O4 | 2 | non |
+| 3.4-ex21 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
+| 3.4-ex22 à ex25 | Le RAG avancé | O2, O3, O4 | 2–3 | non |
+| 3.4-ex26 à ex28 | Plusieurs langues | O5 | 2–3 | non |
+| 3.4-ex29 à ex31 | Un RAG en service | O1, O2, O4 | 2–3 | non |
 
 ## Ressources matérielles
 
