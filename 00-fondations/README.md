@@ -2,11 +2,10 @@
 id: "etape-0"
 titre: "Étape 0 — Fondations"
 ordre: 0
-semaines: 20
 statut: brouillon
 ---
 
-# Étape 0 — Fondations (20 semaines)
+# Étape 0 — Fondations
 
 **Objectif** : amener un débutant complet à écrire du code Python propre, versionné et testé, avec les maths dont l'IA a vraiment besoin.
 
@@ -18,15 +17,15 @@ statut: brouillon
 
 ## Modules
 
-| Module | Dossier | Semaines | Contenu | Exercice clé |
-| --- | --- | --- | --- | --- |
-| 0.0 Préparer son PC | `00-preparer-son-pc/` | Avant la semaine 1 | Installer Python, Git et VS Code (avec WSL sous Windows), cloner le dépôt de la formation, vérifier que tout fonctionne | Vérifier son installation : chaque outil répond avec la version attendue et le dépôt est cloné |
-| 0.1 Python pour l'ingénieur | `01-python/` | 1–6 | Types, fonctions, classes, modules, fichiers, exceptions, environnements virtuels, typage, style PEP 8 | 60 exercices progressifs corrigés automatiquement |
-| 0.2 Outils du développeur | `02-outils/` | 7–8 | Terminal Linux, Git et GitHub (branches, pull requests), VS Code, Markdown | Forker le dépôt de la formation, y pousser ses exercices et obtenir un premier badge vert |
-| 0.3 Code de qualité | `03-qualite/` | 9–10 | Tests avec pytest, débogage, lisibilité, documentation, notions d'algorithmique | Couvrir un module existant à 80 % de tests |
-| 0.4 Maths pour l'IA | `04-maths/` | 11–16 | Algèbre linéaire, dérivées et gradient, probabilités et statistiques, toujours avec NumPy | Coder une descente de gradient à la main |
-| 0.5 Données et API | `05-donnees-api/` | 17–18 | JSON, CSV, appels HTTP, SQL de base | Récupérer des données d'une API publique et les stocker en SQLite |
-| Projet 0 | `projet/` | 19–20 | Réalisation du projet 0 et examen oral avec l'IA | — |
+| Module | Dossier | Contenu | Exercice clé |
+| --- | --- | --- | --- |
+| 0.0 Préparer son PC | `00-preparer-son-pc/` | Installer Python, Git et VS Code (avec WSL sous Windows), cloner le dépôt de la formation, vérifier que tout fonctionne | Vérifier son installation : chaque outil répond avec la version attendue et le dépôt est cloné |
+| 0.1 Python pour l'ingénieur | `01-python/` | Types, fonctions, classes, modules, fichiers, exceptions, environnements virtuels, typage, style PEP 8 | 60 exercices progressifs corrigés automatiquement |
+| 0.2 Outils du développeur | `02-outils/` | Terminal Linux, Git et GitHub (branches, pull requests), VS Code, Markdown | Forker le dépôt de la formation, y pousser ses exercices et obtenir un premier badge vert |
+| 0.3 Code de qualité | `03-qualite/` | Tests avec pytest, débogage, lisibilité, documentation, notions d'algorithmique | Couvrir un module existant à 80 % de tests |
+| 0.4 Maths pour l'IA | `04-maths/` | Algèbre linéaire, dérivées et gradient, probabilités et statistiques, toujours avec NumPy | Coder une descente de gradient à la main |
+| 0.5 Données et API | `05-donnees-api/` | JSON, CSV, appels HTTP, SQL de base | Récupérer des données d'une API publique et les stocker en SQLite |
+| Projet 0 | `projet/` | Réalisation du projet 0 et examen oral avec l'IA | — |
 
 ## Projet 0 — Analyseur de données en ligne de commande
 

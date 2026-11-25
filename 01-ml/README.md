@@ -2,11 +2,10 @@
 id: "etape-1"
 titre: "Étape 1 — Développement assisté par IA, données et machine learning classique"
 ordre: 1
-semaines: 10
 statut: brouillon
 ---
 
-# Étape 1 — Développement assisté par IA, données et machine learning classique (10 semaines)
+# Étape 1 — Développement assisté par IA, données et machine learning classique
 
 **Objectif** : passer de données brutes à un modèle évalué honnêtement, et savoir expliquer ses résultats à un décideur non technique.
 
@@ -14,16 +13,16 @@ statut: brouillon
 
 ## Modules
 
-| Module | Dossier | Semaines | Contenu | Exercice clé |
-| --- | --- | --- | --- | --- |
-| 1.1 Développement assisté par IA | `01-dev-assiste-ia/` | 1 | Assistants de code et options gratuites ou locales, décrire une tâche, relire et tester le code généré, limites et risques | Réaliser la même fonctionnalité avec et sans assistant, puis comparer temps, qualité et bugs |
-| 1.2 Manipulation de données | `02-manipulation-donnees/` | 2–3 | pandas, nettoyage, valeurs manquantes, jointures, agrégations, visualisation | Analyse exploratoire complète d'un jeu de données réel et sale |
-| 1.3 Données terrain : collecte et annotation | `03-donnees-terrain/` | 4 | KoboToolbox ou ODK, consentement et anonymisation, Label Studio, accord entre annotateurs, données synthétiques | Collecter et annoter seul au moins 200 exemples réels avec un protocole documenté |
-| 1.4 Fondements du ML | `04-fondements-ml/` | 5 | Supervisé ou non, surapprentissage, biais/variance, découpage, fuite de données | Repérer et corriger 5 erreurs dans un notebook piégé |
-| 1.5 Algorithmes essentiels | `05-algorithmes/` | 6–7 | Régressions, arbres, random forest, gradient boosting, k-means, PCA, recommandation | Régression linéaire codée de zéro, puis avec scikit-learn |
-| 1.6 Évaluation et optimisation | `06-evaluation/` | 8 | Métriques, validation croisée, hyperparamètres, classes déséquilibrées | Choisir et justifier la bonne métrique pour 4 cas métier |
-| 1.7 Feature engineering, pipelines et séries temporelles | `07-features-pipelines/` | 9 | Encodage, normalisation, pipelines scikit-learn, séries temporelles, SHAP | Pipeline reproductible de bout en bout |
-| 1.8 Communiquer les résultats | `08-communiquer/` | 10 | Rapport d'analyse, tableau de bord Streamlit, présentation non technique | Vidéo de présentation de 5 minutes du projet 1 |
+| Module | Dossier | Contenu | Exercice clé |
+| --- | --- | --- | --- |
+| 1.1 Développement assisté par IA | `01-dev-assiste-ia/` | Assistants de code et options gratuites ou locales, décrire une tâche, relire et tester le code généré, limites et risques | Réaliser la même fonctionnalité avec et sans assistant, puis comparer temps, qualité et bugs |
+| 1.2 Manipulation de données | `02-manipulation-donnees/` | pandas, nettoyage, valeurs manquantes, jointures, agrégations, visualisation | Analyse exploratoire complète d'un jeu de données réel et sale |
+| 1.3 Données terrain : collecte et annotation | `03-donnees-terrain/` | KoboToolbox ou ODK, consentement et anonymisation, Label Studio, accord entre annotateurs, données synthétiques | Collecter et annoter seul au moins 200 exemples réels avec un protocole documenté |
+| 1.4 Fondements du ML | `04-fondements-ml/` | Supervisé ou non, surapprentissage, biais/variance, découpage, fuite de données | Repérer et corriger 5 erreurs dans un notebook piégé |
+| 1.5 Algorithmes essentiels | `05-algorithmes/` | Régressions, arbres, random forest, gradient boosting, k-means, PCA, recommandation | Régression linéaire codée de zéro, puis avec scikit-learn |
+| 1.6 Évaluation et optimisation | `06-evaluation/` | Métriques, validation croisée, hyperparamètres, classes déséquilibrées | Choisir et justifier la bonne métrique pour 4 cas métier |
+| 1.7 Feature engineering, pipelines et séries temporelles | `07-features-pipelines/` | Encodage, normalisation, pipelines scikit-learn, séries temporelles, SHAP | Pipeline reproductible de bout en bout |
+| 1.8 Communiquer les résultats | `08-communiquer/` | Rapport d'analyse, tableau de bord Streamlit, présentation non technique | Vidéo de présentation de 5 minutes du projet 1 |
 
 ## Projet 1 — Modèle de prédiction à impact local (`projet/`)
 
@@ -39,4 +38,4 @@ README et commentaires de code en anglais.
 
 ## État
 
-Aucun module rédigé pour l'instant.
+Les fiches des modules 1.1 à 1.8 sont écrites (`fiche.md`, statut brouillon, à valider par le mainteneur) : objectifs, chapitres et leçons. Aucun cours n'est encore rédigé. La plateforme affiche chaque fiche sur `/modules/<slug>`.

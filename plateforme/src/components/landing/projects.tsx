@@ -38,7 +38,7 @@ function RagPreview() {
           Et qui va gagner le prochain match ?
         </p>
         <p className="max-w-[90%] rounded-2xl rounded-bl-md border border-line bg-surface px-4 py-2.5 text-sm text-fg-muted">
-          Je ne sais pas : ce n&apos;est pas dans les documents que je connais.
+          Je ne sais pas&nbsp;: ce n&apos;est pas dans les documents que je connais.
         </p>
       </div>
     </figure>
@@ -99,7 +99,7 @@ export function Projects() {
         <ProjectCard item={byNumber["03"]} featured className="lg:col-span-2 lg:row-span-2" />
 
         {/* Mobile et tablette : les 5 autres projets en carrousel horizontal. Grand écran : la grille. */}
-        <p className="mt-4 text-sm text-fg-subtle lg:hidden">Les 5 autres projets : fais glisser.</p>
+        <p className="mt-4 text-sm text-fg-subtle lg:hidden">Les 5 autres projets&nbsp;: fais glisser.</p>
         <div
           role="region"
           aria-label="Les autres projets"

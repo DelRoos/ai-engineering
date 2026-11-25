@@ -4,7 +4,6 @@ titre: "La moyenne des ventes de Fatou"
 module: "0.1"
 objectifs: [O2]
 difficulte: 1
-duree_estimee: "20 min"
 type: exercice
 statut: brouillon
 version: 1
@@ -16,7 +15,6 @@ mise_a_jour: 2026-11-24
 # La moyenne des ventes de Fatou
 
 **Objectif évalué** : O2 — calculer une statistique simple sur une liste.
-**Durée estimée** : 20 minutes.
 
 ## Contexte
 

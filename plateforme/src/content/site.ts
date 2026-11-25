@@ -6,7 +6,7 @@ export const site = {
   name: "Formation AI Engineer",
   shortName: "AI Engineer",
   description:
-    "Une formation open source et gratuite pour devenir AI Engineer : 72 semaines, 6 projets publics, sur un PC de 8 Go de RAM sans carte graphique. En français, ancrée en Afrique francophone.",
+    "Une formation open source et gratuite pour devenir AI Engineer : 7 étapes, 43 modules, 6 projets publics, sur un PC de 8 Go de RAM sans carte graphique. En français, ancrée en Afrique francophone.",
   /**
    * URL du dépôt GitHub public. Si elle vaut null, les boutons « GitHub »
    * mènent à la section open source, qui annonce que le dépôt arrive bientôt.

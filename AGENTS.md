@@ -17,7 +17,7 @@ En cas de contradiction, le fichier de priorité la plus haute l'emporte. Ne mod
 
 ## 2. La formation en bref
 
-- **Un seul parcours, du débutant à l'expert** : 7 étapes (0 à 6) et 2 semaines de consolidation, soit 72 semaines, environ 15 h par semaine. On saute un module qu'on maîtrise déjà en réussissant son QCM (80 %) et son exercice clé (tests au vert).
+- **Un seul parcours, du débutant à l'expert** : 7 étapes (0 à 6) et deux pauses de consolidation, sans durée imposée : la connaissance décide du découpage, et chacun avance à son rythme. On saute un module qu'on maîtrise déjà en réussissant son QCM (80 %) et son exercice clé (tests au vert).
 - **Objectif de sortie** : concevoir, déployer et maintenir des solutions d'IA en production, prouvé par 6 projets publics dont les tests passent, chacun validé par un examen oral mené par une IA.
 - **Rendu** : le contenu est lu directement dans le dépôt (VS Code, terminal, GitHub) **et** affiché par une plateforme Next.js située dans `plateforme/`. Le dépôt seul doit toujours suffire pour suivre toute la formation.
 
@@ -98,8 +98,8 @@ Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-
 ```
 <etape>/<NN-nom-court>/
 ├── fiche.md                   # fiche du module (étape 1 du circuit)
-├── cours.mdx                  # le cours (module d'une semaine au plus)
-├── cours/                     # OU un chapitre par semaine si le module dure plus d'une semaine
+├── cours.mdx                  # le cours (module d'un seul chapitre)
+├── cours/                     # OU un fichier par chapitre (un chapitre = un thème) si le module en a plusieurs
 │   ├── 01-<slug>.mdx
 │   └── 02-<slug>.mdx
 ├── assets/                    # images du cours (légères, texte alternatif obligatoire)

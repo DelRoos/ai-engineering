@@ -2,15 +2,13 @@
 id: "0.5"
 titre: "Données et API"
 parcours: "00-fondations"
-semaines: "17–18"
-duree_estimee: "15 h par semaine"
 promesse: "Aller chercher des données sur Internet avec une API, les lire en JSON et en CSV, puis les ranger et les interroger dans une base SQL."
 question_saut: "Tu sais déjà appeler une API et écrire du SQL ?"
 qcm: true
 prerequis: ["0.1", "0.3"]
 statut: brouillon
 version: 1
-mise_a_jour: 2026-11-24
+mise_a_jour: 2026-11-25
 ---
 
 # Fiche du module 0.5 — Données et API
@@ -24,38 +22,56 @@ mise_a_jour: 2026-11-24
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Lire et écrire des données JSON et CSV en Python, sans se faire piéger par les encodages et les séparateurs. | ex01 à ex04, qcm |
-| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex05 à ex08, qcm |
-| O3 | Respecter les limites d'une API et éviter de la rappeler inutilement. | ex09, ex10, qcm |
-| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex11 à ex15, qcm |
-| O5 | Relier deux tables avec JOIN. | ex16, ex17, qcm |
-| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex18, ex19, exercice clé (ex20), qcm |
+| O1 | Lire et écrire des données JSON et CSV en Python, sans se faire piéger par les encodages et les séparateurs. | ex01 à ex03, qcm |
+| O2 | Appeler une API HTTP, lire sa réponse et gérer les erreurs réseau. | ex04 à ex07, exercice clé (ex20), qcm |
+| O3 | Respecter les limites d'une API et éviter de la rappeler inutilement. | ex08 à ex10, qcm |
+| O4 | Créer une base SQLite et interroger ses données avec SELECT, WHERE, ORDER BY et GROUP BY. | ex11 à ex14, ex15 à ex18, qcm |
+| O5 | Relier deux tables avec JOIN. | ex15 à ex18, qcm |
+| O6 | Utiliser SQLite depuis Python avec des requêtes paramétrées. | ex19, exercice clé (ex20), qcm |
+| O7 | Récupérer les données d'une page web quand aucune API n'existe, en respectant le droit et le site. | ex08 à ex10, qcm |
 
 ## Chapitres
 
-| Chapitre | Titre | Semaine | Exercices |
-| --- | --- | --- | --- |
-| 1 | Formats de données et API | Semaine 17 | 10 |
-| 2 | Le SQL avec SQLite | Semaine 18 | 10 |
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Les formats de données | 3 |
+| 2 | Le web et HTTP | 4 |
+| 3 | Utiliser une API sérieusement | 3 |
+| 4 | Une base de données | 4 |
+| 5 | Interroger plusieurs tables | 4 |
+| 6 | Python et SQLite | 2 |
 
 ## Notions, dans l'ordre
 
-| Chapitre | Id de la notion | Notion | Durée | Objectif |
-| --- | --- | --- | --- | --- |
-| 1 | `json` | Le format JSON | 20 min | O1 |
-| 1 | `json-python` | Lire et écrire du JSON en Python | 25 min | O1 |
-| 1 | `csv-pieges` | Les pièges du CSV : séparateurs, encodages, accents | 25 min | O1 |
-| 1 | `http` | Comment marche le web : requêtes et réponses HTTP | 25 min | O2 |
-| 1 | `requests` | Appeler une API avec requests | 30 min | O2 |
-| 1 | `statut-erreurs` | Paramètres, codes de statut et erreurs réseau | 25 min | O2 |
-| 1 | `limites-cache` | Respecter une API : limites, clés et cache | 25 min | O3 |
-| 2 | `pourquoi-bdd` | Pourquoi une base de données | 15 min | O4 |
-| 2 | `create-insert` | Créer une table et y insérer des lignes | 30 min | O4 |
-| 2 | `select-where` | Lire avec SELECT et filtrer avec WHERE | 25 min | O4 |
-| 2 | `order-limit` | Trier et limiter : ORDER BY et LIMIT | 15 min | O4 |
-| 2 | `group-by` | Regrouper et compter : GROUP BY | 30 min | O4 |
-| 2 | `join` | Relier deux tables : JOIN | 30 min | O5 |
-| 2 | `sqlite-python` | SQLite depuis Python, sans injection SQL | 30 min | O6 |
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `json` | Le format JSON | O1 |
+| 1 | `json-python` | Lire et écrire du JSON en Python | O1 |
+| 1 | `csv-pieges` | Les pièges du CSV : séparateurs, encodages, accents | O1 |
+| 2 | `http` | Comment marche le web : requêtes et réponses HTTP | O2 |
+| 2 | `url-parametres` | Lire une URL et ses paramètres | O2 |
+| 2 | `requests` | Appeler une API avec requests | O2 |
+| 2 | `statut-erreurs` | Paramètres, codes de statut et erreurs réseau | O2 |
+| 2 | `post` | Envoyer des données : la méthode POST | O2 |
+| 3 | `limites-cache` | Respecter une API : limites, clés et cache | O3 |
+| 3 | `pagination` | Récupérer beaucoup de données : la pagination | O3 |
+| 3 | `en-tetes` | Les en-têtes HTTP et l'authentification | O3 |
+| 3 | `cle-secrete` | Garder une clé d'API secrète | O3 |
+| 3 | `scraping` | Quand il n'y a pas d'API : lire une page web, et le droit de le faire | O7 |
+| 4 | `pourquoi-bdd` | Pourquoi une base de données | O4 |
+| 4 | `create-insert` | Créer une table et y insérer des lignes | O4 |
+| 4 | `select-where` | Lire avec SELECT et filtrer avec WHERE | O4 |
+| 4 | `null-sql` | Les valeurs manquantes en SQL : NULL | O4 |
+| 4 | `order-limit` | Trier et limiter : ORDER BY et LIMIT | O4 |
+| 4 | `update-delete` | Modifier et supprimer des lignes | O4 |
+| 5 | `concevoir-tables` | Concevoir ses tables : clés et relations | O5 |
+| 5 | `join` | Relier deux tables : JOIN | O5 |
+| 5 | `group-by` | Regrouper et compter : GROUP BY | O4 |
+| 5 | `sous-requetes` | Une requête dans une requête | O5 |
+| 5 | `index` | Accélérer une requête : les index | O5 |
+| 6 | `sqlite-python` | SQLite depuis Python, sans injection SQL | O6 |
+| 6 | `transactions` | Tout ou rien : les transactions | O6 |
+| 6 | `api-vers-base` | De l'API à la base : un petit pipeline de données | O6 |
 
 ## Vocabulaire du module
 
@@ -82,18 +98,22 @@ mise_a_jour: 2026-11-24
 
 ## Exercices prévus
 
-| Id | Titre | Objectif | Difficulté (1–3) | Durée | Livrable non testable ? |
-| --- | --- | --- | --- | --- | --- |
-| 0.5-ex01 à ex10 | Chapitre 1 : lire les réponses de l'API météo, gérer ses erreurs, mettre en cache | O1 à O3 | 1–2 | 20–40 min | non |
-| 0.5-ex11 à ex19 | Chapitre 2 : la base des prix de Salif, en SQL puis depuis Python | O4 à O6 | 2 | 20–40 min | non |
-| 0.5-ex20 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | 2 h | non |
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 0.5-ex01 à ex03 | Les formats de données | O1 | 1 | non |
+| 0.5-ex04 à ex07 | Le web et HTTP | O2 | 1 | non |
+| 0.5-ex08 à ex10 | Utiliser une API sérieusement | O3, O7 | 2 | non |
+| 0.5-ex11 à ex14 | Une base de données | O4 | 2 | non |
+| 0.5-ex15 à ex18 | Interroger plusieurs tables | O4, O5 | 2–3 | non |
+| 0.5-ex19 | Python et SQLite | O6 | 2–3 | non |
+| 0.5-ex20 | Exercice clé : récupérer des données d'une API publique et les stocker en SQLite | O2, O6 | 3 | non |
 
 ## Ressources matérielles
 
 - **RAM maximale** : moins de 200 Mo.
 - **Téléchargements** : quelques centaines de Ko de réponses d'API pendant les exercices (les tests n'en ont pas besoin).
 - **Temps de calcul le plus long** : moins d'une seconde.
-- **Dépendances nouvelles** : requests (moins de 1 Mo). SQLite est déjà inclus dans Python.
+- **Dépendances nouvelles** : requests, et beautifulsoup4 pour lire une page web (moins de 1 Mo chacun). SQLite est déjà inclus dans Python.
 - **API payante** : aucune. Open-Meteo : 10 000 appels par jour au plus en usage gratuit (conditions lues le 24/11/2026).
 
 ## Point de contrôle sécurité et éthique
@@ -130,3 +150,4 @@ mise_a_jour: 2026-11-24
 
 - TODO(vérifier) : format exact d'attribution demandé par Open-Meteo pour la licence CC BY 4.0.
 - TODO(vérifier) : prix des céréales réalistes au marché de Ouagadougou, pour le fichier fictif.
+- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

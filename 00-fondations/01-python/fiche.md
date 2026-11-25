@@ -2,15 +2,13 @@
 id: "0.1"
 titre: "Python pour l'ingénieur"
 parcours: "00-fondations"
-semaines: "1–6"
-duree_estimee: "15 h par semaine"
 promesse: "Écrire des programmes Python propres, lisibles et testables. C'est la base de tout le reste du parcours."
 question_saut: "Tu sais déjà coder en Python ?"
 qcm: true
 prerequis: ["0.0"]
 statut: brouillon
 version: 1
-mise_a_jour: 2026-11-24
+mise_a_jour: 2026-11-25
 ---
 
 # Fiche du module 0.1 — Python pour l'ingénieur
@@ -24,74 +22,108 @@ mise_a_jour: 2026-11-24
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Écrire un script qui manipule des nombres, du texte et des valeurs saisies par l'utilisateur. | ex01 à ex10, qcm |
-| O2 | Contrôler un programme avec des conditions et des boucles. | ex11 à ex20, qcm |
-| O3 | Choisir la bonne collection (liste, tuple, dictionnaire, ensemble) et la parcourir. | ex21 à ex30, qcm |
-| O4 | Découper un programme en fonctions typées et documentées. | ex31 à ex40, qcm |
-| O5 | Lire et écrire des fichiers texte et CSV, et gérer les erreurs avec des exceptions. | ex41 à ex50, qcm |
-| O6 | Représenter un problème avec des classes et organiser son code en modules. | ex51 à ex56, qcm |
-| O7 | Isoler un projet dans un environnement virtuel et écrire du code conforme à PEP 8. | ex57 à ex60, qcm |
+| O1 | Écrire un script qui manipule des nombres, du texte et des valeurs saisies par l'utilisateur. | ex01 à ex05, ex06 à ex10, qcm |
+| O2 | Contrôler un programme avec des conditions et des boucles. | ex11 à ex15, ex16 à ex20, ex21 à ex26, qcm |
+| O3 | Choisir la bonne collection (liste, tuple, dictionnaire, ensemble) et la parcourir. | ex21 à ex26, ex27 à ex32, qcm |
+| O4 | Découper un programme en fonctions typées et documentées. | ex33 à ex38, ex39 à ex42, qcm |
+| O5 | Lire et écrire des fichiers texte et CSV, et gérer les erreurs avec des exceptions. | ex43 à ex46, ex47 à ex50, qcm |
+| O6 | Représenter un problème avec des classes et organiser son code en modules. | ex51 à ex55, ex56 à ex60, qcm |
+| O7 | Isoler un projet dans un environnement virtuel et écrire du code conforme à PEP 8. | ex56 à ex60, qcm |
 
 ## Chapitres
 
-| Chapitre | Titre | Semaine | Exercices |
-| --- | --- | --- | --- |
-| 1 | Tes premiers programmes | Semaine 1 | 10 |
-| 2 | Décider et répéter | Semaine 2 | 10 |
-| 3 | Les collections | Semaine 3 | 10 |
-| 4 | Les fonctions | Semaine 4 | 10 |
-| 5 | Fichiers et erreurs | Semaine 5 | 10 |
-| 6 | Classes, modules et projet propre | Semaine 6 | 10 |
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Premiers pas | 5 |
+| 2 | Nombres et texte | 5 |
+| 3 | Décider | 5 |
+| 4 | Répéter | 5 |
+| 5 | Les listes | 6 |
+| 6 | Tuples, dictionnaires et ensembles | 6 |
+| 7 | Les fonctions | 6 |
+| 8 | Aller plus loin avec les fonctions | 4 |
+| 9 | Les fichiers | 4 |
+| 10 | Les erreurs | 4 |
+| 11 | Les classes | 5 |
+| 12 | Modules, projet et outils | 5 |
 
 ## Notions, dans l'ordre
 
-| Chapitre | Id de la notion | Notion | Durée | Objectif |
-| --- | --- | --- | --- | --- |
-| 1 | `premier-programme` | Ton premier programme avec print | 20 min | O1 |
-| 1 | `mode-interactif` | Python comme calculatrice : le mode interactif | 20 min | O1 |
-| 1 | `variables` | Ranger une valeur : les variables | 25 min | O1 |
-| 1 | `nombres` | Nombres entiers et nombres décimaux | 25 min | O1 |
-| 1 | `chaines` | Le texte : les chaînes de caractères | 30 min | O1 |
-| 1 | `f-strings` | Mettre en forme un affichage avec les f-strings | 25 min | O1 |
-| 1 | `input` | Demander une valeur et convertir son type | 30 min | O1 |
-| 2 | `booleens` | Vrai ou faux : booléens et comparaisons | 25 min | O2 |
-| 2 | `if` | Prendre une décision avec if, elif et else | 30 min | O2 |
-| 2 | `and-or-not` | Combiner des conditions : and, or, not | 20 min | O2 |
-| 2 | `while` | Répéter tant que : la boucle while | 25 min | O2 |
-| 2 | `listes` | Ranger plusieurs valeurs : les listes | 30 min | O2 |
-| 2 | `for` | Parcourir une liste avec for | 25 min | O2 |
-| 2 | `range` | Compter avec range | 20 min | O2 |
-| 3 | `slicing` | Découper une liste et une chaîne | 25 min | O3 |
-| 3 | `methodes-listes` | Ajouter, retirer, trier : les méthodes de liste | 25 min | O3 |
-| 3 | `tuples` | Des valeurs qui ne changent pas : les tuples | 20 min | O3 |
-| 3 | `dictionnaires` | Associer des clés et des valeurs : les dictionnaires | 30 min | O3 |
-| 3 | `parcourir-dict` | Parcourir un dictionnaire | 20 min | O3 |
-| 3 | `ensembles` | Sans doublons : les ensembles | 20 min | O3 |
-| 3 | `comprehensions` | Construire une liste en une ligne : les compréhensions | 30 min | O3 |
-| 4 | `pourquoi-fonctions` | Pourquoi écrire des fonctions | 15 min | O4 |
-| 4 | `def` | Définir une fonction et ses paramètres | 25 min | O4 |
-| 4 | `return` | Renvoyer un résultat avec return | 25 min | O4 |
-| 4 | `arguments` | Valeurs par défaut et arguments nommés | 25 min | O4 |
-| 4 | `portee` | La portée des variables | 25 min | O4 |
-| 4 | `annotations` | Annoter les types | 25 min | O4 |
-| 4 | `docstrings` | Documenter avec une docstring | 20 min | O4 |
-| 4 | `decouper` | Découper un problème en petites fonctions | 25 min | O4 |
-| 5 | `lire-fichier` | Lire un fichier texte | 25 min | O5 |
-| 5 | `with` | Ouvrir proprement avec with | 15 min | O5 |
-| 5 | `ecrire-fichier` | Écrire dans un fichier | 20 min | O5 |
-| 5 | `csv` | Lire et écrire un fichier CSV | 30 min | O5 |
-| 5 | `pathlib` | Désigner un fichier avec pathlib | 20 min | O5 |
-| 5 | `lire-erreur` | Quand ça plante : lire un message d'erreur | 25 min | O5 |
-| 5 | `try-except` | Attraper une erreur avec try et except | 25 min | O5 |
-| 5 | `raise` | Lever ta propre exception | 20 min | O5 |
-| 6 | `classes` | Créer une classe et ses objets | 30 min | O6 |
-| 6 | `methodes` | Attributs et méthodes | 25 min | O6 |
-| 6 | `dataclasses` | Des classes de données en une ligne : dataclass | 20 min | O6 |
-| 6 | `import` | Importer un module de la bibliothèque standard | 20 min | O6 |
-| 6 | `plusieurs-fichiers` | Découper ton code en plusieurs fichiers | 25 min | O6 |
-| 6 | `main` | Lancer un script : if __name__ == "__main__" | 15 min | O6 |
-| 6 | `venv-pip` | Environnement virtuel et pip | 30 min | O7 |
-| 6 | `pep8-ruff` | Le style PEP 8, vérifié par ruff | 25 min | O7 |
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `premier-programme` | Ton premier programme avec print | O1 |
+| 1 | `mode-interactif` | Python comme calculatrice : le mode interactif | O1 |
+| 1 | `variables` | Ranger une valeur : les variables | O1 |
+| 1 | `commentaires` | Commenter ton code | O1 |
+| 1 | `aide` | Chercher de l'aide : help() et la documentation officielle | O1 |
+| 2 | `nombres` | Nombres entiers et nombres décimaux | O1 |
+| 2 | `operateurs` | Division entière, reste et puissance : les opérateurs | O1 |
+| 2 | `chaines` | Le texte : les chaînes de caractères | O1 |
+| 2 | `methodes-chaines` | Les méthodes des chaînes : upper, split, replace | O1 |
+| 2 | `f-strings` | Mettre en forme un affichage avec les f-strings | O1 |
+| 2 | `input` | Demander une valeur et convertir son type | O1 |
+| 3 | `booleens` | Vrai ou faux : booléens et comparaisons | O2 |
+| 3 | `none` | Rien du tout : la valeur None | O2 |
+| 3 | `if` | Prendre une décision avec if, elif et else | O2 |
+| 3 | `and-or-not` | Combiner des conditions : and, or, not | O2 |
+| 3 | `match` | Choisir parmi plusieurs cas avec match | O2 |
+| 4 | `while` | Répéter tant que : la boucle while | O2 |
+| 4 | `for` | Répéter avec for | O2 |
+| 4 | `range` | Compter avec range | O2 |
+| 4 | `break-continue` | Sortir d'une boucle : break et continue | O2 |
+| 4 | `boucles-imbriquees` | Des boucles dans des boucles | O2 |
+| 5 | `listes` | Ranger plusieurs valeurs : les listes | O2 |
+| 5 | `slicing` | Découper une liste et une chaîne | O3 |
+| 5 | `methodes-listes` | Ajouter, retirer, trier : les méthodes de liste | O3 |
+| 5 | `copie-listes` | Deux noms pour une même liste : copier sans surprise | O3 |
+| 5 | `enumerate-zip` | Parcourir avec enumerate et zip | O3 |
+| 5 | `trier` | Trier avec sorted et une clé | O3 |
+| 5 | `comprehensions` | Construire une liste en une ligne : les compréhensions | O3 |
+| 6 | `tuples` | Des valeurs qui ne changent pas : les tuples | O3 |
+| 6 | `unpacking` | Déballer plusieurs valeurs d'un coup | O3 |
+| 6 | `dictionnaires` | Associer des clés et des valeurs : les dictionnaires | O3 |
+| 6 | `parcourir-dict` | Parcourir un dictionnaire | O3 |
+| 6 | `comprehensions-dict` | Les compréhensions de dictionnaire et d'ensemble | O3 |
+| 6 | `donnees-imbriquees` | Des données imbriquées : listes de dictionnaires | O3 |
+| 6 | `ensembles` | Sans doublons : les ensembles | O3 |
+| 7 | `pourquoi-fonctions` | Pourquoi écrire des fonctions | O4 |
+| 7 | `def` | Définir une fonction et ses paramètres | O4 |
+| 7 | `return` | Renvoyer un résultat avec return | O4 |
+| 7 | `arguments` | Valeurs par défaut et arguments nommés | O4 |
+| 7 | `portee` | La portée des variables | O4 |
+| 7 | `decouper` | Découper un problème en petites fonctions | O4 |
+| 8 | `args-kwargs` | Un nombre variable d'arguments : *args et **kwargs | O4 |
+| 8 | `lambda` | Les fonctions anonymes : lambda | O4 |
+| 8 | `fonction-argument` | Passer une fonction à une autre fonction | O4 |
+| 8 | `decorateurs` | Les décorateurs : comprendre le @ devant une fonction | O4 |
+| 8 | `generateurs` | Produire des valeurs une à une : les générateurs et yield | O4 |
+| 8 | `annotations` | Annoter les types | O4 |
+| 8 | `docstrings` | Documenter avec une docstring | O4 |
+| 9 | `lire-fichier` | Lire un fichier texte | O5 |
+| 9 | `with` | Ouvrir proprement avec with | O5 |
+| 9 | `encodage` | Les accents dans les fichiers : l'encodage UTF-8 | O5 |
+| 9 | `ecrire-fichier` | Écrire dans un fichier | O5 |
+| 9 | `pathlib` | Désigner un fichier avec pathlib | O5 |
+| 9 | `csv` | Lire et écrire un fichier CSV | O5 |
+| 10 | `lire-erreur` | Quand ça plante : lire un message d'erreur | O5 |
+| 10 | `try-except` | Attraper une erreur avec try et except | O5 |
+| 10 | `else-finally` | Les blocs else et finally | O5 |
+| 10 | `raise` | Lever ta propre exception | O5 |
+| 10 | `exceptions-perso` | Créer tes propres exceptions | O5 |
+| 11 | `classes` | Créer une classe et ses objets | O6 |
+| 11 | `methodes` | Attributs et méthodes | O6 |
+| 11 | `methodes-speciales` | Les méthodes spéciales : __str__ et __eq__ | O6 |
+| 11 | `heritage` | L'héritage | O6 |
+| 11 | `composition` | Assembler des objets : la composition | O6 |
+| 11 | `dataclasses` | Des classes de données en une ligne : dataclass | O6 |
+| 12 | `import` | Importer un module de la bibliothèque standard | O6 |
+| 12 | `bibliotheque-standard` | La bibliothèque standard : math, random, datetime | O6 |
+| 12 | `plusieurs-fichiers` | Découper ton code en plusieurs fichiers | O6 |
+| 12 | `main` | Lancer un script : if __name__ == "__main__" | O6 |
+| 12 | `argparse` | Lire les arguments de la ligne de commande | O7 |
+| 12 | `venv-pip` | Environnement virtuel et pip | O7 |
+| 12 | `requirements` | Noter ses dépendances : requirements.txt | O7 |
+| 12 | `pep8-ruff` | Le style PEP 8, vérifié par ruff | O7 |
 
 ## Vocabulaire du module
 
@@ -125,14 +157,20 @@ mise_a_jour: 2026-11-24
 
 ## Exercices prévus
 
-| Id | Titre | Objectif | Difficulté (1–3) | Durée | Livrable non testable ? |
-| --- | --- | --- | --- | --- | --- |
-| 0.1-ex01 à ex10 | Chapitre 1 : calculs de ventes, affichages, saisies | O1 | 1 | 15–30 min | non |
-| 0.1-ex11 à ex20 | Chapitre 2 : remises, stocks, boucles de caisse | O2 | 1–2 | 15–30 min | non |
-| 0.1-ex21 à ex30 | Chapitre 3 : catalogue des produits, clients, doublons | O3 | 2 | 20–40 min | non |
-| 0.1-ex31 à ex40 | Chapitre 4 : fonctions de caisse typées et documentées | O4 | 2 | 20–40 min | non |
-| 0.1-ex41 à ex50 | Chapitre 5 : lire le cahier des ventes en CSV sans planter | O5 | 2–3 | 30–45 min | non |
-| 0.1-ex51 à ex60 | Chapitre 6 : la petite application de gestion de Fatou | O6, O7 | 3 | 30 min–1 h | non |
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 0.1-ex01 à ex05 | Premiers pas | O1 | 1 | non |
+| 0.1-ex06 à ex10 | Nombres et texte | O1 | 1 | non |
+| 0.1-ex11 à ex15 | Décider | O2 | 1 | non |
+| 0.1-ex16 à ex20 | Répéter | O2 | 1 | non |
+| 0.1-ex21 à ex26 | Les listes | O2, O3 | 2 | non |
+| 0.1-ex27 à ex32 | Tuples, dictionnaires et ensembles | O3 | 2 | non |
+| 0.1-ex33 à ex38 | Les fonctions | O4 | 2 | non |
+| 0.1-ex39 à ex42 | Aller plus loin avec les fonctions | O4 | 2 | non |
+| 0.1-ex43 à ex46 | Les fichiers | O5 | 2–3 | non |
+| 0.1-ex47 à ex50 | Les erreurs | O5 | 2–3 | non |
+| 0.1-ex51 à ex55 | Les classes | O6 | 2–3 | non |
+| 0.1-ex56 à ex60 | Modules, projet et outils | O6, O7 | 2–3 | non |
 
 Exercice clé : les 60 exercices, tous validés par `python outils/check.py`.
 
@@ -174,3 +212,4 @@ Sans objet. Une seule règle, rappelée dans la notion `input` : ne jamais utili
 ## Points à vérifier
 
 - TODO(vérifier) : version minimale de Python visée par les exemples (syntaxe des annotations `list[int]`, `X | None`).
+- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

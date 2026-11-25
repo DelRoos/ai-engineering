@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 const moduleCount = etapes.flatMap((e) => e.modules).filter((m) => m.id !== "C").length;
-const totalWeeks = etapes.reduce((sum, e) => sum + e.weeks, 0) + consolidationAfter.length;
 
 /** Tous les modules du parcours unique, dans l'ordre (docs/programme.md). */
 export default function CommencerPage() {
@@ -45,7 +44,7 @@ export default function CommencerPage() {
               {[
                 { value: etapes.length, unit: "étapes" },
                 { value: moduleCount, unit: "modules" },
-                { value: totalWeeks, unit: "semaines" },
+                { value: 6, unit: "projets" },
               ].map((f) => (
                 <li key={f.unit} className="font-display">
                   <span className="text-4xl font-bold tracking-tight text-fg sm:text-5xl">{f.value}</span>
@@ -91,7 +90,7 @@ export default function CommencerPage() {
                           <span className="mx-2 text-line-strong" aria-hidden="true">
                             /
                           </span>
-                          {etape.weeks} semaines
+                          {etape.modules.filter((x) => x.id !== "C").length} modules
                         </p>
                         <h2 id={`titre-etape-${etape.n}`} className="mt-1 text-3xl font-bold tracking-tight text-balance text-fg sm:text-4xl">
                           {etape.title}
@@ -99,7 +98,7 @@ export default function CommencerPage() {
                         <p className="mt-3 flex gap-2.5 text-fg-muted">
                           <Flag className="mt-1 size-4 shrink-0 text-accent" aria-hidden="true" />
                           <span>
-                            <span className="font-semibold text-fg">Projet : </span>
+                            <span className="font-semibold text-fg">Projet&nbsp;: </span>
                             {etape.project}
                           </span>
                         </p>
@@ -110,7 +109,7 @@ export default function CommencerPage() {
                       {etape.modules.map((m) => (
                         <li
                           key={m.id}
-                          className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-x-4 border-b border-line py-5 sm:grid-cols-[4rem_minmax(0,1fr)_9rem] sm:gap-x-6"
+                          className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-x-4 border-b border-line py-5 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-x-6"
                         >
                           <span className="font-display text-lg font-bold text-accent-1 tabular-nums">{m.id}</span>
                           <div>
@@ -131,9 +130,7 @@ export default function CommencerPage() {
                               <h3 className="text-lg font-semibold text-fg">{m.title}</h3>
                             )}
                             <p className="mt-1 leading-relaxed text-fg-muted">{m.content}</p>
-                            <p className="mt-2 text-sm text-fg-subtle sm:hidden">{m.weeks}</p>
                           </div>
-                          <p className="hidden pt-1 text-right text-sm text-fg-subtle sm:block">{m.weeks}</p>
                         </li>
                       ))}
                     </ol>
@@ -143,7 +140,7 @@ export default function CommencerPage() {
                     <p className="mt-10 flex items-center gap-4 text-sm text-fg-subtle">
                       <span className="h-px flex-1 border-t border-dashed border-line-strong" aria-hidden="true" />
                       <span>
-                        <span className="font-semibold text-fg-muted">1 semaine de consolidation</span> : rattrapage, révisions, projet libre
+                        <span className="font-semibold text-fg-muted">Consolidation</span>&nbsp;: rattrapage, révisions, projet libre
                       </span>
                       <span className="h-px flex-1 border-t border-dashed border-line-strong" aria-hidden="true" />
                     </p>

@@ -2,15 +2,13 @@
 id: "0.0"
 titre: "Préparer son PC"
 parcours: "00-fondations"
-semaines: "avant la semaine 1"
-duree_estimee: "3 h, en une ou deux séances"
 promesse: "Installer tout ce qu'il faut pour suivre la formation sur ton PC, gratuitement, et vérifier que tout marche avant d'écrire ta première ligne de code."
 question_saut: "Ton PC est déjà prêt ?"
 qcm: false
 prerequis: []
 statut: brouillon
 version: 1
-mise_a_jour: 2026-11-24
+mise_a_jour: 2026-11-25
 ---
 
 # Fiche du module 0.0 — Préparer son PC
@@ -24,30 +22,36 @@ mise_a_jour: 2026-11-24
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Vérifier que son PC a la mémoire, le disque et le système nécessaires. | 0.0-ex01 (étape « matériel ») |
-| O2 | Ouvrir un terminal et y lancer une commande. | 0.0-ex01 (toutes les étapes se lancent au terminal) |
-| O3 | Installer Python, Git et VS Code, avec WSL et Ubuntu sous Windows. | 0.0-ex01 (versions attendues) |
-| O4 | Cloner le dépôt de la formation et installer ses outils dans un environnement virtuel. | 0.0-ex01 (dépôt et outils présents) |
-| O5 | Lancer la vérification de son installation et lire son résultat. | 0.0-ex01 |
+| O1 | Vérifier que son PC a la mémoire, le disque et le système nécessaires. | exercice clé (ex01) |
+| O2 | Ouvrir un terminal et y lancer une commande. | exercice clé (ex01) |
+| O3 | Installer Python, Git et VS Code, avec WSL et Ubuntu sous Windows. | exercice clé (ex01) |
+| O4 | Cloner le dépôt de la formation et installer ses outils dans un environnement virtuel. | exercice clé (ex01) |
+| O5 | Lancer la vérification de son installation et lire son résultat. | exercice clé (ex01) |
 
 ## Chapitres
 
-| Chapitre | Titre | Semaine | Exercices |
-| --- | --- | --- | --- |
-| 1 | Ton poste de travail, prêt en une soirée | Avant la semaine 1 | 1 |
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Connaître ton PC et ton terminal | 0 |
+| 2 | Installer tes outils | 0 |
+| 3 | Récupérer la formation | 1 |
 
 ## Notions, dans l'ordre
 
-| Chapitre | Id de la notion | Notion | Durée | Objectif |
-| --- | --- | --- | --- | --- |
-| 1 | `pc-pret` | Vérifier que ton PC est prêt | 15 min | O1 |
-| 1 | `terminal` | Ouvrir un terminal et taper ta première commande | 20 min | O2 |
-| 1 | `wsl` | Sous Windows : installer WSL et Ubuntu | 30 min | O3 |
-| 1 | `installer-python` | Installer Python | 25 min | O3 |
-| 1 | `installer-git` | Installer Git et te présenter à lui | 20 min | O3 |
-| 1 | `installer-vscode` | Installer VS Code et ses extensions | 25 min | O3 |
-| 1 | `cloner-depot` | Cloner le dépôt et installer les outils de la formation | 30 min | O4 |
-| 1 | `verification` | Lancer la vérification finale | 15 min | O5 |
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `pc-pret` | Vérifier que ton PC est prêt | O1 |
+| 1 | `a-quoi-sert` | Python, Git, VS Code : à quoi sert chaque outil | O3 |
+| 1 | `terminal` | Ouvrir un terminal et taper ta première commande | O2 |
+| 2 | `wsl` | Sous Windows : installer WSL et Ubuntu | O3 |
+| 2 | `installer-python` | Installer Python | O3 |
+| 2 | `installer-git` | Installer Git et te présenter à lui | O3 |
+| 2 | `installer-vscode` | Installer VS Code et ses extensions | O3 |
+| 3 | `cloner-depot` | Cloner le dépôt et installer les outils de la formation | O4 |
+| 3 | `mettre-a-jour` | Mettre à jour la formation avec git pull | O4 |
+| 3 | `hors-ligne` | Économiser tes données : tout télécharger une fois, travailler hors ligne | O4 |
+| 3 | `verification` | Lancer la vérification finale | O5 |
+| 3 | `depanner` | Quand une installation échoue : trouver de l'aide | O5 |
 
 ## Vocabulaire du module
 
@@ -72,9 +76,9 @@ mise_a_jour: 2026-11-24
 
 ## Exercices prévus
 
-| Id | Titre | Objectif | Difficulté (1–3) | Durée | Livrable non testable ? |
-| --- | --- | --- | --- | --- | --- |
-| 0.0-ex01 | Exercice clé : la vérification de ton installation (matériel, Python, Git, VS Code, dépôt, outils) | O1 à O5 | 1 | 15 min | non |
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 0.0-ex01 | Exercice clé : la vérification de ton installation (matériel, Python, Git, VS Code, dépôt, outils) | O1 à O5 | 3 | non |
 
 ## Ressources matérielles
 
@@ -118,3 +122,4 @@ mise_a_jour: 2026-11-24
 - TODO(vérifier) : version de Python à installer (la plus récente prise en charge par toutes les dépendances de la formation) et version fournie par la distribution Ubuntu de WSL.
 - TODO(vérifier) : tailles de téléchargement de WSL, Ubuntu, Python, Git et VS Code.
 - TODO(vérifier) : la vérification finale (`python outils/check.py 00-fondations/00-preparer-son-pc`) doit fonctionner sur Linux, WSL et macOS.
+- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

@@ -2,21 +2,20 @@
 id: "etape-5"
 titre: "Étape 5 — Sécurité, éthique et IA responsable"
 ordre: 5
-semaines: 3
 statut: brouillon
 ---
 
-# Étape 5 — Sécurité, éthique et IA responsable (3 semaines)
+# Étape 5 — Sécurité, éthique et IA responsable
 
 **Objectif** : livrer des systèmes dignes de confiance. La sécurité et l'éthique sont déjà traitées dans chaque projet depuis l'étape 1 ; cette étape approfondit le sujet et se conclut par l'audit d'un système existant.
 
 ## Modules
 
-| Module | Dossier | Semaine | Contenu | Exercice clé |
-| --- | --- | --- | --- | --- |
-| 5.1 Sécurité des applications LLM | `01-securite-llm/` | 1 | OWASP Top 10 pour les applications LLM : injection de prompt, fuite de données, outils dangereux, permissions minimales, red teaming défensif | Durcir l'agent du projet 3 et documenter chaque protection |
-| 5.2 Biais, équité, fiabilité | `02-biais-equite/` | 2 | Mesurer les biais (genre, langue, région), hallucinations, explicabilité, supervision humaine | Mesurer les écarts de performance d'un modèle entre groupes |
-| 5.3 Données, droit et gouvernance | `03-droit-gouvernance/` | 3 | Loi camerounaise n° 2024/017 sur les données personnelles, lois équivalentes des autres pays visés, RGPD, AI Act, transferts de données, licences, model cards et datasheets | Rédiger la fiche de conformité d'un projet |
+| Module | Dossier | Contenu | Exercice clé |
+| --- | --- | --- | --- |
+| 5.1 Sécurité des applications LLM | `01-securite-llm/` | OWASP Top 10 pour les applications LLM : injection de prompt, fuite de données, outils dangereux, permissions minimales, red teaming défensif | Durcir l'agent du projet 3 et documenter chaque protection |
+| 5.2 Biais, équité, fiabilité | `02-biais-equite/` | Mesurer les biais (genre, langue, région), hallucinations, explicabilité, supervision humaine | Mesurer les écarts de performance d'un modèle entre groupes |
+| 5.3 Données, droit et gouvernance | `03-droit-gouvernance/` | Loi camerounaise n° 2024/017 sur les données personnelles, lois équivalentes des autres pays visés, RGPD, AI Act, transferts de données, licences, model cards et datasheets | Rédiger la fiche de conformité d'un projet |
 
 ## Points de contrôle dans chaque étape
 

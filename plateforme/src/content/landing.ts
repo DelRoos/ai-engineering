@@ -43,7 +43,7 @@ export const terminal = {
 };
 
 export const facts = [
-  { value: "72", unit: "semaines", label: "un seul parcours, du premier code au métier" },
+  { value: "43", unit: "modules", label: "un seul parcours, du premier code au métier" },
   { value: "6", unit: "projets", label: "publics, vérifiés par des tests automatiques" },
   { value: "0", unit: "€", label: "outils gratuits et modèles locaux par défaut" },
   { value: "8", unit: "Go", label: "de RAM suffisent, sans carte graphique" },
@@ -174,7 +174,6 @@ export type EtapeParcours = {
   id: string;
   label: string;
   title: string;
-  weeks: number;
   project: string | null;
   kind: "fondations" | "etape" | "consolidation";
 };
@@ -184,7 +183,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "fondations",
     label: "Étape 0",
     title: "Fondations : Python, Git, Linux, maths, données",
-    weeks: 20,
     project: "Outil en ligne de commande qui analyse un dataset public local",
     kind: "fondations",
   },
@@ -192,7 +190,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p1",
     label: "Étape 1",
     title: "Développement assisté par IA, données terrain, machine learning classique",
-    weeks: 10,
     project: "Modèle de prédiction entraîné en partie sur des données que tu as collectées",
     kind: "etape",
   },
@@ -200,7 +197,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p2",
     label: "Étape 2",
     title: "Deep learning avec PyTorch",
-    weeks: 6,
     project: "Classifieur de maladies des plantes, optimisé pour mobile",
     kind: "etape",
   },
@@ -208,7 +204,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "c1",
     label: "Consolidation",
     title: "Rattrapage, révisions, projet libre",
-    weeks: 1,
     project: null,
     kind: "consolidation",
   },
@@ -216,7 +211,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p3",
     label: "Étape 3",
     title: "LLM, RAG, agents, IA locale, langues africaines",
-    weeks: 12,
     project: "Assistant RAG sur des documents officiels + agent avec outils, utilisable hors ligne",
     kind: "etape",
   },
@@ -224,7 +218,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p4",
     label: "Étape 4",
     title: "Ingénierie de production et pipelines de données",
-    weeks: 9,
     project: "Mise en production du projet 3",
     kind: "etape",
   },
@@ -232,7 +225,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "c2",
     label: "Consolidation",
     title: "Rattrapage, révisions, projet libre",
-    weeks: 1,
     project: null,
     kind: "consolidation",
   },
@@ -240,7 +232,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p5",
     label: "Étape 5",
     title: "Sécurité, éthique, IA responsable",
-    weeks: 3,
     project: "Audit de sécurité et de biais d'un système existant",
     kind: "etape",
   },
@@ -248,7 +239,6 @@ export const etapesParcours: EtapeParcours[] = [
     id: "p6",
     label: "Étape 6",
     title: "Capstone, produit, entrepreneuriat et carrière",
-    weeks: 10,
     project: "Solution complète sur un cas réaliste, présentée en anglais en vidéo",
     kind: "etape",
   },
@@ -258,7 +248,7 @@ export const parcours = {
   eyebrow: "Le parcours",
   title: "De ta première ligne de Python à l'IA en production.",
   intro:
-    "Environ 15 heures par semaine, à ton rythme. Un seul chemin, dans l'ordre. Chaque étape se termine par un projet et un examen oral.",
+    "Un seul chemin, dans l'ordre, à ton rythme : aucune durée imposée. Chaque étape se termine par un projet et un examen oral.",
 };
 
 export const projects = {
@@ -357,8 +347,8 @@ export const faq = {
       a: "Non, et c'est assumé. Ta preuve de niveau est ton portfolio GitHub : six projets publics, des badges verts, et les rapports de correction. Un recruteur peut tout vérifier en quelques minutes.",
     },
     {
-      q: "Combien de temps faut-il par semaine ?",
-      a: "Environ 15 heures : 3 h de cours, 9 h de pratique, 1 h de QCM et 2 h de vérification. C'est indicatif : tu avances à ta vitesse, et tu peux faire une pause sans rien perdre.",
+      q: "Combien de temps faut-il pour finir ?",
+      a: "Aucune durée n'est imposée : la formation suit les connaissances, pas un calendrier. Tu passes à la suite quand tes exercices et ton QCM sont réussis, et tu peux faire une pause quand tu veux sans rien perdre : ta progression reste dans ton dépôt.",
     },
     {
       q: "J'ai le droit d'utiliser ChatGPT, Claude ou Copilot ?",

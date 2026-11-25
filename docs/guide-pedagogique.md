@@ -81,18 +81,18 @@ Les relectures (étapes 7 et 8 du circuit) enrichissent cette section et la `faq
 
 ## 2. Longueur
 
-Le programme prévoit environ **3 h de cours par semaine** (texte, mini-exercices et vidéos facultatives).
+La longueur suit la connaissance à transmettre, pas un temps fixé : un chapitre est un thème cohérent, et un module a autant de chapitres que son sujet l'exige.
 
 | Élément | Longueur cible |
 | --- | --- |
-| Fichier de cours (une semaine) | 4 000 à 6 000 mots, mini-exercices compris |
+| Fichier de cours (un chapitre) | 6 000 mots au plus, mini-exercices compris |
 | Notion | 300 à 800 mots |
 | Pourquoi | 100 à 250 mots |
 | Exemple de code | 15 lignes au plus de préférence, 40 au maximum |
 | Phrase | 20 mots au plus |
 | Paragraphe | 5 phrases au plus |
 
-Un module de plus d'une semaine est découpé en un fichier par semaine dans `cours/` (voir `AGENTS.md` § 8). Si un fichier dépasse 6 000 mots, découpe-le.
+Un module de plusieurs chapitres a un fichier par chapitre dans `cours/` (voir `AGENTS.md` § 8). Si un fichier dépasse 6 000 mots ou 8 notions, découpe-le en deux chapitres.
 
 ---
 
@@ -149,7 +149,7 @@ Un exercice est un dossier `exercices/NN-nom/` (modèle : `templates/exercice/`)
 1. **Un objectif principal par exercice**, indiqué dans l'énoncé (`Objectif évalué : O2`).
 2. **Progression** : les exercices d'un module vont du plus guidé au plus libre. Le premier se réussit en recopiant presque un exemple du cours, et le dernier demande de combiner plusieurs notions.
 3. **Énoncé autonome** : on doit pouvoir réussir avec le cours et l'énoncé seulement. Donne la signature exacte des fonctions, les formats d'entrée et de sortie, et au moins un exemple d'appel avec le résultat attendu.
-4. **Durée estimée** indiquée (15 minutes à 2 heures).
+4. **Difficulté** indiquée (1 à 3), sans durée : chacun avance à son rythme.
 5. **Tests qui enseignent** : chaque assertion a un message en français qui dit ce qui était attendu, ce qui a été obtenu et, si possible, une piste (`« Pour [3, 5], la moyenne attendue est 4, tu as renvoyé 8. As-tu divisé par le nombre d'éléments ? »`).
 6. **Tests robustes** : teste plusieurs cas, dont les cas limites (liste vide, valeur manquante, texte avec accents). Utilise des valeurs différentes de celles de l'énoncé pour qu'on ne puisse pas les coder en dur.
 7. **Ressources** : moins de 30 secondes et moins de 1 Go de RAM par exécution des tests, sans réseau (voir `AGENTS.md` § 10).

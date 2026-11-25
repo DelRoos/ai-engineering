@@ -37,7 +37,7 @@ function PortfolioPreview() {
           </li>
         ))}
       </ul>
-      <figcaption className="mt-5 text-sm text-fg-subtle">Illustration : à quoi ressemble un portfolio vérifiable.</figcaption>
+      <figcaption className="mt-5 text-sm text-fg-subtle">Illustration&nbsp;: à quoi ressemble un portfolio vérifiable.</figcaption>
     </figure>
   );
 }

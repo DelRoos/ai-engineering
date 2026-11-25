@@ -4,6 +4,7 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { etapes } from "@/content/commencer";
 import { ETAPES } from "./content";
+import { slugify } from "./slug";
 
 /**
  * Lecture des fiches de module (`<etape>/<NN-nom>/fiche.md`), au build.
@@ -14,8 +15,16 @@ import { ETAPES } from "./content";
 
 const REPO_ROOT = path.resolve(process.cwd(), "..");
 
-export type Lecon = { id: string; title: string; minutes: number };
-export type Chapitre = { n: number; title: string; week: string; exercises: number; lessons: Lecon[] };
+export type Lecon = { id: string; title: string; objective: string };
+export type Chapitre = {
+  n: number;
+  /** Segment d'URL du chapitre, tiré de son titre : « Les listes » → « les-listes ». */
+  slug: string;
+  title: string;
+  exercises: number;
+  lessons: Lecon[];
+};
+export type Objectif = { id: string; text: string };
 export type Ressource = { label: string; href: string; meta: string };
 export type Voisin = { id: string; title: string; slug: string | null; kind: "module" | "projet" };
 
@@ -30,13 +39,10 @@ export type Fiche = {
   promise: string;
   skipQuestion: string;
   status: "brouillon" | "relu" | "publie";
-  /** Nombre de semaines (0 pour un module à faire « avant la semaine 1 »). */
-  weeks: number;
-  weeksLabel: string;
   hasQcm: boolean;
   qcm: { drawn: number; threshold: number };
   keyExercise: string;
-  objectives: string[];
+  objectives: Objectif[];
   chapters: Chapitre[];
   exerciseCount: number;
   filRouge: string;
@@ -51,15 +57,7 @@ export function typo(text: string): string {
     .replace(/« /g, "« ");
 }
 
-/** Durée lisible : 145 → « 2 h 25 », 25 → « 25 min ». */
-export function formatMinutes(total: number): string {
-  const h = Math.floor(total / 60);
-  const m = total % 60;
-  if (h === 0) return `${m} min`;
-  return m === 0 ? `${h} h` : `${h} h ${String(m).padStart(2, "0")}`;
-}
-
-export const chapterMinutes = (c: Chapitre) => c.lessons.reduce((s, l) => s + l.minutes, 0);
+const capitalize = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 
 const FRONT_MATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
 
@@ -96,17 +94,6 @@ function bullet(section: string | undefined, label: string): string | null {
   return m ? m[1].trim() : null;
 }
 
-function weeksOf(semaines: string): { weeks: number; label: string } {
-  const range = semaines.match(/^(\d+)\s*[–-]\s*(\d+)$/);
-  if (range) {
-    const [a, b] = [Number(range[1]), Number(range[2])];
-    const weeks = b - a + 1;
-    return { weeks, label: weeks === 2 ? `Semaines ${a} et ${b}` : `Semaines ${a} à ${b}` };
-  }
-  if (/^\d+$/.test(semaines)) return { weeks: 1, label: `Semaine ${semaines}` };
-  return { weeks: 0, label: semaines.charAt(0).toUpperCase() + semaines.slice(1) };
-}
-
 const allModules = etapes.flatMap((e) => e.modules.map((m) => ({ ...m, etape: e })));
 
 function readFiche(file: string, folder: string, etapeN: number): Fiche {
@@ -129,46 +116,46 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
   const etape = etapes.find((e) => e.n === etapeN) ?? fail(`étape ${etapeN} absente de content/commencer.ts`);
 
   // Chapitres et leçons
-  const chapters: Chapitre[] = tableRows(s.get("Chapitres")).map(([n, title, week, exercises]) => ({
+  const chapters: Chapitre[] = tableRows(s.get("Chapitres")).map(([n, title, exercises]) => ({
     n: Number(n),
+    slug: slugify(title),
     title: typo(title),
-    week,
     exercises: Number(exercises),
     lessons: [],
   }));
   if (chapters.length === 0) fail("tableau « Chapitres » vide ou absent");
 
-  for (const [chap, lessonId, title, duree] of tableRows(s.get("Notions, dans l'ordre"))) {
+  for (const [chap, lessonId, title, objective] of tableRows(s.get("Notions, dans l'ordre"))) {
     const c = chapters.find((x) => x.n === Number(chap)) ?? fail(`la notion « ${lessonId} » cite le chapitre ${chap}, absent du tableau des chapitres`);
-    const minutes = Number(duree?.match(/^(\d+)\s*min$/)?.[1]);
-    if (!minutes) fail(`durée « ${duree} » illisible pour la notion « ${lessonId} » (attendu : « 25 min »)`);
-    c.lessons.push({ id: lessonId, title: typo(title), minutes });
+    c.lessons.push({ id: lessonId, title: typo(title), objective: objective ?? "" });
   }
   for (const c of chapters) {
     if (c.lessons.length === 0) fail(`le chapitre ${c.n} n'a aucune notion`);
-    if (c.lessons.length > 8) fail(`le chapitre ${c.n} a ${c.lessons.length} notions (8 au plus)`);
+    if (c.lessons.length > 8) fail(`le chapitre ${c.n} a ${c.lessons.length} notions (8 au plus) : découpe-le en deux chapitres`);
     if (!Number.isFinite(c.exercises)) fail(`nombre d'exercices illisible au chapitre ${c.n}`);
   }
+  const chapterSlugs = chapters.map((c) => c.slug);
+  const dupChapter = chapterSlugs.find((x, i) => chapterSlugs.indexOf(x) !== i);
+  if (dupChapter) fail(`deux chapitres ont le même titre (slug « ${dupChapter} »)`);
   const ids = chapters.flatMap((c) => c.lessons.map((l) => l.id));
   const dup = ids.find((x, i) => ids.indexOf(x) !== i);
   if (dup) fail(`identifiant de notion en double : « ${dup} »`);
 
-  const objectives = tableRows(s.get("Objectifs vérifiables")).map((r) => typo(r[1]));
+  const objectives = tableRows(s.get("Objectifs vérifiables")).map((r) => ({ id: r[0], text: typo(r[1]) }));
   if (objectives.length === 0) fail("tableau « Objectifs vérifiables » vide");
 
   const resources: Ressource[] = tableRows(s.get("Ressources externes gratuites"))
-    .map(([res, langue, duree]) => {
+    .map(([res, langue]) => {
       const link = res.match(/^\[(.+)\]\((https?:\/\/[^)]+)\)$/);
-      return link ? { label: typo(link[1]), href: link[2], meta: [langue, duree].filter(Boolean).join(", ") } : null;
+      return link ? { label: typo(link[1]), href: link[2], meta: langue } : null;
     })
     .filter((r): r is Ressource => r !== null);
 
   const prerequisites: Voisin[] = (Array.isArray(data.prerequis) ? data.prerequis.map(String) : []).map((pid) => {
     const m = allModules.find((x) => x.id === pid) ?? fail(`prérequis « ${pid} » inconnu`);
-    return { id: pid, title: m.title, slug: null, kind: "module" };
+    return { id: pid, title: typo(m.title), slug: null, kind: "module" };
   });
 
-  const { weeks, label } = weeksOf(need("semaines"));
   const slug = path.basename(folder).replace(/^\d+-/, "");
 
   return {
@@ -176,19 +163,17 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
     slug,
     folder,
     etape: { n: etape.n, title: etape.title },
-    title: need("titre"),
+    title: typo(need("titre")),
     promise: typo(need("promesse")),
     skipQuestion: typo(need("question_saut")),
     status: (data.statut as Fiche["status"]) ?? "brouillon",
-    weeks,
-    weeksLabel: label,
     hasQcm: data.qcm !== false,
     qcm: { drawn: 10, threshold: 80 },
     keyExercise: typo(bullet(s.get("Extrait du programme"), "Exercice clé") ?? fail("« Exercice clé » absent de l'extrait du programme")),
     objectives,
     chapters,
     exerciseCount: chapters.reduce((sum, c) => sum + c.exercises, 0),
-    filRouge: typo(bullet(s.get("Fil rouge et ancrage local"), "Situation") ?? fail("« Situation » absente du fil rouge")),
+    filRouge: capitalize(typo(bullet(s.get("Fil rouge et ancrage local"), "Situation") ?? fail("« Situation » absente du fil rouge"))),
     prerequisites,
     resources,
   };
@@ -229,7 +214,7 @@ export function slugOf(id: string): string | null {
 /** Module précédent et suivant dans le parcours. Après le dernier module d'une étape vient son projet. */
 export function neighbours(id: string): { prev: Voisin | null; next: Voisin | null } {
   const i = allModules.findIndex((m) => m.id === id);
-  const toVoisin = (m: (typeof allModules)[number]): Voisin => ({ id: m.id, title: m.title, slug: slugOf(m.id), kind: "module" });
+  const toVoisin = (m: (typeof allModules)[number]): Voisin => ({ id: m.id, title: typo(m.title), slug: slugOf(m.id), kind: "module" });
   const cur = allModules[i];
   const prevM = allModules[i - 1];
   const nextM = allModules[i + 1];
@@ -239,4 +224,18 @@ export function neighbours(id: string): { prev: Voisin | null; next: Voisin | nu
       ? toVoisin(nextM)
       : { id: `Projet ${cur.etape.n}`, title: typo(cur.etape.project), slug: null, kind: "projet" as const };
   return { prev, next };
+}
+
+/** Un chapitre d'un module, avec ses voisins dans le module. */
+export function getChapitre(moduleSlug: string, chapitreSlug: string) {
+  const fiche = getFiche(moduleSlug);
+  const i = fiche?.chapters.findIndex((c) => c.slug === decodeURIComponent(chapitreSlug)) ?? -1;
+  if (!fiche || i < 0) return undefined;
+  return { fiche, chapitre: fiche.chapters[i], prev: fiche.chapters[i - 1] ?? null, next: fiche.chapters[i + 1] ?? null };
+}
+
+/** Objectifs travaillés par un chapitre (ceux de ses leçons), dans l'ordre de la fiche. */
+export function chapterObjectives(fiche: Fiche, chapitre: Chapitre): Objectif[] {
+  const ids = new Set(chapitre.lessons.flatMap((l) => l.objective.match(/O\d+/g) ?? []));
+  return fiche.objectives.filter((o) => ids.has(o.id));
 }

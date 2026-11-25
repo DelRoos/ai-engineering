@@ -2,8 +2,6 @@
 id: "X.Y"
 titre: "Titre du module (repris du programme)"
 parcours: "0N-nom-de-l-etape"
-semaines: "1–2"              # semaines dans l'étape, d'après le programme
-duree_estimee: "15 h par semaine"
 promesse: "Une phrase : ce que l'apprenant saura faire à la fin. Affichée en haut de la page du module."
 question_saut: "Tu maîtrises déjà … ?"   # affichée sur la page du module, à côté de la règle « sauter un module »
 qcm: true                    # false si le module n'a pas de QCM (ex. 0.0)
@@ -26,7 +24,7 @@ mise_a_jour: 2026-11-24
 
 ## Objectifs vérifiables
 
-<!-- CONSIGNE : 3 à 6 objectifs par semaine de module. Verbes d'action observables (guide pédagogique § 1.1). Chaque objectif est évalué au moins une fois. -->
+<!-- CONSIGNE : 3 à 8 objectifs, autant que le module l'exige. Verbes d'action observables (guide pédagogique § 1.1). Chaque objectif est évalué au moins une fois. -->
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
@@ -36,20 +34,20 @@ mise_a_jour: 2026-11-24
 
 ## Chapitres
 
-<!-- CONSIGNE : un chapitre par semaine (un fichier cours/NN-slug.mdx). « Semaine » est le texte affiché sur la page du module. La plateforme lit ce tableau : garde ses colonnes. -->
+<!-- CONSIGNE : un chapitre = un thème cohérent (un fichier cours/NN-slug.mdx), avec autant de chapitres que le sujet l'exige. Aucune durée : c'est la connaissance qui décide du découpage, pas le temps. La plateforme lit ce tableau : garde ses colonnes. -->
 
-| Chapitre | Titre | Semaine | Exercices |
-| --- | --- | --- | --- |
-| 1 | … | Semaine 1 | 10 |
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | … | 5 |
 
 ## Notions, dans l'ordre
 
-<!-- CONSIGNE : une notion = une leçon (explication, exemple, mini-exercice), 15 à 30 min. Une idée nouvelle par notion, 8 notions au plus par chapitre, environ 3 h de cours par chapitre. L'identifiant sert d'ancre et de lien avec le QCM : il ne change plus une fois publié. La plateforme lit ce tableau : garde ses colonnes. -->
+<!-- CONSIGNE : une notion = une leçon (explication, exemple, mini-exercice). Une idée nouvelle par notion, 8 notions au plus par chapitre : au-delà, crée un chapitre de plus. N'enlève jamais une notion utile pour gagner du temps. L'identifiant sert d'ancre et de lien avec le QCM : il ne change plus une fois publié. La plateforme lit ce tableau : garde ses colonnes. -->
 
-| Chapitre | Id de la notion | Notion | Durée | Objectif |
-| --- | --- | --- | --- | --- |
-| 1 | `…` | … | 25 min | O1 |
-| 1 | `…` | … | 20 min | O2 |
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `…` | … | O1 |
+| 1 | `…` | … | O2 |
 
 ## Vocabulaire du module
 
@@ -69,12 +67,12 @@ mise_a_jour: 2026-11-24
 
 ## Exercices prévus
 
-<!-- CONSIGNE : pour valider la fiche, une ligne par chapitre suffit (X.Y-ex01 à ex10), plus une ligne pour l'exercice clé. Le détail exercice par exercice est écrit à l'étape 2 du circuit. Le total doit égaler la somme de la colonne « Exercices » du tableau des chapitres. -->
+<!-- CONSIGNE : pour valider la fiche, une ligne par chapitre suffit (X.Y-ex01 à ex05), plus une ligne pour l'exercice clé. Le détail exercice par exercice est écrit à l'étape 2 du circuit. Le total doit égaler la somme de la colonne « Exercices » du tableau des chapitres. -->
 
-| Id | Titre | Objectif | Difficulté (1–3) | Durée | Livrable non testable ? |
-| --- | --- | --- | --- | --- | --- |
-| X.Y-ex01 | … | O1 | 1 | 20 min | non |
-| X.Y-ex05 | Exercice clé : … | O3 | 3 | 2 h | oui → GRILLE.md |
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| X.Y-ex01 | … | O1 | 1 | non |
+| X.Y-ex05 | Exercice clé : … | O3 | 3 | oui → GRILLE.md |
 
 ## Ressources matérielles
 

@@ -2,15 +2,13 @@
 id: "0.2"
 titre: "Outils du développeur"
 parcours: "00-fondations"
-semaines: "7–8"
-duree_estimee: "15 h par semaine"
 promesse: "Travailler comme un développeur : te déplacer dans le terminal, versionner ton code avec Git et le publier sur GitHub, avec un premier badge vert."
 question_saut: "Tu utilises déjà Git et le terminal ?"
 qcm: true
 prerequis: ["0.1"]
 statut: brouillon
 version: 1
-mise_a_jour: 2026-11-24
+mise_a_jour: 2026-11-25
 ---
 
 # Fiche du module 0.2 — Outils du développeur
@@ -24,40 +22,57 @@ mise_a_jour: 2026-11-24
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex03, qcm |
-| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex04, ex05, qcm |
-| O3 | Utiliser VS Code et écrire un README en Markdown. | ex07, ex08, qcm |
-| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex09 à ex11, qcm |
-| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex12, ex13, qcm |
-| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex14, ex15, exercice clé (ex16), qcm |
+| O1 | Se déplacer dans les dossiers et gérer des fichiers au terminal. | ex01 à ex04, ex05 à ex08, qcm |
+| O2 | Chercher dans des fichiers et enchaîner des commandes. | ex01 à ex04, ex05 à ex08, qcm |
+| O3 | Utiliser VS Code et écrire un README en Markdown. | ex09 à ex10, qcm |
+| O4 | Enregistrer l'historique d'un projet avec Git et revenir en arrière. | ex11 à ex13, qcm |
+| O5 | Travailler sur une branche, fusionner et résoudre un conflit. | ex14 à ex16, qcm |
+| O6 | Publier son code sur GitHub, ouvrir une pull request et lire le résultat de GitHub Actions. | ex17 à ex20, exercice clé (ex21), qcm |
 
 ## Chapitres
 
-| Chapitre | Titre | Semaine | Exercices |
-| --- | --- | --- | --- |
-| 1 | Le terminal, VS Code et Markdown | Semaine 7 | 8 |
-| 2 | Git et GitHub | Semaine 8 | 8 |
+| Chapitre | Titre | Exercices |
+| --- | --- | --- |
+| 1 | Le terminal | 4 |
+| 2 | Le système Linux | 4 |
+| 3 | VS Code et Markdown | 2 |
+| 4 | Git sur ton PC | 3 |
+| 5 | Les branches | 3 |
+| 6 | GitHub | 5 |
 
 ## Notions, dans l'ordre
 
-| Chapitre | Id de la notion | Notion | Durée | Objectif |
-| --- | --- | --- | --- | --- |
-| 1 | `se-reperer` | Se repérer : dossiers et chemins | 25 min | O1 |
-| 1 | `gerer-fichiers` | Créer, copier, déplacer et supprimer | 25 min | O1 |
-| 1 | `lire-chercher` | Lire un fichier et chercher dedans avec grep | 25 min | O2 |
-| 1 | `pipes` | Rediriger et enchaîner des commandes | 25 min | O2 |
-| 1 | `sudo-apt` | Droits, sudo et installation de logiciels | 20 min | O1 |
-| 1 | `path` | Variables d'environnement et PATH | 20 min | O1 |
-| 1 | `vscode` | VS Code au quotidien : projet, terminal intégré, raccourcis | 25 min | O3 |
-| 1 | `markdown` | Écrire en Markdown | 20 min | O3 |
-| 2 | `pourquoi-git` | Pourquoi versionner son code | 15 min | O4 |
-| 2 | `premier-commit` | Ton premier dépôt : init, add, commit | 25 min | O4 |
-| 2 | `historique` | Lire l'historique : status, log, diff | 20 min | O4 |
-| 2 | `annuler` | Revenir en arrière sans rien casser | 20 min | O4 |
-| 2 | `branches` | Travailler sur une branche | 25 min | O5 |
-| 2 | `conflits` | Fusionner et résoudre un conflit | 30 min | O5 |
-| 2 | `github` | GitHub : clé SSH, push et pull | 30 min | O6 |
-| 2 | `fork-pr` | Fork, pull request et GitHub Actions | 30 min | O6 |
+| Chapitre | Id de la notion | Notion | Objectif |
+| --- | --- | --- | --- |
+| 1 | `se-reperer` | Se repérer : dossiers et chemins | O1 |
+| 1 | `gerer-fichiers` | Créer, copier, déplacer et supprimer | O1 |
+| 1 | `jokers` | Agir sur plusieurs fichiers : les jokers | O1 |
+| 1 | `lire-chercher` | Lire un fichier et chercher dedans avec grep | O2 |
+| 1 | `pipes` | Rediriger et enchaîner des commandes | O2 |
+| 2 | `sudo-apt` | Droits, sudo et installation de logiciels | O1 |
+| 2 | `path` | Variables d'environnement et PATH | O1 |
+| 2 | `processus` | Voir et arrêter un programme : les processus | O1 |
+| 2 | `nano` | Modifier un fichier sans quitter le terminal : nano | O1 |
+| 2 | `archives` | Télécharger et décompresser : curl, zip et tar | O1 |
+| 2 | `script-shell` | Ton premier script shell | O2 |
+| 3 | `vscode` | VS Code au quotidien : projet, terminal intégré, raccourcis | O3 |
+| 3 | `markdown` | Écrire en Markdown | O3 |
+| 4 | `pourquoi-git` | Pourquoi versionner son code | O4 |
+| 4 | `premier-commit` | Ton premier dépôt : init, add, commit | O4 |
+| 4 | `historique` | Lire l'historique : status, log, diff | O4 |
+| 4 | `annuler` | Revenir en arrière sans rien casser | O4 |
+| 4 | `gitignore` | Ignorer des fichiers : .gitignore | O4 |
+| 5 | `branches` | Travailler sur une branche | O5 |
+| 5 | `conflits` | Fusionner et résoudre un conflit | O5 |
+| 5 | `stash` | Mettre ton travail de côté : git stash | O5 |
+| 5 | `messages-commit` | Écrire de bons messages de commit | O5 |
+| 6 | `compte-github` | Créer et sécuriser ton compte GitHub | O6 |
+| 6 | `github` | GitHub : clé SSH, push et pull | O6 |
+| 6 | `fork-pr` | Fork et pull request | O6 |
+| 6 | `revue-pr` | Relire une pull request sur GitHub | O6 |
+| 6 | `upstream` | Garder ton fork à jour avec le dépôt d'origine | O6 |
+| 6 | `issues` | Les issues : signaler et suivre un problème | O6 |
+| 6 | `github-actions` | GitHub Actions et le badge vert | O6 |
 
 ## Vocabulaire du module
 
@@ -85,11 +100,15 @@ mise_a_jour: 2026-11-24
 
 ## Exercices prévus
 
-| Id | Titre | Objectif | Difficulté (1–3) | Durée | Livrable non testable ? |
-| --- | --- | --- | --- | --- | --- |
-| 0.2-ex01 à ex08 | Chapitre 1 : ranger le dossier du projet, chercher dans les fichiers, écrire le README | O1 à O3 | 1–2 | 15–30 min | non |
-| 0.2-ex09 à ex15 | Chapitre 2 : historique, branches, conflit, dépôt distant | O4 à O6 | 2 | 20–40 min | non |
-| 0.2-ex16 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | 1 h | non |
+| Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
+| --- | --- | --- | --- | --- |
+| 0.2-ex01 à ex04 | Le terminal | O1, O2 | 1 | non |
+| 0.2-ex05 à ex08 | Le système Linux | O1, O2 | 1 | non |
+| 0.2-ex09 à ex10 | VS Code et Markdown | O3 | 2 | non |
+| 0.2-ex11 à ex13 | Git sur ton PC | O4 | 2 | non |
+| 0.2-ex14 à ex16 | Les branches | O5 | 2–3 | non |
+| 0.2-ex17 à ex20 | GitHub | O6 | 2–3 | non |
+| 0.2-ex21 | Exercice clé : forker le dépôt, y pousser ses exercices et obtenir un premier badge vert | O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -133,3 +152,4 @@ mise_a_jour: 2026-11-24
 - TODO(vérifier) : comment tester automatiquement les exercices de terminal et de Git (état d'un dossier, historique d'un dépôt local) sans accès réseau.
 - TODO(vérifier) : l'exercice clé dépend de GitHub ; prévoir une vérification locale du badge (lecture de l'état du workflow) ou une capture.
 - TODO(vérifier) : licences de Pro Git et de The Missing Semester.
+- TODO(vérifier) : compléter le vocabulaire du module pour les notions ajoutées par l'audit du 25/11/2026 (vérifier chaque terme dans docs/glossaire.md).

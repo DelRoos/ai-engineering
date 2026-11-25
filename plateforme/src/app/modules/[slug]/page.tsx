@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
   Check,
   ChevronDown,
   ChevronRight,
-  Clock,
+  Compass,
   FileCheck2,
   FlaskConical,
   ListChecks,
@@ -19,7 +20,7 @@ import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { CopyCommand } from "@/components/module/copy-command";
 import { ButtonLink, Container, cn } from "@/components/ui";
-import { chapterMinutes, formatMinutes, getFiche, getFiches, neighbours, type Voisin } from "@/lib/fiches";
+import { getFiche, getFiches, neighbours, type Voisin } from "@/lib/fiches";
 import { site } from "@/content/site";
 
 export const dynamicParams = false;
@@ -43,17 +44,12 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
   if (!m) notFound();
 
   const { prev, next } = neighbours(m.id);
-  const totalMinutes = m.chapters.reduce((s, c) => s + chapterMinutes(c), 0);
   const totalLessons = m.chapters.reduce((s, c) => s + c.lessons.length, 0);
   const single = m.chapters.length === 1;
 
   const stats = [
-    m.weeks > 0
-      ? { value: String(m.weeks), unit: "semaines", detail: m.weeksLabel }
-      : { value: formatMinutes(totalMinutes), unit: "", detail: m.weeksLabel },
-    single
-      ? { value: String(totalLessons), unit: "leçons", detail: "à suivre dans l'ordre" }
-      : { value: String(m.chapters.length), unit: "chapitres", detail: `${totalLessons} leçons, ${formatMinutes(totalMinutes)}` },
+    { value: String(m.chapters.length), unit: plural(m.chapters.length, "chapitre", "chapitres"), detail: "un thème chacun" },
+    { value: String(totalLessons), unit: "leçons", detail: "explication, exemple, mini-exercice" },
     m.hasQcm
       ? { value: String(m.exerciseCount), unit: "exercices", detail: "corrigés par des tests" }
       : { value: String(m.exerciseCount), unit: plural(m.exerciseCount, "vérification", "vérifications"), detail: "automatique, en une commande" },
@@ -109,9 +105,18 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                   </p>
                 )}
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <ButtonLink href="#chapitre-1" className="h-13 px-7 text-base">
-                    {single ? "Voir les leçons" : "Commencer le chapitre 1"}
-                    <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+                  <ButtonLink
+                    href={`/modules/${m.slug}/${m.chapters[0].slug}`}
+                    target="_blank"
+                    rel="noopener"
+                    className="h-13 px-7 text-base"
+                  >
+                    Commencer le chapitre 1
+                    <ArrowUpRight
+                      className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">(s&apos;ouvre dans un nouvel onglet)</span>
                   </ButtonLink>
                   {!single && (
                     <ButtonLink href="#programme" variant="secondary" className="h-13 px-7 text-base">
@@ -151,11 +156,11 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                 </h2>
                 <ul className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
                   {m.objectives.map((o) => (
-                    <li key={o} className="flex gap-3.5">
+                    <li key={o.id} className="flex gap-3.5">
                       <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-success/15">
                         <Check className="size-3.5 text-success" strokeWidth={3} aria-hidden="true" />
                       </span>
-                      <span className="leading-relaxed text-fg">{o}</span>
+                      <span className="leading-relaxed text-fg">{o.text}</span>
                     </li>
                   ))}
                 </ul>
@@ -170,7 +175,7 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                   <p className="text-sm text-fg-subtle">
                     {single
                       ? `${totalLessons} leçons, à suivre dans l'ordre.`
-                      : "Un chapitre par semaine. Ouvre un chapitre pour voir ses leçons."}
+                      : "Ouvre un chapitre pour voir ses leçons."}
                   </p>
                 </div>
                 <ol className="relative mt-8">
@@ -206,15 +211,12 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                         >
                           <summary className="flex cursor-pointer list-none items-start justify-between gap-3 rounded-3xl p-4 sm:p-6 [&::-webkit-details-marker]:hidden">
                             <div className="min-w-0">
-                              <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm">
-                                <span className="font-semibold text-fg-subtle">{c.week}</span>
-                                {first && (
-                                  <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold text-[#1a0d05]">
-                                    Commence ici
-                                  </span>
-                                )}
-                              </div>
-                              <h3 className="mt-2 text-xl font-bold tracking-tight text-fg sm:text-2xl">
+                              {first && (
+                                <span className="mb-2 inline-block rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold text-[#1a0d05]">
+                                  Commence ici
+                                </span>
+                              )}
+                              <h3 className="text-xl font-bold tracking-tight text-fg sm:text-2xl">
                                 {!single && <span className="text-fg-subtle">Chapitre {c.n}. </span>}
                                 {c.title}
                               </h3>
@@ -223,17 +225,15 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                                   <BookOpen className="size-4" aria-hidden="true" />
                                   {c.lessons.length} leçons
                                 </span>
-                                <span className="flex items-center gap-1.5">
-                                  <Clock className="size-4" aria-hidden="true" />
-                                  {formatMinutes(chapterMinutes(c))}
-                                </span>
-                                <span className="flex items-center gap-1.5">
-                                  <FlaskConical className="size-4" aria-hidden="true" />
-                                  {c.exercises}{" "}
-                                  {m.hasQcm
-                                    ? plural(c.exercises, "exercice", "exercices")
-                                    : plural(c.exercises, "vérification", "vérifications")}
-                                </span>
+                                {c.exercises > 0 && (
+                                  <span className="flex items-center gap-1.5">
+                                    <FlaskConical className="size-4" aria-hidden="true" />
+                                    {c.exercises}{" "}
+                                    {m.hasQcm
+                                      ? plural(c.exercises, "exercice", "exercices")
+                                      : plural(c.exercises, "vérification", "vérifications")}
+                                  </span>
+                                )}
                               </p>
                             </div>
                             <span
@@ -249,24 +249,38 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                               {c.lessons.map((l, j) => (
                                 <li
                                   key={l.id}
-                                  className="grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-baseline gap-x-2.5 border-b border-line py-3 sm:grid-cols-[2rem_minmax(0,1fr)_auto] sm:gap-x-3"
+                                  className="grid grid-cols-[1.75rem_minmax(0,1fr)] items-baseline gap-x-2.5 border-b border-line py-3 last:border-b-0 sm:grid-cols-[2.25rem_minmax(0,1fr)] sm:gap-x-3"
                                 >
                                   <span className="font-display text-sm font-bold text-accent-1 tabular-nums">
                                     {single ? j + 1 : `${c.n}.${j + 1}`}
                                   </span>
                                   <span className="text-fg">{l.title}</span>
-                                  <span className="text-sm whitespace-nowrap text-fg-subtle tabular-nums">{l.minutes}&nbsp;min</span>
                                 </li>
                               ))}
-                              <li className="grid grid-cols-[1.75rem_minmax(0,1fr)] items-baseline gap-x-2.5 pt-3 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-x-3">
-                                <FlaskConical className="size-4 translate-y-0.5 text-accent" aria-hidden="true" />
-                                <span className="text-fg-muted">
-                                  {m.hasQcm
-                                    ? `Puis ${c.exercises} ${plural(c.exercises, "exercice", "exercices")} sur ton PC, ${plural(c.exercises, "corrigé", "corrigés")} par des tests`
-                                    : "Puis la vérification automatique de ton installation"}
-                                </span>
-                              </li>
+                              {c.exercises > 0 && (
+                                <li className="grid grid-cols-[1.75rem_minmax(0,1fr)] items-baseline gap-x-2.5 border-t border-line pt-3 sm:grid-cols-[2.25rem_minmax(0,1fr)] sm:gap-x-3">
+                                  <FlaskConical className="size-4 translate-y-0.5 text-accent" aria-hidden="true" />
+                                  <span className="text-fg-muted">
+                                    {m.hasQcm
+                                      ? `Puis ${c.exercises} ${plural(c.exercises, "exercice", "exercices")} sur ton PC, ${plural(c.exercises, "corrigé", "corrigés")} par des tests`
+                                      : "Puis la vérification automatique de ton installation"}
+                                  </span>
+                                </li>
+                              )}
                             </ol>
+                            <a
+                              href={`/modules/${m.slug}/${c.slug}`}
+                              target="_blank"
+                              rel="noopener"
+                              className="group/open mt-5 inline-flex h-11 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-semibold text-fg transition-[border-color,background-color,color] duration-200 hover:border-accent/60 hover:bg-accent/[0.08] hover:text-accent-1"
+                            >
+                              Ouvrir le chapitre
+                              <ArrowUpRight
+                                className="size-4 transition-transform duration-200 group-hover/open:translate-x-0.5 group-hover/open:-translate-y-0.5"
+                                aria-hidden="true"
+                              />
+                              <span className="sr-only">(s&apos;ouvre dans un nouvel onglet)</span>
+                            </a>
                           </div>
                         </details>
                       </li>
@@ -397,13 +411,12 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
 
                 <div className="rounded-3xl border border-line bg-surface p-5">
                   <p className="flex items-center gap-2 text-sm font-semibold text-fg">
-                    <Clock className="size-4 text-accent" aria-hidden="true" />
-                    Ton rythme
+                    <Compass className="size-4 text-accent" aria-hidden="true" />
+                    À ton rythme
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-                    {m.weeks > 0
-                      ? `Environ 15 h par semaine pendant ${m.weeks} semaines. C'est indicatif : avance à ta vitesse.`
-                      : `Environ ${formatMinutes(totalMinutes)} de lecture, plus le temps des téléchargements. En une ou deux séances, avant la semaine 1.`}
+                    Aucune durée imposée. Prends le temps de comprendre chaque leçon, et passe à la suite quand tes
+                    exercices sont réussis.
                   </p>
                 </div>
               </div>

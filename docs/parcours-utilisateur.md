@@ -65,7 +65,7 @@ Profils secondaires, hors plateforme : le **recruteur** (il vérifie le portfoli
 - **Écran** : **Module** — l'entrée d'un module : ce que tu vas savoir faire, les chapitres, les exercices, le QCM, le temps estimé, le module suivant.
 - **Sortie** : un chapitre.
 
-### Étape 5 — Apprendre (chaque semaine)
+### Étape 5 — Apprendre (à son rythme)
 
 - **Awa** lit, souvent sur téléphone, parfois hors ligne dans le dépôt. Elle fait les mini-exercices.
 - **Écran** : **Chapitre** — la lecture. *Page existante mise de côté : à reprendre après validation de sa maquette.*
@@ -83,7 +83,7 @@ Profils secondaires, hors plateforme : le **recruteur** (il vérifie le portfoli
 
 ### Étape 8 — Construire le projet d'étape
 
-- **Écran** : **Projet** — l'énoncé, les livrables, les étapes conseillées semaine par semaine, les critères de validation, la grille de l'agent correcteur.
+- **Écran** : **Projet** — l'énoncé, les livrables, les étapes conseillées, les critères de validation, la grille de l'agent correcteur.
 
 ### Étape 9 — Prouver
 

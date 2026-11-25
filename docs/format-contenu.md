@@ -38,8 +38,6 @@ id: "0.1"                  # identifiant du module (programme)
 chapitre: 1                # 1 si cours.mdx ; numéro du chapitre si cours/NN-slug.mdx
 titre: "Python pour l'ingénieur : types et variables"
 parcours: "00-fondations"
-semaine: 1                 # semaine dans l'étape
-duree_estimee: "3 h"       # lecture + mini-exercices
 objectifs: [O1, O2, O3]    # identifiants définis dans fiche.md
 prerequis: []              # identifiants de modules, ex. ["0.1", "0.3"]
 statut: brouillon          # brouillon | relu | publie
@@ -58,7 +56,6 @@ titre: "Compter les ventes par produit"
 module: "0.1"              # absent pour un projet d'étape
 objectifs: [O2]
 difficulte: 2              # 1 à 3
-duree_estimee: "45 min"
 type: exercice             # exercice | exercice-cle | projet
 statut: brouillon
 version: 1

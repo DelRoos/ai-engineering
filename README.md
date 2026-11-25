@@ -1,6 +1,6 @@
 # Formation AI Engineer
 
-Une formation **gratuite et open source** pour devenir AI Engineer, en français. Un seul parcours, du premier code jusqu'au métier : 7 étapes, 72 semaines, 6 projets publics. Tout se fait **sur ton PC**, même modeste : 8 Go de RAM, sans carte graphique, sans rien payer.
+Une formation **gratuite et open source** pour devenir AI Engineer, en français. Un seul parcours, du premier code jusqu'au métier : 7 étapes, 43 modules, 6 projets publics, sans durée imposée. Tout se fait **sur ton PC**, même modeste : 8 Go de RAM, sans carte graphique, sans rien payer.
 
 <p align="center">
   <img src="docs/images/accueil.jpg" alt="Page d'accueil du site de la formation : « Deviens AI Engineer. Gratuitement, sur ton propre PC. », à côté d'un terminal qui montre la vérification automatique d'un projet." width="900">
@@ -22,19 +22,19 @@ La formation est pensée pour l'Afrique francophone : les exemples et les projet
   <img src="docs/images/parcours.svg" alt="Les 7 étapes du parcours en escalier, du débutant à l'expert, avec leur durée et leur projet." width="900">
 </p>
 
-| Étape | Thème | Durée | Projet |
+| Étape | Thème | Modules | Projet |
 | --- | --- | --- | --- |
-| 0 | Fondations : préparer son PC, Python, Git, Linux, maths, données | 20 semaines | Un outil en ligne de commande qui analyse un jeu de données public |
-| 1 | Développement assisté par IA, données terrain, machine learning classique | 10 semaines | Un modèle de prédiction entraîné en partie sur des données que tu as collectées |
-| 2 | Deep learning | 6 semaines | Un classifieur de maladies des plantes, optimisé pour mobile |
-| — | Consolidation | 1 semaine | Rattrapage, révisions, projet libre |
-| 3 | LLM, RAG, agents, IA locale, langues africaines | 12 semaines | Un assistant RAG sur des documents officiels et un agent avec outils, utilisables hors ligne |
-| 4 | Ingénierie de production et pipelines de données | 9 semaines | La mise en production du projet 3 |
-| — | Consolidation | 1 semaine | Rattrapage, révisions, projet libre |
-| 5 | Sécurité, éthique, IA responsable | 3 semaines | L'audit de sécurité et de biais d'un système existant |
-| 6 | Capstone, produit, entrepreneuriat et carrière | 10 semaines | Une solution complète sur un cas réaliste, présentée en anglais en vidéo |
+| 0 | Fondations : préparer son PC, Python, Git, Linux, maths, données | 6 | Un outil en ligne de commande qui analyse un jeu de données public |
+| 1 | Développement assisté par IA, données terrain, machine learning classique | 8 | Un modèle de prédiction entraîné en partie sur des données que tu as collectées |
+| 2 | Deep learning | 5 | Un classifieur de maladies des plantes, optimisé pour mobile |
+| — | Consolidation | — | Rattrapage, révisions, projet libre |
+| 3 | LLM, RAG, agents, IA locale, langues africaines | 10 | Un assistant RAG sur des documents officiels et un agent avec outils, utilisables hors ligne |
+| 4 | Ingénierie de production et pipelines de données | 9 | La mise en production du projet 3 |
+| — | Consolidation | — | Rattrapage, révisions, projet libre |
+| 5 | Sécurité, éthique, IA responsable | 3 | L'audit de sécurité et de biais d'un système existant |
+| 6 | Capstone, produit, entrepreneuriat et carrière | 2 + capstone | Une solution complète sur un cas réaliste, présentée en anglais en vidéo |
 
-Compte environ 15 h par semaine : 3 h de cours, 9 h de pratique, le reste pour les QCM et la vérification. C'est indicatif, chacun avance à sa vitesse.
+Il n'y a pas de durée imposée : chaque module a autant de leçons que son sujet l'exige, et tu passes à la suite quand tes exercices et ton QCM sont réussis.
 
 Le détail de chaque module est dans [docs/programme.md](docs/programme.md).
 
@@ -48,9 +48,9 @@ Tu clones ce dépôt une fois, puis tu travailles en local. La connexion ne sert
 4. **À la fin de chaque étape, tu réalises un projet.** Il est validé par ses tests, des contrôles de qualité, un badge vert sur GitHub, puis un examen oral mené par un agent IA qui vérifie que tu comprends ton code.
 
 <p align="center">
-  <img src="docs/images/module-python.jpg" alt="Page du module 0.1 Python pour l'ingénieur : le programme semaine par semaine, avec le chapitre 1 ouvert sur ses 7 leçons et leur durée." width="560">
+  <img src="docs/images/module-python.jpg" alt="Page du module 0.1 Python pour l'ingénieur : le programme découpé en chapitres thématiques, avec le chapitre 1 ouvert sur ses leçons." width="560">
   <br>
-  <sub>Le programme d'un module sur le site : un chapitre par semaine, des leçons de 15 à 30 minutes.</sub>
+  <sub>Le programme d'un module sur le site : un chapitre par thème, chacun avec ses leçons et ses exercices.</sub>
 </p>
 
 Il n'y a ni compte, ni inscription, ni mentor, ni diplôme. Ta preuve de niveau, c'est ton **portfolio GitHub** : 6 projets publics dont les tests passent, vérifiables par un recruteur en quelques minutes.

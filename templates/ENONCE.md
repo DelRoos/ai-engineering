@@ -3,7 +3,6 @@ id: "projet-N"
 titre: "Projet N — Titre (repris du programme)"
 objectifs: [P1, P2, P3]
 difficulte: 3
-duree_estimee: "N semaines (environ N × 9 h de pratique)"
 type: projet
 statut: brouillon
 version: 1
@@ -86,10 +85,10 @@ mise_a_jour: 2026-11-24
 
 ## Étapes conseillées
 
-<!-- CONSIGNE : un découpage en étapes avec une durée indicative, pour qu'un apprenant seul ne se perde pas. Chaque étape se termine par une vérification. -->
+<!-- CONSIGNE : un découpage en étapes, pour qu'un apprenant seul ne se perde pas. Pas de durée : chaque étape se termine par une vérification, et on passe à la suivante quand elle est réussie. -->
 
-1. **Semaine 1 — …** : … Vérification : …
-2. **Semaine 2 — …** : … Vérification : …
+1. **Étape 1 — …** : … Vérification : …
+2. **Étape 2 — …** : … Vérification : …
 
 ## Validation
 
