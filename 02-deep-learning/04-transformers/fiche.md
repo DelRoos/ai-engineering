@@ -22,22 +22,23 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Transformer du texte en tokens et en embeddings. | ex01 à ex03, exercice clé (ex15), qcm |
-| O2 | Expliquer ce qu'est un modèle de langue et pourquoi les réseaux récurrents ont été dépassés. | ex04 à ex06, qcm |
-| O3 | Calculer un mécanisme d'attention, à la main puis en code. | ex07 à ex09, exercice clé (ex15), qcm |
-| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex10 à ex14, exercice clé (ex15), ex16 à ex18, qcm |
-| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex19 à ex22, qcm |
+| O1 | Transformer du texte en tokens et en embeddings. | ex01 à ex05, exercice clé (ex23), qcm |
+| O2 | Expliquer ce qu'est un modèle de langue et pourquoi les réseaux récurrents ont été dépassés. | ex06 à ex09, qcm |
+| O3 | Calculer un mécanisme d'attention, à la main puis en code. | ex10 à ex14, exercice clé (ex23), qcm |
+| O4 | Assembler un bloc Transformer et un petit modèle génératif. | ex15 à ex18, ex19 à ex22, exercice clé (ex23), ex24 à ex27, qcm |
+| O5 | Utiliser des modèles pré-entraînés avec la bibliothèque Hugging Face. | ex28 à ex32, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Le texte en nombres | 3 |
-| 2 | Les séquences | 3 |
-| 3 | L'attention | 3 |
-| 4 | Le Transformer | 6 |
-| 5 | Pré-entraîner | 3 |
-| 6 | Hugging Face | 4 |
+| 1 | Le texte en nombres | 5 |
+| 2 | Les séquences | 4 |
+| 3 | L'attention | 5 |
+| 4 | Le Transformer | 4 |
+| 5 | Construire un mini-GPT | 5 |
+| 6 | Pré-entraîner | 4 |
+| 7 | Hugging Face | 5 |
 
 ## Notions, dans l'ordre
 
@@ -45,38 +46,50 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `tokenisation` | La tokenisation : du texte aux tokens | O1 |
 | 1 | `bpe` | Découper en sous-mots : BPE | O1 |
+| 1 | `entrainer-tokenizer` | Entraîner ton propre tokenizer | O1 |
+| 1 | `tokens-speciaux` | Les tokens spéciaux : début, fin, remplissage | O1 |
 | 1 | `embeddings` | Les embeddings : des mots dans un espace | O1 |
 | 1 | `word2vec` | Apprendre des embeddings : word2vec | O1 |
 | 1 | `analogies` | Les analogies dans l'espace des mots | O1 |
+| 2 | `sacs-de-mots` | Avant les réseaux : sacs de mots et n-grammes | O2 |
 | 2 | `modele-langue` | Prédire le mot suivant : le modèle de langue | O2 |
 | 2 | `rnn` | Les réseaux récurrents et leurs limites | O2 |
+| 2 | `retropropagation-temps` | La rétropropagation dans le temps | O2 |
 | 2 | `lstm-gru` | Retenir plus longtemps : LSTM et GRU | O2 |
 | 2 | `seq2seq` | Encoder puis décoder : seq2seq | O2 |
-| 2 | `retropropagation-temps` | La rétropropagation dans le temps | O2 |
 | 3 | `attention-intuition` | L'attention : regarder les bons mots | O3 |
+| 3 | `attention-traduction` | Les débuts de l'attention : traduire en regardant la phrase source | O3 |
 | 3 | `requetes-cles-valeurs` | Requêtes, clés et valeurs | O3 |
 | 3 | `attention-calcul` | Calculer l'attention, à la main puis en code | O3 |
+| 3 | `auto-attention` | L'auto-attention : chaque mot regarde les autres | O3 |
 | 3 | `multi-tetes` | Plusieurs têtes d'attention | O3 |
 | 3 | `masque-causal` | Ne pas regarder l'avenir : le masque causal | O3 |
+| 3 | `attention-croisee` | L'attention croisée entre deux séquences | O3 |
 | 4 | `position` | Donner l'ordre des mots : l'encodage de position | O4 |
 | 4 | `bloc-transformer` | Un bloc Transformer complet | O4 |
+| 4 | `feed-forward` | La couche feed-forward du Transformer | O4 |
 | 4 | `norme-residus` | Normalisation et connexions résiduelles | O4 |
 | 4 | `familles-transformers` | Encodeur, décodeur : les familles de modèles | O4 |
-| 4 | `mini-gpt` | Un mini-GPT qui génère du texte | O4 |
-| 4 | `echantillonnage` | Générer : température et échantillonnage | O4 |
-| 4 | `beam-search` | Chercher la meilleure suite : beam search | O4 |
-| 4 | `kv-cache` | Générer vite : le cache des clés et des valeurs | O4 |
-| 5 | `bert` | BERT : apprendre en devinant les mots cachés | O4 |
-| 5 | `gpt-preentrainement` | GPT : apprendre en prédisant la suite | O4 |
-| 5 | `objectifs-preentrainement` | Les objectifs de pré-entraînement | O4 |
-| 5 | `donnees-preentrainement` | Les données de pré-entraînement | O4 |
-| 5 | `adapter-preentraine` | Adapter un modèle pré-entraîné à une tâche | O4 |
-| 6 | `hub-hf` | Le Hub de Hugging Face | O5 |
-| 6 | `pipelines-hf` | Utiliser un modèle en trois lignes : pipeline | O5 |
-| 6 | `tokenizers-hf` | Les tokenizers de Hugging Face | O5 |
-| 6 | `datasets-hf` | La bibliothèque datasets | O5 |
-| 6 | `adapter-hf` | Adapter un petit modèle à une tâche de texte | O5 |
-| 6 | `partager-hf` | Partager ton modèle sur le Hub | O5 |
+| 4 | `cout-attention` | Le coût de l'attention sur les longs textes | O4 |
+| 5 | `corpus-gpt` | Préparer un corpus pour un modèle de langue | O4 |
+| 5 | `mini-gpt` | Un mini-GPT qui génère du texte | O4 |
+| 5 | `entrainer-gpt` | Entraîner un mini-GPT et suivre sa perte | O4 |
+| 5 | `echantillonnage` | Générer : température et échantillonnage | O4 |
+| 5 | `beam-search` | Chercher la meilleure suite : beam search | O4 |
+| 5 | `kv-cache` | Générer vite : le cache des clés et des valeurs | O4 |
+| 6 | `objectifs-preentrainement` | Les objectifs de pré-entraînement | O4 |
+| 6 | `bert` | BERT : apprendre en devinant les mots cachés | O4 |
+| 6 | `gpt-preentrainement` | GPT : apprendre en prédisant la suite | O4 |
+| 6 | `donnees-preentrainement` | Les données de pré-entraînement | O4 |
+| 6 | `perplexite` | Mesurer un modèle de langue : la perplexité | O4 |
+| 6 | `adapter-preentraine` | Adapter un modèle pré-entraîné à une tâche | O4 |
+| 7 | `hub-hf` | Le Hub de Hugging Face | O5 |
+| 7 | `pipelines-hf` | Utiliser un modèle en trois lignes : pipeline | O5 |
+| 7 | `tokenizers-hf` | Les tokenizers de Hugging Face | O5 |
+| 7 | `datasets-hf` | La bibliothèque datasets | O5 |
+| 7 | `adapter-hf` | Adapter un petit modèle à une tâche de texte | O5 |
+| 7 | `trainer-hf` | Entraîner avec Trainer | O5 |
+| 7 | `partager-hf` | Partager ton modèle sur le Hub | O5 |
 
 ## Vocabulaire du module
 
@@ -91,6 +104,13 @@ mise_a_jour: 2026-11-25
 | encodage de position (positional encoding) | A | `position` |
 | Transformer, encodeur, décodeur | A | `familles-transformers` |
 | Hub, pipeline | A | `pipelines-hf` |
+| token spécial (special token), remplissage (padding) | A | `tokens-speciaux` |
+| n-gramme, sac de mots | A | `sacs-de-mots` |
+| auto-attention (self-attention) | A | `auto-attention` |
+| attention croisée (cross-attention) | A | `attention-croisee` |
+| feed-forward | A | `feed-forward` |
+| perplexité | B | `perplexite` |
+| Trainer | A | `trainer-hf` |
 
 ## Fil rouge et ancrage local
 
@@ -102,13 +122,14 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 2.4-ex01 à ex03 | Le texte en nombres | O1 | 1 | non |
-| 2.4-ex04 à ex06 | Les séquences | O2 | 1 | non |
-| 2.4-ex07 à ex09 | L'attention | O3 | 2 | non |
-| 2.4-ex10 à ex14 | Le Transformer | O4 | 2 | non |
-| 2.4-ex15 | Exercice clé : un mini-Transformer qui génère du texte, entraîné sur processeur | O1, O3, O4 | 3 | non |
-| 2.4-ex16 à ex18 | Pré-entraîner | O4 | 2–3 | non |
-| 2.4-ex19 à ex22 | Hugging Face | O5 | 2–3 | non |
+| 2.4-ex01 à ex05 | Le texte en nombres | O1 | 1 | non |
+| 2.4-ex06 à ex09 | Les séquences | O2 | 1 | non |
+| 2.4-ex10 à ex14 | L'attention | O3 | 2 | non |
+| 2.4-ex15 à ex18 | Le Transformer | O4 | 2 | non |
+| 2.4-ex19 à ex22 | Construire un mini-GPT | O4 | 2–3 | non |
+| 2.4-ex23 | Exercice clé : un mini-Transformer qui génère du texte, entraîné sur processeur | O1, O3, O4 | 3 | non |
+| 2.4-ex24 à ex27 | Pré-entraîner | O4 | 2–3 | non |
+| 2.4-ex28 à ex32 | Hugging Face | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
