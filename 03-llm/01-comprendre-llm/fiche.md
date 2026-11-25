@@ -22,26 +22,28 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer comment un LLM est entraîné : pré-entraînement, instruction tuning, RLHF. | ex01 à ex04, qcm |
-| O2 | Raisonner en tokens : contexte, coût et limites. | ex05 à ex07, exercice clé (ex17), qcm |
-| O3 | Régler la génération et reconnaître les hallucinations. | ex08 à ex10, qcm |
-| O4 | Faire tourner un petit modèle ouvert en local avec Ollama. | ex14 à ex16, exercice clé (ex17), qcm |
-| O5 | Comparer des modèles ouverts et fermés sur la qualité, le coût et la latence. | ex11 à ex13, ex14 à ex16, exercice clé (ex17), qcm |
+| O1 | Expliquer comment un LLM est entraîné : pré-entraînement, instruction tuning, RLHF. | ex01 à ex05, ex15 à ex17, qcm |
+| O2 | Raisonner en tokens : contexte, coût et limites. | ex06 à ex09, exercice clé (ex27), qcm |
+| O3 | Régler la génération et reconnaître les hallucinations. | ex10 à ex14, ex15 à ex17, qcm |
+| O4 | Faire tourner un petit modèle ouvert en local avec Ollama. | ex22 à ex26, exercice clé (ex27), qcm |
+| O5 | Comparer des modèles ouverts et fermés sur la qualité, le coût et la latence. | ex18 à ex21, ex22 à ex26, exercice clé (ex27), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Comment naît un LLM | 4 |
-| 2 | Les tokens | 3 |
-| 3 | Générer du texte | 3 |
-| 4 | Les modèles | 3 |
-| 5 | En local et par API | 4 |
+| 1 | Comment naît un LLM | 5 |
+| 2 | Les tokens | 4 |
+| 3 | Générer du texte | 5 |
+| 4 | Converser avec un modèle | 3 |
+| 5 | Les modèles | 4 |
+| 6 | En local et par API | 6 |
 
 ## Notions, dans l'ordre
 
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
+| 1 | `architecture-llm` | Ce qu'il y a dans un LLM : un Transformer qui prédit la suite | O1 |
 | 1 | `pre-entrainement` | Le pré-entraînement : apprendre à prédire la suite | O1 |
 | 1 | `donnees-entrainement-llm` | Les données qui entraînent un LLM | O1 |
 | 1 | `instruction-tuning` | L'instruction tuning : apprendre à suivre des consignes | O1 |
@@ -53,21 +55,32 @@ mise_a_jour: 2026-11-25
 | 2 | `cout-tokens` | Ce que coûte un token | O2 |
 | 2 | `langues-tokens` | Pourquoi certaines langues coûtent plus cher | O2 |
 | 2 | `compter-tokens` | Compter les tokens avant d'envoyer | O2 |
+| 2 | `perdu-au-milieu` | Ce qui se perd dans un long contexte | O2 |
+| 3 | `generation-token` | Générer un token à la fois | O3 |
 | 3 | `temperature` | La température | O3 |
 | 3 | `top-p` | Top-p, top-k et les autres réglages | O3 |
+| 3 | `probabilites-tokens` | La confiance du modèle : les probabilités des tokens | O3 |
 | 3 | `sorties-reproductibles` | Des réponses reproductibles | O3 |
 | 3 | `hallucinations` | Pourquoi un LLM invente : les hallucinations | O3 |
 | 3 | `arret-generation` | Arrêter la génération : longueur et séquences d'arrêt | O3 |
-| 4 | `ouverts-fermes` | Modèles fermés et modèles ouverts | O5 |
-| 4 | `familles` | Les familles de modèles ouverts : Llama, Mistral, Qwen, Gemma | O5 |
-| 4 | `benchmarks-llm` | Lire un classement de modèles sans se faire avoir | O5 |
-| 4 | `licences-modeles` | Les licences des modèles | O5 |
-| 4 | `choisir-modele` | Choisir un modèle pour une tâche | O5 |
-| 5 | `ollama` | Installer Ollama et un petit modèle | O4 |
-| 5 | `quantification-llm` | Pourquoi un modèle quantifié tient dans 8 Go | O4 |
-| 5 | `api-llm` | Appeler un modèle par API | O5 |
-| 5 | `limites-api` | Les limites d'une API : quotas, débit, confidentialité | O5 |
-| 5 | `comparer-llm` | Comparer des modèles : qualité, coût, latence | O5 |
+| 4 | `roles-messages` | Les rôles d'une conversation : système, utilisateur, assistant | O3 |
+| 4 | `gabarit-conversation` | Le gabarit de conversation de chaque modèle | O3 |
+| 4 | `forces-faiblesses` | Ce qu'un LLM fait bien, et ce qu'il fait mal | O3 |
+| 4 | `date-coupure` | La date de coupure des connaissances | O3 |
+| 4 | `multimodaux-apercu` | Les modèles qui voient et qui entendent : un aperçu | O1 |
+| 5 | `ouverts-fermes` | Modèles fermés et modèles ouverts | O5 |
+| 5 | `familles` | Les familles de modèles ouverts : Llama, Mistral, Qwen, Gemma | O5 |
+| 5 | `modeles-specialises` | Des modèles spécialisés : code, embeddings, raisonnement | O5 |
+| 5 | `benchmarks-llm` | Lire un classement de modèles sans se faire avoir | O5 |
+| 5 | `licences-modeles` | Les licences des modèles | O5 |
+| 5 | `choisir-modele` | Choisir un modèle pour une tâche | O5 |
+| 6 | `ollama` | Installer Ollama et un petit modèle | O4 |
+| 6 | `quantification-llm` | Pourquoi un modèle quantifié tient dans 8 Go | O4 |
+| 6 | `api-llm` | Appeler un modèle par API | O5 |
+| 6 | `streaming-api` | Recevoir la réponse au fil de l'eau | O5 |
+| 6 | `limites-api` | Les limites d'une API : quotas, débit, confidentialité | O5 |
+| 6 | `proteger-cle-budget` | Protéger ta clé d'API et ton budget | O5 |
+| 6 | `comparer-llm` | Comparer des modèles : qualité, coût, latence | O5 |
 
 ## Vocabulaire du module
 
@@ -83,6 +96,12 @@ mise_a_jour: 2026-11-25
 | modèle ouvert (open weights) | A | `ouverts-fermes` |
 | Ollama, quantification | A | `ollama` |
 | latence | B | `comparer-llm` |
+| génération autorégressive | A | `generation-token` |
+| logprobs (probabilités des tokens) | A | `probabilites-tokens` |
+| rôle système, utilisateur, assistant | B | `roles-messages` |
+| gabarit de conversation (chat template) | A | `gabarit-conversation` |
+| date de coupure (knowledge cutoff) | A | `date-coupure` |
+| streaming | A | `streaming-api` |
 
 ## Fil rouge et ancrage local
 
@@ -94,12 +113,13 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.1-ex01 à ex04 | Comment naît un LLM | O1 | 1 | non |
-| 3.1-ex05 à ex07 | Les tokens | O2 | 2 | non |
-| 3.1-ex08 à ex10 | Générer du texte | O3 | 2 | non |
-| 3.1-ex11 à ex13 | Les modèles | O5 | 2–3 | non |
-| 3.1-ex14 à ex16 | En local et par API | O4, O5 | 2–3 | non |
-| 3.1-ex17 | Exercice clé : comparer 3 petits modèles locaux (et, en option, une API à bas coût) sur 20 tâches | O2, O4, O5 | 3 | oui → GRILLE.md (rapport de comparaison) |
+| 3.1-ex01 à ex05 | Comment naît un LLM | O1 | 1 | non |
+| 3.1-ex06 à ex09 | Les tokens | O2 | 1 | non |
+| 3.1-ex10 à ex14 | Générer du texte | O3 | 2 | non |
+| 3.1-ex15 à ex17 | Converser avec un modèle | O1, O3 | 2 | non |
+| 3.1-ex18 à ex21 | Les modèles | O5 | 2–3 | non |
+| 3.1-ex22 à ex26 | En local et par API | O4, O5 | 2–3 | non |
+| 3.1-ex27 | Exercice clé : comparer 3 petits modèles locaux (et, en option, une API à bas coût) sur 20 tâches | O2, O4, O5 | 3 | oui → GRILLE.md (rapport de comparaison) |
 
 ## Ressources matérielles
 
