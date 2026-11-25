@@ -111,7 +111,7 @@ Objectif : amener un débutant complet à écrire du code Python propre, version
 | Module | Contenu | Exercice clé |
 | --- | --- | --- |
 | 0.0 Préparer son PC | Installer Python, Git et VS Code (avec WSL sous Windows), cloner le dépôt de la formation, vérifier que tout fonctionne | Vérifier son installation : chaque outil répond avec la version attendue et le dépôt est cloné |
-| 0.1 Python pour l'ingénieur | Types, fonctions, classes, modules, fichiers, exceptions, environnements virtuels, typage, style PEP 8 | 75 exercices progressifs corrigés automatiquement |
+| 0.1 Python pour l'ingénieur | Types, fonctions, classes, modules, fichiers, exceptions, environnements virtuels, typage, style PEP 8 | 84 exercices progressifs corrigés automatiquement |
 | 0.2 Outils du développeur | Terminal Linux, Git et GitHub (branches, pull requests), VS Code, Markdown | Forker le dépôt de la formation, y pousser ses exercices et obtenir un premier badge vert |
 | 0.3 Code de qualité | Tests avec pytest, débogage, lisibilité, documentation, notions d'algorithmique (complexité, listes, dictionnaires) | Couvrir un module existant à 80 % de tests |
 | 0.4 Maths pour l'IA | Algèbre linéaire (vecteurs, matrices, produit scalaire), dérivées et gradient, probabilités et statistiques (moyenne, variance, lois, théorème de Bayes) — toujours avec NumPy | Coder une descente de gradient à la main |
