@@ -15,7 +15,7 @@ Deux règles guident tout le reste :
 | --- | --- | --- |
 | `cours.mdx`, `cours/NN-slug.mdx` | MDX avec front matter YAML | Oui, avec les composants du § 4 |
 | `fiche.md` | Markdown avec front matter YAML | Oui : la page du module et de ses chapitres en est tirée |
-| `07-projets/*/fiche.md` | Markdown avec front matter YAML (`templates/projet.md`) | Oui : la page de la famille et une page par projet (§ 4 bis) |
+| `09-projets/*/fiche.md` | Markdown avec front matter YAML (`templates/projet.md`) | Oui : la page de la famille et une page par projet (§ 4 bis) |
 | `exercices/*/ENONCE.md`, `projet/ENONCE.md` | Markdown avec front matter YAML | Oui, en Markdown simple (pas de composants) |
 | `exercices/*/indices.md` | Markdown avec `<details>` | Oui, chaque `<details>` devient un indice dépliable |
 | `qcm.yaml`, `qcm/NN-slug.yaml` | YAML, validé par `templates/qcm.schema.json` | Oui, en QCM interactif |
@@ -158,15 +158,15 @@ Ajouter un composant : propose-le dans ce document (nom, propriétés, rôle, re
 
 ## 4 bis. Famille de grands projets
 
-Les grands projets forment la section finale du parcours (étape 7, dossier `07-projets/`). Ils sont rangés par **familles**, et une famille se lit exactement comme un module :
+Les grands projets forment la section finale du parcours (section 9, dossier `09-projets/`). Ils sont rangés par **familles**, et une famille se lit exactement comme un module :
 
 | Module | Famille de projets |
 | --- | --- |
-| Le module (`7.1`, `7.2`…) | Une famille : Assistants documentaires, Agents opérationnels… |
+| Le module (`9.1`, `9.2`…) | Une famille : Assistants documentaires, Agents opérationnels… |
 | Un chapitre | **Un projet** : un client réel, un problème, une approche différente des autres projets de la famille |
 | Une leçon | **Une étape d'expert**, propre à ce projet et vérifiable |
 
-La fiche (`07-projets/<NN-famille>/fiche.md`, modèle `templates/projet.md`) reprend le format d'une fiche de module, avec `nature: projets` dans le front matter et `Exercices` à 0 dans le tableau des chapitres. Elle ajoute deux sections :
+La fiche (`09-projets/<NN-famille>/fiche.md`, modèle `templates/projet.md`) reprend le format d'une fiche de module, avec `nature: projets` dans le front matter et `Exercices` à 0 dans le tableau des chapitres. Elle ajoute deux sections :
 
 - `## Comparatif des projets` : un tableau, une ligne par projet (le problème, l'approche, le point dur, le coût). Il apprend à choisir l'approche selon le problème.
 - `## Les projets` : une sous-section `### N. Titre` par projet, numérotée comme son chapitre, avec exactement ces libellés : `**Le client**`, `**Le problème**`, `**Pourquoi ce cas est différent**`, `**L'approche de l'expert**`, `**Alternatives écartées**`, `**Ce qui se vend**`, `**Contraintes réelles**`, `**L'imprévu**`, `**C'est réussi quand**` (sous-liste), `**À revoir**`, `**Pour ton portfolio**`.
@@ -175,7 +175,7 @@ La fiche (`07-projets/<NN-famille>/fiche.md`, modèle `templates/projet.md`) rep
 
 **Les pages** : `/modules/<famille>` (la famille, son comparatif, ses projets) et `/modules/<famille>/<projet>` (le projet), tirées de la fiche ; `/projets` présente toutes les familles puis le projet de chaque étape.
 
-**La commande de vérification** d'un projet est `python outils/check.py 07-projets/<NN-famille>/<NN-titre-du-projet-en-slug>`.
+**La commande de vérification** d'un projet est `python outils/check.py 09-projets/<NN-famille>/<NN-titre-du-projet-en-slug>`.
 
 ---
 

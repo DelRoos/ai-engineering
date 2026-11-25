@@ -5,7 +5,7 @@ import { Toc } from "@/components/course/toc";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Container } from "@/components/ui";
-import { consolidationAfter, etapes, intro } from "@/content/commencer";
+import { collecte, consolidationAfter, etapes, intro, noCode } from "@/content/commencer";
 import { site } from "@/content/site";
 import { getFamilles, slugOf } from "@/lib/fiches";
 
@@ -44,6 +44,7 @@ export default function CommencerPage() {
               {[
                 { value: etapes.length, unit: "étapes" },
                 { value: moduleCount, unit: "modules" },
+                { value: collecte.modules.length + noCode.modules.length, unit: "modules de collecte et d'automatisation" },
                 { value: etapes.length, unit: "projets d'étape" },
                 { value: getFamilles().reduce((n, f) => n + f.chapters.length, 0), unit: "grands projets" },
               ].map((f) => (
@@ -70,6 +71,7 @@ export default function CommencerPage() {
                   title="Le parcours"
                   items={[
                     ...etapes.map((e) => ({ id: `etape-${e.n}`, label: `${e.n}. ${e.title}` })),
+                    ...[collecte, noCode].map((e) => ({ id: `etape-${e.n}`, label: `${e.n}. ${e.title}` })),
                     { id: "grands-projets", label: "Les grands projets" },
                   ]}
                 />
@@ -77,7 +79,7 @@ export default function CommencerPage() {
             </aside>
 
             <ol className="min-w-0">
-              {etapes.map((etape) => (
+              {[...etapes, collecte, noCode].map((etape) => (
                 <li key={etape.n}>
                   <section id={`etape-${etape.n}`} aria-labelledby={`titre-etape-${etape.n}`} className="scroll-mt-24 pt-14">
                     {/* Même colonne que les identifiants de modules : titres d'étape et de modules alignés */}
@@ -90,7 +92,7 @@ export default function CommencerPage() {
                       </span>
                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-fg-subtle">
-                          Étape {etape.n}
+                          {etape.n > 6 ? "Grande section" : `Étape ${etape.n}`}
                           <span className="mx-2 text-line-strong" aria-hidden="true">
                             /
                           </span>

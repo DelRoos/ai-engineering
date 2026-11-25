@@ -258,26 +258,58 @@ Exercice : un dossier d'une page (problème, solution, coûts, prix, marché) po
 - **Stratégies d'emploi** : travail à distance pour des entreprises étrangères, freelance international, création de start-up, postes locaux.
 - **Réseau** : GitHub Discussions de la formation, communautés internationales en ligne (Hugging Face, Masakhane pour les langues africaines, Deep Learning Indaba).
 
+## Grande section 7 — Collecte de données et automatisation avec IA
+
+Objectif : devenir un vrai web scraper, expert en collecte de données, en automatisation de navigateur et en automatisation de tâches, au niveau du web de 2026. Section à part : chaque module indique ses prérequis (les bases du scraping sont dans le module 0.5). Dossier `07-collecte-automatisation/`.
+
+| Module | Contenu | Exercice clé |
+| --- | --- | --- |
+| 7.1 Le web vu par un scraper | HTTP, HTML et DOM, sélecteurs CSS et XPath, outils du développeur, API cachées, pages dynamiques, comment les sites voient les robots | Cartographier un site réel et choisir l'outil de collecte |
+| 7.2 Extraire proprement | httpx, parseurs, structures courantes, PDF et tableurs, données propres et validées, stockage, historique, tests | Le catalogue complet d'un site de vente, validé, historisé et testé |
+| 7.3 Scraper à grande échelle | Scrapy, asynchrone, politesse, crawl incrémental, planification, surveillance, Common Crawl et corpus | Un crawler planifié de 50 000 pages par jour, surveillé |
+| 7.4 Automatiser un navigateur | Playwright, interception réseau, sessions et fichiers, démarches sur des portails, tests et surveillance | Une démarche répétitive sur un portail, avec reprise et preuve |
+| 7.5 L'IA au service de la collecte | Extraction par LLM vérifiée, scrapers qui se réparent, vision, agents navigateur, veille intelligente | Les annonces de 30 sites différents, extraites et évaluées |
+| 7.6 Automatiser des tâches | Excel, PDF, courriels, WhatsApp, API et webhooks, paiements mobiles, planification, RPA | La chaîne mensuelle d'une PME automatisée |
+| 7.7 Collecter dans les règles | Droit de la collecte, données personnelles, robots.txt, documentation, vendre la collecte | L'audit juridique et éthique d'un projet de collecte |
+| 7.8 Le scraping en 2026 : protections, accès et IA | Systèmes anti-robots (empreintes TLS et navigateur, comportement, réputation des IP, défis), ligne rouge juridique, accès légitimes (robots vérifiés, Web Bot Auth, paiement à la collecte), robots et agents d'IA, protéger un site | Diagnostiquer un blocage, obtenir un accès légitime, protéger un site |
+
+Les protections anti-robots sont étudiées pour les comprendre, lire un blocage, obtenir un accès légitime et protéger un site. Leur contournement n'est pas enseigné : il expose l'apprenant et ses clients à des poursuites.
+
+## Grande section 8 — Automatisation no code
+
+Objectif : automatiser les processus d'une organisation sans tout coder, et en faire un métier. n8n (ouvert, gratuit, auto-hébergeable) en priorité. Dossier `08-automatisation-no-code/`.
+
+| Module | Contenu | Exercice clé |
+| --- | --- | --- |
+| 8.1 Penser une automatisation | Processus, déclencheurs et actions, données, erreurs, no code ou code, accès et données personnelles | Choisir les trois premières automatisations d'une PME |
+| 8.2 n8n en profondeur | Nœuds, expressions, webhooks, erreurs, auto-hébergement, sauvegardes, versionnage, licence | Un n8n auto-hébergé avec trois workflows de PME |
+| 8.3 Les autres plateformes | Make, Zapier, Power Automate, Apps Script, outils ouverts, coût selon le volume | La même automatisation sur trois plateformes, et une recommandation |
+| 8.4 L'IA dans le no code | Modèles dans un workflow, documents, agents, MCP, RAG sans code, évaluation et sécurité | Un assistant WhatsApp sans code fondé sur les documents d'une entreprise |
+| 8.5 Les outils d'une PME | Tableurs, bases no code, formulaires et KoboToolbox, CRM, factures, mobile money, WhatsApp Business | Le système complet d'une PME en outils no code |
+| 8.6 Vendre de l'automatisation | Clients, audit, gain chiffré, devis, livraison, maintenance, freelance ou agence | Une offre complète pour une PME réelle |
+
 ## Les grands projets
 
-Après les sept étapes, une grande section de **projets réels**, rangés par **familles**. Le but : donner les prérequis des projets qu'un AI engineer rencontre dans sa carrière, et construire un portfolio qui convainc. Chaque projet est assez réaliste pour qu'une entreprise l'achète et l'utilise : un client crédible, ses contraintes réelles, un modèle économique, des critères mesurables et un imprévu en cours de route.
+Après les sept étapes et les deux grandes sections, une grande section de **projets réels**, rangés par **familles**. Le but : donner les prérequis des projets qu'un AI engineer rencontre dans sa carrière, et construire un portfolio qui convainc. Chaque projet est assez réaliste pour qu'une entreprise l'achète et l'utilise : un client crédible, ses contraintes réelles, un modèle économique, des critères mesurables et un imprévu en cours de route.
 
-Une famille se lit comme un module : **chaque projet est un chapitre, chaque étape d'expert une leçon**. Dans une même famille, les projets posent des problèmes différents qui se résolvent différemment ; un tableau comparatif apprend à choisir l'approche. Les fiches sont dans `07-projets/`.
+Une famille se lit comme un module : **chaque projet est un chapitre, chaque étape d'expert une leçon**. Dans une même famille, les projets posent des problèmes différents qui se résolvent différemment ; un tableau comparatif apprend à choisir l'approche. Les fiches sont dans `09-projets/`.
 
 | Famille | Projets | Ce qu'elle couvre |
 | --- | --- | --- |
-| 7.1 Assistants documentaires | Assistant juridique qui cite l'article · Archives scannées et tableaux · Base de connaissances d'entreprise · Questions globales sur 500 rapports · Chiffres en langage naturel · Santé hors ligne et multilingue | RAG hybride, citations, OCR, ColPali, droits d'accès, GraphRAG, texte vers SQL, IA locale |
-| 7.2 Agents opérationnels | Back-office d'une coopérative · Outils d'un transitaire par MCP · 200 dossiers de crédit · Veille sur portails sans API · Analyste en bac à sable | Outils, MCP, harness, reprise, agents navigateur, exécution de code |
-| 7.3 Systèmes multi-agents | Équipe de recherche · Support à plusieurs spécialistes · Centrale d'achat qui négocie · Un agent ou plusieurs ? | Orchestration, relais, protocoles, comparaison mesurée |
-| 7.4 Commercial et relation client | Commercial virtuel · Support WhatsApp · Recommandation de produits · Qualification de prospects | Agents avec limites, recommandation, scoring, effet sur les ventes |
-| 7.5 Modèles sur mesure | Réclamations mobile money · Bons de livraison distillés · Calculateur de cotisations · Ton d'une banque · Recherche médicale · Traduction français-wolof | LoRA, distillation, GRPO, DPO, retriever adapté, langue locale |
-| 7.6 IA locale et embarquée | Office notarial confidentiel · Diagnostic sur téléphone · Serveur de PME · Parc de 200 tablettes | Quantification, service local, mobile, mises à jour d'un parc |
-| 7.7 Voix, vision et contenu | Studio de contenu · Serveur vocal · Reçus et factures · Comptes rendus de réunions · Visuels marketing | Voix en temps réel, modèles vision-langage, transcription, génération d'images |
-| 7.8 Données et prédiction | Demande des pharmacies · Score de crédit · Fraude mobile money · Tri du cacao par la vision | Séries temporelles, scoring équitable, classes rares, détection d'objets |
-| 7.9 Plateformes à grande échelle | 100 000 utilisateurs · Passerelle LLM · Évaluation continue · 5 millions de documents · 300 clients sur une plateforme | Mise à l'échelle, routage, repli, observabilité, réindexation, multi-clients |
-| 7.10 IA de confiance | Test d'intrusion · Garde-fous · Audit de biais · Mise en conformité | Sécurité, équité, droit des données et de l'IA |
+| 9.1 Assistants documentaires | Assistant juridique qui cite l'article · Archives scannées et tableaux · Base de connaissances d'entreprise · Questions globales sur 500 rapports · Chiffres en langage naturel · Santé hors ligne et multilingue | RAG hybride, citations, OCR, ColPali, droits d'accès, GraphRAG, texte vers SQL, IA locale |
+| 9.2 Agents opérationnels | Back-office d'une coopérative · Outils d'un transitaire par MCP · 200 dossiers de crédit · Veille sur portails sans API · Analyste en bac à sable | Outils, MCP, harness, reprise, agents navigateur, exécution de code |
+| 9.3 Systèmes multi-agents | Équipe de recherche · Support à plusieurs spécialistes · Centrale d'achat qui négocie · Un agent ou plusieurs ? | Orchestration, relais, protocoles, comparaison mesurée |
+| 9.4 Commercial et relation client | Commercial virtuel · Support WhatsApp · Recommandation de produits · Qualification de prospects | Agents avec limites, recommandation, scoring, effet sur les ventes |
+| 9.5 Modèles sur mesure | Réclamations mobile money · Bons de livraison distillés · Calculateur de cotisations · Ton d'une banque · Recherche médicale · Traduction français-wolof | LoRA, distillation, GRPO, DPO, retriever adapté, langue locale |
+| 9.6 IA locale et embarquée | Office notarial confidentiel · Diagnostic sur téléphone · Serveur de PME · Parc de 200 tablettes | Quantification, service local, mobile, mises à jour d'un parc |
+| 9.7 Voix, vision et contenu | Studio de contenu · Serveur vocal · Reçus et factures · Comptes rendus de réunions · Visuels marketing | Voix en temps réel, modèles vision-langage, transcription, génération d'images |
+| 9.8 Données et prédiction | Demande des pharmacies · Score de crédit · Fraude mobile money · Tri du cacao par la vision | Séries temporelles, scoring équitable, classes rares, détection d'objets |
+| 9.9 Plateformes à grande échelle | 100 000 utilisateurs · Passerelle LLM · Évaluation continue · 5 millions de documents · 300 clients sur une plateforme | Mise à l'échelle, routage, repli, observabilité, réindexation, multi-clients |
+| 9.10 IA de confiance | Test d'intrusion · Garde-fous · Audit de biais · Mise en conformité | Sécurité, équité, droit des données et de l'IA |
+| 9.11 Collecte et veille | Observatoire des prix · Agrégateur immobilier · Veille de l'emploi · Veille concurrentielle · Corpus en wolof et haoussa | Collecte à grande échelle, extraction par LLM, dédoublonnage, droit de la collecte |
+| 9.12 Automatisation d'entreprise | Société de livraison · Facturation d'un cabinet · Courriels d'un transitaire · École privée · Processus RH | n8n, Power Automate, IA sans code, mobile money, données personnelles |
 
-**La mise à l'échelle** est traitée dans les modules 3.8 (service d'un modèle), 4.8 (performance et coûts) et 4.9 (architecture), puis appliquée dans toute la famille 7.9.
+**La mise à l'échelle** est traitée dans les modules 3.8 (service d'un modèle), 4.8 (performance et coûts) et 4.9 (architecture), puis appliquée dans toute la famille 9.9.
 
 **Validation d'un projet** : ses tests, la grille de l'agent correcteur (au moins 14/20) et l'examen oral avec l'IA. Pour un portfolio équilibré, l'apprenant livre des projets dans plusieurs familles.
 

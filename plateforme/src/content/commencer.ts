@@ -120,26 +120,63 @@ export const etapes: Etape[] = [
 ];
 
 /**
- * La section finale du parcours : les grands projets, rangés par familles (07-projets/).
+ * La section finale du parcours : les grands projets, rangés par familles (09-projets/).
  * Chaque famille est un module, chaque projet un chapitre, chaque étape d'expert une leçon.
  */
 export const grandsProjets: Etape = {
-  n: 7,
+  n: 9,
   title: "Les grands projets",
   project: "Ton portfolio : des projets réels dans plusieurs familles",
   modules: [
-    { id: "7.1", title: "Assistants documentaires", content: "Citer la loi, lire des scans, respecter les droits d'accès, répondre aux questions globales, interroger des chiffres, fonctionner hors ligne." },
-    { id: "7.2", title: "Agents opérationnels", content: "Un back-office, un serveur MCP, des dossiers traités sur plusieurs sessions, un navigateur, un bac à sable de code." },
-    { id: "7.3", title: "Systèmes multi-agents", content: "Une équipe de recherche, un support à plusieurs spécialistes, une centrale d'achat qui négocie, un agent ou plusieurs tranché par la mesure." },
-    { id: "7.4", title: "Commercial et relation client", content: "Un commercial virtuel, un support WhatsApp, une recommandation de produits, une qualification de prospects." },
-    { id: "7.5", title: "Modèles sur mesure", content: "Fine-tuning LoRA, distillation, GRPO, DPO, retriever adapté, traduction en langue locale." },
-    { id: "7.6", title: "IA locale et embarquée", content: "Un assistant confidentiel sur PC, un diagnostic sur téléphone sans réseau, un serveur de PME, un parc de tablettes." },
-    { id: "7.7", title: "Voix, vision et contenu", content: "Un studio multilingue, un serveur vocal, des reçus lus par la vision, des comptes rendus, des visuels de marque." },
-    { id: "7.8", title: "Données et prédiction", content: "Prévoir la demande, scorer un crédit, arrêter la fraude, trier une récolte par la vision." },
-    { id: "7.9", title: "Plateformes à grande échelle", content: "100 000 utilisateurs, une passerelle LLM, l'évaluation continue, 5 millions de documents, 300 clients sur une plateforme." },
-    { id: "7.10", title: "IA de confiance", content: "Test d'intrusion, garde-fous, audit de biais, mise en conformité." },
+    { id: "9.1", title: "Assistants documentaires", content: "Citer la loi, lire des scans, respecter les droits d'accès, répondre aux questions globales, interroger des chiffres, fonctionner hors ligne." },
+    { id: "9.2", title: "Agents opérationnels", content: "Un back-office, un serveur MCP, des dossiers traités sur plusieurs sessions, un navigateur, un bac à sable de code." },
+    { id: "9.3", title: "Systèmes multi-agents", content: "Une équipe de recherche, un support à plusieurs spécialistes, une centrale d'achat qui négocie, un agent ou plusieurs tranché par la mesure." },
+    { id: "9.4", title: "Commercial et relation client", content: "Un commercial virtuel, un support WhatsApp, une recommandation de produits, une qualification de prospects." },
+    { id: "9.5", title: "Modèles sur mesure", content: "Fine-tuning LoRA, distillation, GRPO, DPO, retriever adapté, traduction en langue locale." },
+    { id: "9.6", title: "IA locale et embarquée", content: "Un assistant confidentiel sur PC, un diagnostic sur téléphone sans réseau, un serveur de PME, un parc de tablettes." },
+    { id: "9.7", title: "Voix, vision et contenu", content: "Un studio multilingue, un serveur vocal, des reçus lus par la vision, des comptes rendus, des visuels de marque." },
+    { id: "9.8", title: "Données et prédiction", content: "Prévoir la demande, scorer un crédit, arrêter la fraude, trier une récolte par la vision." },
+    { id: "9.9", title: "Plateformes à grande échelle", content: "100 000 utilisateurs, une passerelle LLM, l'évaluation continue, 5 millions de documents, 300 clients sur une plateforme." },
+    { id: "9.10", title: "IA de confiance", content: "Test d'intrusion, garde-fous, audit de biais, mise en conformité." },
+    { id: "9.11", title: "Collecte et veille", content: "Un observatoire des prix, un agrégateur immobilier, une veille de l'emploi, une veille concurrentielle, un corpus en langues africaines." },
+    { id: "9.12", title: "Automatisation d'entreprise", content: "Une société de livraison, la facturation d'un cabinet, les courriels d'un transitaire, une école, les processus RH." },
   ],
 };
+
+/** Grande section 7 : devenir expert en collecte de données, scraping et automatisation, avec l'IA. */
+export const collecte: Etape = {
+  n: 7,
+  title: "Collecte de données et automatisation avec IA",
+  project: "Les projets de la famille 9.11 « Collecte et veille »",
+  modules: [
+    { id: "7.1", title: "Le web vu par un scraper", content: "HTTP, HTML et DOM, sélecteurs CSS et XPath, outils du développeur, API cachées, pages dynamiques, comment les sites voient les robots." },
+    { id: "7.2", title: "Extraire proprement", content: "httpx, parseurs, paginations, tableaux, PDF et tableurs, données propres et validées, stockage, historique, tests." },
+    { id: "7.3", title: "Scraper à grande échelle", content: "Scrapy, asynchrone, politesse, stratégies de crawl, crawl incrémental, planification, surveillance, Common Crawl et corpus." },
+    { id: "7.4", title: "Automatiser un navigateur", content: "Playwright, interception réseau, sessions et fichiers, démarches sur des portails, tests et surveillance de sites." },
+    { id: "7.5", title: "L'IA au service de la collecte", content: "Extraction par LLM vérifiée, scrapers qui se réparent, vision sur captures, agents navigateur, veille intelligente." },
+    { id: "7.6", title: "Automatiser des tâches", content: "Excel, PDF, courriels, WhatsApp, API et webhooks, paiements mobiles, planification, Prefect, RPA, fiabilité." },
+    { id: "7.7", title: "Collecter dans les règles", content: "Conditions d'utilisation, droit d'auteur et bases de données, données personnelles, robots.txt, documentation, vendre la collecte." },
+    { id: "7.8", title: "Le scraping en 2026 : protections, accès et IA", content: "Comment les systèmes anti-robots détectent un robot, la ligne rouge juridique, les accès légitimes (robots vérifiés, requêtes signées, paiement à la collecte), les robots et agents d'IA, protéger un site." },
+  ],
+};
+
+/** Grande section 8 : l'automatisation no code, de l'audit de processus à la vente de services. */
+export const noCode: Etape = {
+  n: 8,
+  title: "Automatisation no code",
+  project: "Les projets de la famille 9.12 « Automatisation d'entreprise »",
+  modules: [
+    { id: "8.1", title: "Penser une automatisation", content: "Processus métier, déclencheurs et actions, données, erreurs et doublons, no code ou code, accès et données personnelles." },
+    { id: "8.2", title: "n8n en profondeur", content: "Nœuds et expressions, webhooks, sous-workflows, gestion d'erreurs, auto-hébergement Docker, sauvegardes, versionnage, licence." },
+    { id: "8.3", title: "Les autres plateformes", content: "Make, Zapier, Power Automate, Apps Script, outils ouverts, coût selon le volume, recommander une plateforme." },
+    { id: "8.4", title: "L'IA dans le no code", content: "Modèles dans un workflow, documents et courriels, agents, MCP, RAG sans code, évaluation et sécurité." },
+    { id: "8.5", title: "Les outils d'une PME", content: "Tableurs, bases no code, formulaires et KoboToolbox, CRM, factures, mobile money, WhatsApp Business." },
+    { id: "8.6", title: "Vendre de l'automatisation", content: "Trouver des clients, auditer, chiffrer le gain, devis, livraison, maintenance, freelance ou agence." },
+  ],
+};
+
+/** Les grandes sections qui suivent les 7 étapes du parcours, dans l'ordre. */
+export const grandesSections: Etape[] = [collecte, noCode, grandsProjets];
 
 /** Pauses de consolidation, placées après ces étapes (docs/programme.md). */
 export const consolidationAfter = [2, 4];

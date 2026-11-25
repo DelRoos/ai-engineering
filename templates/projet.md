@@ -1,7 +1,7 @@
 ---
-id: "7.N"                     # identifiant de la famille, ne change plus une fois publié
+id: "9.N"                     # identifiant de la famille, ne change plus une fois publié
 titre: "Nom de la famille"    # Assistants documentaires, Agents opérationnels…
-parcours: "07-projets"
+parcours: "09-projets"
 nature: projets               # obligatoire : chaque chapitre est un projet, chaque leçon une étape d'expert
 promesse: "N projets qui … : chacun face à un problème différent."
 question_saut: "Tu as déjà … ?"
@@ -12,7 +12,7 @@ version: 1
 mise_a_jour: AAAA-MM-JJ
 ---
 
-# 7.N — Nom de la famille
+# 9.N — Nom de la famille
 
 <!-- CONSIGNE : une famille regroupe 4 à 6 projets du même domaine qui posent des problèmes DIFFÉRENTS et se résolvent
 DIFFÉREMMENT. Chaque projet doit être assez réaliste pour qu'une entreprise l'achète et l'utilise : client crédible,

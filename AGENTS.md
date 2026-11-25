@@ -91,7 +91,7 @@ ai-engineer/
 └── plateforme/                # application Next.js qui affiche le contenu
 ```
 
-Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-production`, `05-securite`, `06-capstone`. Les grands projets, section finale du parcours, sont dans `07-projets`.
+Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-production`, `05-securite`, `06-capstone`. Après les étapes viennent trois grandes sections : `07-collecte-automatisation` (collecte de données, scraping, automatisation avec IA), `08-automatisation-no-code` (automatisation no code) et `09-projets` (les grands projets, par familles).
 
 ### Structure d'un module
 
@@ -127,10 +127,10 @@ Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-
 
 ### Structure d'une famille de grands projets
 
-Les grands projets (étape 7) sont rangés par familles. Une famille se construit comme un module : sa fiche (`templates/projet.md`, `nature: projets`) liste ses projets comme des chapitres, et les étapes de chaque projet comme des leçons. Chaque projet a ensuite son dossier.
+Les grands projets (section 9) sont rangés par familles. Une famille se construit comme un module : sa fiche (`templates/projet.md`, `nature: projets`) liste ses projets comme des chapitres, et les étapes de chaque projet comme des leçons. Chaque projet a ensuite son dossier.
 
 ```
-07-projets/<NN-famille>/
+09-projets/<NN-famille>/
 ├── fiche.md                   # projets, comparatif, client, approche, ce qui se vend, critères, leçons à revoir
 └── <NN-titre-du-projet>/
     ├── ENONCE.md              # cahier des charges détaillé, étape par étape

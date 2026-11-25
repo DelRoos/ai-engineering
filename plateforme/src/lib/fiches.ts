@@ -2,7 +2,7 @@ import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { etapes, grandsProjets } from "@/content/commencer";
+import { etapes, grandesSections } from "@/content/commencer";
 import { ETAPES } from "./content";
 import { slugify } from "./slug";
 
@@ -182,7 +182,7 @@ function bullet(section: string | undefined, label: string): string | null {
   return m ? m[1].trim() : null;
 }
 
-const toutesEtapes = [...etapes, grandsProjets];
+const toutesEtapes = [...etapes, ...grandesSections];
 const allModules = toutesEtapes.flatMap((e) => e.modules.map((m) => ({ ...m, etape: e })));
 
 function readFiche(file: string, folder: string, etapeN: number): Fiche {
@@ -305,8 +305,8 @@ let cache: Fiche[] | null = null;
 export function getFiches(): Fiche[] {
   if (cache) return cache;
   const fiches: Fiche[] = [];
-  // Les 7 étapes du parcours, puis la section des grands projets (étape 7).
-  [...ETAPES.map((e) => e.dir), GRANDS_PROJETS_DIR].forEach((dir, n) => {
+  // Les 7 étapes du parcours (0 à 6), puis les grandes sections : collecte (7), no code (8), grands projets (9).
+  [...ETAPES.map((e) => e.dir), ...SECTIONS_DIRS].forEach((dir, n) => {
     const root = path.join(REPO_ROOT, dir);
     if (!fs.existsSync(root)) return;
     for (const d of fs.readdirSync(root, { withFileTypes: true }).filter((x) => x.isDirectory()).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -327,7 +327,7 @@ export function getFiches(): Fiche[] {
   return fiches;
 }
 
-const GRANDS_PROJETS_DIR = "07-projets";
+const SECTIONS_DIRS = ["07-collecte-automatisation", "08-automatisation-no-code", "09-projets"];
 
 function resolveLecon(fiches: Fiche[], ref: string, where: string): LeconRef {
   const fail = (msg: string): never => {
@@ -359,7 +359,7 @@ export function projectsUsingChapter(fiche: Fiche, chapitre: Chapitre) {
   );
 }
 
-/** Les familles de grands projets (étape 7). */
+/** Les familles de grands projets (section 9). */
 export function getFamilles(): Fiche[] {
   return getFiches().filter((f) => f.nature === "projets");
 }
@@ -384,7 +384,7 @@ export function neighbours(id: string): { prev: Voisin | null; next: Voisin | nu
   const next =
     nextM && nextM.etape.n === cur.etape.n
       ? toVoisin(nextM)
-      : cur.etape.n === grandsProjets.n
+      : cur.etape.n > 6
         ? null
         : { id: `Projet ${cur.etape.n}`, title: typo(cur.etape.project), slug: null, kind: "projet" as const };
   return { prev, next };

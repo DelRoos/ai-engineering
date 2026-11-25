@@ -81,9 +81,15 @@ Profils secondaires, hors plateforme : le **recruteur** (il vérifie le portfoli
 
 - **Écran** : **QCM** — à définir (voir question ouverte n° 2).
 
+### Les grandes sections : collecte de données et automatisation
+
+- **Décision du mainteneur (25/11/2026)** : deux grandes sections à part, après les 7 étapes, chaque module indiquant ses prérequis. **Section 7, collecte de données et automatisation avec IA** (`07-collecte-automatisation/`) : faire de l'apprenant un vrai web scraper, expert en collecte de données, en automatisation de navigateur et de tâches, au niveau du web de 2026 (protections anti-robots et IA comprises). **Section 8, automatisation no code** (`08-automatisation-no-code/`) : n8n en priorité, les autres plateformes, l'IA sans code, les outils d'une PME, vendre de l'automatisation.
+- **Limite posée** : les protections anti-robots sont expliquées en profondeur pour lire un blocage, obtenir un accès légitime et protéger un site ; leur contournement (usurpation d'empreinte, rotation de proxies pour échapper aux blocages, résolution de captchas) n'est pas enseigné.
+- **Écrans** : les mêmes que les modules (Module, Chapitre) ; les deux sections apparaissent dans « Par où commencer » après l'étape 6.
+
 ### Étape 8 — Construire un projet, du problème métier au résultat
 
-- **Décision du mainteneur (25/11/2026)** : les **grands projets** forment une grande section à part, à la fin du parcours (`07-projets/`), rangée par **familles**. Une famille se lit comme un module : chaque projet est un chapitre, chaque étape d'expert une leçon. Les projets doivent être assez réalistes pour se vendre et servir de portfolio, et couvrir tous les aspects du métier (RAG, agents, multi-agents, MCP, fine-tuning, IA locale, multimodal, prédiction, mise à l'échelle, sécurité). Les projets d'étape gardent leur place à la fin de chaque étape.
+- **Décision du mainteneur (25/11/2026)** : les **grands projets** forment une grande section à part, à la fin du parcours (`09-projets/`), rangée par **familles**. Une famille se lit comme un module : chaque projet est un chapitre, chaque étape d'expert une leçon. Les projets doivent être assez réalistes pour se vendre et servir de portfolio, et couvrir tous les aspects du métier (RAG, agents, multi-agents, MCP, fine-tuning, IA locale, multimodal, prédiction, mise à l'échelle, sécurité). Les projets d'étape gardent leur place à la fin de chaque étape.
 - **Awa** : « Qu'est-ce que je construis, pour qui, et par où je commence ? » **Ibrahim** : « Qu'est-ce que ce projet prouve à un recruteur ? »
 - **Écran** : **Projets** (`/projets`) — la démarche commune, les familles et leurs projets, puis le projet de chaque étape. Entrée « Projets » du menu.
 - **Écran** : **Famille** (`/modules/<famille>`) — le comparatif des projets (même domaine, approches différentes), puis les projets.
