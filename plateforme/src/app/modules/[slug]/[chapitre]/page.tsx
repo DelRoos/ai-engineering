@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronRight, FlaskConical, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Briefcase, Check, ChevronRight, FlaskConical, MapPin } from "lucide-react";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { CopyCommand } from "@/components/module/copy-command";
 import { Container, cn } from "@/components/ui";
 import { chapterObjectives, getChapitre, getFiches, type Chapitre } from "@/lib/fiches";
 import { site } from "@/content/site";
+import { missionsForChapter } from "@/lib/projets";
 
 export const dynamicParams = false;
 
@@ -35,6 +36,7 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
   if (!found) notFound();
   const { fiche: m, chapitre: c, prev, next } = found;
   const objectives = chapterObjectives(m, c);
+  const applications = missionsForChapter(m, c);
 
   return (
     <>
@@ -124,7 +126,8 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
                   {c.lessons.map((l, j) => (
                     <li
                       key={l.id}
-                      className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-baseline gap-x-3 border-b border-line py-5 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-x-4"
+                      id={l.id}
+                      className="scroll-mt-24 grid grid-cols-[2.75rem_minmax(0,1fr)] items-baseline gap-x-3 border-b border-line py-5 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:gap-x-4"
                     >
                       <span className="font-display text-lg font-bold text-accent-1 tabular-nums">
                         {c.n}.{j + 1}
@@ -174,6 +177,43 @@ export default async function ChapitrePage({ params }: PageProps<"/modules/[slug
                     </p>
                     <CopyCommand command={`python outils/check.py ${m.folder}`} />
                   </article>
+                </section>
+              )}
+              {/* À appliquer dans un projet */}
+              {applications.length > 0 && (
+                <section aria-labelledby="titre-appliquer" className="pt-16 sm:pt-20">
+                  <h2 id="titre-appliquer" className="flex items-center gap-2.5 text-2xl font-bold tracking-tight text-fg sm:text-3xl">
+                    <Briefcase className="size-6 text-accent" aria-hidden="true" />
+                    À appliquer dans un projet
+                  </h2>
+                  <p className="mt-3 text-fg-muted">Ce que tu apprends ici sert dans ces missions des grands projets.</p>
+                  <ul className="mt-6 border-t border-line">
+                    {applications.map(({ projet, mission, lessons }) => (
+                      <li key={`${projet.id}-${mission.n}`} className="border-b border-line">
+                        <a
+                          href={`/projets/${projet.slug}/${mission.slug}`}
+                          target="_blank"
+                          rel="noopener"
+                          className="group flex items-start justify-between gap-4 py-4"
+                        >
+                          <span className="min-w-0">
+                            <span className="block text-sm text-fg-subtle">
+                              {projet.id} {projet.family}, mission {mission.n}
+                            </span>
+                            <span className="mt-0.5 block font-semibold text-fg group-hover:text-accent-1">{mission.title}</span>
+                            <span className="mt-1 block text-sm text-fg-muted">
+                              Avec&nbsp;: {lessons.map((l) => l.lessonTitle).join(" · ")}
+                            </span>
+                          </span>
+                          <ArrowUpRight
+                            className="mt-1 size-4 shrink-0 text-fg-subtle transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+                            aria-hidden="true"
+                          />
+                          <span className="sr-only">(s&apos;ouvre dans un nouvel onglet)</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </section>
               )}
             </div>

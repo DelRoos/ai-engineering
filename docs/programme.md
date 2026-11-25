@@ -258,6 +258,17 @@ Exercice : un dossier d'une page (problème, solution, coûts, prix, marché) po
 - **Stratégies d'emploi** : travail à distance pour des entreprises étrangères, freelance international, création de start-up, postes locaux.
 - **Réseau** : GitHub Discussions de la formation, communautés internationales en ligne (Hugging Face, Masakhane pour les langues africaines, Deep Learning Indaba).
 
+## Les grands projets
+
+Après les sept étapes, une grande section de **projets complets**, menés comme chez un vrai client. Chaque projet est indépendant, indique les modules qu'il demande, et se construit comme un module : un brief client, des indicateurs de réussite, des missions vérifiables (dont des changements imprévus), une validation (tests, grille de l'agent correcteur, examen oral) et un guide de portfolio. Les fiches sont dans `07-projets/`.
+
+| Projet | Famille | Ce que l'apprenant construit | Après les modules |
+| --- | --- | --- | --- |
+| P1 | Assistant documentaire | L'assistant d'une inspection du travail qui répond en citant l'article exact, dit « je ne sais pas » et suit les textes qui changent | 3.3, 3.4, 3.5, 4.2, 4.5 |
+| P2 | Assistant opérationnel | L'assistant d'une coopérative de cacao qui interroge les données, planifie les tournées et prépare les paiements validés par le trésorier | 3.4, 3.6, 4.2, 4.5, 4.7 |
+| P3 | Commercial virtuel | Le commercial d'un distributeur de kits solaires qui recommande, établit des devis exacts, négocie dans les limites et enregistre les commandes sans doublon | 3.2, 3.3, 3.5, 3.6, 4.2 |
+| P4 | Studio de contenu | Le studio d'une ONG de santé qui transforme des consignes validées en messages écrits, illustrés et parlés, en plusieurs langues | 3.2, 3.4, 3.9, 3.10, 5.2 |
+
 ## Évaluation, certification et organisation open source
 
 **Évaluation.** La progression repose sur des preuves concrètes, pas sur des examens à mémoriser.

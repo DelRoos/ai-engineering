@@ -10,9 +10,9 @@ import { MobileMenu } from "./mobile-menu";
  * - Sur une autre page (`page="autre"`), les mêmes liens ramènent aux sections de la landing (/#metier…).
  * Le bouton de droite est volontairement secondaire : le seul bouton plein d'un écran est son action principale.
  */
-export function Header({ page = "landing" }: { page?: "landing" | "commencer" | "module" }) {
+export function Header({ page = "landing" }: { page?: "landing" | "commencer" | "module" | "projet" | "projets" }) {
   const onLanding = page === "landing";
-  const items = nav.map((item) => ({ ...item, href: onLanding ? item.href : `/${item.href}` }));
+  const items = nav.map((item) => ({ ...item, href: item.href.startsWith("/") || onLanding ? item.href : `/${item.href}` }));
 
   return (
     <header className="sticky top-3 z-50 px-3 sm:top-4 sm:px-4">
@@ -28,6 +28,7 @@ export function Header({ page = "landing" }: { page?: "landing" | "commencer" | 
               key={item.href}
               href={item.href}
               {...(onLanding ? { "data-nav": "" } : {})}
+              aria-current={item.href === "/projets" && (page === "projets" || page === "projet") ? "page" : undefined}
               className="rounded-full px-3.5 py-2 text-sm text-fg-muted transition-colors duration-200 hover:bg-white/[0.06] hover:text-fg aria-[current]:bg-accent/12 aria-[current]:text-accent-1"
             >
               {item.label}
@@ -45,6 +46,12 @@ export function Header({ page = "landing" }: { page?: "landing" | "commencer" | 
             <span className="hidden sm:block">
               <ButtonLink href="/" variant="secondary" className="h-10 px-5 text-xs">
                 Accueil
+              </ButtonLink>
+            </span>
+          ) : page === "projet" ? (
+            <span className="hidden sm:block">
+              <ButtonLink href="/projets" variant="secondary" className="h-10 px-5 text-xs">
+                Tous les projets
               </ButtonLink>
             </span>
           ) : page === "module" ? (

@@ -13,7 +13,7 @@ import { slugify } from "./slug";
  * Une fiche mal remplie fait échouer le build, avec un message qui dit quoi corriger.
  */
 
-const REPO_ROOT = path.resolve(process.cwd(), "..");
+export const REPO_ROOT = path.resolve(process.cwd(), "..");
 
 export type Lecon = { id: string; title: string; objective: string };
 export type Chapitre = {
@@ -69,7 +69,7 @@ const capitalize = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 
 const FRONT_MATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
 
-function sections(body: string): Map<string, string> {
+export function sections(body: string): Map<string, string> {
   const map = new Map<string, string>();
   const parts = body.split(/^## /m).slice(1);
   for (const part of parts) {
@@ -80,7 +80,7 @@ function sections(body: string): Map<string, string> {
 }
 
 /** Lignes d'un tableau Markdown, sans l'en-tête ni le séparateur, cellules nettoyées. */
-function tableRows(section: string | undefined): string[][] {
+export function tableRows(section: string | undefined): string[][] {
   if (!section) return [];
   const lines = section
     .split(/\r?\n/)

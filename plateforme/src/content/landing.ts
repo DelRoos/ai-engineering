@@ -8,7 +8,7 @@ export const nav = [
   { label: "Le métier", href: "#metier" },
   { label: "Méthode", href: "#methode" },
   { label: "Parcours", href: "#parcours" },
-  { label: "Projets", href: "#projets" },
+  { label: "Projets", href: "/projets" },
   { label: "FAQ", href: "#faq" },
 ];
 

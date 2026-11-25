@@ -91,7 +91,7 @@ ai-engineer/
 └── plateforme/                # application Next.js qui affiche le contenu
 ```
 
-Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-production`, `05-securite`, `06-capstone`.
+Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-production`, `05-securite`, `06-capstone`. Les grands projets, section finale du parcours, sont dans `07-projets`.
 
 ### Structure d'un module
 
@@ -123,6 +123,24 @@ Dossiers d'étape : `00-fondations`, `01-ml`, `02-deep-learning`, `03-llm`, `04-
 ├── starter/
 ├── solution/                  # solution de référence, pour valider les tests en CI
 └── tests/
+```
+
+### Structure d'un grand projet
+
+Un grand projet se construit comme un module : une fiche (`templates/projet.md`), puis une mission par dossier, chacune avec son énoncé, ses indices, ses tests.
+
+```
+07-projets/<NN-nom-court>/
+├── fiche.md                   # brief client, indicateurs, compétences, missions, validation, portfolio
+├── missions/
+│   └── <NN-titre-de-la-mission>/
+│       ├── ENONCE.md
+│       ├── indices.md
+│       ├── starter/
+│       └── tests/
+├── donnees/                   # données fictives fournies (catalogue, scénarios, conversations de test)
+├── GRILLE.md                  # grille de l'agent correcteur et banque de questions d'oral
+└── solution/
 ```
 
 Le module 0.0 « Préparer son PC » se trouve dans `00-fondations/00-preparer-son-pc/`.

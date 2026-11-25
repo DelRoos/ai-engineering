@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Flag } from "lucide-react";
+import { ArrowRight, Briefcase, Flag } from "lucide-react";
 import { Toc } from "@/components/course/toc";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
@@ -8,6 +8,7 @@ import { Container } from "@/components/ui";
 import { consolidationAfter, etapes, intro } from "@/content/commencer";
 import { site } from "@/content/site";
 import { slugOf } from "@/lib/fiches";
+import { getProjets } from "@/lib/projets";
 
 export const metadata: Metadata = {
   title: `Par où commencer ? — ${site.name}`,
@@ -44,7 +45,8 @@ export default function CommencerPage() {
               {[
                 { value: etapes.length, unit: "étapes" },
                 { value: moduleCount, unit: "modules" },
-                { value: 6, unit: "projets" },
+                { value: etapes.length, unit: "projets d'étape" },
+                { value: getProjets().length, unit: "grands projets" },
               ].map((f) => (
                 <li key={f.unit} className="font-display">
                   <span className="text-4xl font-bold tracking-tight text-fg sm:text-5xl">{f.value}</span>
@@ -66,8 +68,11 @@ export default function CommencerPage() {
             <aside className="hidden lg:block">
               <div className="sticky top-24 pt-14">
                 <Toc
-                  title="Les 7 étapes"
-                  items={etapes.map((e) => ({ id: `etape-${e.n}`, label: `${e.n}. ${e.title}` }))}
+                  title="Le parcours"
+                  items={[
+                    ...etapes.map((e) => ({ id: `etape-${e.n}`, label: `${e.n}. ${e.title}` })),
+                    { id: "grands-projets", label: "Les grands projets" },
+                  ]}
                 />
               </div>
             </aside>
@@ -147,6 +152,9 @@ export default function CommencerPage() {
                   )}
                 </li>
               ))}
+              <li>
+                <GrandsProjets />
+              </li>
             </ol>
           </Container>
         </section>
@@ -154,5 +162,60 @@ export default function CommencerPage() {
 
       <Footer onLanding={false} />
     </>
+  );
+}
+
+/** La section finale du parcours : les grands projets, construits du problème métier au résultat prouvé. */
+function GrandsProjets() {
+  const projets = getProjets();
+  if (projets.length === 0) return null;
+  return (
+    <section id="grands-projets" aria-labelledby="titre-grands-projets" className="scroll-mt-24 pt-14">
+      <header className="flex items-start gap-4 sm:gap-6">
+        <span className="flex w-[3.25rem] shrink-0 justify-start text-accent sm:w-16" aria-hidden="true">
+          <Briefcase className="size-12 sm:size-14" strokeWidth={1.5} />
+        </span>
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-fg-subtle">
+            Pour finir
+            <span className="mx-2 text-line-strong" aria-hidden="true">
+              /
+            </span>
+            {projets.length} projets
+          </p>
+          <h2 id="titre-grands-projets" className="mt-1 text-3xl font-bold tracking-tight text-balance text-fg sm:text-4xl">
+            Les grands projets
+          </h2>
+          <p className="mt-3 text-fg-muted">
+            Des produits complets, menés comme chez un vrai client&nbsp;: un brief, des missions vérifiées, des imprévus, des
+            mesures, puis ton portfolio.
+          </p>
+        </div>
+      </header>
+      <ol className="mt-8 border-t border-line">
+        {projets.map((p) => (
+          <li
+            key={p.id}
+            className="grid grid-cols-[3.25rem_minmax(0,1fr)] gap-x-4 border-b border-line py-5 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-x-6"
+          >
+            <span className="font-display text-lg font-bold text-accent-1 tabular-nums">{p.id}</span>
+            <div>
+              <h3 className="text-lg font-semibold">
+                <Link
+                  href={`/projets/${p.slug}`}
+                  className="group inline-flex items-center gap-2 text-fg transition-colors duration-200 hover:text-accent-1"
+                >
+                  {p.family}
+                  <ArrowRight className="size-4 text-accent transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </h3>
+              <p className="mt-1 leading-relaxed text-fg-muted">
+                {p.title}. {p.missions.length} missions, après les modules {p.prerequisites.map((x) => x.id).join(", ")}.
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }

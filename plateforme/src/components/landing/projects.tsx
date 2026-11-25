@@ -1,4 +1,5 @@
-import { FileSearch, Flag, Leaf, Rocket, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, FileSearch, Flag, Leaf, Rocket, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { projects } from "@/content/landing";
 import { Section, SectionHeader, cn } from "@/components/ui";
 
@@ -111,6 +112,25 @@ export function Projects() {
           ))}
         </div>
       </div>
+
+      <Link
+        href="/projets#grands-projets"
+        className="group mt-4 flex flex-col gap-3 rounded-3xl border border-dashed border-line-strong p-6 transition-[border-color,background-color] duration-200 hover:border-accent/60 hover:bg-accent/[0.04] sm:flex-row sm:items-center sm:justify-between sm:p-8"
+      >
+        <span>
+          <span className="block text-sm font-semibold text-fg-subtle">Et pour finir le parcours</span>
+          <span className="mt-1 block text-xl font-bold text-fg group-hover:text-accent-1">
+            Quatre grands projets, construits comme chez un vrai client
+          </span>
+          <span className="mt-1 block text-sm text-fg-muted">
+            Assistant documentaire, assistant opérationnel, commercial virtuel, studio de contenu.
+          </span>
+        </span>
+        <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-accent-1">
+          Voir les projets
+          <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+        </span>
+      </Link>
     </Section>
   );
 }

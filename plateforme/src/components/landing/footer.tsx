@@ -16,7 +16,7 @@ export function Footer({ onLanding = true }: { onLanding?: boolean }) {
           {nav.map((item) => (
             <a
               key={item.href}
-              href={onLanding ? item.href : `/${item.href}`}
+              href={item.href.startsWith("/") || onLanding ? item.href : `/${item.href}`}
               className="text-sm text-fg-muted transition-colors duration-200 hover:text-fg"
             >
               {item.label}

@@ -14,7 +14,8 @@ Deux règles guident tout le reste :
 | Fichier | Format | Rendu par la plateforme |
 | --- | --- | --- |
 | `cours.mdx`, `cours/NN-slug.mdx` | MDX avec front matter YAML | Oui, avec les composants du § 4 |
-| `fiche.md` | Markdown avec front matter YAML | Non (usage interne) ; le front matter peut alimenter la navigation |
+| `fiche.md` | Markdown avec front matter YAML | Oui : la page du module et de ses chapitres en est tirée |
+| `07-projets/*/fiche.md` | Markdown avec front matter YAML (`templates/projet.md`) | Oui : la page du projet et une page par mission (§ 4 bis) |
 | `exercices/*/ENONCE.md`, `projet/ENONCE.md` | Markdown avec front matter YAML | Oui, en Markdown simple (pas de composants) |
 | `exercices/*/indices.md` | Markdown avec `<details>` | Oui, chaque `<details>` devient un indice dépliable |
 | `qcm.yaml`, `qcm/NN-slug.yaml` | YAML, validé par `templates/qcm.schema.json` | Oui, en QCM interactif |
@@ -152,6 +153,29 @@ print(prices[-1])
 ````
 
 Ajouter un composant : propose-le dans ce document (nom, propriétés, rôle, rendu brut), fais-le valider, implémente-le dans `plateforme/`, puis utilise-le.
+
+---
+
+## 4 bis. Fiche d'un grand projet
+
+Un grand projet (`07-projets/<NN-nom>/fiche.md`, modèle `templates/projet.md`) mène l'apprenant **du problème métier au résultat prouvé**. La plateforme le lit au build (`plateforme/src/lib/projets.ts`) et en tire trois sortes de pages : `/projets` (tous les projets), `/projets/<nom>` (le projet) et `/projets/<nom>/<mission>` (une page par mission, ouverte dans un nouvel onglet).
+
+| Section | Contenu | Rendu |
+| --- | --- | --- |
+| Front matter | `id`, `titre`, `famille`, `promesse`, `prerequis`, `statut`, `version`, `mise_a_jour` | En-tête de la page |
+| `## Le brief client` | Lignes `- **Le client** :`, `**Les utilisateurs**`, `**Le problème**`, `**Le résultat attendu**`, `**Hors périmètre**` | « Le brief du client » |
+| `## Indicateurs de réussite` | Tableau Indicateur, Nature (`métier` ou `technique`), Cible, Comment le mesurer | « Comment le client jugera ton travail » |
+| `## Compétences démontrées` | Tableau Compétence, Leçons à revoir | « Ce que tu vas prouver », avec un lien vers chaque leçon |
+| `## Missions` | Une sous-section `### N. Titre` par mission (voir ci-dessous) | Les missions, et une page par mission |
+| `## Validation` | Tableau Contrôle, Comment, Règle | « Valider ton projet » |
+| `## Portfolio` | Liste | « Le montrer dans ton portfolio » |
+| `## Données et ressources matérielles` | Lignes `- **Libellé** :` | Colonne « Données et matériel » |
+
+Chaque mission contient, dans cet ordre : `**Situation**`, `**Livrable**`, `**Critères de réussite**` (sous-liste), `**Étapes conseillées**` (sous-liste numérotée), `**Changement imprévu**` (facultatif), `**Leçons utiles**`, `**Vérification**` (`tests automatiques`, `grille`, ou les deux).
+
+**Les leçons citées** s'écrivent `module/id-de-la-leçon` (`3.4/citations`). Le build vérifie que chacune existe, puis crée les liens dans les deux sens : la mission affiche « Pour réussir, revois… », et la page du chapitre de la leçon affiche « À appliquer dans un projet ». Une seule source, donc rien à tenir à jour deux fois.
+
+**La commande de vérification** d'une mission est `python outils/check.py 07-projets/<NN-nom>/missions/<NN-titre-en-slug>` : le nom du dossier de la mission se déduit de son numéro et de son titre.
 
 ---
 
