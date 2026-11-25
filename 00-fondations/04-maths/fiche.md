@@ -23,11 +23,11 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Représenter des données par des vecteurs NumPy et calculer norme, produit scalaire et similarité. | ex01 à ex04, ex05 à ex09, qcm |
-| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex10 à ex14, ex15 à ex17, ex18 à ex20, ex21 à ex23, qcm |
-| O3 | Calculer une dérivée, à la main et numériquement, et l'interpréter comme une pente. | ex24 à ex28, ex29 à ex31, qcm |
-| O4 | Calculer un gradient et coder une descente de gradient. | ex32 à ex34, ex35 à ex39, exercice clé (ex40), qcm |
-| O5 | Calculer des probabilités, dont des probabilités conditionnelles avec le théorème de Bayes. | ex41 à ex44, ex45 à ex48, ex49 à ex51, qcm |
-| O6 | Décrire un jeu de données avec des statistiques et repérer ce qui cloche. | ex52 à ex54, ex55 à ex59, ex60 à ex62, qcm |
+| O2 | Manipuler des matrices et calculer un produit matriciel, à la main puis avec NumPy. | ex10 à ex14, ex15 à ex17, ex18 à ex20, ex39 à ex43, qcm |
+| O3 | Calculer une dérivée, à la main et numériquement, et l'interpréter comme une pente. | ex21 à ex25, ex26 à ex29, ex39 à ex43, qcm |
+| O4 | Calculer un gradient et coder une descente de gradient. | ex30 à ex32, ex33 à ex37, exercice clé (ex38), ex39 à ex43, qcm |
+| O5 | Calculer des probabilités, dont des probabilités conditionnelles avec le théorème de Bayes. | ex44 à ex48, ex49 à ex53, ex54 à ex56, qcm |
+| O6 | Décrire un jeu de données avec des statistiques et repérer ce qui cloche. | ex57 à ex60, ex61 à ex65, ex66 à ex69, qcm |
 
 ## Chapitres
 
@@ -38,17 +38,17 @@ mise_a_jour: 2026-11-25
 | 3 | Les matrices | 5 |
 | 4 | Systèmes et transformations | 3 |
 | 5 | Décomposer une matrice | 3 |
-| 6 | Les matrices au cœur de l'IA | 3 |
-| 7 | Fonctions et dérivées | 5 |
-| 8 | Composer et chercher un minimum | 3 |
-| 9 | Le gradient | 3 |
-| 10 | La descente de gradient | 6 |
-| 11 | Les probabilités | 4 |
-| 12 | Variables aléatoires et lois | 4 |
+| 6 | Fonctions et dérivées | 5 |
+| 7 | Composer et chercher un minimum | 4 |
+| 8 | Le gradient | 3 |
+| 9 | La descente de gradient | 6 |
+| 10 | Les maths d'un réseau de neurones | 5 |
+| 11 | Les probabilités | 5 |
+| 12 | Variables aléatoires et lois | 5 |
 | 13 | Information et vraisemblance | 3 |
-| 14 | Décrire des données | 3 |
+| 14 | Décrire des données | 4 |
 | 15 | Relations et échantillons | 5 |
-| 16 | Tester des hypothèses | 3 |
+| 16 | Tester des hypothèses | 4 |
 
 ## Notions, dans l'ordre
 
@@ -80,39 +80,45 @@ mise_a_jour: 2026-11-25
 | 4 | `inverse` | Résoudre un système d'équations : l'inverse d'une matrice | O2 |
 | 4 | `moindres-carres` | Quand il n'y a pas de solution exacte : les moindres carrés | O2 |
 | 5 | `valeurs-propres` | Valeurs propres et vecteurs propres : l'intuition | O2 |
-| 5 | `svd` | La décomposition en valeurs singulières (SVD) | O2 |
-| 5 | `pca-maths` | Ce que calcule une ACP | O2 |
 | 5 | `diagonalisation` | Diagonaliser une matrice | O2 |
 | 5 | `matrices-symetriques` | Les matrices symétriques et définies positives | O2 |
-| 6 | `couche-neurones` | Une couche de neurones, c'est un produit de matrices | O2 |
-| 6 | `tenseurs` | Au-delà de 2 dimensions : les tenseurs | O2 |
-| 6 | `embeddings-maths` | Des mots aux vecteurs : l'idée des embeddings | O2 |
-| 6 | `convolution-maths` | La convolution, vue comme un calcul de matrices | O2 |
-| 6 | `attention-maths` | L'attention, vue comme des produits scalaires | O2 |
-| 7 | `tracer-fonction` | Tracer une fonction avec matplotlib | O3 |
-| 7 | `exp-log` | Exponentielle et logarithme | O3 |
-| 7 | `sigmoide` | La sigmoïde : transformer un score en probabilité | O3 |
-| 7 | `pente` | La pente d'une droite | O3 |
-| 7 | `derivee` | La dérivée : la pente en un point | O3 |
-| 7 | `regles-derivation` | Les règles de dérivation utiles | O3 |
-| 7 | `derivee-numerique` | Calculer une dérivée numériquement | O3 |
-| 8 | `regle-chaine` | Dériver une composition : la règle de la chaîne | O3 |
-| 8 | `minimum` | Trouver le minimum d'une fonction | O3 |
-| 8 | `minima-locaux` | Minimum local, minimum global | O3 |
-| 8 | `convexite` | Les fonctions convexes | O3 |
-| 8 | `taylor` | Approcher une fonction : le développement de Taylor | O3 |
-| 9 | `plusieurs-variables` | Les fonctions de plusieurs variables | O4 |
-| 9 | `derivees-partielles` | Les dérivées partielles | O4 |
-| 9 | `gradient` | Le gradient : la direction de la plus forte pente | O4 |
-| 9 | `jacobienne` | La matrice jacobienne | O4 |
-| 9 | `hessienne` | La courbure : la matrice hessienne | O4 |
-| 10 | `fonction-perte` | Mesurer l'erreur : la fonction de perte | O4 |
-| 10 | `descente-gradient` | La descente de gradient, pas à pas | O4 |
-| 10 | `taux-apprentissage` | Le taux d'apprentissage | O4 |
-| 10 | `gradient-vectorise` | Calculer le gradient de toutes les données d'un coup | O4 |
-| 10 | `sgd` | Par petits paquets : la descente de gradient stochastique | O4 |
-| 10 | `momentum` | Accélérer la descente : le momentum | O4 |
-| 10 | `ajuster-droite` | Ajuster une droite aux données par descente de gradient | O4 |
+| 5 | `svd` | La décomposition en valeurs singulières (SVD) | O2 |
+| 5 | `pca-maths` | Ce que calcule une ACP | O2 |
+| 6 | `fonctions-usuelles` | Les fonctions de base : affine, carré, racine, valeur absolue | O3 |
+| 6 | `tracer-fonction` | Tracer une fonction avec matplotlib | O3 |
+| 6 | `exp-log` | Exponentielle et logarithme | O3 |
+| 6 | `sigmoide` | La sigmoïde : transformer un score en probabilité | O3 |
+| 6 | `pente` | La pente d'une droite | O3 |
+| 6 | `derivee` | La dérivée : la pente en un point | O3 |
+| 6 | `regles-derivation` | Les règles de dérivation utiles | O3 |
+| 6 | `derivee-numerique` | Calculer une dérivée numériquement | O3 |
+| 7 | `regle-chaine` | Dériver une composition : la règle de la chaîne | O3 |
+| 7 | `minimum` | Trouver le minimum d'une fonction | O3 |
+| 7 | `minima-locaux` | Minimum local, minimum global | O3 |
+| 7 | `convexite` | Les fonctions convexes | O3 |
+| 7 | `taylor` | Approcher une fonction : le développement de Taylor | O3 |
+| 7 | `integrale-intuition` | L'aire sous la courbe : l'intuition de l'intégrale | O3 |
+| 8 | `plusieurs-variables` | Les fonctions de plusieurs variables | O4 |
+| 8 | `derivees-partielles` | Les dérivées partielles | O4 |
+| 8 | `gradient` | Le gradient : la direction de la plus forte pente | O4 |
+| 8 | `jacobienne` | La matrice jacobienne | O4 |
+| 8 | `hessienne` | La courbure : la matrice hessienne | O4 |
+| 9 | `fonction-perte` | Mesurer l'erreur : la fonction de perte | O4 |
+| 9 | `descente-gradient` | La descente de gradient, pas à pas | O4 |
+| 9 | `taux-apprentissage` | Le taux d'apprentissage | O4 |
+| 9 | `gradient-vectorise` | Calculer le gradient de toutes les données d'un coup | O4 |
+| 9 | `sgd` | Par petits paquets : la descente de gradient stochastique | O4 |
+| 9 | `momentum` | Accélérer la descente : le momentum | O4 |
+| 9 | `adam-idee` | Adapter le pas à chaque paramètre : l'idée d'Adam | O4 |
+| 9 | `ajuster-droite` | Ajuster une droite aux données par descente de gradient | O4 |
+| 10 | `couche-neurones` | Une couche de neurones, c'est un produit de matrices | O2 |
+| 10 | `tenseurs` | Au-delà de 2 dimensions : les tenseurs | O2 |
+| 10 | `softmax-maths` | Des scores aux probabilités : la softmax | O3 |
+| 10 | `retropropagation-maths` | La rétropropagation : la règle de la chaîne à grande échelle | O4 |
+| 10 | `embeddings-maths` | Des mots aux vecteurs : l'idée des embeddings | O2 |
+| 10 | `convolution-maths` | La convolution, vue comme un calcul de matrices | O2 |
+| 10 | `attention-maths` | L'attention, vue comme des produits scalaires | O2 |
+| 11 | `denombrement` | Compter les possibilités : le dénombrement | O5 |
 | 11 | `probabilite` | Le hasard en chiffres : la probabilité d'un événement | O5 |
 | 11 | `simuler-hasard` | Simuler le hasard avec NumPy | O5 |
 | 11 | `probabilite-jointe` | Probabilités jointes et marginales | O5 |
@@ -120,11 +126,13 @@ mise_a_jour: 2026-11-25
 | 11 | `independance` | Des événements indépendants | O5 |
 | 11 | `bayes` | Le théorème de Bayes | O5 |
 | 12 | `esperance` | Variables aléatoires et espérance | O5 |
+| 12 | `variance-aleatoire` | La variance d'une variable aléatoire | O5 |
 | 12 | `binomiale` | Les lois de Bernoulli et binomiale | O5 |
 | 12 | `poisson` | Compter des événements rares : la loi de Poisson | O5 |
 | 12 | `densite` | Les lois continues : la densité de probabilité | O5 |
 | 12 | `uniforme-exponentielle` | Les lois uniforme et exponentielle | O5 |
 | 12 | `loi-normale` | La loi normale | O5 |
+| 12 | `grands-nombres` | La loi des grands nombres | O5 |
 | 13 | `entropie` | Mesurer l'incertitude : l'entropie | O5 |
 | 13 | `entropie-croisee-kl` | L'entropie croisée et la divergence KL | O5 |
 | 13 | `vraisemblance` | La vraisemblance et son maximum | O5 |
@@ -133,6 +141,7 @@ mise_a_jour: 2026-11-25
 | 14 | `moyenne-mediane` | Résumer des données : moyenne, médiane, mode | O6 |
 | 14 | `variance` | Mesurer la dispersion : variance et écart type | O6 |
 | 14 | `quantiles` | Quantiles et valeurs aberrantes | O6 |
+| 14 | `asymetrie` | Une distribution qui penche : l'asymétrie | O6 |
 | 14 | `histogrammes` | Histogrammes et distributions | O6 |
 | 14 | `boites-moustaches` | Les boîtes à moustaches | O6 |
 | 15 | `covariance` | Varier ensemble : la covariance | O6 |
@@ -144,10 +153,11 @@ mise_a_jour: 2026-11-25
 | 15 | `intervalle-confiance` | L'intervalle de confiance | O6 |
 | 15 | `normaliser` | Mettre les données à la même échelle | O6 |
 | 16 | `test-hypothese` | Une différence est-elle due au hasard ? Le test d'hypothèse | O6 |
-| 16 | `test-ab` | Comparer deux versions : le test A/B | O6 |
-| 16 | `tests-multiples` | Le piège des tests multiples | O6 |
 | 16 | `p-value` | Lire une p-value sans se tromper | O6 |
 | 16 | `taille-effet` | L'effet est-il important ? La taille d'effet | O6 |
+| 16 | `test-ab` | Comparer deux versions : le test A/B | O6 |
+| 16 | `tests-multiples` | Le piège des tests multiples | O6 |
+| 16 | `regression-statistique` | La régression linéaire vue par la statistique | O6 |
 
 ## Vocabulaire du module
 
@@ -186,6 +196,14 @@ mise_a_jour: 2026-11-25
 | théorème central limite | B | `tcl` |
 | marge d'erreur, intervalle de confiance | B | `marge-erreur` |
 | test d'hypothèse, p-value | A | `test-hypothese` |
+| fonction affine | B | `fonctions-usuelles` |
+| intégrale, aire sous la courbe | B | `integrale-intuition` |
+| Adam (optimiseur) | A | `adam-idee` |
+| softmax | A | `softmax-maths` |
+| rétropropagation (backpropagation) | A | `retropropagation-maths` |
+| dénombrement, combinaison | B | `denombrement` |
+| loi des grands nombres | B | `grands-nombres` |
+| asymétrie (skewness) | A | `asymetrie` |
 
 ## Fil rouge et ancrage local
 
@@ -202,18 +220,18 @@ mise_a_jour: 2026-11-25
 | 0.4-ex10 à ex14 | Les matrices | O2 | 1 | non |
 | 0.4-ex15 à ex17 | Systèmes et transformations | O2 | 1 | non |
 | 0.4-ex18 à ex20 | Décomposer une matrice | O2 | 1 | non |
-| 0.4-ex21 à ex23 | Les matrices au cœur de l'IA | O2 | 2 | non |
-| 0.4-ex24 à ex28 | Fonctions et dérivées | O3 | 2 | non |
-| 0.4-ex29 à ex31 | Composer et chercher un minimum | O3 | 2 | non |
-| 0.4-ex32 à ex34 | Le gradient | O4 | 2 | non |
-| 0.4-ex35 à ex39 | La descente de gradient | O4 | 2 | non |
-| 0.4-ex40 | Exercice clé : coder une descente de gradient à la main (sans bibliothèque de ML) | O4 | 3 | non |
-| 0.4-ex41 à ex44 | Les probabilités | O5 | 2–3 | non |
-| 0.4-ex45 à ex48 | Variables aléatoires et lois | O5 | 2–3 | non |
-| 0.4-ex49 à ex51 | Information et vraisemblance | O5 | 2–3 | non |
-| 0.4-ex52 à ex54 | Décrire des données | O6 | 2–3 | non |
-| 0.4-ex55 à ex59 | Relations et échantillons | O6 | 2–3 | non |
-| 0.4-ex60 à ex62 | Tester des hypothèses | O6 | 2–3 | non |
+| 0.4-ex21 à ex25 | Fonctions et dérivées | O3 | 2 | non |
+| 0.4-ex26 à ex29 | Composer et chercher un minimum | O3 | 2 | non |
+| 0.4-ex30 à ex32 | Le gradient | O4 | 2 | non |
+| 0.4-ex33 à ex37 | La descente de gradient | O4 | 2 | non |
+| 0.4-ex38 | Exercice clé : coder une descente de gradient à la main (sans bibliothèque de ML) | O4 | 3 | non |
+| 0.4-ex39 à ex43 | Les maths d'un réseau de neurones | O2, O3, O4 | 2 | non |
+| 0.4-ex44 à ex48 | Les probabilités | O5 | 2–3 | non |
+| 0.4-ex49 à ex53 | Variables aléatoires et lois | O5 | 2–3 | non |
+| 0.4-ex54 à ex56 | Information et vraisemblance | O5 | 2–3 | non |
+| 0.4-ex57 à ex60 | Décrire des données | O6 | 2–3 | non |
+| 0.4-ex61 à ex65 | Relations et échantillons | O6 | 2–3 | non |
+| 0.4-ex66 à ex69 | Tester des hypothèses | O6 | 2–3 | non |
 
 ## Ressources matérielles
 
