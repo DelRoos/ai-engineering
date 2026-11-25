@@ -22,19 +22,19 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Analyser ce que le droit permet sur un projet de collecte : conditions d'utilisation, droit d'auteur, bases de données. | ex01 à ex04, qcm |
-| O2 | Appliquer le droit des données personnelles à une collecte, lois africaines comprises. | ex05 à ex08, qcm |
-| O3 | Respecter les règles techniques posées par les sites et préférer les accès officiels. | ex09 à ex11, qcm |
-| O4 | Documenter la provenance et les licences de données collectées. | ex12 à ex14, exercice clé (ex15), qcm |
-| O5 | Vendre une prestation de collecte de façon responsable. | ex16 à ex18, qcm |
+| O1 | Analyser ce que le droit permet sur un projet de collecte : conditions d'utilisation, droit d'auteur, bases de données. | ex01 à ex05, qcm |
+| O2 | Appliquer le droit des données personnelles à une collecte, lois africaines comprises. | ex06 à ex10, qcm |
+| O3 | Respecter les règles techniques posées par les sites et préférer les accès officiels. | ex11 à ex14, qcm |
+| O4 | Documenter la provenance et les licences de données collectées. | ex15 à ex17, exercice clé (ex18), qcm |
+| O5 | Vendre une prestation de collecte de façon responsable. | ex19 à ex21, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Le droit de la collecte | 4 |
-| 2 | Les données personnelles | 4 |
-| 3 | Les règles techniques | 3 |
+| 1 | Le droit de la collecte | 5 |
+| 2 | Les données personnelles | 5 |
+| 3 | Les règles techniques | 4 |
 | 4 | Documenter ses données | 4 |
 | 5 | Vendre la collecte | 3 |
 
@@ -45,7 +45,8 @@ mise_a_jour: 2026-11-25
 | 1 | `cgu-collecte` | Lire les conditions d'utilisation d'un site | O1 |
 | 1 | `droit-auteur-collecte` | Le droit d'auteur sur les contenus collectés | O1 |
 | 1 | `droit-bases-donnees` | Le droit des bases de données | O1 |
-| 1 | `jurisprudence-scraping` | Ce que les tribunaux ont jugé sur le scraping | O1 |
+| 1 | `jurisprudence-scraping` | Ce que les tribunaux ont jugé sur le scraping : de hiQ à Reddit contre SerpApi et Perplexity | O1 |
+| 1 | `jurisprudence-ia` | L'entraînement des IA devant les juges : Thomson Reuters c. Ross, Bartz c. Anthropic, Kadrey c. Meta | O1 |
 | 1 | `donnees-ouvertes` | Les données publiques et les licences ouvertes | O1 |
 | 1 | `collecte-internationale` | Collecter depuis l'Afrique des sites du monde entier | O1 |
 | 2 | `donnee-perso-collectee` | Quand une donnée collectée est personnelle | O2 |
@@ -53,9 +54,11 @@ mise_a_jour: 2026-11-25
 | 2 | `minimiser-collecte` | Ne collecter que le nécessaire | O2 |
 | 2 | `informer-personnes` | Informer les personnes concernées | O2 |
 | 2 | `conserver-supprimer` | Conserver, puis supprimer | O2 |
-| 2 | `lois-africaines-collecte` | Les lois africaines sur les données, appliquées à la collecte | O2 |
+| 2 | `lois-africaines-collecte` | Les lois africaines appliquées à la collecte : Cameroun (loi n° 2024/017), Nigeria (NDPA et GAID 2025) et les autres | O2 |
+| 2 | `cnil-moissonnage` | Les recommandations de la CNIL sur le moissonnage pour l'IA | O2 |
 | 3 | `robots-txt-detail` | robots.txt en détail : ce qu'il dit et ce qu'il ne dit pas | O3 |
 | 3 | `signaux-ia` | Les nouveaux signaux : refuser l'entraînement des IA | O3 |
+| 3 | `ai-act-tdm` | L'AI Act et le droit de refuser la fouille de textes (TDM) | O3 |
 | 3 | `preferer-api` | Préférer l'API officielle | O3 |
 | 3 | `demander-acces` | Demander un accès ou un partenariat | O3 |
 | 3 | `protections-respecter` | Les protections qu'on ne contourne pas | O3 |
@@ -90,12 +93,12 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 7.7-ex01 à ex04 | Le droit de la collecte | O1 | 1 | non |
-| 7.7-ex05 à ex08 | Les données personnelles | O2 | 2 | non |
-| 7.7-ex09 à ex11 | Les règles techniques | O3 | 2 | non |
-| 7.7-ex12 à ex14 | Documenter ses données | O4 | 2–3 | non |
-| 7.7-ex15 | Exercice clé : mener l'audit juridique et éthique d'un projet de collecte réel, avec sa fiche de données et une décision argumentée | O4 | 3 | oui → GRILLE.md |
-| 7.7-ex16 à ex18 | Vendre la collecte | O5 | 2–3 | non |
+| 7.7-ex01 à ex05 | Le droit de la collecte | O1 | 1 | non |
+| 7.7-ex06 à ex10 | Les données personnelles | O2 | 2 | non |
+| 7.7-ex11 à ex14 | Les règles techniques | O3 | 2 | non |
+| 7.7-ex15 à ex17 | Documenter ses données | O4 | 2–3 | non |
+| 7.7-ex18 | Exercice clé : mener l'audit juridique et éthique d'un projet de collecte réel, avec sa fiche de données et une décision argumentée | O4 | 3 | oui → GRILLE.md |
+| 7.7-ex19 à ex21 | Vendre la collecte | O5 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -119,6 +122,7 @@ mise_a_jour: 2026-11-25
 | [CNIL, la carte des lois sur les données dans le monde](https://www.cnil.fr/fr/la-protection-des-donnees-dans-le-monde) | français | carte | accès libre | Situer les lois des pays africains. |
 | [Datasheets for Datasets](https://arxiv.org/abs/1803.09010) | anglais | article | accès libre | Le modèle de fiche de données. |
 | [Licences Creative Commons](https://creativecommons.org/licenses/) | français et anglais | référence | libre | Comprendre les licences des contenus réutilisés. |
+| [CNIL, l'intérêt légitime et le moissonnage](https://www.cnil.fr/fr/focus-interet-legitime-collecte-par-moissonnage) | français | recommandation | accès libre | Les mesures attendues quand on moissonne des données personnelles pour l'IA. |
 
 ## Circuit
 

@@ -22,23 +22,24 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Extraire des données structurées avec un LLM à partir de pages préparées, à coût maîtrisé. | ex01 à ex04, qcm |
-| O2 | Fiabiliser une extraction par LLM : vérifier dans la source, combiner avec des sélecteurs, évaluer. | ex05 à ex07, exercice clé (ex08), qcm |
-| O3 | Faire générer et réparer des sélecteurs par un LLM, sous contrôle. | ex09 à ex11, qcm |
-| O4 | Extraire des données à partir de captures d'écran avec un modèle vision-langage. | ex12 à ex14, qcm |
-| O5 | Utiliser un agent navigateur borné, et l'évaluer. | ex15 à ex18, qcm |
-| O6 | Transformer une collecte en information : classer, extraire des entités, dédoublonner, résumer, alerter. | ex19 à ex21, qcm |
+| O1 | Extraire des données structurées avec un LLM à partir de pages préparées, à coût maîtrisé. | ex01 à ex05, qcm |
+| O2 | Fiabiliser une extraction par LLM : vérifier dans la source, combiner avec des sélecteurs, évaluer. | ex06 à ex08, exercice clé (ex09), qcm |
+| O3 | Faire générer et réparer des sélecteurs par un LLM, sous contrôle. | ex10 à ex12, qcm |
+| O4 | Extraire des données à partir de captures d'écran avec un modèle vision-langage. | ex13 à ex15, qcm |
+| O5 | Utiliser un agent navigateur borné, et l'évaluer. | ex16 à ex19, ex20 à ex22, qcm |
+| O6 | Transformer une collecte en information : classer, extraire des entités, dédoublonner, résumer, alerter. | ex23 à ex25, qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Extraire avec un LLM | 4 |
+| 1 | Extraire avec un LLM | 5 |
 | 2 | Fiabiliser l'extraction | 4 |
 | 3 | Des scrapers qui se réparent | 3 |
 | 4 | Voir la page | 3 |
 | 5 | Les agents navigateur | 4 |
-| 6 | De la collecte à l'information | 3 |
+| 6 | Des agents navigateur en production | 3 |
+| 7 | De la collecte à l'information | 3 |
 
 ## Notions, dans l'ordre
 
@@ -50,6 +51,7 @@ mise_a_jour: 2026-11-25
 | 1 | `sorties-contraintes-extraction` | Sorties structurées et génération contrainte | O1 |
 | 1 | `extraction-modele-local` | Extraire avec un petit modèle local | O1 |
 | 1 | `cout-extraction` | Le coût d'une page extraite par LLM | O1 |
+| 1 | `modeles-extraction-specialises` | Les petits modèles spécialisés dans l'extraction | O1 |
 | 2 | `valeurs-inventees` | Les valeurs inventées : les détecter | O2 |
 | 2 | `verifier-dans-source` | Vérifier que chaque valeur est bien dans la page | O2 |
 | 2 | `extraction-hybride` | Sélecteurs pour le stable, LLM pour le variable | O2 |
@@ -66,16 +68,21 @@ mise_a_jour: 2026-11-25
 | 4 | `cout-vision` | Le coût de la vision, page par page | O4 |
 | 4 | `vision-ou-dom` | Vision ou DOM : choisir | O4 |
 | 5 | `boucle-agent-navigateur` | La boucle d'un agent navigateur : voir, décider, agir | O5 |
+| 5 | `arbre-accessibilite` | L'arbre d'accessibilité : moins cher et plus fiable que la vision | O5 |
+| 5 | `playwright-mcp` | Playwright MCP et Chrome DevTools MCP | O5 |
+| 5 | `code-et-ia` | Mêler code et IA : act, extract, observe et cache d'actions (Stagehand) | O5 |
 | 5 | `agent-navigateur-ouvert` | Un agent avec une bibliothèque ouverte comme browser-use | O5 |
 | 5 | `computer-use` | Le computer use : un agent qui pilote l'écran | O5 |
-| 5 | `borner-agent-navigateur` | Borner l'agent : domaines, actions, budget | O5 |
-| 5 | `pages-piegees` | Les pages piégées : l'injection indirecte par le web | O5 |
-| 5 | `evaluer-agent-navigateur` | Évaluer un agent navigateur sur des tâches | O5 |
-| 6 | `classer-collecte` | Classer ce qu'on collecte : catégories, sentiment | O6 |
-| 6 | `entites-collecte` | Extraire personnes, lieux et organisations | O6 |
-| 6 | `doublons-semantiques-collecte` | Rapprocher les doublons par le sens | O6 |
-| 6 | `resumer-veille` | Résumer une veille quotidienne | O6 |
-| 6 | `alertes-pertinentes` | Des alertes qui ne sonnent que pour l'important | O6 |
+| 6 | `borner-agent-navigateur` | Borner l'agent : domaines, actions, budget | O5 |
+| 6 | `pages-piegees` | Les pages piégées : l'injection indirecte par le web | O5 |
+| 6 | `evaluer-agent-navigateur` | Évaluer un agent navigateur sur des tâches | O5 |
+| 6 | `cout-agent-navigateur` | Le coût d'une tâche : arbre d'accessibilité, vision, cache | O5 |
+| 6 | `navigateurs-pour-agents` | Les moteurs de navigateur conçus pour les agents | O5 |
+| 7 | `classer-collecte` | Classer ce qu'on collecte : catégories, sentiment | O6 |
+| 7 | `entites-collecte` | Extraire personnes, lieux et organisations | O6 |
+| 7 | `doublons-semantiques-collecte` | Rapprocher les doublons par le sens | O6 |
+| 7 | `resumer-veille` | Résumer une veille quotidienne | O6 |
+| 7 | `alertes-pertinentes` | Des alertes qui ne sonnent que pour l'important | O6 |
 
 ## Vocabulaire du module
 
@@ -86,6 +93,7 @@ mise_a_jour: 2026-11-25
 | computer use | A | `computer-use` |
 | auto-réparation (self-healing) | B | `reparer-selecteurs` |
 | injection indirecte | B | `pages-piegees` |
+| arbre d'accessibilité (accessibility tree) | B | `arbre-accessibilite` |
 
 ## Fil rouge et ancrage local
 
@@ -97,13 +105,36 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 7.5-ex01 à ex04 | Extraire avec un LLM | O1 | 1 | non |
-| 7.5-ex05 à ex07 | Fiabiliser l'extraction | O2 | 1 | non |
-| 7.5-ex08 | Exercice clé : extraire avec un LLM les annonces de 30 sites aux structures différentes, avec vérification dans la source, évaluation champ par champ et coût mesuré | O2 | 3 | non |
-| 7.5-ex09 à ex11 | Des scrapers qui se réparent | O3 | 2 | non |
-| 7.5-ex12 à ex14 | Voir la page | O4 | 2 | non |
-| 7.5-ex15 à ex18 | Les agents navigateur | O5 | 2–3 | non |
-| 7.5-ex19 à ex21 | De la collecte à l'information | O6 | 2–3 | non |
+| 7.5-ex01 à ex05 | Extraire avec un LLM | O1 | 1 | non |
+| 7.5-ex06 à ex08 | Fiabiliser l'extraction | O2 | 1 | non |
+| 7.5-ex09 | Exercice clé : extraire avec un LLM les annonces de 30 sites aux structures différentes, avec vérification dans la source, évaluation champ par champ et coût mesuré | O2 | 3 | non |
+| 7.5-ex10 à ex12 | Des scrapers qui se réparent | O3 | 2 | non |
+| 7.5-ex13 à ex15 | Voir la page | O4 | 2 | non |
+| 7.5-ex16 à ex19 | Les agents navigateur | O5 | 2–3 | non |
+| 7.5-ex20 à ex22 | Des agents navigateur en production | O5 | 2–3 | non |
+| 7.5-ex23 à ex25 | De la collecte à l'information | O6 | 2–3 | non |
+
+## Épreuve de niveau expert
+
+**Épreuve** : sur 30 sites aux structures différentes, comparer trois façons d'extraire (sélecteurs seuls, LLM sur Markdown, extraction hybride), puis un agent navigateur par l'arbre d'accessibilité face à un agent par la vision, sur 20 tâches, avec la qualité et le coût mesurés.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Implémenter | L'extraction hybride et l'agent borné, relançables |
+| Diagnostiquer | Les valeurs inventées et les échecs d'agent, rattachés à leur cause |
+| Comparer | Qualité champ par champ et coût par page, à budget égal |
+| Choisir | La méthode retenue par type de site, justifiée |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| Extraction par LLM avec schéma et vérification dans la source | établie | autonome avec un petit modèle local |
+| Agents par l'arbre d'accessibilité (Playwright MCP, Chrome DevTools MCP) | établie, récente | autonome en local |
+| Code et IA mêlés avec cache d'actions (Stagehand) | récente | expérience réduite |
+| Computer use par la vision | établie, coûteuse | expérience réduite, comparée à l'arbre d'accessibilité |
+| Petits modèles spécialisés d'extraction (par exemple Clairic, novembre 2026) | expérimentale | résultats publiés par leur éditeur, à vérifier sur tes données |
+| Moteurs de navigateur pour agents (par exemple Kitesurf) | expérimentale | lecture et essai local facultatif |
 
 ## Ressources matérielles
 
@@ -125,6 +156,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | [Pydantic](https://docs.pydantic.dev/) | anglais | documentation | MIT | Décrire et valider ce qu'on extrait. |
 | [browser-use](https://github.com/browser-use/browser-use) | anglais | dépôt | MIT | Un agent navigateur ouvert, à étudier et à borner. |
+| [Playwright MCP](https://github.com/microsoft/playwright-mcp) | anglais | dépôt | Apache 2.0 | Piloter un navigateur par l'arbre d'accessibilité, depuis un agent. |
+| [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) | anglais | dépôt | Apache 2.0 | Donner à un agent les outils du développeur de Chrome. |
+| [Stagehand](https://docs.stagehand.dev/) | anglais | documentation | MIT | Le modèle hybride : code déterministe et actions par IA, avec cache. |
+| [Kitesurf (Cloudflare)](https://blog.cloudflare.com/kitesurf-open-source) | anglais | article | accès libre | Un moteur de navigateur pour agents, open source et expérimental. |
 | [Trafilatura](https://trafilatura.readthedocs.io/) | anglais | documentation | Apache 2.0 | Réduire une page à son contenu avant de l'envoyer au modèle. |
 | [Ollama](https://github.com/ollama/ollama) | anglais | dépôt | MIT | Extraire en local, sans coût par page. |
 

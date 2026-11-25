@@ -24,11 +24,11 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Piloter un navigateur avec Playwright : locators, attentes automatiques, actions, enregistrement. | ex01 à ex05, qcm |
 | O2 | Collecter les sites dynamiques en interceptant le réseau plutôt qu'en lisant l'écran. | ex06 à ex09, qcm |
-| O3 | Gérer sessions, connexions avec ses propres accès, téléchargements, envois et captures. | ex10 à ex13, qcm |
-| O4 | Rendre une automatisation de navigateur robuste et débogable. | ex14 à ex16, qcm |
-| O5 | Automatiser une démarche sur un portail, avec vérification et preuve de chaque action. | ex17 à ex19, exercice clé (ex20), qcm |
-| O6 | Tester et surveiller un site automatiquement. | ex21 à ex23, qcm |
-| O7 | Faire tourner des navigateurs en production à coût maîtrisé. | ex24 à ex26, qcm |
+| O3 | Gérer sessions, connexions avec ses propres accès, téléchargements, envois et captures. | ex10 à ex14, qcm |
+| O4 | Rendre une automatisation de navigateur robuste et débogable. | ex15 à ex18, qcm |
+| O5 | Automatiser une démarche sur un portail, avec vérification et preuve de chaque action. | ex19 à ex21, exercice clé (ex22), qcm |
+| O6 | Tester et surveiller un site automatiquement. | ex23 à ex26, qcm |
+| O7 | Faire tourner des navigateurs en production à coût maîtrisé. | ex27 à ex29, qcm |
 
 ## Chapitres
 
@@ -36,10 +36,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Playwright | 5 |
 | 2 | Les sites dynamiques | 4 |
-| 3 | Sessions et fichiers | 4 |
-| 4 | Robustesse | 3 |
+| 3 | Sessions et fichiers | 5 |
+| 4 | Robustesse | 4 |
 | 5 | Automatiser des démarches | 4 |
-| 6 | Tester et surveiller des sites | 3 |
+| 6 | Tester et surveiller des sites | 4 |
 | 7 | Le navigateur en production | 3 |
 
 ## Notions, dans l'ordre
@@ -65,11 +65,13 @@ mise_a_jour: 2026-11-25
 | 3 | `telechargements-navigateur` | Les téléchargements | O3 |
 | 3 | `envoi-fichiers` | Envoyer des fichiers dans un formulaire | O3 |
 | 3 | `captures-pdf` | Captures d'écran et PDF de pages | O3 |
+| 3 | `multi-regions` | Tester un catalogue multi-pays : géolocalisation, fuseau, langue | O3 |
 | 4 | `selecteurs-role` | Des sélecteurs par rôle et par texte | O4 |
 | 4 | `erreurs-navigateur` | Gérer les erreurs et les délais | O4 |
 | 4 | `reprendre-parcours` | Reprendre un parcours interrompu | O4 |
 | 4 | `traces-playwright` | Déboguer avec les traces de Playwright | O4 |
 | 4 | `changements-interface` | Résister aux changements d'interface | O4 |
+| 4 | `rejeu-har` | Rejouer le réseau en test : les fichiers HAR | O4 |
 | 5 | `formulaires-serie` | Remplir des formulaires en série à partir d'un tableur | O5 |
 | 5 | `portails-sans-api` | Travailler avec un portail sans API | O5 |
 | 5 | `verifier-saisie` | Vérifier chaque saisie avant de valider | O5 |
@@ -80,6 +82,7 @@ mise_a_jour: 2026-11-25
 | 6 | `comparer-captures` | Comparer des captures pour voir ce qui a changé | O6 |
 | 6 | `accessibilite-auto` | Vérifier l'accessibilité automatiquement | O6 |
 | 6 | `selenium-puppeteer` | Selenium et Puppeteer : ce qu'il faut savoir | O6 |
+| 6 | `mitmproxy-propres-apps` | Inspecter le trafic de ses propres applications avec mitmproxy | O6 |
 | 7 | `navigateurs-conteneur` | Des navigateurs dans un conteneur | O7 |
 | 7 | `paralleliser-navigateurs` | Paralléliser les navigateurs sans saturer la machine | O7 |
 | 7 | `memoire-navigateur` | La mémoire d'un navigateur sans tête | O7 |
@@ -109,12 +112,12 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 7.4-ex01 à ex05 | Playwright | O1 | 1 | non |
 | 7.4-ex06 à ex09 | Les sites dynamiques | O2 | 1 | non |
-| 7.4-ex10 à ex13 | Sessions et fichiers | O3 | 2 | non |
-| 7.4-ex14 à ex16 | Robustesse | O4 | 2 | non |
-| 7.4-ex17 à ex19 | Automatiser des démarches | O5 | 2–3 | non |
-| 7.4-ex20 | Exercice clé : automatiser une démarche répétitive sur un portail web à partir d'un tableur, avec reprise après erreur et preuve de chaque saisie | O5 | 3 | non |
-| 7.4-ex21 à ex23 | Tester et surveiller des sites | O6 | 2–3 | non |
-| 7.4-ex24 à ex26 | Le navigateur en production | O7 | 2–3 | non |
+| 7.4-ex10 à ex14 | Sessions et fichiers | O3 | 2 | non |
+| 7.4-ex15 à ex18 | Robustesse | O4 | 2 | non |
+| 7.4-ex19 à ex21 | Automatiser des démarches | O5 | 2–3 | non |
+| 7.4-ex22 | Exercice clé : automatiser une démarche répétitive sur un portail web à partir d'un tableur, avec reprise après erreur et preuve de chaque saisie | O5 | 3 | non |
+| 7.4-ex23 à ex26 | Tester et surveiller des sites | O6 | 2–3 | non |
+| 7.4-ex27 à ex29 | Le navigateur en production | O7 | 2–3 | non |
 
 ## Ressources matérielles
 
@@ -138,6 +141,8 @@ mise_a_jour: 2026-11-25
 | [Playwright, les bonnes pratiques](https://playwright.dev/docs/best-practices) | anglais | documentation | Apache 2.0 | Des tests et des automatisations qui tiennent. |
 | [Documentation de Selenium](https://www.selenium.dev/documentation/) | anglais | documentation | Apache 2.0 | L'outil historique, encore très présent en entreprise. |
 | [Quotes to Scrape, version JavaScript](https://quotes.toscrape.com/js/) | anglais | site d'entraînement | libre | S'entraîner sur une page rendue par JavaScript. |
+| [Playwright, simuler et rejouer le réseau](https://playwright.dev/python/docs/mock) | anglais | documentation | Apache 2.0 | Rejouer un fichier HAR pour tester hors ligne. |
+| [mitmproxy](https://docs.mitmproxy.org/stable/) | anglais | documentation | MIT | Inspecter le trafic de ses propres applications. |
 
 ## Circuit
 

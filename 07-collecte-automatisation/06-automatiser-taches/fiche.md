@@ -25,9 +25,9 @@ mise_a_jour: 2026-11-25
 | O1 | Automatiser le travail sur fichiers : Excel, PDF, Word, images. | ex01 à ex04, qcm |
 | O2 | Envoyer et traiter des messages automatiquement : courriels, WhatsApp, SMS, notifications. | ex05 à ex08, qcm |
 | O3 | Brancher des services en ligne par API, webhooks et OAuth. | ex09 à ex12, qcm |
-| O4 | Planifier et enchaîner des tâches de façon relançable. | ex13 à ex15, qcm |
-| O5 | Choisir la RPA quand rien d'autre n'est possible, en connaissant ses faiblesses. | ex16 à ex18, qcm |
-| O6 | Rendre une automatisation fiable, documentée et mesurée. | ex19 à ex22, exercice clé (ex23), qcm |
+| O4 | Planifier et enchaîner des tâches de façon relançable. | ex13 à ex16, qcm |
+| O5 | Choisir la RPA quand rien d'autre n'est possible, en connaissant ses faiblesses. | ex17 à ex19, qcm |
+| O6 | Rendre une automatisation fiable, documentée et mesurée. | ex20 à ex23, exercice clé (ex24), qcm |
 
 ## Chapitres
 
@@ -36,7 +36,7 @@ mise_a_jour: 2026-11-25
 | 1 | Automatiser son poste | 4 |
 | 2 | Communiquer automatiquement | 4 |
 | 3 | Brancher les services | 4 |
-| 4 | Planifier et enchaîner | 3 |
+| 4 | Planifier et enchaîner | 4 |
 | 5 | La RPA | 3 |
 | 6 | Fiabiliser une automatisation | 5 |
 
@@ -67,6 +67,7 @@ mise_a_jour: 2026-11-25
 | 4 | `enchainer-taches` | Enchaîner des tâches qui dépendent les unes des autres | O4 |
 | 4 | `prefect-taches` | Orchestrer avec Prefect | O4 |
 | 4 | `arriere-plan` | Des files de tâches pour le travail en arrière-plan | O4 |
+| 4 | `temporal-ouverture` | Au-delà de Prefect : l'orchestration durable avec Temporal | O4 |
 | 5 | `rpa-notions` | La RPA : automatiser une interface comme un humain | O5 |
 | 5 | `applications-bureau` | Piloter des applications de bureau | O5 |
 | 5 | `rpa-api-navigateur` | RPA, API ou navigateur : choisir | O5 |
@@ -102,10 +103,10 @@ mise_a_jour: 2026-11-25
 | 7.6-ex01 à ex04 | Automatiser son poste | O1 | 1 | non |
 | 7.6-ex05 à ex08 | Communiquer automatiquement | O2 | 1 | non |
 | 7.6-ex09 à ex12 | Brancher les services | O3 | 2 | non |
-| 7.6-ex13 à ex15 | Planifier et enchaîner | O4 | 2 | non |
-| 7.6-ex16 à ex18 | La RPA | O5 | 2–3 | non |
-| 7.6-ex19 à ex22 | Fiabiliser une automatisation | O6 | 2–3 | non |
-| 7.6-ex23 | Exercice clé : automatiser la chaîne mensuelle d'une PME : relevés, tableur, factures en PDF, envoi par courriel, relances et rapport | O6 | 3 | non |
+| 7.6-ex13 à ex16 | Planifier et enchaîner | O4 | 2 | non |
+| 7.6-ex17 à ex19 | La RPA | O5 | 2–3 | non |
+| 7.6-ex20 à ex23 | Fiabiliser une automatisation | O6 | 2–3 | non |
+| 7.6-ex24 | Exercice clé : automatiser la chaîne mensuelle d'une PME : relevés, tableur, factures en PDF, envoi par courriel, relances et rapport | O6 | 3 | non |
 
 ## Ressources matérielles
 
@@ -128,6 +129,7 @@ mise_a_jour: 2026-11-25
 | [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) | anglais | livre en ligne | CC BY-NC-SA | Le classique de l'automatisation de bureau en Python. |
 | [Documentation d'openpyxl](https://openpyxl.readthedocs.io/) | anglais | documentation | MIT | Lire et écrire des fichiers Excel. |
 | [Documentation de Prefect](https://docs.prefect.io/) | anglais | documentation | Apache 2.0 | Orchestrer et planifier des tâches. |
+| [Documentation de Temporal](https://docs.temporal.io/) | anglais | documentation | MIT | Des processus longs qui reprennent exactement où ils s'étaient arrêtés. |
 | [API WhatsApp Business (Meta)](https://developers.facebook.com/docs/whatsapp/) | anglais | documentation | conditions de Meta | Envoyer des messages automatiques sur WhatsApp. |
 | [API Google Sheets](https://developers.google.com/sheets/api) | anglais | documentation | conditions de Google | Lire et écrire des feuilles par programme. |
 

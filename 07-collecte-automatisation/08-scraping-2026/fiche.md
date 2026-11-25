@@ -24,10 +24,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | O1 | Expliquer comment les systèmes anti-robots modernes détectent un robot, et lire un blocage. | ex01 à ex05, qcm |
 | O2 | Situer la ligne rouge juridique et éthique du contournement, et en mesurer les risques. | ex06 à ex08, qcm |
-| O3 | Obtenir un accès légitime aux données : API, partenariats, fournisseurs, robots vérifiés, requêtes signées. | ex09 à ex12, qcm |
-| O4 | Comprendre le web à l'ère de l'IA : robots et agents d'IA, signaux de refus, contenus publiés pour les agents. | ex13 à ex16, qcm |
-| O5 | Collecter de façon robuste et sobre sans rien contourner, et savoir s'arrêter. | ex17 à ex19, qcm |
-| O6 | Protéger un site contre la collecte abusive en laissant passer les robots légitimes. | ex20 à ex23, exercice clé (ex24), qcm |
+| O3 | Obtenir un accès légitime aux données : API, partenariats, fournisseurs, robots vérifiés, requêtes signées. | ex09 à ex13, qcm |
+| O4 | Comprendre le web à l'ère de l'IA : robots et agents d'IA, signaux de refus, contenus publiés pour les agents. | ex14 à ex17, qcm |
+| O5 | Collecter de façon robuste et sobre sans rien contourner, et savoir s'arrêter. | ex18 à ex20, qcm |
+| O6 | Protéger un site contre la collecte abusive en laissant passer les robots légitimes. | ex21 à ex25, exercice clé (ex26), qcm |
 
 ## Chapitres
 
@@ -35,10 +35,10 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- |
 | 1 | Comment fonctionnent les protections anti-robots | 5 |
 | 2 | La ligne rouge | 3 |
-| 3 | Obtenir un accès légitime | 4 |
+| 3 | Obtenir un accès légitime | 5 |
 | 4 | Le web à l'ère de l'IA | 4 |
 | 5 | Collecter robuste, sans contourner | 3 |
-| 6 | L'autre côté : protéger un site | 5 |
+| 6 | L'autre côté : protéger un site | 6 |
 
 ## Notions, dans l'ordre
 
@@ -61,12 +61,14 @@ mise_a_jour: 2026-11-25
 | 3 | `accords-donnees` | Les partenariats et les accords de données | O3 |
 | 3 | `fournisseurs-donnees` | Acheter des données à des fournisseurs licenciés | O3 |
 | 3 | `robots-verifies` | Devenir un robot vérifié : les programmes des CDN | O3 |
-| 3 | `web-bot-auth` | Signer ses requêtes : Web Bot Auth et les signatures HTTP | O3 |
-| 3 | `paiement-collecte` | Le paiement à la collecte (pay per crawl) | O3 |
+| 3 | `web-bot-auth` | Signer ses requêtes : Web Bot Auth, le travail de l'IETF | O3 |
+| 3 | `agent-pour-personne` | Prouver qu'un agent agit pour une personne | O3 |
+| 3 | `paiement-collecte` | Payer pour collecter : pay per crawl et passerelles de monétisation | O3 |
+| 3 | `x402` | Le protocole x402 : payer une requête avec le code HTTP 402 | O3 |
 | 4 | `crawlers-ia` | Les robots des entreprises d'IA et leur poids sur le web | O4 |
 | 4 | `signaux-refus-ia` | Refuser l'IA : robots.txt, en-têtes et signaux de contenu | O4 |
 | 4 | `agents-identifies` | Les agents d'IA qui naviguent pour un utilisateur : s'identifier | O4 |
-| 4 | `publier-pour-agents` | Les sites qui publient pour les agents : llms.txt, API, MCP | O4 |
+| 4 | `publier-pour-agents` | Ce que les sites gagnent à publier pour les agents | O4 |
 | 4 | `marche-donnees-ia` | Le marché des données d'entraînement et ses licences | O4 |
 | 4 | `surcharge-robots-ia` | Quand les robots d'IA saturent les petits sites | O4 |
 | 5 | `faible-empreinte` | Une collecte à faible empreinte : peu de requêtes, au bon moment | O5 |
@@ -79,6 +81,7 @@ mise_a_jour: 2026-11-25
 | 6 | `detecter-scrapers` | Repérer les scrapers dans ses journaux | O6 |
 | 6 | `proteger-api-collecte` | Protéger une API : clés, quotas, signatures | O6 |
 | 6 | `laisser-passer-bons-robots` | Laisser passer les bons robots : moteurs de recherche, partenaires, robots vérifiés | O6 |
+| 6 | `tester-ses-regles` | Tester ses propres règles : comment des clients différents sont vus par ton pare-feu | O6 |
 | 6 | `vendre-protection` | Vendre la protection contre la collecte abusive | O6 |
 
 ## Vocabulaire du module
@@ -91,7 +94,7 @@ mise_a_jour: 2026-11-25
 | robot vérifié (verified bot) | B | `robots-verifies` |
 | Web Bot Auth, signatures de messages HTTP | A | `web-bot-auth` |
 | pay per crawl | A | `paiement-collecte` |
-| llms.txt | A | `publier-pour-agents` |
+| x402 | A | `x402` |
 
 ## Fil rouge et ancrage local
 
@@ -105,11 +108,34 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 7.8-ex01 à ex05 | Comment fonctionnent les protections anti-robots | O1 | 1 | non |
 | 7.8-ex06 à ex08 | La ligne rouge | O2 | 1 | non |
-| 7.8-ex09 à ex12 | Obtenir un accès légitime | O3 | 2 | non |
-| 7.8-ex13 à ex16 | Le web à l'ère de l'IA | O4 | 2 | non |
-| 7.8-ex17 à ex19 | Collecter robuste, sans contourner | O5 | 2–3 | non |
-| 7.8-ex20 à ex23 | L'autre côté : protéger un site | O6 | 2–3 | non |
-| 7.8-ex24 | Exercice clé : diagnostiquer une collecte bloquée, obtenir un accès légitime ou une source de remplacement, puis protéger un site de démonstration contre la collecte abusive | O6 | 3 | non |
+| 7.8-ex09 à ex13 | Obtenir un accès légitime | O3 | 2 | non |
+| 7.8-ex14 à ex17 | Le web à l'ère de l'IA | O4 | 2 | non |
+| 7.8-ex18 à ex20 | Collecter robuste, sans contourner | O5 | 2–3 | non |
+| 7.8-ex21 à ex25 | L'autre côté : protéger un site | O6 | 2–3 | non |
+| 7.8-ex26 | Exercice clé : diagnostiquer une collecte bloquée, obtenir un accès légitime ou une source de remplacement, puis protéger un site de démonstration contre la collecte abusive | O6 | 3 | non |
+
+## Épreuve de niveau expert
+
+**Épreuve** : une collecte est bloquée sur un site de démonstration. Lire le blocage, puis obtenir l'accès par un canal légitime (API, Markdown, requêtes signées, accès payant simulé) ou une source de remplacement ; ensuite, protéger un second site contre la collecte abusive sans bloquer les robots vérifiés.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Expliquer | Le mécanisme qui a déclenché le blocage |
+| Diagnostiquer | Le système, la règle et la réponse, établis à partir des journaux |
+| Choisir | Le canal d'accès retenu, avec son coût et son cadre juridique |
+| Implémenter | Les règles de protection, mesurées sur des clients légitimes et abusifs |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| Lecture des systèmes anti-robots (empreintes, comportement, réputation) | établie | analyse de journaux et de réponses enregistrés |
+| Robots vérifiés auprès des CDN | établie | lecture des programmes et de leurs conditions |
+| Web Bot Auth (signatures HTTP des robots) | norme en cours (groupe de travail IETF) | expérience réduite sur un site local |
+| x402 et paiement à la collecte | récente (x402 Foundation, Linux Foundation) ; pay per crawl encore en bêta | simulation locale |
+| WebMCP | expérimentale (derrière des options de Chrome) | lecture du déploiement Commerce.com |
+| Markdown pour agents (Accept: text/markdown) | récente, répandue chez un grand CDN | autonome |
+| Liste européenne des protocoles de refus TDM | en préparation (consultation close en janvier 2026) | veille |
 
 ## Ressources matérielles
 
@@ -132,10 +158,12 @@ mise_a_jour: 2026-11-25
 | [JA4+ (FoxIO)](https://github.com/FoxIO-LLC/ja4) | anglais | dépôt | licences du dépôt | Comprendre les empreintes réseau utilisées par les systèmes anti-robots. |
 | [OWASP Automated Threats to Web Applications](https://owasp.org/www-project-automated-threats-to-web-applications/) | anglais | référence | CC BY-SA | La classification des menaces automatisées, vue du défenseur. |
 | [Cloudflare, les robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/) | anglais | documentation | accès libre | Comment un robot légitime se fait reconnaître. |
-| [Web Bot Auth (IETF, brouillon)](https://datatracker.ietf.org/doc/draft-meunier-web-bot-auth-architecture/) | anglais | norme en cours | libre | Signer les requêtes d'un robot pour prouver son identité. |
+| [Web Bot Auth, le brouillon du groupe de travail IETF](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/) | anglais | norme en cours | libre | Signer les requêtes d'un robot pour prouver son identité. |
+| [La fondation x402 (Linux Foundation)](https://www.linuxfoundation.org/x402foundation) | anglais | référence | accès libre | Le protocole ouvert de paiement par requête. |
+| [La Monetization Gateway (Cloudflare)](https://blog.cloudflare.com/monetization-gateway/) | anglais | article | accès libre | L'évolution de pay per crawl vers le paiement de tout accès. |
 | [RFC 9421 : HTTP Message Signatures](https://www.rfc-editor.org/rfc/rfc9421) | anglais | norme | libre | La signature des messages HTTP, base de Web Bot Auth. |
 | [Pay per crawl (Cloudflare)](https://blog.cloudflare.com/introducing-pay-per-crawl/) | anglais | article | accès libre | Payer l'accès aux contenus plutôt que les prendre. |
-| [llms.txt](https://llmstxt.org/) | anglais | proposition | libre | Les contenus que les sites publient pour les modèles et les agents. |
+| [llms.txt](https://llmstxt.org/) | anglais | proposition | libre | Une carte de documentation pour les agents de code, pas un contrôle de la collecte. |
 
 ## Circuit
 
