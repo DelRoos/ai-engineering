@@ -22,25 +22,27 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Construire une boucle agent qui raisonne, agit et observe. | ex01 à ex03, ex04 à ex06, ex16 à ex18, exercice clé (ex25), qcm |
-| O2 | Donner des outils à un agent et contrôler leur usage. | ex07 à ex09, exercice clé (ex25), qcm |
-| O3 | Utiliser et créer des serveurs MCP. | ex10 à ex12, qcm |
-| O4 | Ajouter mémoire, planification et coopération entre agents. | ex13 à ex15, ex16 à ex18, qcm |
-| O5 | Encadrer un agent avec des garde-fous. | ex19 à ex21, exercice clé (ex25), qcm |
-| O6 | Évaluer un agent sur des scénarios. | ex22 à ex24, exercice clé (ex25), qcm |
+| O1 | Construire une boucle agent qui raisonne, agit et observe. | ex01 à ex05, ex06 à ex09, ex27 à ex29, exercice clé (ex40), ex41 à ex43, qcm |
+| O2 | Donner des outils à un agent et contrôler leur usage. | ex10 à ex14, exercice clé (ex40), ex41 à ex43, qcm |
+| O3 | Utiliser et créer des serveurs MCP. | ex15 à ex19, qcm |
+| O4 | Ajouter mémoire, planification et coopération entre agents. | ex20 à ex23, ex24 à ex26, ex27 à ex29, ex41 à ex43, qcm |
+| O5 | Encadrer un agent avec des garde-fous. | ex30 à ex34, exercice clé (ex40), ex41 à ex43, qcm |
+| O6 | Évaluer un agent sur des scénarios. | ex35 à ex39, exercice clé (ex40), qcm |
 
 ## Chapitres
 
 | Chapitre | Titre | Exercices |
 | --- | --- | --- |
-| 1 | Qu'est-ce qu'un agent | 3 |
-| 2 | Les workflows avant les agents | 3 |
-| 3 | Les outils | 3 |
-| 4 | MCP | 3 |
-| 5 | Mémoire et planification | 3 |
-| 6 | Les frameworks | 3 |
-| 7 | Des agents sous contrôle | 3 |
-| 8 | Évaluer un agent | 4 |
+| 1 | Qu'est-ce qu'un agent | 5 |
+| 2 | Les workflows avant les agents | 4 |
+| 3 | Les outils | 5 |
+| 4 | MCP | 5 |
+| 5 | Mémoire et planification | 4 |
+| 6 | Plusieurs agents | 3 |
+| 7 | Les frameworks | 3 |
+| 8 | Des agents sous contrôle | 5 |
+| 9 | Évaluer un agent | 6 |
+| 10 | Des agents dans le monde réel | 3 |
 
 ## Notions, dans l'ordre
 
@@ -48,44 +50,66 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- |
 | 1 | `agent-definition` | Qu'est-ce qu'un agent | O1 |
 | 1 | `boucle-agent` | La boucle : raisonner, agir, observer | O1 |
+| 1 | `etat-agent` | L'état d'un agent : objectif, messages, résultats | O1 |
 | 1 | `agent-zero` | Un agent de zéro, en Python | O1 |
+| 1 | `arret-agent` | Savoir s'arrêter : la condition de fin | O1 |
 | 1 | `faut-il-agent` | Faut-il vraiment un agent ? | O1 |
 | 1 | `types-agents` | Des assistants aux agents autonomes | O1 |
 | 2 | `chainage` | Enchaîner des appels | O1 |
 | 2 | `aiguillage` | Aiguiller vers la bonne tâche | O1 |
 | 2 | `parallelisation` | Lancer des tâches en parallèle | O1 |
+| 2 | `orchestrateur-executants` | Un chef et des exécutants : orchestrateur et travailleurs | O1 |
 | 2 | `evaluateur-optimiseur` | Un modèle qui critique, un autre qui corrige | O1 |
 | 2 | `choisir-workflow` | Choisir le bon schéma | O1 |
 | 3 | `outils-agent` | Donner des outils à un agent | O2 |
 | 3 | `concevoir-outil` | Concevoir un bon outil | O2 |
 | 3 | `erreurs-outils` | Quand un outil échoue | O2 |
-| 3 | `agent-code` | Un agent qui écrit et exécute du code | O2 |
 | 3 | `outils-recherche` | Des outils de recherche : web et documents | O2 |
+| 3 | `outils-fichiers` | Lire et écrire des fichiers sans danger | O2 |
+| 3 | `outils-api` | Une API externe comme outil | O2 |
+| 3 | `agent-code` | Un agent qui écrit et exécute du code | O2 |
 | 4 | `mcp` | Le Model Context Protocol | O3 |
+| 4 | `serveurs-mcp-existants` | Utiliser des serveurs MCP existants | O3 |
 | 4 | `serveur-mcp` | Créer un serveur MCP | O3 |
 | 4 | `ressources-mcp` | Ressources et prompts dans MCP | O3 |
+| 4 | `inspecteur-mcp` | Tester un serveur MCP avec l'inspecteur | O3 |
 | 4 | `client-mcp` | Brancher un serveur MCP à un agent | O3 |
 | 4 | `transports-mcp` | Local ou distant : les transports MCP | O3 |
 | 5 | `memoire-travail` | La mémoire de travail | O4 |
+| 5 | `resumer-historique` | Résumer l'historique pour tenir dans le contexte | O4 |
 | 5 | `memoire-longue` | La mémoire longue | O4 |
 | 5 | `planification` | Planifier une tâche en étapes | O4 |
-| 5 | `multi-agents` | Plusieurs agents qui coopèrent | O4 |
+| 5 | `replanifier` | Changer de plan quand une étape échoue | O4 |
 | 5 | `reflexion` | Se relire et se corriger : la réflexion | O4 |
-| 6 | `frameworks-agents` | Les frameworks d'agents : smolagents, LangGraph et les autres | O1 |
-| 6 | `graphe-etats` | Un agent comme un graphe d'états | O4 |
-| 6 | `smolagents` | Un premier agent avec smolagents | O1 |
-| 6 | `langgraph` | Un agent avec LangGraph | O4 |
-| 6 | `choisir-framework` | Framework ou code maison ? | O1 |
-| 7 | `garde-fous` | Les garde-fous | O5 |
-| 7 | `permissions-agent` | Les permissions minimales | O5 |
-| 7 | `limiter-boucles` | Limiter les boucles et les coûts | O5 |
-| 7 | `humain-boucle` | Garder un humain dans la boucle | O5 |
-| 7 | `validation-actions` | Vérifier une action avant de l'exécuter | O5 |
-| 8 | `taux-reussite` | Mesurer le taux de réussite des tâches | O6 |
-| 8 | `trajectoires` | Analyser les trajectoires | O6 |
-| 8 | `observer-agent` | Observer un agent en action : les traces | O6 |
-| 8 | `scenarios` | Construire des scénarios de test | O6 |
-| 8 | `benchmarks-agents` | Les bancs d'essai d'agents | O6 |
+| 6 | `quand-multi-agents` | Quand plusieurs agents valent mieux qu'un | O4 |
+| 6 | `multi-agents` | Plusieurs agents qui coopèrent | O4 |
+| 6 | `roles-agents` | Répartir les rôles entre agents | O4 |
+| 6 | `communication-agents` | Faire communiquer des agents | O4 |
+| 6 | `protocoles-agents` | Les protocoles entre agents (A2A) | O4 |
+| 7 | `frameworks-agents` | Les frameworks d'agents : smolagents, LangGraph et les autres | O1 |
+| 7 | `graphe-etats` | Un agent comme un graphe d'états | O4 |
+| 7 | `smolagents` | Un premier agent avec smolagents | O1 |
+| 7 | `langgraph` | Un agent avec LangGraph | O4 |
+| 7 | `choisir-framework` | Framework ou code maison ? | O1 |
+| 8 | `garde-fous` | Les garde-fous | O5 |
+| 8 | `permissions-agent` | Les permissions minimales | O5 |
+| 8 | `validation-actions` | Vérifier une action avant de l'exécuter | O5 |
+| 8 | `bac-a-sable-agent` | Exécuter le code d'un agent dans un bac à sable | O5 |
+| 8 | `limiter-boucles` | Limiter les boucles et les coûts | O5 |
+| 8 | `humain-boucle` | Garder un humain dans la boucle | O5 |
+| 8 | `journal-actions` | Garder une trace de chaque action | O5 |
+| 9 | `taux-reussite` | Mesurer le taux de réussite des tâches | O6 |
+| 9 | `scenarios` | Construire des scénarios de test | O6 |
+| 9 | `trajectoires` | Analyser les trajectoires | O6 |
+| 9 | `evaluer-etapes` | Évaluer chaque étape, pas seulement le résultat | O6 |
+| 9 | `observer-agent` | Observer un agent en action : les traces | O6 |
+| 9 | `cout-agent` | Mesurer le coût et la durée d'une tâche | O6 |
+| 9 | `benchmarks-agents` | Les bancs d'essai d'agents | O6 |
+| 10 | `agents-navigateur` | Les agents qui utilisent un navigateur | O2 |
+| 10 | `agents-documents` | Un agent qui traite des documents de bout en bout | O1 |
+| 10 | `agents-messagerie` | Un agent sur WhatsApp ou par SMS | O1 |
+| 10 | `taches-longues` | Les tâches longues : reprendre là où l'agent s'était arrêté | O4 |
+| 10 | `deployer-agent` | Mettre un agent à la disposition des utilisateurs | O5 |
 
 ## Vocabulaire du module
 
@@ -100,6 +124,13 @@ mise_a_jour: 2026-11-25
 | multi-agents | A | `multi-agents` |
 | garde-fou (guardrail) | A | `garde-fous` |
 | trajectoire | B | `trajectoires` |
+| état (state) | A | `etat-agent` |
+| orchestrateur, exécutant (worker) | A | `orchestrateur-executants` |
+| inspecteur MCP | A | `inspecteur-mcp` |
+| replanification | B | `replanifier` |
+| A2A (protocole entre agents) | A | `protocoles-agents` |
+| bac à sable (sandbox) | A | `bac-a-sable-agent` |
+| agent de navigation (browser agent) | A | `agents-navigateur` |
 
 ## Fil rouge et ancrage local
 
@@ -111,15 +142,17 @@ mise_a_jour: 2026-11-25
 
 | Id | Titre | Objectif | Difficulté (1–3) | Livrable non testable ? |
 | --- | --- | --- | --- | --- |
-| 3.6-ex01 à ex03 | Qu'est-ce qu'un agent | O1 | 1 | non |
-| 3.6-ex04 à ex06 | Les workflows avant les agents | O1 | 1 | non |
-| 3.6-ex07 à ex09 | Les outils | O2 | 2 | non |
-| 3.6-ex10 à ex12 | MCP | O3 | 2 | non |
-| 3.6-ex13 à ex15 | Mémoire et planification | O4 | 2 | non |
-| 3.6-ex16 à ex18 | Les frameworks | O1, O4 | 2–3 | non |
-| 3.6-ex19 à ex21 | Des agents sous contrôle | O5 | 2–3 | non |
-| 3.6-ex22 à ex24 | Évaluer un agent | O6 | 2–3 | non |
-| 3.6-ex25 | Exercice clé : un agent qui consulte une API météo et une base de données pour conseiller un agriculteur, évalué sur 30 scénarios | O1, O2, O5, O6 | 3 | non |
+| 3.6-ex01 à ex05 | Qu'est-ce qu'un agent | O1 | 1 | non |
+| 3.6-ex06 à ex09 | Les workflows avant les agents | O1 | 1 | non |
+| 3.6-ex10 à ex14 | Les outils | O2 | 1 | non |
+| 3.6-ex15 à ex19 | MCP | O3 | 2 | non |
+| 3.6-ex20 à ex23 | Mémoire et planification | O4 | 2 | non |
+| 3.6-ex24 à ex26 | Plusieurs agents | O4 | 2 | non |
+| 3.6-ex27 à ex29 | Les frameworks | O1, O4 | 2–3 | non |
+| 3.6-ex30 à ex34 | Des agents sous contrôle | O5 | 2–3 | non |
+| 3.6-ex35 à ex39 | Évaluer un agent | O6 | 2–3 | non |
+| 3.6-ex40 | Exercice clé : un agent qui consulte une API météo et une base de données pour conseiller un agriculteur, évalué sur 30 scénarios | O1, O2, O5, O6 | 3 | non |
+| 3.6-ex41 à ex43 | Des agents dans le monde réel | O1, O2, O4, O5 | 2–3 | non |
 
 ## Ressources matérielles
 
