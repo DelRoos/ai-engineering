@@ -74,6 +74,24 @@ mise_a_jour: 2026-11-24
 | X.Y-ex01 | … | O1 | 1 | non |
 | X.Y-ex05 | Exercice clé : … | O3 | 3 | oui → GRILLE.md |
 
+## Épreuve de niveau expert
+
+<!-- CONSIGNE : facultative pour les étapes 0 à 2, attendue à partir de l'étape 3 (voir docs/guide-pedagogique.md § 5.3). Une tâche ouverte qui oblige à diagnostiquer, comparer et choisir, pas seulement à appliquer. Chaque méthode enseignée reçoit un statut : établie, coûteuse (expérience réduite et résultats documentés) ou expérimentale (avec son degré de validation). -->
+
+**Épreuve** : …
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Diagnostiquer | … |
+| Comparer | … |
+| Choisir | … |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| … | établie | autonome, en local |
+
 ## Ressources matérielles
 
 <!-- CONSIGNE : vérifier la compatibilité avec la machine minimale (AGENTS.md § 4). -->

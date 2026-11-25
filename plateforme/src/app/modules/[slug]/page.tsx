@@ -15,6 +15,7 @@ import {
   ListChecks,
   MapPin,
   SkipForward,
+  Target,
 } from "lucide-react";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
@@ -326,6 +327,61 @@ export default async function ModulePage({ params }: PageProps<"/modules/[slug]"
                   )}
                 </div>
               </section>
+
+              {/* Épreuve de niveau expert */}
+              {m.expert && (
+                <section aria-labelledby="titre-expert" className="pt-16 sm:pt-24">
+                  <h2 id="titre-expert" className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
+                    L&apos;épreuve de niveau expert
+                  </h2>
+                  <p className="mt-4 max-w-2xl leading-relaxed text-fg-muted">
+                    Au-delà de l&apos;exercice clé, une épreuve ouverte pour prouver que tu maîtrises le sujet&nbsp;: pas seulement
+                    l&apos;appliquer, mais diagnostiquer, comparer et choisir.
+                  </p>
+                  <article className="mt-8 rounded-3xl border border-line bg-surface p-6 sm:p-7">
+                    <Target className="size-7 text-accent" strokeWidth={1.75} aria-hidden="true" />
+                    <p className="mt-5 leading-relaxed text-fg">{m.expert.task}</p>
+                    <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-fg-subtle">Ce que l&apos;épreuve démontre</h3>
+                    <dl className="mt-3 grid gap-3 sm:grid-cols-2">
+                      {m.expert.levels.map((l) => (
+                        <div key={l.level} className="rounded-2xl border border-line p-4">
+                          <dt className="font-semibold text-fg">{l.level}</dt>
+                          <dd className="mt-1 text-sm leading-relaxed text-fg-muted">{l.proof}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </article>
+                  {m.expert.methods.length > 0 && (
+                    <div className="mt-8">
+                      <h3 className="text-xl font-bold text-fg">Le statut des méthodes enseignées</h3>
+                      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fg-muted">
+                        Ton PC de 8&nbsp;Go fixe la taille des expériences, pas le niveau des connaissances. Une méthode coûteuse
+                        s&apos;étudie par une expérience réduite et la lecture de résultats publiés.
+                      </p>
+                      <div className="mt-4 overflow-x-auto">
+                        <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+                          <thead>
+                            <tr className="border-b border-line text-fg-subtle">
+                              <th scope="col" className="py-3 pr-4 font-semibold">Méthode</th>
+                              <th scope="col" className="py-3 pr-4 font-semibold">Statut</th>
+                              <th scope="col" className="py-3 font-semibold">Pratique</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {m.expert.methods.map((x) => (
+                              <tr key={x.method} className="border-b border-line align-top">
+                                <td className="py-3 pr-4 font-medium text-fg">{x.method}</td>
+                                <td className="py-3 pr-4 text-fg-muted">{x.status}</td>
+                                <td className="py-3 text-fg-muted">{x.practice}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+                </section>
+              )}
 
               {/* Pour aller plus loin */}
               {m.resources.length > 0 && (

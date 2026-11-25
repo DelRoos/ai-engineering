@@ -160,6 +160,31 @@ Un exercice est un dossier `exercices/NN-nom/` (modèle : `templates/exercice/`)
 
 L'« exercice clé » du programme est le dernier exercice du module. Il reprend exactement la consigne du programme. S'il a un livrable non testable (rapport, vidéo, protocole de collecte), il a aussi une `GRILLE.md`.
 
+### 5.3 Épreuve de niveau expert
+
+L'exercice clé prouve qu'on sait appliquer. À partir de l'étape 3, chaque module a aussi une **épreuve de niveau expert** (section `## Épreuve de niveau expert` de la fiche) : une tâche ouverte, avec un livrable et une `GRILLE.md`, qui prouve qu'on sait raisonner sur le sujet.
+
+**Les niveaux.** L'épreuve dit quels niveaux elle démontre, et quelle preuve est attendue pour chacun.
+
+| Niveau | Ce que l'apprenant sait faire |
+| --- | --- |
+| Expliquer | Décrire le mécanisme d'une méthode et ses hypothèses |
+| Implémenter | La construire, de façon reproductible |
+| Diagnostiquer | Trouver pourquoi elle échoue sur un cas réel |
+| Comparer | La mettre face à d'autres méthodes, dans une expérience contrôlée (même budget, mêmes données) |
+| Choisir | Recommander une méthode pour une contrainte donnée, et justifier |
+| Maintenir | La faire vivre : mesures relancées, mises à jour, dérives repérées |
+
+**Le statut des méthodes.** Chaque méthode enseignée reçoit un statut, affiché sur la plateforme.
+
+| Statut | Ce que ça veut dire | Comment on la pratique |
+| --- | --- | --- |
+| établie | Validée, largement utilisée | En autonomie, en local |
+| coûteuse | Validée, mais trop gourmande pour un PC de 8 Go à pleine échelle | Expérience réduite (petit modèle, petit jeu, peu de pas) et lecture critique de résultats publiés, documentés dans le rendu |
+| récente ou expérimentale | Publiée, encore peu reproduite | Expérience réduite, en disant le degré de validation (une étude, plusieurs, reprise par des outils courants) |
+
+**La règle des 8 Go.** La contrainte de 8 Go de RAM sans GPU définit le **format des expériences**, jamais le **plafond des connaissances**. On enseigne les méthodes de pointe, même quand elles ne tournent pas en grand sur la machine de l'apprenant : on les étudie, on les reproduit en petit, on lit leurs résultats avec un regard critique.
+
 ---
 
 ## 6. Indices progressifs

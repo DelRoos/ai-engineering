@@ -48,6 +48,14 @@ export type Fiche = {
   filRouge: string;
   prerequisites: Voisin[];
   resources: Ressource[];
+  expert: Expert | null;
+};
+
+/** Épreuve de niveau expert : la tâche, les niveaux démontrés et le statut des méthodes enseignées. */
+export type Expert = {
+  task: string;
+  levels: { level: string; proof: string }[];
+  methods: { method: string; status: string; practice: string }[];
 };
 
 /** Typographie française : espace insécable avant « : ; ! ? » et à l'intérieur des guillemets. */
@@ -159,6 +167,19 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
 
   const slug = path.basename(folder).replace(/^\d+-/, "");
 
+  let expert: Expert | null = null;
+  const epreuve = s.get("Épreuve de niveau expert");
+  if (epreuve) {
+    const [levelsPart, methodsPart] = epreuve.split("**Statut des méthodes enseignées**");
+    const task = bullet(levelsPart.replace(/^\*\*Épreuve\*\* : /m, "- **Épreuve** : "), "Épreuve") ?? fail("« **Épreuve** : » absent de l'épreuve de niveau expert");
+    expert = {
+      task: typo(task),
+      levels: tableRows(levelsPart).map(([level, proof]) => ({ level, proof: typo(proof) })),
+      methods: tableRows(methodsPart).map(([method, status, practice]) => ({ method: typo(method), status: typo(status), practice: typo(practice) })),
+    };
+    if (expert.levels.length === 0) fail("tableau des niveaux démontrés vide dans l'épreuve de niveau expert");
+  }
+
   return {
     id,
     slug,
@@ -177,6 +198,7 @@ function readFiche(file: string, folder: string, etapeN: number): Fiche {
     filRouge: capitalize(typo(bullet(s.get("Fil rouge et ancrage local"), "Situation") ?? fail("« Situation » absente du fil rouge"))),
     prerequisites,
     resources,
+    expert,
   };
 }
 

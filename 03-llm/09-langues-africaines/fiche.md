@@ -23,11 +23,12 @@ mise_a_jour: 2026-11-25
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
 | O1 | Expliquer pourquoi les modèles échouent sur les langues peu dotées. | ex01 à ex03, qcm |
-| O2 | Trouver et évaluer les jeux de données et modèles existants. | ex04 à ex06, exercice clé (ex19), qcm |
+| O2 | Trouver et évaluer les jeux de données et modèles existants. | ex04 à ex06, exercice clé (ex27), qcm |
 | O3 | Traduire, classer et analyser des textes en langue locale. | ex07 à ex09, qcm |
-| O4 | Transcrire la parole en langue locale. | ex10 à ex12, qcm |
-| O5 | Améliorer un modèle avec peu de données. | ex13 à ex15, exercice clé (ex19), qcm |
-| O6 | Évaluer avec des métriques adaptées et des locuteurs natifs. | ex16 à ex18, exercice clé (ex19), qcm |
+| O4 | Transcrire la parole en langue locale. | ex10 à ex14, qcm |
+| O5 | Améliorer un modèle avec peu de données. | ex15 à ex17, exercice clé (ex27), qcm |
+| O6 | Évaluer avec des métriques adaptées et des locuteurs natifs. | ex22 à ex26, exercice clé (ex27), qcm |
+| O7 | Adapter un modèle à une langue peu dotée (tokenizer, transfert, variante, données synthétiques) et mesurer le gain face au modèle de départ. | ex18 à ex21, qcm |
 
 ## Chapitres
 
@@ -36,9 +37,10 @@ mise_a_jour: 2026-11-25
 | 1 | Le problème | 3 |
 | 2 | Les ressources | 3 |
 | 3 | Le texte | 3 |
-| 4 | La parole | 3 |
+| 4 | La parole | 5 |
 | 5 | Avec peu de données | 3 |
-| 6 | Évaluer | 4 |
+| 6 | Adapter un modèle à une langue | 4 |
+| 7 | Évaluer | 6 |
 
 ## Notions, dans l'ordre
 
@@ -61,19 +63,29 @@ mise_a_jour: 2026-11-25
 | 3 | `corriger-orthographe` | Corriger et uniformiser l'écriture | O3 |
 | 4 | `reconnaissance-vocale` | La reconnaissance vocale | O4 |
 | 4 | `whisper-langues` | Whisper et les langues africaines | O4 |
+| 4 | `accents-parole` | Les accents africains face à la reconnaissance vocale : AfriVox | O4 |
+| 4 | `alternance-parole` | Quand on mélange les langues à l'oral : AfriSwitch | O4 |
 | 4 | `synthese-langues` | Faire parler une machine en langue locale | O4 |
 | 4 | `donnees-vocales` | Constituer un corpus de voix | O4 |
 | 4 | `adapter-whisper` | Adapter Whisper à une langue | O4 |
 | 5 | `peu-exemples` | Apprendre avec peu d'exemples | O5 |
 | 5 | `retro-traduction` | Multiplier les données : la rétro-traduction | O5 |
-| 5 | `adapter-langue` | Adapter un modèle à une langue locale | O5 |
 | 5 | `collecte-communautaire` | Collecter des données avec la communauté | O5 |
+| 5 | `licences-donnees-langues` | Les licences des données de langues : ce qu'on peut réutiliser | O5 |
 | 5 | `souverainete-donnees` | À qui appartiennent les données d'une langue ? | O5 |
-| 6 | `metriques-traduction` | Mesurer une traduction : BLEU et chrF | O6 |
-| 6 | `wer-cer` | Mesurer une transcription : WER et CER | O6 |
-| 6 | `locuteurs-natifs` | Évaluer avec des locuteurs natifs | O6 |
-| 6 | `eval-humaine-langues` | Organiser une évaluation avec une communauté | O6 |
-| 6 | `biais-langues-eval` | Les écarts entre langues et entre variantes | O6 |
+| 6 | `mesurer-tokenizer` | Mesurer ce qu'une langue coûte à un tokenizer : la fertilité | O7 |
+| 6 | `etendre-tokenizer` | Étendre le vocabulaire d'un tokenizer | O7 |
+| 6 | `transfert-langues` | Profiter d'une langue proche ou dominante : le transfert | O7 |
+| 6 | `adapter-langue` | Adapter un modèle à une langue locale | O7 |
+| 6 | `adapter-domaine-variante` | Adapter à une variante régionale ou à un domaine | O7 |
+| 6 | `donnees-paralleles-synth` | Des données parallèles synthétiques, et leurs limites | O7 |
+| 7 | `metriques-traduction` | Mesurer une traduction : BLEU et chrF | O6 |
+| 7 | `wer-cer` | Mesurer une transcription : WER et CER | O6 |
+| 7 | `evaluation-multitache` | Évaluer sur beaucoup de tâches et de langues : AfroBench | O6 |
+| 7 | `couverture-vs-reel` | « Couvre la langue » ne veut pas dire « utilisable » | O6 |
+| 7 | `locuteurs-natifs` | Évaluer avec des locuteurs natifs | O6 |
+| 7 | `eval-humaine-langues` | Organiser une évaluation avec une communauté | O6 |
+| 7 | `biais-langues-eval` | Les écarts entre langues et entre variantes | O6 |
 
 ## Vocabulaire du module
 
@@ -86,6 +98,10 @@ mise_a_jour: 2026-11-25
 | WER (taux d'erreur de mots) | A | `whisper-langues` |
 | BLEU, chrF | A | `metriques-traduction` |
 | locuteur natif | B | `locuteurs-natifs` |
+| fertilité d'un tokenizer | A | `mesurer-tokenizer` |
+| transfert entre langues (cross-lingual transfer) | A | `transfert-langues` |
+| AfroBench | A | `evaluation-multitache` |
+| AfriVox, AfriSwitch | A | `accents-parole` |
 
 ## Fil rouge et ancrage local
 
@@ -100,10 +116,32 @@ mise_a_jour: 2026-11-25
 | 3.9-ex01 à ex03 | Le problème | O1 | 1 | non |
 | 3.9-ex04 à ex06 | Les ressources | O2 | 1 | non |
 | 3.9-ex07 à ex09 | Le texte | O3 | 2 | non |
-| 3.9-ex10 à ex12 | La parole | O4 | 2 | non |
-| 3.9-ex13 à ex15 | Avec peu de données | O5 | 2–3 | non |
-| 3.9-ex16 à ex18 | Évaluer | O6 | 2–3 | non |
-| 3.9-ex19 | Exercice clé : améliorer et mesurer un modèle sur une langue locale | O2, O5, O6 | 3 | oui → GRILLE.md (protocole d'évaluation avec les locuteurs) |
+| 3.9-ex10 à ex14 | La parole | O4 | 2 | non |
+| 3.9-ex15 à ex17 | Avec peu de données | O5 | 2–3 | non |
+| 3.9-ex18 à ex21 | Adapter un modèle à une langue | O7 | 2–3 | non |
+| 3.9-ex22 à ex26 | Évaluer | O6 | 2–3 | non |
+| 3.9-ex27 | Exercice clé : améliorer et mesurer un modèle sur une langue locale | O2, O5, O6 | 3 | oui → GRILLE.md (protocole d'évaluation avec les locuteurs) |
+
+## Épreuve de niveau expert
+
+**Épreuve** : pour une langue locale choisie, mesurer la fertilité du tokenizer et la qualité de départ d'un modèle ouvert, l'adapter par une seule intervention (transfert, extension du vocabulaire ou données synthétiques), puis prouver le gain sur un jeu vérifié par des locuteurs natifs, licences des données documentées.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Diagnostiquer | Où et pourquoi le modèle de départ échoue sur la langue |
+| Implémenter | L'adaptation, relançable, avec données et licences tracées |
+| Comparer | Avant et après, métriques automatiques et jugement des locuteurs |
+| Maintenir | Le jeu d'évaluation publié pour que d'autres puissent mesurer |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| Métriques chrF, WER, CER ; évaluation par des locuteurs | établie | autonome |
+| Rétro-traduction, transfert depuis une langue proche | établie | autonome sur un petit corpus |
+| Extension du vocabulaire d'un tokenizer | établie, coûteuse | expérience réduite sur un très petit modèle |
+| Adapter Whisper à une langue | établie, coûteuse | expérience réduite, Colab gratuit |
+| Données parallèles synthétiques pour langues peu dotées | expérimentale | expérience réduite, validation par des locuteurs obligatoire |
 
 ## Ressources matérielles
 
@@ -126,6 +164,9 @@ Respecter les communautés : consentement des locuteurs, crédit aux contributeu
 | [MasakhaNER](https://github.com/masakhane-io/masakhane-ner) | anglais | jeu de données | licences variables | La reconnaissance d'entités dans des langues africaines. |
 | [AfriSenti](https://github.com/afrisenti-semeval/afrisent-semeval-2023) | anglais | jeu de données | licences variables | Des textes annotés en sentiment dans 14 langues. |
 | [Lacuna Fund](https://lacunafund.org/) | anglais | fonds et jeux de données | accès libre | Des jeux de données financés pour les langues peu dotées. |
+| [AfroBench](https://aclanthology.org/2025.findings-acl.976/) | anglais | article | accès libre | Mesurer les LLM sur de nombreuses langues et tâches africaines. |
+| [AfriVox](https://aclanthology.org/2026.eacl-long.122/) | anglais | article | accès libre | La reconnaissance vocale face aux accents africains. |
+| [AfriSwitch](https://arxiv.org/abs/2608.26434) | anglais | article | accès libre | L'alternance codique à l'oral, mesurée. |
 
 ## Circuit
 

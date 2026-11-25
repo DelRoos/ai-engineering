@@ -22,11 +22,12 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex03, exercice clé (ex21), ex29 à ex31, qcm |
-| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex06, ex07 à ex10, exercice clé (ex21), ex22 à ex25, ex29 à ex31, qcm |
-| O3 | Améliorer la recherche par reformulation et reranking. | ex11 à ex15, exercice clé (ex21), ex22 à ex25, qcm |
-| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex16 à ex20, exercice clé (ex21), ex22 à ex25, ex29 à ex31, qcm |
-| O5 | Construire un RAG multilingue. | ex26 à ex28, qcm |
+| O1 | Expliquer le fonctionnement d'un RAG et ses points faibles. | ex01 à ex03, exercice clé (ex21), ex37 à ex39, qcm |
+| O2 | Préparer des documents, y compris PDF et tableaux, et les découper. | ex04 à ex06, ex07 à ex10, exercice clé (ex21), ex22 à ex24, ex37 à ex39, qcm |
+| O3 | Améliorer la recherche par reformulation et reranking. | ex11 à ex15, exercice clé (ex21), qcm |
+| O4 | Générer des réponses qui citent leurs sources et refusent hors sujet. | ex16 à ex20, exercice clé (ex21), ex22 à ex24, ex37 à ex39, qcm |
+| O5 | Construire un RAG multilingue. | ex34 à ex36, qcm |
+| O6 | Choisir une architecture RAG avancée (hiérarchique, adaptative, correctrice, multi-sauts, visuelle, graphe) selon le type de question, et prouver son apport face au RAG simple. | ex25 à ex29, ex30 à ex33, qcm |
 
 ## Chapitres
 
@@ -37,9 +38,11 @@ mise_a_jour: 2026-11-25
 | 3 | Découper et indexer | 4 |
 | 4 | Mieux chercher | 5 |
 | 5 | Bien répondre | 6 |
-| 6 | Le RAG avancé | 4 |
-| 7 | Plusieurs langues | 3 |
-| 8 | Un RAG en service | 3 |
+| 6 | Le RAG avancé | 3 |
+| 7 | Les familles d'architectures RAG | 5 |
+| 8 | GraphRAG en profondeur | 4 |
+| 9 | Plusieurs langues | 3 |
+| 10 | Un RAG en service | 3 |
 
 ## Notions, dans l'ordre
 
@@ -77,20 +80,33 @@ mise_a_jour: 2026-11-25
 | 5 | `forme-reponse` | Répondre sous la bonne forme : courte, détaillée, en liste | O4 |
 | 6 | `rag-conversation` | Un RAG qui suit la conversation | O4 |
 | 6 | `texte-vers-sql` | Interroger des chiffres : du texte au SQL | O4 |
-| 6 | `graph-rag` | Relier les informations : notions de GraphRAG | O3 |
 | 6 | `rag-multimodal` | Des documents avec images et schémas | O2 |
 | 6 | `droits-acces-rag` | Chacun ne voit que ses documents | O4 |
 | 6 | `rag-agentique` | Un RAG qui décide quand et quoi chercher | O4 |
-| 7 | `rag-multilingue` | Un RAG multilingue | O5 |
-| 7 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
-| 7 | `embeddings-multilingues-rag` | Des embeddings qui relient les langues | O5 |
-| 7 | `documents-bilingues` | Des documents en français et en anglais | O5 |
-| 7 | `repondre-langue-question` | Répondre dans la langue de la question | O5 |
-| 8 | `latence-cout-rag` | Ce que coûte une question : latence et argent | O1 |
-| 8 | `cache-rag` | Mettre en cache les recherches et les réponses | O1 |
-| 8 | `fraicheur-index` | Des documents qui changent : garder l'index à jour | O2 |
-| 8 | `questions-sans-reponse` | Apprendre des questions restées sans réponse | O4 |
-| 8 | `documents-pieges` | Les documents piégés : l'injection indirecte dans un RAG | O4 |
+| 7 | `rag-hierarchique` | Résumer par niveaux pour les questions larges : RAPTOR | O6 |
+| 7 | `late-chunking` | Encoder le document avant de découper : le late chunking | O6 |
+| 7 | `rag-adaptatif` | Décider de chercher et critiquer sa réponse : Self-RAG | O6 |
+| 7 | `rag-correctif` | Juger les passages trouvés et corriger la recherche : CRAG | O6 |
+| 7 | `multi-sauts` | Les questions en plusieurs sauts | O6 |
+| 7 | `pages-visuelles` | Chercher directement dans les images de pages : ColPali | O6 |
+| 7 | `besoins-architectures` | Ce que chaque architecture demande : entraînement, appels, index | O6 |
+| 7 | `partir-du-simple` | Partir du RAG simple, ne changer qu'avec une mesure | O6 |
+| 8 | `graph-rag` | Quand un graphe apporte quelque chose | O6 |
+| 8 | `extraire-graphe` | Extraire entités et relations avec un LLM | O6 |
+| 8 | `resumes-communautes` | Les communautés et leurs résumés : répondre aux questions globales | O6 |
+| 8 | `erreurs-graphe` | Les erreurs d'extraction et leur propagation | O6 |
+| 8 | `maj-graphe` | Mettre le graphe à jour quand les documents changent | O6 |
+| 8 | `cout-graphrag` | Le coût d'indexation d'un GraphRAG, comparé au RAG simple | O6 |
+| 9 | `rag-multilingue` | Un RAG multilingue | O5 |
+| 9 | `traduire-ou-pas` | Traduire la question ou les documents ? | O5 |
+| 9 | `embeddings-multilingues-rag` | Des embeddings qui relient les langues | O5 |
+| 9 | `documents-bilingues` | Des documents en français et en anglais | O5 |
+| 9 | `repondre-langue-question` | Répondre dans la langue de la question | O5 |
+| 10 | `latence-cout-rag` | Ce que coûte une question : latence et argent | O1 |
+| 10 | `cache-rag` | Mettre en cache les recherches et les réponses | O1 |
+| 10 | `fraicheur-index` | Des documents qui changent : garder l'index à jour | O2 |
+| 10 | `questions-sans-reponse` | Apprendre des questions restées sans réponse | O4 |
+| 10 | `documents-pieges` | Les documents piégés : l'injection indirecte dans un RAG | O4 |
 
 ## Vocabulaire du module
 
@@ -110,6 +126,12 @@ mise_a_jour: 2026-11-25
 | GraphRAG | A | `graph-rag` |
 | texte vers SQL (text-to-SQL) | A | `texte-vers-sql` |
 | injection indirecte | B | `documents-pieges` |
+| RAPTOR (RAG hiérarchique) | A | `rag-hierarchique` |
+| late chunking | A | `late-chunking` |
+| Self-RAG, CRAG | A | `rag-adaptatif` |
+| question multi-sauts (multi-hop) | A | `multi-sauts` |
+| ColPali | A | `pages-visuelles` |
+| communauté (graphe), résumé de communauté | B | `resumes-communautes` |
 
 ## Fil rouge et ancrage local
 
@@ -123,13 +145,36 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 3.4-ex01 à ex03 | Le principe | O1 | 1 | non |
 | 3.4-ex04 à ex06 | Extraire le texte | O2 | 1 | non |
-| 3.4-ex07 à ex10 | Découper et indexer | O2 | 2 | non |
+| 3.4-ex07 à ex10 | Découper et indexer | O2 | 1 | non |
 | 3.4-ex11 à ex15 | Mieux chercher | O3 | 2 | non |
 | 3.4-ex16 à ex20 | Bien répondre | O4 | 2 | non |
 | 3.4-ex21 | Exercice clé : un assistant qui cite ses sources et refuse de répondre hors sujet | O1 à O4 | 3 | non |
-| 3.4-ex22 à ex25 | Le RAG avancé | O2, O3, O4 | 2–3 | non |
-| 3.4-ex26 à ex28 | Plusieurs langues | O5 | 2–3 | non |
-| 3.4-ex29 à ex31 | Un RAG en service | O1, O2, O4 | 2–3 | non |
+| 3.4-ex22 à ex24 | Le RAG avancé | O2, O4 | 2 | non |
+| 3.4-ex25 à ex29 | Les familles d'architectures RAG | O6 | 2–3 | non |
+| 3.4-ex30 à ex33 | GraphRAG en profondeur | O6 | 2–3 | non |
+| 3.4-ex34 à ex36 | Plusieurs langues | O5 | 2–3 | non |
+| 3.4-ex37 à ex39 | Un RAG en service | O1, O2, O4 | 2–3 | non |
+
+## Épreuve de niveau expert
+
+**Épreuve** : sur un même corpus, comparer le RAG simple, un RAG correctif et un GraphRAG sur trois types de questions (factuelles, multi-sauts, globales), puis montrer où chaque architecture gagne, où elle perd et ce qu'elle coûte à l'indexation et à chaque question.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Implémenter | Les trois RAG sur le même corpus, relançables |
+| Diagnostiquer | Chaque échec rattaché à son étape : extraction, recherche, génération, graphe |
+| Comparer | Un tableau par type de question, avec coûts d'indexation et par question |
+| Choisir | L'architecture retenue, ou le refus d'en changer, justifié par la mesure |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| RAG simple, hybride, reranking, citations | établie | autonome, en local |
+| CRAG, multi-sauts, late chunking | établie | autonome sur un petit corpus |
+| RAPTOR, GraphRAG | établie, coûteuse à l'indexation | expérience réduite sur quelques dizaines de documents |
+| Self-RAG (modèle entraîné à critiquer) | coûteuse | analyse des résultats publiés, imitation par prompts |
+| ColPali | établie, coûteuse en mémoire | expérience réduite sur quelques pages |
 
 ## Ressources matérielles
 
@@ -152,6 +197,12 @@ Point de contrôle du projet 3 : refus des questions hors périmètre, tests d'i
 | [Patterns for Building LLM-based Systems (Eugene Yan)](https://eugeneyan.com/writing/llm-patterns/) | anglais | article | accès libre | Les grands schémas d'un système à base de LLM. |
 | [Documentation de LlamaIndex](https://docs.llamaindex.ai/) | anglais | documentation | MIT | Un framework pour construire des RAG. |
 | [GraphRAG (Microsoft)](https://microsoft.github.io/graphrag/) | anglais | documentation | MIT | Relier les informations dans un graphe. |
+| [RAPTOR](https://arxiv.org/abs/2401.18059) | anglais | article | accès libre | Le RAG par arbre de résumés. |
+| [Late Chunking](https://arxiv.org/abs/2409.04701) | anglais | article | accès libre | Garder le contexte du document dans chaque morceau. |
+| [Self-RAG](https://arxiv.org/abs/2310.11511) | anglais | article | accès libre | Un modèle qui décide de chercher et critique sa réponse. |
+| [Corrective RAG (CRAG)](https://arxiv.org/abs/2401.15884) | anglais | article | accès libre | Évaluer les passages et corriger la recherche. |
+| [ColPali](https://arxiv.org/abs/2407.01449) | anglais | article | accès libre | La recherche sur des images de pages. |
+| [From Local to Global: A Graph RAG Approach](https://arxiv.org/abs/2404.16130) | anglais | article | accès libre | L'article fondateur de GraphRAG et ses questions globales. |
 
 ## Circuit
 

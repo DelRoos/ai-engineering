@@ -22,11 +22,12 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex05, exercice clé (ex24), ex25 à ex27, qcm |
+| O1 | Construire un jeu de test représentatif, avec ses cas difficiles. | ex01 à ex05, exercice clé (ex24), ex30 à ex32, qcm |
 | O2 | Mesurer la fidélité et la pertinence des réponses. | ex06 à ex10, exercice clé (ex24), qcm |
 | O3 | Utiliser un LLM comme juge en connaissant ses biais. | ex11 à ex15, qcm |
-| O4 | Organiser une évaluation humaine. | ex16 à ex19, ex25 à ex27, qcm |
-| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex20 à ex23, exercice clé (ex24), ex25 à ex27, qcm |
+| O4 | Organiser une évaluation humaine. | ex16 à ex19, ex30 à ex32, qcm |
+| O5 | Automatiser des tests de non-régression et comparer des variantes. | ex20 à ex23, exercice clé (ex24), ex30 à ex32, qcm |
+| O6 | Prouver qu'une amélioration vient bien du changement annoncé : évaluation par affirmation, ablation, contrefactuel, budget fixé, méta-évaluation. | ex25 à ex29, qcm |
 
 ## Chapitres
 
@@ -37,7 +38,8 @@ mise_a_jour: 2026-11-25
 | 3 | Le LLM juge | 5 |
 | 4 | Les humains | 4 |
 | 5 | Ne pas régresser | 5 |
-| 6 | Évaluer en production | 3 |
+| 6 | Le diagnostic scientifique | 5 |
+| 7 | Évaluer en production | 3 |
 
 ## Notions, dans l'ordre
 
@@ -78,11 +80,19 @@ mise_a_jour: 2026-11-25
 | 5 | `cout-latence-eval` | Mesurer aussi le coût et la latence | O5 |
 | 5 | `automatiser-eval` | Automatiser l'évaluation | O5 |
 | 5 | `presenter-resultats-eval` | Présenter les résultats d'une évaluation | O5 |
-| 6 | `echantillon-production` | Évaluer un échantillon des vraies conversations | O5 |
-| 6 | `signaux-implicites` | Les signaux implicites : reformulations et abandons | O4 |
-| 6 | `test-ab-llm` | Tester une nouvelle version sur une partie des utilisateurs | O5 |
-| 6 | `boucle-amelioration` | De l'erreur repérée au jeu de test : la boucle d'amélioration | O1 |
-| 6 | `qualite-dans-le-temps` | Surveiller la qualité dans le temps | O5 |
+| 6 | `affirmations` | Évaluer affirmation par affirmation | O6 |
+| 6 | `ragchecker` | Diagnostiquer un RAG étape par étape : RAGChecker | O6 |
+| 6 | `ablation` | L'ablation : retirer une pièce pour mesurer son rôle | O6 |
+| 6 | `contrefactuel` | Les tests contrefactuels : changer un détail, observer la réponse | O6 |
+| 6 | `budget-fixe` | Comparer à budget fixé : même coût, même nombre d'appels | O6 |
+| 6 | `contamination-tests` | Les tests contaminés : quand le modèle a déjà vu les questions | O6 |
+| 6 | `meta-evaluation` | Évaluer l'évaluation : la méta-évaluation | O6 |
+| 6 | `attribuer-progres` | Attribuer un progrès à sa vraie cause | O6 |
+| 7 | `echantillon-production` | Évaluer un échantillon des vraies conversations | O5 |
+| 7 | `signaux-implicites` | Les signaux implicites : reformulations et abandons | O4 |
+| 7 | `test-ab-llm` | Tester une nouvelle version sur une partie des utilisateurs | O5 |
+| 7 | `boucle-amelioration` | De l'erreur repérée au jeu de test : la boucle d'amélioration | O1 |
+| 7 | `qualite-dans-le-temps` | Surveiller la qualité dans le temps | O5 |
 
 ## Vocabulaire du module
 
@@ -100,6 +110,11 @@ mise_a_jour: 2026-11-25
 | réponse de référence (ground truth) | A | `juge-reference` |
 | signal implicite | B | `signaux-implicites` |
 | boucle d'amélioration (data flywheel) | A | `boucle-amelioration` |
+| évaluation par affirmation (claim-level) | A | `affirmations` |
+| ablation | A | `ablation` |
+| test contrefactuel | A | `contrefactuel` |
+| contamination (des données de test) | A | `contamination-tests` |
+| méta-évaluation | A | `meta-evaluation` |
 
 ## Fil rouge et ancrage local
 
@@ -117,7 +132,28 @@ mise_a_jour: 2026-11-25
 | 3.5-ex16 à ex19 | Les humains | O4 | 2 | non |
 | 3.5-ex20 à ex23 | Ne pas régresser | O5 | 2–3 | non |
 | 3.5-ex24 | Exercice clé : un jeu d'évaluation de 50 questions, et la mesure de 3 variantes du RAG | O1, O2, O5 | 3 | oui → GRILLE.md (analyse des résultats) |
-| 3.5-ex25 à ex27 | Évaluer en production | O1, O4, O5 | 2–3 | non |
+| 3.5-ex25 à ex29 | Le diagnostic scientifique | O6 | 2–3 | non |
+| 3.5-ex30 à ex32 | Évaluer en production | O1, O4, O5 | 2–3 | non |
+
+## Épreuve de niveau expert
+
+**Épreuve** : une variante de ton RAG semble meilleure de quelques points. Montrer si l'amélioration survit au contrôle du protocole : même budget, ablation de chaque changement, intervalle de confiance, vérification du juge contre des annotations humaines.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Diagnostiquer | Les erreurs classées par affirmation et par étape |
+| Comparer | Une comparaison à budget fixé, avec intervalle de confiance |
+| Choisir | Une conclusion qui dit ce que la mesure permet d'affirmer, et rien de plus |
+| Maintenir | Le protocole automatisé, relancé à chaque version |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| Jeu de test, vérifications par code, non-régression | établie | autonome |
+| LLM juge calibré sur des annotations humaines | établie | autonome avec un juge local |
+| Évaluation par affirmation, ablation, contrefactuel | établie | autonome sur un petit jeu |
+| Méta-évaluation d'un juge ou d'une métrique | établie | autonome, quelques dizaines d'annotations |
 
 ## Ressources matérielles
 
@@ -138,6 +174,8 @@ Le jeu de test inclut des tentatives d'injection et des questions hors périmèt
 | [Your AI Product Needs Evals (Hamel Husain)](https://hamel.dev/blog/posts/evals/) | anglais | article | accès libre | Une méthode concrète pour évaluer un produit. |
 | [Documentation de Ragas](https://docs.ragas.io/) | anglais | documentation | Apache 2.0 | Des métriques prêtes pour évaluer un RAG. |
 | [Patterns for Building LLM-based Systems (Eugene Yan)](https://eugeneyan.com/writing/llm-patterns/) | anglais | article | accès libre | La partie « Evals » et les retours utilisateurs. |
+| [RAGChecker](https://arxiv.org/abs/2408.08067) | anglais | article | accès libre | Des métriques par affirmation qui séparent recherche et génération. |
+| [Test-Time Scaling in Reasoning LLMs (2026)](https://arxiv.org/abs/2608.04001) | anglais | article | accès libre | Un exemple de protocole qui compare des méthodes à budget égal. |
 
 ## Circuit
 

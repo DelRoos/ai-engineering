@@ -22,11 +22,12 @@ mise_a_jour: 2026-11-25
 
 | Id | À la fin, l'apprenant sait… | Évalué par |
 | --- | --- | --- |
-| O1 | Écrire des instructions claires et vérifiables. | ex01 à ex05, ex11 à ex15, exercice clé (ex25), qcm |
+| O1 | Écrire des instructions claires et vérifiables. | ex01 à ex05, ex11 à ex15, exercice clé (ex27), qcm |
 | O2 | Guider un modèle avec des exemples et un raisonnement étape par étape. | ex06 à ex10, qcm |
-| O3 | Gérer le contexte d'une conversation. | ex16 à ex19, qcm |
-| O4 | Obtenir des sorties JSON validées avec Pydantic. | ex20 à ex24, exercice clé (ex25), qcm |
-| O5 | Faire appeler des fonctions par un modèle. | ex26 à ex29, qcm |
+| O3 | Gérer le contexte d'une conversation et composer le contexte d'un appel (sources, ordre, budget, compaction). | ex16 à ex18, ex19 à ex22, qcm |
+| O4 | Obtenir des sorties JSON validées avec Pydantic ou contraintes pendant la génération, et choisir entre les deux. | ex23 à ex26, exercice clé (ex27), ex28 à ex30, qcm |
+| O5 | Faire appeler des fonctions par un modèle. | ex31 à ex34, qcm |
+| O6 | Optimiser automatiquement un prompt à partir d'une métrique et prouver que le gain tient sur des données nouvelles. | ex35 à ex38, qcm |
 
 ## Chapitres
 
@@ -35,9 +36,12 @@ mise_a_jour: 2026-11-25
 | 1 | Bien demander | 5 |
 | 2 | Exemples et raisonnement | 5 |
 | 3 | Les tâches courantes | 5 |
-| 4 | Le contexte | 4 |
-| 5 | Des sorties structurées | 6 |
-| 6 | Appeler des fonctions | 4 |
+| 4 | La conversation | 3 |
+| 5 | Le context engineering | 4 |
+| 6 | Des sorties structurées | 5 |
+| 7 | Contraindre la génération | 3 |
+| 8 | Appeler des fonctions | 4 |
+| 9 | Optimiser les prompts automatiquement | 4 |
 
 ## Notions, dans l'ordre
 
@@ -67,25 +71,39 @@ mise_a_jour: 2026-11-25
 | 3 | `prompt-questions-texte` | Répondre à des questions sur un texte fourni | O1 |
 | 3 | `prompt-code` | Faire écrire du code et des requêtes SQL | O1 |
 | 4 | `conversation` | Une conversation : l'historique des messages | O3 |
-| 4 | `contexte-deborde` | Quand le contexte déborde : résumer et trier | O3 |
 | 4 | `gabarits` | Les gabarits de prompts | O3 |
-| 4 | `ordre-contexte` | L'ordre compte : où placer les informations | O3 |
 | 4 | `memoire-conversation` | Garder une mémoire de la conversation | O3 |
+| 4 | `contexte-deborde` | Quand le contexte déborde : résumer et trier | O3 |
 | 4 | `cache-prompt` | Réutiliser un long début de prompt : le cache de prompt | O3 |
-| 5 | `json-llm` | Demander du JSON | O4 |
-| 5 | `pydantic` | Valider avec Pydantic | O4 |
-| 5 | `valeurs-autorisees` | Des valeurs autorisées : listes fermées et contraintes | O4 |
-| 5 | `schemas-complexes` | Des schémas imbriqués et des listes | O4 |
-| 5 | `reparer-sortie` | Quand la sortie est invalide : réessayer et réparer | O4 |
-| 5 | `generation-contrainte` | Forcer le format : la génération contrainte | O4 |
-| 5 | `sortie-progressive` | Lire une sortie structurée au fil de l'eau | O4 |
-| 5 | `extraire-documents` | Extraire des données de documents | O4 |
-| 6 | `function-calling` | Le function calling | O5 |
-| 6 | `schema-outil` | Décrire un outil avec un schéma | O5 |
-| 6 | `boucle-outils` | La boucle complète : appel, exécution, résultat renvoyé au modèle | O5 |
-| 6 | `plusieurs-outils` | Plusieurs outils et des appels en parallèle | O5 |
-| 6 | `valider-arguments` | Valider les arguments avant d'exécuter | O5 |
-| 6 | `erreur-outil` | Renvoyer une erreur d'outil au modèle | O5 |
+| 5 | `context-engineering` | Du prompt au contexte : le context engineering | O3 |
+| 5 | `composer-contexte` | Composer le contexte : consignes, documents, outils, mémoire, historique | O3 |
+| 5 | `ordre-contexte` | L'ordre compte : où placer les informations | O3 |
+| 5 | `budget-contexte` | Un budget de tokens pour chaque partie du contexte | O3 |
+| 5 | `exemples-dynamiques` | Choisir les exemples selon la demande | O3 |
+| 5 | `compacter-contexte` | Compacter un contexte long sans perdre l'essentiel | O3 |
+| 6 | `json-llm` | Demander du JSON | O4 |
+| 6 | `pydantic` | Valider avec Pydantic | O4 |
+| 6 | `valeurs-autorisees` | Des valeurs autorisées : listes fermées et contraintes | O4 |
+| 6 | `schemas-complexes` | Des schémas imbriqués et des listes | O4 |
+| 6 | `reparer-sortie` | Quand la sortie est invalide : réessayer et réparer | O4 |
+| 6 | `extraire-documents` | Extraire des données de documents | O4 |
+| 7 | `generation-contrainte` | Forcer le format : la génération contrainte | O4 |
+| 7 | `grammaires` | Contraindre avec une grammaire ou une expression régulière | O4 |
+| 7 | `valider-ou-contraindre` | Valider après coup ou contraindre pendant : choisir | O4 |
+| 7 | `sortie-progressive` | Lire une sortie structurée au fil de l'eau | O4 |
+| 7 | `contraintes-qualite` | Quand la contrainte dégrade la réponse | O4 |
+| 8 | `function-calling` | Le function calling | O5 |
+| 8 | `schema-outil` | Décrire un outil avec un schéma | O5 |
+| 8 | `boucle-outils` | La boucle complète : appel, exécution, résultat renvoyé au modèle | O5 |
+| 8 | `plusieurs-outils` | Plusieurs outils et des appels en parallèle | O5 |
+| 8 | `valider-arguments` | Valider les arguments avant d'exécuter | O5 |
+| 8 | `erreur-outil` | Renvoyer une erreur d'outil au modèle | O5 |
+| 9 | `optimisation-auto` | Optimiser un prompt à partir d'exemples et d'une métrique | O6 |
+| 9 | `dspy` | Programmer plutôt qu'écrire des prompts : DSPy | O6 |
+| 9 | `optimiseurs-instructions` | Chercher les instructions et les exemples : MIPROv2 | O6 |
+| 9 | `optimiseurs-reflexifs` | Faire réfléchir le modèle sur ses erreurs : GEPA | O6 |
+| 9 | `surapprentissage-prompt` | Un prompt optimisé peut sur-apprendre : jeux de développement et de test | O6 |
+| 9 | `manuel-ou-auto` | Écrire à la main ou optimiser : coût et bénéfice | O6 |
 
 ## Vocabulaire du module
 
@@ -104,6 +122,12 @@ mise_a_jour: 2026-11-25
 | cache de prompt (prompt caching) | A | `cache-prompt` |
 | énumération (enum) | A | `valeurs-autorisees` |
 | appel d'outil, résultat d'outil (tool result) | A | `boucle-outils` |
+| context engineering | A | `context-engineering` |
+| compaction du contexte | A | `compacter-contexte` |
+| grammaire (génération contrainte) | B | `grammaires` |
+| optimisation de prompts | A | `optimisation-auto` |
+| DSPy, signature, module, optimiseur | A | `dspy` |
+| MIPROv2, GEPA | A | `optimiseurs-instructions` |
 
 ## Fil rouge et ancrage local
 
@@ -117,11 +141,34 @@ mise_a_jour: 2026-11-25
 | --- | --- | --- | --- | --- |
 | 3.2-ex01 à ex05 | Bien demander | O1 | 1 | non |
 | 3.2-ex06 à ex10 | Exemples et raisonnement | O2 | 1 | non |
-| 3.2-ex11 à ex15 | Les tâches courantes | O1 | 2 | non |
-| 3.2-ex16 à ex19 | Le contexte | O3 | 2 | non |
-| 3.2-ex20 à ex24 | Des sorties structurées | O4 | 2–3 | non |
-| 3.2-ex25 | Exercice clé : extraire des données structurées de 100 factures ou reçus | O1, O4 | 3 | non |
-| 3.2-ex26 à ex29 | Appeler des fonctions | O5 | 2–3 | non |
+| 3.2-ex11 à ex15 | Les tâches courantes | O1 | 1 | non |
+| 3.2-ex16 à ex18 | La conversation | O3 | 2 | non |
+| 3.2-ex19 à ex22 | Le context engineering | O3 | 2 | non |
+| 3.2-ex23 à ex26 | Des sorties structurées | O4 | 2 | non |
+| 3.2-ex27 | Exercice clé : extraire des données structurées de 100 factures ou reçus | O1, O4 | 3 | non |
+| 3.2-ex28 à ex30 | Contraindre la génération | O4 | 2–3 | non |
+| 3.2-ex31 à ex34 | Appeler des fonctions | O5 | 2–3 | non |
+| 3.2-ex35 à ex38 | Optimiser les prompts automatiquement | O6 | 2–3 | non |
+
+## Épreuve de niveau expert
+
+**Épreuve** : optimiser automatiquement le prompt d'extraction de factures sur un jeu de développement, puis prouver que le gain tient sur des documents jamais vus, avec un coût par document mesuré.
+
+| Niveau démontré | Preuve attendue |
+| --- | --- |
+| Implémenter | Le pipeline d'extraction et l'optimiseur, relançables |
+| Diagnostiquer | Les erreurs qui restent, classées par type |
+| Comparer | Prompt manuel, prompt optimisé, génération contrainte, sur le même test |
+| Choisir | La version retenue, justifiée par qualité et coût |
+
+**Statut des méthodes enseignées**
+
+| Méthode | Statut | Pratique |
+| --- | --- | --- |
+| Sorties structurées validées, génération contrainte | établie | autonome, en local |
+| Context engineering (composer, compacter, budget) | établie | autonome |
+| Optimisation de prompts (DSPy, MIPROv2) | établie | expérience réduite : petit jeu, petit modèle local |
+| Optimisation réflexive (GEPA) | récente | expérience réduite, résultats publiés à confirmer sur tes données |
 
 ## Ressources matérielles
 
@@ -143,6 +190,9 @@ Une facture peut contenir une instruction cachée destinée au modèle : premier
 | [OpenAI Cookbook](https://cookbook.openai.com/) | anglais | recettes | MIT | Des exemples de prompts, de sorties structurées et d'outils. |
 | [Documentation de Pydantic](https://docs.pydantic.dev/) | anglais | documentation | MIT | Décrire et valider des données structurées. |
 | [Documentation d'Instructor](https://python.useinstructor.com/) | anglais | documentation | MIT | Des sorties structurées validées, avec plusieurs fournisseurs. |
+| [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | anglais | article | accès libre | La discipline qui succède au prompt engineering, expliquée par la pratique. |
+| [DSPy, les optimiseurs](https://dspy.ai/learn/optimization/optimizers/) | anglais | documentation | libre | Les optimiseurs de prompts, leurs entrées et leurs coûts. |
+| [GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](https://arxiv.org/abs/2507.19457) | anglais | article | accès libre | L'optimisation par réflexion sur les erreurs. |
 
 ## Circuit
 
