@@ -32,7 +32,11 @@ Persona de référence pour les relectures : **Awa, 19 ans, à Bafoussam**, bac 
 ## 4. Contraintes non négociables
 
 1. **Autonomie totale.** Aucun mentor, aucune cohorte, aucun correcteur humain. Tout ce qui est évalué l'est par un QCM, un test automatique ou l'agent correcteur IA guidé par une grille.
-2. **PC d'entrée de gamme.** Tout doit tourner sur un processeur 64 bits 4 cœurs, **8 Go de RAM**, **sans GPU**, 40 Go de disque (4 Go de RAM pour les étapes 0 et 1). Colab et Kaggle sont une option pour aller plus vite, jamais une obligation.
+2. **PC d'entrée de gamme.** Tout doit tourner sur un processeur 64 bits (4 cœurs conseillés, 2 acceptés), **8 Go de RAM**, **sans GPU**, 40 Go de disque (4 Go de RAM pour les étapes 0 et 1). Colab et Kaggle sont une option pour aller plus vite, jamais une obligation.
+   - **Cœurs** : 4 conseillés ; 2 acceptés. Avec 2 cœurs, les étapes 0 et 1 se suivent sans problème ; ensuite les entraînements sont plus lents (Colab ou Kaggle en option).
+   - **Système** : Windows 10 64 bits (build 19041 ou plus) est accepté, comme Windows 11, macOS et Linux. Pour la sécurité, Windows 10 22H2 (build 19045) à jour est conseillé : c'est la seule version qui reçoit encore des correctifs.
+   - **RAM** : avec 4 Go, les étapes 0 et 1 se suivent sur tout système, Windows compris (en fermant les autres programmes) ; 8 Go sont nécessaires ensuite. Avec 4 Go, deux voies, aucune imposée : faire les parties lourdes sur Colab ou Kaggle (gratuits, en ligne, compte requis), ou ajouter de la RAM si le PC le permet. L'achat n'est jamais présenté comme obligatoire.
+   - **Mac trop ancien** (macOS que VS Code ne suit plus) : essayer quand même les étapes 0 et 1 ; si un outil refuse de s'installer, utiliser un autre ordinateur (proche, école) ou un Linux. Aucune promesse non sourcée. Passer à Windows 11 est conseillé, jamais exigé ; l'option payante des mises à jour de sécurité prolongées n'est jamais présentée comme nécessaire.
 3. **Coût zéro par défaut.** Outils gratuits et modèles locaux partout. Une API payante n'est proposée que si elle apporte vraiment quelque chose, toujours en option, toujours avec une alternative locale gratuite, avec un budget maximum chiffré et daté.
 4. **Français simple.** Cours en français, niveau B1, tutoiement. L'anglais monte par paliers (voir § 7).
 5. **Ancrage en Afrique francophone.** Exemples, données et projets tirés de situations réelles : agriculture, santé, mobile money, marchés, transport, administration, langues locales.
@@ -169,6 +173,18 @@ Un module passe par 8 étapes, **dans l'ordre**. On ne commence pas une étape t
 Après l'étape 8, seul le mainteneur passe le statut à `publie`.
 
 Les projets d'étape suivent le même circuit : la fiche est remplacée par `ENONCE.md` en brouillon, et l'étape 6 (grille) est obligatoire.
+
+### 9 bis. Production par Gemini, contrôle par Claude
+
+Le contenu (leçons, cadres de chapitre, exercices, QCM) est **écrit par Gemini**, appelé par la ligne de commande d'Antigravity (`agy`). Claude Code **ne l'écrit pas** : il pilote la production et la contrôle. Celui qui écrit n'est pas celui qui valide.
+
+- **Une tâche à la fois, en session neuve.** `outils/production/produire.py` donne à Gemini une consigne (`outils/production/consignes/`) et seulement le contexte utile : le module, la leçon, ce qui est déjà enseigné.
+- **Sources d'abord.** Pour chaque leçon : recherche (Gemini choisit les pages, `candidats.yaml`), lecture des pages par le pilote (texte exact dans `pages/`), extraction (`sources.yaml`, chaque fait avec sa citation exacte), plan (`plan.yaml`), puis rédaction (`lecon.mdx`), avec renvois et sources en bas de page (`docs/guide-pedagogique.md` § 4.1).
+- **Gemini ne lance aucune commande.** Il cherche sur le web, lit et écrit des fichiers. Le pilote lit les pages, exécute le code et lance les contrôles, puis lui renvoie les résultats.
+- **Contrôle à chaque étape** : contrôles automatiques (`outils/contenu.py`, `outils/qcm.py`, `outils/check.py`, `outils/production/sources.py`), analyse du raisonnement de Gemini à partir de ses traces (`outils/production/traces.py`) et tests visuels (`outils/production/visuel.py`). Un échec renvoie la tâche à Gemini avec le rapport ; au troisième échec, elle est escaladée.
+- **Trace complète** : consignes, sessions brutes de Gemini (réflexions et appels d'outils), versions successives, rapports. Tout est gardé dans le dépôt séparé `ai-engineer-fabrication`, pour que l'apprenant ne le télécharge pas.
+- **Ordre dans un module**, chapitre par chapitre : leçons, puis relecture de chaque leçon (étapes 7 et 8 sur la leçon), puis cadre du chapitre et assemblage dans `cours/`, puis exercices du chapitre (solution et tests d'abord, puis starter, énoncé, indices), puis QCM du chapitre. Les cases du circuit d'un module sont cochées quand tous ses chapitres ont franchi l'étape. Le code des exemples du cours est exécuté par les contrôles : il n'a pas besoin d'être écrit avant le cours.
+- **Le mainteneur** valide les fiches avant toute production, et chaque module à la fin, en le lisant sur la plateforme.
 
 ## 10. Exigences techniques des exercices et projets
 

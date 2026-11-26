@@ -89,6 +89,23 @@ Voir `templates/fiche.md` et les `README.md` des dossiers d'étape.
 - **Liens internes** : chemins relatifs vers le fichier (`../03-qualite/cours.mdx`). La plateforme les convertit en URL.
 - **Liens externes** : toujours avec la langue et, pour une vidéo, la durée : `[Documentation Python (anglais)](https://docs.python.org/3/)`.
 
+### 3.1 Sources et renvois
+
+Le cours est écrit **à partir de sources lues**, pas de mémoire. Chaque fait vérifiable (commande, option, version, chiffre, date, comportement d'un outil, article de loi, résultat de recherche) porte un **renvoi** vers sa source, en note de bas de page GitHub (`remark-gfm`, déjà utilisé par la plateforme) :
+
+```mdx
+Sous Windows, Python s'installe avec le Python install manager[^python-doc-windows].
+
+[^python-doc-windows]: Python Software Foundation, [« Using Python on Windows »](https://docs.python.org/3/using/windows.html) (anglais), consultée le 25 novembre 2026.
+```
+
+- L'identifiant du renvoi est celui de la source dans `sources.yaml` (minuscules, chiffres, tirets). Une même source peut être citée plusieurs fois avec le même renvoi.
+- Les définitions sont groupées **en bas du fichier**. La plateforme les affiche en fin de page ; dans VS Code, elles restent lisibles en bas du fichier.
+- Une définition contient : l'éditeur ou l'auteur, un **lien Markdown** vers la page (jamais une URL nue : elle déborde de l'écran d'un téléphone), la langue et la date de consultation.
+- Un code exécuté et sa sortie n'ont pas besoin de renvoi : le contrôle les exécute.
+
+Le dossier de recherche de chaque leçon (`sources.yaml` : sources, faits et citations exactes) est gardé dans le dépôt de fabrication, avec toute la trace de production (voir `outils/production/README.md`).
+
 ---
 
 ## 4. Composants MDX
@@ -218,12 +235,13 @@ Le texte des questions, des choix et des explications est du **Markdown simple**
 
 ---
 
-## 8. Validation automatique (prévue)
+## 8. Validation automatique
 
-Un futur outil (`outils/`) et la CI vérifieront :
+| Commande | Ce qu'elle vérifie |
+| --- | --- |
+| `python outils/contenu.py <module>` | La fiche (objectifs, notions, exercices, sections), puis chaque cours : front matter, sections et leur ordre, notions conformes à la fiche, pièges MDX, **compilation avec la configuration de la plateforme**, rédaction (phrases, tutoiement, interdits, prix sans date). Avec `--executer` : chaque bloc Python est exécuté et sa sortie comparée au bloc `text` qui suit. |
+| `python outils/qcm.py <module> --valider` | Le schéma, la banque (2 fois le tirage), 2 questions par objectif, notions et objectifs existants, identifiants uniques, clé cohérente avec les explications, biais de position et de longueur. |
+| `python outils/check.py <chemin> --production` | Voir `outils/README.md`. |
+| `python outils/production/visuel.py <module>` | **Tests visuels** : le site est construit (`next build`), chaque chapitre est ouvert dans Chrome sur un téléphone (360 × 740) et un ordinateur : erreurs de rendu, formules, débordement en largeur, ancres, sources en bas de page, images, poids de la page. Captures gardées pour la relecture. |
 
-- le front matter de chaque fichier rendu ;
-- la compilation de chaque `.mdx` avec la même configuration que la plateforme ;
-- la validité de chaque `qcm.yaml` contre le schéma, et la règle « banque d'au moins 2 fois le tirage » ;
-- le poids des images et la présence des textes alternatifs ;
-- l'unicité des identifiants (`Notion`, `MiniExercice`, questions, exercices).
+Un bloc Python qui ne peut pas tourner seul (il lit un fichier, il attend une saisie) commence par la ligne `# ne pas exécuter : <raison>`.

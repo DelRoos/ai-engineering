@@ -1,0 +1,52 @@
+# Règles d'autorisation de Gemini CLI pendant la production du contenu.
+# Chargées par produire.py avec l'option --policy (les règles du dossier .gemini/policies
+# d'un projet sont désactivées dans Gemini CLI 0.64, voir docs/reference/policy-engine.md).
+# En mode non interactif, tout ce qui n'est pas autorisé ici est refusé.
+
+# Lire et chercher dans les fichiers : toujours permis.
+[[rule]]
+toolName = ["read_file", "read_many_files", "list_directory", "glob", "grep_search"]
+decision = "allow"
+priority = 500
+
+# Écrire : permis (produire.py contrôle ensuite chaque fichier modifié).
+[[rule]]
+toolName = ["write_file", "replace"]
+decision = "allow"
+priority = 500
+
+# Chercher sur le web : permis. Le résultat est un résumé, il sert à trouver les pages.
+[[rule]]
+toolName = "google_web_search"
+decision = "allow"
+priority = 500
+
+# Résumé de page par Gemini : refusé. Il ne donne pas le texte exact et ne laisse pas de trace vérifiable.
+[[rule]]
+toolName = "web_fetch"
+decision = "deny"
+priority = 500
+denyMessage = "Pour lire une page, utilise : python outils/production/lire_page.py <url>. Il donne le texte exact et le garde pour la vérification des citations."
+
+# Commandes permises : lire une page, lancer les contrôles, les tests et le lint.
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = [
+  "python outils/production/lire_page.py",
+  "python outils/contenu.py",
+  "python outils/qcm.py",
+  "python outils/check.py",
+  "python -m pytest",
+  "python -m ruff",
+  "pytest",
+  "ruff",
+]
+decision = "allow"
+priority = 500
+
+# Toute autre commande : refusée, avec une explication pour le modèle.
+[[rule]]
+toolName = "run_shell_command"
+decision = "deny"
+priority = 400
+denyMessage = "Commande non autorisée pendant la production. Seules lire_page.py, les outils de outils/, pytest et ruff sont permis."

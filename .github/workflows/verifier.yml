@@ -1,0 +1,52 @@
+# Vérifie le contenu à chaque pull request : fiches, cours, QCM, exercices (solutions en CI).
+name: Vérifier le contenu
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  contenu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: plateforme/package-lock.json
+      - name: Installer
+        run: |
+          pip install -r outils/requirements.txt
+          npm ci --prefix plateforme
+      - name: Fiches et cours
+        run: |
+          status=0
+          for module in $(ls -d [0-9][0-9]-*/*/ | sed 's:/$::'); do
+            if [ -d "$module/cours" ] || [ -f "$module/cours.mdx" ]; then
+              python outils/contenu.py "$module" --executer || status=1
+            fi
+          done
+          exit $status
+      - name: QCM
+        run: |
+          status=0
+          for module in $(ls -d [0-9][0-9]-*/*/ | sed 's:/$::'); do
+            if [ -f "$module/qcm.yaml" ] || [ -d "$module/qcm" ]; then
+              python outils/qcm.py "$module" --valider || status=1
+            fi
+          done
+          exit $status
+      - name: Exercices (solutions, starters, tests par mutation)
+        run: |
+          status=0
+          for module in $(ls -d [0-9][0-9]-*/*/ | sed 's:/$::'); do
+            if [ -d "$module/exercices" ]; then
+              python outils/check.py "$module" --production || status=1
+            fi
+          done
+          exit $status

@@ -1,0 +1,6 @@
+# Dépendances réservées à la production du contenu (pas à l'apprenant). Versions relevées en novembre 2026.
+-r ../requirements.txt
+# Tests visuels : pilote le Chrome déjà installé (channel="chrome"), sans télécharger de navigateur.
+playwright==1.65.2
+# Lecture des sources en PDF (textes de loi, rapports).
+pypdf==7.1.1

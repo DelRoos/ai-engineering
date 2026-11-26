@@ -138,6 +138,16 @@ Règles :
 - Utilise des ordres de grandeur réalistes (prix en FCFA, populations, rendements agricoles). Si tu cites un chiffre réel, donne la source et l'année. Sinon, précise qu'il est inventé pour l'exemple.
 - Montre des personnes compétentes dans des situations normales. Pas de misérabilisme, pas de clichés.
 
+### 4.1 Écrire à partir de sources
+
+Un cours ne s'écrit pas de mémoire : la mémoire d'un auteur, humain ou IA, est datée et parfois fausse.
+
+1. **Chercher d'abord.** Avant d'écrire une leçon, on rassemble ses sources et, pour chaque fait, la phrase exacte qui le prouve (`sources.yaml`).
+2. **Préférer les sources primaires** : documentation officielle, normes, textes de loi, articles scientifiques, données publiques ; puis livres et cours reconnus ; puis blogs d'experts. Jamais une page générée par une IA ni un forum de réponses non vérifiées.
+3. **Citer au fil du texte** : chaque fait vérifiable porte un renvoi `[^id]`, et la liste des sources est en bas de la page (format : `docs/format-contenu.md` § 3.1).
+4. **Reformuler** : on explique avec ses mots, pour Awa. Recopier une source est interdit (licence, et ce n'est pas pédagogique). Une courte citation entre « » est permise si elle aide.
+5. **Signaler le doute** : un fait sans source sûre devient `TODO(vérifier): …`, jamais une affirmation.
+
 ---
 
 ## 5. Exercices

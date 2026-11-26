@@ -7,3 +7,8 @@ export function slugify(text: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 }
+
+/** Ancre d'un exemple : même calcul dans le sommaire de la leçon et dans le composant <Exemple>. */
+export function exempleId(titre?: string | null): string {
+  return titre ? `exemple-${slugify(titre)}` : "exemple";
+}

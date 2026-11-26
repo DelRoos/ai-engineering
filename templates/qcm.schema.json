@@ -13,7 +13,7 @@
     "module": {
       "description": "Identifiant du module, ex. \"0.1\" ou \"3.4\".",
       "type": "string",
-      "pattern": "^[0-6]\\.[0-9]{1,2}$"
+      "pattern": "^[0-8]\\.[0-9]{1,2}$"
     },
     "chapitre": {
       "description": "Numéro du chapitre si le module a un QCM par chapitre (qcm/NN-slug.yaml).",
@@ -58,7 +58,7 @@
         "id": {
           "description": "Identifiant stable : <module>-qNN, ex. \"0.1-q07\". Ne change plus une fois publié.",
           "type": "string",
-          "pattern": "^[0-6]\\.[0-9]{1,2}-q[0-9]{2,3}$"
+          "pattern": "^[0-8]\\.[0-9]{1,2}-q[0-9]{2,3}$"
         },
         "objectif": {
           "description": "Objectif évalué, défini dans fiche.md (O1, O2…).",

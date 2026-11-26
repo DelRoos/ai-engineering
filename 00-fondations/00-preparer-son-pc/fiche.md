@@ -41,6 +41,10 @@ mise_a_jour: 2026-11-25
 | Chapitre | Id de la notion | Notion | Objectif |
 | --- | --- | --- | --- |
 | 1 | `pc-pret` | Vérifier que ton PC est prêt | O1 |
+| 1 | `pc-pas-pret` | Si ton PC n'est pas prêt : sauvegarder, libérer le disque, mettre Windows à jour | O1 |
+| 1 | `passer-64-bits` | Préparer le passage de Windows 32 bits à 64 bits sans rien perdre | O1 |
+| 1 | `installer-64-bits` | Installer Windows 64 bits et tout remettre en place | O1 |
+| 1 | `autres-cas` | Sur Mac, sous Linux, ou avec peu de RAM ou de cœurs : que faire | O1 |
 | 1 | `fichiers-dossiers` | Fichiers, dossiers et extensions : s'y retrouver dans ton PC | O1 |
 | 1 | `a-quoi-sert` | Python, Git, VS Code : à quoi sert chaque outil | O3 |
 | 1 | `terminal` | Ouvrir un terminal et taper ta première commande | O2 |
@@ -89,7 +93,7 @@ mise_a_jour: 2026-11-25
 
 ## Ressources matérielles
 
-- **RAM maximale** : 8 Go conseillés sous Windows (WSL et VS Code ouverts ensemble) ; 4 Go suffisent sous Linux.
+- **RAM maximale** : 8 Go pour la formation ; 4 Go suffisent pour les étapes 0 et 1 (sous Windows aussi, en fermant les autres programmes). Sous Windows, 8 Go conseillés dès maintenant : WSL et VS Code tournent ensemble.
 - **Téléchargements** : environ 1,5 Go sous Windows (WSL et Ubuntu compris), environ 400 Mo sous Linux ou macOS. TODO(vérifier) les tailles exactes au moment de la rédaction.
 - **Temps de calcul le plus long** : l'installation de WSL et d'Ubuntu, 10 à 30 minutes selon la connexion.
 - **Dépendances nouvelles** : Python, Git, VS Code, puis `requirements.txt` de la formation (pytest, ruff, PyYAML).
@@ -125,7 +129,9 @@ mise_a_jour: 2026-11-25
 
 | Date | Étape | Fichier et ligne | Problème | Correction |
 | --- | --- | --- | --- | --- |
-| | | | | |
+| 2026-11-26 | 7-8 (leçon `pc-pas-pret`) | notions, ligne `pc-pas-pret` | 1 038 mots pour 800 ; le passage en 64 bits demande une vraie procédure | Notion coupée en deux (`pc-pas-pret`, `passer-64-bits`), décision du mainteneur |
+| 2026-11-26 | 7-8 (leçon `pc-pas-pret`, v4) | notions, ligne `pc-pas-pret` | 800 mots tenus au prix d'un style télégraphique (Windows, ESU, Windows 11, Mac, Linux, RAM, cœurs) | Mac, Linux, RAM et cœurs sortent dans la notion `autres-cas` ; `pc-pas-pret` ne traite plus que Windows, décision du mainteneur |
+| 2026-11-26 | 7-8 (leçon `passer-64-bits`) | notions, ligne `passer-64-bits` | une réinstallation complète ne tient pas en 800 mots au niveau B1 (texte télégraphique) | Notion coupée en deux (`passer-64-bits` : préparer ; `installer-64-bits` : installer et restaurer), décision du mainteneur |
 
 ## Points à vérifier
 

@@ -1,0 +1,224 @@
+---
+id: "apercu"
+chapitre: 1
+titre: "Connaître ton PC et ton terminal (aperçu)"
+parcours: "fondations"
+objectifs: [O1]
+prerequis: []
+statut: brouillon
+version: 1
+mise_a_jour: 2026-11-26
+licence: CC-BY-SA-4.0
+---
+
+Aperçu provisoire : le cadre du chapitre (objectifs, pourquoi, résumé) sera écrit à l assemblage.
+
+<Notion id="pc-pret" titre="Vérifier que ton PC est prêt">
+
+À Bamako, Moussa vérifie son PC avant de dépenser son forfait inutilement. Rien ne se télécharge dans cette leçon.
+
+Comme un chauffeur avant Bamako-Ségou, vérifie quatre points sans terminal (fenêtre de commandes) :
+
+- Calcul : le **processeur** (*processor*), divisé en cœurs (unités de calcul).
+- Stockage des programmes ouverts : la **RAM** (en français : mémoire vive).
+- Pilote du PC : le **système d'exploitation** (*operating system*).
+- L'espace disque libre.
+
+<Note>
+
+Exigences de la formation :
+
+- Processeur 64 bits (traitement des données) : 4 cœurs conseillés, 2 acceptés (plus lent après l'étape 1). Colab et Kaggle (PC gratuits en ligne) sont en option.
+- RAM : 8 Go. 4 Go suffisent aux étapes 0 et 1 sur tout système, Windows compris (autres programmes fermés).
+- Disque : 40 Go libres.
+- Aucune carte graphique n'est nécessaire.
+- Système : Windows 10 64 bits (numéro de build 19041 ou plus) est accepté. Plus ce numéro de version est grand, plus Windows est récent. Vise d'abord Windows 10 22H2 (19045) à jour (sécurité). Windows 11 est aussi conseillé, jamais exigé. macOS ou Linux 64 bits récent conviennent.
+
+</Note>
+
+### Sous Windows 10 et 11
+
+1. Ouvre Paramètres (`Touche Windows + I`)[^microsoft-raccourcis-windows] → « Système » → « À propos »[^microsoft-infos-appareil-windows]. Sous « Spécifications de l’appareil », lis processeur, « Mémoire RAM installée » (Windows 10) et « Type du système »[^microsoft-windows-32-64-faq]. Cette ligne donne ton système (64 bits requis) et ton processeur (x64 veut dire 64 bits).
+
+   « Système d’exploitation 32 bits, processeur x64 » (Windows 10) : le processeur suffit, le système bloque (leçon suivante). Windows 11 est toujours 64 bits[^microsoft-windows-32-64-faq]. WSL 2 (sous-système Windows pour Linux) demande au moins un Intel Core 1re génération ou AMD Opteron[^microsoft-wsl-troubleshooting]. Un Core 2 Duo ne suffit pas (TODO(vérifier): comment reconnaître un Intel Core de 1re génération ou plus). Sous « Spécifications Windows », compare les 5 premiers chiffres de « Build du système d’exploitation » à 19041 (pas « 22H2 »).
+
+2. Gestionnaire des tâches (`Ctrl + Maj + Échap`)[^microsoft-raccourcis-windows]. Sous Windows 10 : « Plus de détails » si besoin[^asus-gestionnaire-taches], puis « Performance » → « Processeur ». Lis « Cœurs : » (pas « Processeurs logiques : ») et « Virtualisation : » (TODO(vérifier): libellés sous Windows 11).
+
+   La virtualisation émule un autre système, tel que Linux ; elle est souvent activée[^microsoft-activer-virtualisation]. WSL en a besoin[^microsoft-wsl-troubleshooting]. Windows 10 : « Activé » (prêt). « Désactivé » : prêt ; tu l'activeras dans « Sous Windows : installer WSL et Ubuntu » (chapitre 2). « Non capable » : pas de virtualisation, pas prêt (leçon suivante).
+
+3. Explorateur de fichiers (`Touche Windows + E`)[^microsoft-raccourcis-windows] → « Ce PC ». Sous « Périphériques et lecteurs », lis l'espace libre du lecteur système (en général `C:`, où WSL s'installe)[^microsoft-espace-disque][^microsoft-wsl-troubleshooting].
+
+Un blocage ? Leçon suivante ; sinon, va à l'exemple.
+
+### Sur Mac
+
+Depuis macOS Ventura 13[^apple-stockage-mac] : menu Apple → « Réglages Système » → « Général » → « Informations »[^apple-reglages-a-propos-mac]. Lis « Puce » ou « Processeur », « Mémoire », « macOS », puis « Stockage » sous « Général ».
+
+Les versions suivies en sécurité (en général trois) conviennent[^vscode-requirements]. Relevé en novembre 2026 : macOS 27 Golden Gate, Tahoe 26, Sequoia 15[^eclecticlight-macos-golden-gate]. Sans « Réglages Système », ton macOS est probablement antérieur à Ventura 13.
+
+Sur Mac, TODO(vérifier): cœurs et 64 bits. macOS non suivi (avant Sequoia 15 : Sonoma 14, Ventura 13…) : essaie quand même les étapes 0 et 1. Si un outil refuse de s'installer, utilise un autre PC (proche, école) ou Linux (leçon suivante).
+
+### Sous Linux
+
+Sur GNOME (bureau Linux), ouvre « Activités » → « Paramètres » → « Système » → « À propos »[^gnome-materiel-systeme]. Lis « Processeur » et « Mémoire ». « Informations sur le système » : distribution (variante Linux, comme Ubuntu)[^gnome-version-systeme] et 64 bits sous « Type de système d’exploitation »[^gnome-infos-os].
+
+Disque : « Activités » → « Moniteur système » → « Systèmes de fichiers »[^gnome-espace-disque]. Tu écriras ton code dans VS Code. Il prend en charge Ubuntu 20.04, Debian 10 ou plus récent[^vscode-requirements]. Sous Linux, TODO(vérifier): cœurs, anciens GNOME, autres bureaux.
+
+Un blocage ? Vois « Si ton PC n'est pas prêt ».
+
+<Exemple titre="Moussa vérifie son Windows 10 à Bamako">
+
+- « Spécifications de l’appareil » : Core i3, 8 Go ; « Type du système » : « Système d’exploitation 64 bits, processeur x64 ».
+- « Spécifications Windows » : 22H2, build 19045.
+- Gestionnaire des tâches (« Performance » → « Processeur ») : « Cœurs : 2 », « Virtualisation : Activé ».
+- « Ce PC » : 62 Go libres sur `C:`.
+
+Verdict : prêt. Ses 2 cœurs sont acceptés : après l'étape 1, entraînements plus lents (Colab ou Kaggle en option).
+
+</Exemple>
+
+<MiniExercice id="pc-pret-1">
+
+1. Relève ces quatre points sur ton PC : est-il prêt ?
+2. Verdict et blocages (Windows 10, virtualisation activée) :
+   - PC 1 : Core i3 (2 cœurs), 4 Go, 64 bits (19045), 55 Go (`C:`).
+   - PC 2 : x64 (4 cœurs), 8 Go, 32 bits, build sous 19041, 18 Go (`C:`).
+
+<Solution>
+
+| Situation | Verdict |
+| --- | --- |
+| Tous les points sont bons | Prêt. |
+| 2 cœurs | Prêt (plus lent après l'étape 1). |
+| 4 Go de RAM | Prêt étapes 0–1, 8 Go ensuite. |
+| Virtualisation désactivée | Prêt ; tu l'activeras dans « Sous Windows : installer WSL et Ubuntu » (chapitre 2). |
+| Autre blocage | Pas prêt : leçon suivante. |
+
+- PC 1 : prêt étapes 0–1 (2 cœurs ; 4 Go, programmes fermés) ; RAM insuffisante à l'étape 2.
+- PC 2 : pas prêt (32 bits, build sous 19041, 18 Go).
+
+</Solution>
+
+</MiniExercice>
+
+</Notion>
+
+[^microsoft-raccourcis-windows]: Microsoft, [« Les raccourcis clavier dans Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/raccourcis-clavier-dans-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec) (français), consultée le 25 novembre 2026.
+[^microsoft-infos-appareil-windows]: Microsoft, [« Rechercher des informations sur votre appareil Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/quelle-version-du-syst%C3%A8me-d-exploitation-windows-mon-ordinateur-ex%C3%A9cute-t-il-628bec99-476a-2c13-5296-9dd081cdd808) (français), consultée le 25 novembre 2026.
+[^microsoft-windows-32-64-faq]: Microsoft, [« Windows 32 et 64 bits : Forum Aux Questions | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/windows-32-bits-et-64-bits-forum-aux-questions-c6ca9541-8dce-4d48-0415-94a3faa2e13d) (français), consultée le 25 novembre 2026.
+[^microsoft-wsl-troubleshooting]: Microsoft, [« Résolution des problèmes liés au sous-système Windows pour Linux | Microsoft Learn »](https://learn.microsoft.com/fr-fr/windows/wsl/troubleshooting) (français), consultée le 25 novembre 2026.
+[^asus-gestionnaire-taches]: ASUS, [« [Windows 10] Comment utiliser le Gestionnaire des tâches pour vérifier les performances de l'ordinateur | Assistance officielle | ASUS France »](https://www.asus.com/fr/support/faq/1043921/) (français), consultée le 25 novembre 2026.
+[^microsoft-activer-virtualisation]: Microsoft, [« Activer la virtualisation sur Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/activer-la-virtualisation-sur-windows-c5578302-6e43-4b4b-a449-8ced115f58e1) (français), consultée le 25 novembre 2026.
+[^microsoft-espace-disque]: Microsoft, [« Libérer de l’espace disque dans Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/lib%C3%A9rer-de-l-espace-disque-dans-windows-a18fae02-a0fa-8df9-9838-8970f9939de4) (français), consultée le 25 novembre 2026.
+[^apple-stockage-mac]: Apple Inc., [« Libérer de l’espace de stockage sur Mac - Assistance Apple (FR) »](https://support.apple.com/fr-fr/102624) (français), consultée le 25 novembre 2026.
+[^apple-reglages-a-propos-mac]: Apple Inc., [« Afficher les réglages À propos sur Mac - Assistance Apple (FR) »](https://support.apple.com/fr-fr/guide/mac-help/mchlea7173f3/mac) (français), consultée le 25 novembre 2026.
+[^vscode-requirements]: Microsoft, [« Requirements for Visual Studio Code »](https://code.visualstudio.com/docs/supporting/requirements) (anglais), consultée le 25 novembre 2026.
+[^eclecticlight-macos-golden-gate]: The Eclectic Light Company, [« Apple has released macOS Golden Gate, and security updates to Tahoe 26.7, Sequoia 15.8 – The Eclectic Light Company »](https://eclecticlight.co/2026/09/14/apple-has-released-macos-golden-gate-and-security-updates-to-tahoe-26-7-sequoia-15-8/) (anglais), consultée le 25 novembre 2026.
+[^gnome-materiel-systeme]: Le projet de documentation GNOME, [« Informations sur le matériel de votre système »](https://help.gnome.org/users/gnome-help/stable/about-hardware.html.fr) (français), consultée le 25 novembre 2026.
+[^gnome-version-systeme]: Le projet de documentation GNOME, [« Détection de la version de GNOME en cours d’utilisation »](https://help.gnome.org/users/gnome-help/stable/gnome-version.html.fr) (français), consultée le 25 novembre 2026.
+[^gnome-infos-os]: Le projet de documentation GNOME, [« Trouver des informations sur votre système d’exploitation. »](https://help.gnome.org/gnome-help/about-os.html.fr) (français), consultée le 26 novembre 2026.
+[^gnome-espace-disque]: Le projet de documentation GNOME, [« Vérification de l’espace disque libre »](https://help.gnome.org/users/gnome-help/stable/disk-capacity.html.fr) (français), consultée le 25 novembre 2026.
+
+<Notion id="pc-pas-pret" titre="Si ton PC n'est pas prêt : quoi faire, sans risque">
+
+À Bamako, Aminata bloque : son Windows est trop ancien et son disque est presque plein. Sauvegarde tes fichiers et agis dans l'ordre.
+
+Fais les gros téléchargements avec une connexion qui n'utilise pas ton forfait (école, université, cybercafé, box d'un proche)[^microsoft-telecharger-w10][^microsoft-fin-support-w10]. Le partage de connexion de ton téléphone utilise ton forfait (plusieurs Go, TODO(vérifier): tailles).
+
+### Windows 10 et Windows 11
+
+La formation exige Windows 10 64 bits, build 19041 ou plus. L'installation simple de WSL demande aussi le build 19041[^microsoft-wsl-install]. Entre 19041 et 19044, ton PC est prêt ; 22H2 reste conseillé pour la sécurité (garde tes fichiers, TODO(vérifier)).
+
+Hors forfait, ouvre « Démarrer » → « Paramètres » → « Mise à jour & Sécurité » → « Windows Update » → « Rechercher des mises à jour »[^microsoft-telecharger-w10]. Clique sur « Télécharger & installer », puis redémarre[^microsoft-maj-windows]. Windows Update peut proposer Windows 11 (plusieurs Go) : ne l'accepte pas sur partage de connexion.
+
+Sans correctifs depuis le 14 octobre 2025, ton PC risque plus de virus[^microsoft-fin-support-w10]. L'ESU (mises à jour de sécurité étendues, sans support technique) couvre 22H2 jusqu'au 12 octobre 2027[^microsoft-esu-fr]. Il faut un compte administrateur (droit d'installer) et un compte Microsoft non enfant (compte gratuit). L'ESU reste facultatif pour la formation, même sans inscription ni compte Microsoft (conseillé pour ta sécurité).
+
+D'après la page américaine (*Extended Security Updates*), hors de l'Espace économique européen, l'inscription peut être gratuite[^microsoft-esu-en]. Deux options : synchroniser tes paramètres, ou 1 000 points Microsoft Rewards (points fidélité gratuits). Ouvre Windows Update : il montre les options proposées dans ton pays, s'il y en a[^microsoft-esu-fr]. Synchronise seulement les paramètres ; laisse désactivés les dossiers (Images, Vidéos…), lourds pour ton forfait[^microsoft-sauvegarde-windows]. Ces paramètres sont gardés en ligne sur ton compte Microsoft.
+
+Ne paie pas : 30 USD plus taxes, ou l'équivalent en monnaie locale (prix relevé en novembre 2026)[^microsoft-esu-en]. Windows 11 est conseillé, jamais exigé : gratuit depuis 22H2 si compatible, hors forfait (plusieurs Go, TODO(vérifier))[^microsoft-fin-support-w10]. Il demande entre autres : processeur 64 bits compatible, 64 Go de stockage, exigences de sécurité de la carte mère. Vérifie avec « Contrôle d’intégrité du PC », petite application gratuite à télécharger (TODO(vérifier): taille)[^microsoft-windows-11-specs].
+
+### Windows 32 bits sur processeur 64 bits
+
+La formation, VS Code et Windows 11 exigent 64 bits[^vscode-requirements][^microsoft-windows-32-64-faq]. WSL 2 n'est documenté que pour x64 et ARM64[^microsoft-wsl-install-manual]. Windows 32 bits plafonne sous 4 Go : passer en 64 bits utilise toute ta RAM[^microsoft-memory-limits].
+
+Windows Update ne convertit pas : réinstaller reformate tout le disque[^microsoft-windows-32-64-faq]. Copie tes fichiers sur un disque externe ou une autre clé (empruntés sans achat), puis vérifie qu'ils s'ouvrent[^microsoft-telecharger-w10]. Il faut deux supports : un pour tes fichiers, une clé vierge d'au moins 8 Go (effacée) pour Windows.
+
+Vérifie l'activation avant (TODO(vérifier): écran d'activation). Si ce Windows était déjà activé, il se réactive seul[^microsoft-telecharger-w10]. Dans l'outil Microsoft (hors forfait), choisis 64 bits (x64), pas 32 bits (TODO(vérifier): écran du choix de l'architecture). Inutile de lancer Windows Update avant : l'installation neuve est déjà récente, et tu économises plusieurs Go. Après réinstallation, ne remets sur `C:` que l'essentiel pour garder 40 Go libres.
+
+### Disque plein (moins de 40 Go libres)
+
+Déplace Vidéos, Musique, Images et Téléchargements sur clé USB, carte SD ou disque externe[^microsoft-espace-disque][^apple-espace-stockage-mac]. Supprime l'inutile et vide la Corbeille (clic droit sur la Corbeille sous Windows ; aussi sur Mac). Sous Linux GNOME, clique droit sur la Corbeille (panneau latéral) → « Vider la corbeille »[^gnome-supprimer-fichiers].
+
+<Attention>
+
+Ne compresse jamais `C:`, malgré « Compresser ce lecteur pour économiser de l’espace disque »[^microsoft-espace-disque]. Un fichier créé dans un dossier compressé l'est aussi : le disque virtuel de WSL le serait. WSL tourne uniquement sur le lecteur système (en général `C:`), sans compression ni chiffrement[^microsoft-wsl-troubleshooting]. Tu vérifieras ces cases (Propriétés du dossier WSL) dans « Sous Windows : installer WSL et Ubuntu ».
+
+</Attention>
+
+### Autres cas
+
+La virtualisation (UEFI/BIOS), voulue par WSL 2[^microsoft-wsl-troubleshooting][^microsoft-wsl-install-manual], est souvent active[^microsoft-activer-virtualisation]. Sinon, vois « Sous Windows : installer WSL et Ubuntu » (chapitre 2).
+
+Sur Mac, VS Code suit en général trois versions de macOS[^vscode-requirements]. En septembre 2026 : macOS 27 (puce Apple[^apple-compatibilite-macos-27]), Tahoe 26 et Sequoia 15[^apple-maj-macos]. Tahoe 26 accepte les puces Apple et quatre modèles de 2019–2020 sans puce Apple[^apple-compatibilite-tahoe-26]. Vérifie sur la liste d'Apple, sauvegarde, puis menu Apple → « Réglages Système » → « Général » → « Mise à jour logicielle » hors forfait.
+
+Si macOS est antérieur à Sequoia 15 et affiche « à jour », il ne peut plus monter[^apple-maj-macos]. Essaie les étapes 0 et 1 ; si un outil échoue, utilise un autre ordinateur (proche, école) ou Linux.
+
+Sous Linux : Ubuntu 20.04 ou Debian 10, ou plus récent[^vscode-requirements]. Pour une version plus ancienne, vois « Installer Python » (chapitre 2, TODO(vérifier)).
+
+Avec 2 cœurs ou 4 Go, n'achète rien : les étapes 0 et 1 tournent partout (ferme tes programmes). Ensuite, avec 4 Go : Colab ou Kaggle (gratuits, en ligne, compte requis), ou ajoute de la RAM si possible. Avec 2 cœurs, les entraînements suivants ralentissent (Colab ou Kaggle en option).
+
+Ensuite, refais les vérifications de la leçon précédente.
+
+<Exemple titre="Moussa prépare le PC d'Aminata à Bamako">
+
+Aminata a un Core i3 64 bits (2 cœurs), 8 Go et la virtualisation active. Son Windows 10 64 bits (build 18363) a 18 Go libres sur `C:`.
+
+1. N'achète rien pour les 2 cœurs.
+2. Sauvegarde d'abord ses fichiers avant toute grosse opération.
+3. Libère `C:` d'abord, car la mise à jour a besoin de place. Déplace ses gros dossiers jusqu'à avoir 40 Go libres sur `C:` et vide la Corbeille, sans compresser.
+4. Hors forfait, passe à 22H2 par Windows Update.
+5. Vérifie avec Contrôle d'intégrité du PC si Windows 11 est possible, ou l'ESU gratuit, sans payer.
+
+</Exemple>
+
+<MiniExercice id="pc-pas-pret-1">
+
+Un proche d'Awa a un processeur x64 (4 cœurs), 4 Go de RAM et la virtualisation désactivée. Il tourne sous Windows 10 32 bits (build 18363), avec 22 Go libres sur `C:`, dont beaucoup de vidéos.
+
+1. Donne l'ordre des actions sans perte ni dépense.
+2. Dis pourquoi ces gestes sont dangereux ou inutiles :
+   - A. Réinstaller en 64 bits sans sauvegarder.
+   - B. Compresser `C:` pour gagner de la place.
+   - C. Payer l'option payante ESU.
+
+<Solution>
+
+1. Sauvegarde d'abord ses fichiers avant de reformater et laisse ses vidéos ailleurs (40 Go libres sur `C:`). Vérifie l'activation, puis réinstalle en 64 bits hors forfait (clé vierge de 8 Go minimum), sans Windows Update avant. Garde les 4 Go (tous utilisés en 64 bits) ; laisse la virtualisation pour « Sous Windows : installer WSL et Ubuntu ».
+2. A reformate tout le disque. B compresse et bloque le disque virtuel de WSL 2. C est inutile : l'ESU payant n'est jamais exigé, et 64 bits passe d'abord.
+
+</Solution>
+
+</MiniExercice>
+
+</Notion>
+
+[^microsoft-telecharger-w10]: Microsoft, [« Télécharger Windows 10 »](https://www.microsoft.com/fr-fr/software-download/windows10) (français), consultée le 25 novembre 2026.
+[^microsoft-fin-support-w10]: Microsoft, [« Windows 10 support a pris fin le 14 octobre 2025 | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/fin-de-la-prise-en-charge-de-windows-10-le-14-octobre-2025-2ca8b313-1946-43d3-b55c-2b95b107f281) (français), consultée le 25 novembre 2026.
+[^microsoft-wsl-install]: Microsoft, [« Installer WSL | Microsoft Learn »](https://learn.microsoft.com/fr-fr/windows/wsl/install) (français), consultée le 25 novembre 2026.
+[^microsoft-maj-windows]: Microsoft, [« Installation des mises à jour de Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/mettez-%C3%A0-jour-windows-3c5ae7fc-9fb6-9af1-1984-b5e0412c556a) (français), consultée le 25 novembre 2026.
+[^microsoft-esu-en]: Microsoft, [« Windows 10 Extended Security Updates | Microsoft Windows »](https://www.microsoft.com/en-us/windows/extended-security-updates) (anglais), consultée le 25 novembre 2026.
+[^microsoft-esu-fr]: Microsoft, [« Mises à jour de sécurité étendue de Windows 10 | Microsoft Windows »](https://www.microsoft.com/fr-fr/windows/extended-security-updates) (français), consultée le 25 novembre 2026.
+[^microsoft-sauvegarde-windows]: Microsoft, [« Sauvegarder et restaurer avec Sauvegarde Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/sauvegarder-votre-pc-windows-87a81f8a-78fa-456e-b521-ac0560e32338) (français), consultée le 25 novembre 2026.
+[^vscode-requirements]: Microsoft, [« Requirements for Visual Studio Code »](https://code.visualstudio.com/docs/supporting/requirements) (anglais), consultée le 25 novembre 2026.
+[^microsoft-windows-11-specs]: Microsoft, [« Caractéristiques techniques et configuration requise pour Windows 11 | Microsoft Windows »](https://www.microsoft.com/fr-fr/windows/windows-11-specifications) (français), consultée le 25 novembre 2026.
+[^microsoft-wsl-install-manual]: Microsoft, [« Étapes d’installation manuelles pour les versions antérieures de WSL | Microsoft Learn »](https://learn.microsoft.com/fr-fr/windows/wsl/install-manual) (français), consultée le 25 novembre 2026.
+[^microsoft-windows-32-64-faq]: Microsoft, [« Windows 32 et 64 bits : Forum Aux Questions | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/windows-32-bits-et-64-bits-forum-aux-questions-c6ca9541-8dce-4d48-0415-94a3faa2e13d) (français), consultée le 25 novembre 2026.
+[^microsoft-memory-limits]: Microsoft, [« Memory Limits for Windows and Windows Server Releases - Win32 apps | Microsoft Learn »](https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases) (anglais), consultée le 25 novembre 2026.
+[^microsoft-espace-disque]: Microsoft, [« Libérer de l’espace disque dans Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/lib%C3%A9rer-de-l-espace-disque-dans-windows-a18fae02-a0fa-8df9-9838-8970f9939de4) (français), consultée le 25 novembre 2026.
+[^apple-espace-stockage-mac]: Apple Inc., [« Libérer de l’espace de stockage sur Mac - Assistance Apple (FR) »](https://support.apple.com/fr-fr/102624) (français), consultée le 25 novembre 2026.
+[^gnome-supprimer-fichiers]: Projet GNOME, [« Suppression de fichiers et de dossiers »](https://help.gnome.org/users/gnome-help/stable/files-delete.html.fr) (français), consultée le 25 novembre 2026.
+[^microsoft-wsl-troubleshooting]: Microsoft, [« Résolution des problèmes liés au sous-système Windows pour Linux | Microsoft Learn »](https://learn.microsoft.com/fr-fr/windows/wsl/troubleshooting) (français), consultée le 25 novembre 2026.
+[^microsoft-activer-virtualisation]: Microsoft, [« Activer la virtualisation sur Windows | Microsoft Support »](https://support.microsoft.com/fr-fr/windows/activer-la-virtualisation-sur-windows-c5578302-6e43-4b4b-a449-8ced115f58e1) (français), consultée le 25 novembre 2026.
+[^apple-compatibilite-macos-27]: Apple Inc., [« macOS 27 Golden Gate est compatible avec ces ordinateurs - Assistance Apple (FR) »](https://support.apple.com/fr-fr/127255) (français), consultée le 25 novembre 2026.
+[^apple-compatibilite-tahoe-26]: Apple Inc., [« macOS Tahoe 26 est compatible avec ces ordinateurs - Assistance Apple (FR) »](https://support.apple.com/fr-fr/122867) (français), consultée le 25 novembre 2026.
+[^apple-maj-macos]: Apple Inc., [« Mettre à jour macOS sur votre Mac - Assistance Apple (FR) »](https://support.apple.com/fr-fr/108382) (français), consultée le 25 novembre 2026.

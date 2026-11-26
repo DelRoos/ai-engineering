@@ -16,14 +16,30 @@ Règles d'usage : `docs/guide-pedagogique.md` § 3.1. En bref :
 
 Colonnes : **Terme** (avec son genre en français) · **Cat.** · **Se dit aussi** · **Définition courte** · **Prononciation** · **Module**.
 
+## Le PC et son système
+
+| Terme | Cat. | Se dit aussi | Définition courte | Prononciation | Module |
+| --- | --- | --- | --- | --- | --- |
+| 64 bits (un système, un processeur) | B | *64-bit*, x64 | Façon dont le processeur et le système traitent les données ; nécessaire pour la formation | — | 0.0 |
+| build de Windows (le), numéro de build | A | — | Numéro précis de la version de Windows (par exemple 19045) : plus il est grand, plus Windows est récent. À ne pas confondre avec le *build* du code (ci-dessous) | « bild » | 0.0 |
+| cœur (le) | B | *core* | Unité de calcul du processeur ; un processeur en a plusieurs | — | 0.0 |
+| distribution (la) | B | *distribution*, *distro* | Variante de Linux (Ubuntu, Debian…) | « dis-tro » | 0.0 |
+| processeur (le) | B | *processor*, *CPU* | Composant qui exécute les calculs du PC | « si-pi-you » | 0.0 |
+| RAM (la) | A | mémoire vive | Mémoire qui garde les programmes ouverts ; elle se vide quand on éteint le PC | « ram » | 0.0 |
+| système d'exploitation (le) | B | *operating system*, *OS* | Programme qui pilote le PC et lance les autres (Windows, macOS, Linux) | « o-èss » | 0.0 |
+| terminal (le) | B | *terminal*, invite de commandes | Fenêtre où l'on tape des commandes au lieu de cliquer | — | 0.0 |
+| virtualisation (la) | B | *virtualization* | Fonction du processeur qui permet de faire tourner un autre système dans le sien ; WSL en a besoin | — | 0.0 |
+| WSL (le) | A | sous-système Windows pour Linux | Outil de Windows qui fait tourner Linux à l'intérieur de Windows | « dou-ble-vé-èss-èl » | 0.0 |
+
 ## Outils du développeur
 
 | Terme | Cat. | Se dit aussi | Définition courte | Prononciation | Module |
 | --- | --- | --- | --- | --- | --- |
+| appel (l', m.) | B | *call* | Le fait de faire travailler une fonction en écrivant son nom suivi de parenthèses : `print("Bonjour")` | « kol » | 0.1 |
 | bibliothèque (la) | B | *library* | Code écrit par d'autres, qu'on importe pour s'en servir | « laï-brè-ri » | 0.1 |
 | branche (la) | B | *branch* | Version parallèle du code dans Git, pour travailler sans casser le reste | — | 0.2 |
 | bug (le) | A | bogue | Erreur dans un programme | « beug » | 0.1 |
-| build (le) | A | — | Étape qui prépare le code pour qu'il puisse être lancé ou livré | « bild » | 0.2 |
+| build (le) | A | — | Étape qui prépare le code pour qu'il puisse être lancé ou livré. Pour le numéro de version de Windows, voir « build de Windows » | « bild » | 0.2 |
 | code review (la) | A | revue de code | Relecture du code par une autre personne (ou par soi-même) avant de l'intégrer | « code ri-viou » | 0.2 |
 | commit (le) | A | — | Enregistrement d'un ensemble de modifications dans Git, avec un message | — | 0.2 |
 | debug (le), débugger | A | débogage, déboguer | Chercher et corriger un bug. « Débugger » est le seul verbe francisé admis | « di-beug » | 0.3 |
@@ -31,14 +47,17 @@ Colonnes : **Terme** (avec son genre en français) · **Cat.** · **Se dit aussi
 | fonction (la) | B | *function* | Bloc de code nommé qu'on peut appeler plusieurs fois | — | 0.1 |
 | fork (le) | A | — | Copie d'un dépôt dans ton propre compte, pour le modifier librement | — | 0.2 |
 | framework (le) | A | cadriciel (rare) | Ensemble d'outils qui impose une structure pour construire une application | « frème-weurk » | 4.2 |
+| interpréteur (l', m.) | B | *interpreter* | Programme qui lit ton code Python et exécute ses ordres un par un | — | 0.1 |
 | issue (la) | A | ticket | Tâche, bug ou idée enregistré dans GitHub | « i-chou » | 0.2 |
 | linter (le), lint (le) | A | — | Outil qui vérifie le style et repère des erreurs dans le code sans le lancer | — | 0.3 |
 | liste (la) | B | *list* | Suite ordonnée de valeurs, en Python `[1, 2, 3]` | — | 0.1 |
 | merge (le) | A | fusion | Intégration des modifications d'une branche dans une autre | « meurdj » | 0.2 |
 | package (le) | A | paquet | Code réutilisable qu'on installe, par exemple avec `pip` | « pa-kidj » | 0.1 |
+| programme (le) | B | *program* | Suite d'ordres écrits dans un langage de programmation, que l'ordinateur exécute | — | 0.1 |
 | pull request (la) | A | PR | Demande d'intégrer ses modifications dans un dépôt, avec relecture | « poul ri-kouest » | 0.2 |
 | push (le) | A | — | Envoi de ses commits vers le dépôt en ligne (« faire un push ») | « pouch » | 0.2 |
 | README (le) | A | — | Fichier qui présente un projet : ce qu'il fait, comment l'installer, comment l'utiliser | « rid-mi » | 0.2 |
+| script (le) | B | *script* | Programme enregistré dans un fichier (`.py` pour Python), qu'on lance d'un coup | « skript » | 0.1 |
 | test (le) | B | *test* | Code qui vérifie automatiquement qu'un autre code fait ce qu'il doit faire | — | 0.3 |
 | variable (la) | B | *variable* | Nom qui désigne une valeur gardée en mémoire | — | 0.1 |
 | workflow (le) | A | flux de travail | Suite d'étapes automatisées ou habituelles pour accomplir une tâche | « weurk-flo » | 4.6 |

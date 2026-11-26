@@ -2,14 +2,17 @@
 
 Les outils en ligne de commande qui permettent d'apprendre seul : passer les QCM, valider les exercices et les projets, suivre sa progression. Ils tournent sur un PC d'entrée de gamme, sans connexion.
 
-> **État** : aucun outil n'est encore codé. Ce fichier décrit leur rôle prévu ; il sert de cahier des charges.
+> **État** (novembre 2026) : `check.py`, `contenu.py` et la validation de `qcm.py` sont codés ; le passage du QCM dans le terminal, `progression.py` et `correcteur-ia/` restent à faire.
+>
+> Installation : `pip install -r outils/requirements.txt`. Outils de production du contenu : `outils/production/README.md`.
 
 ## Outils prévus
 
 | Outil | Commande | Rôle |
 | --- | --- | --- |
-| `qcm.py` | `python outils/qcm.py <module>` | Fait passer le QCM d'un module dans le terminal. Tire `tirage` questions au hasard, mélange les choix, affiche l'explication de chaque réponse, valide à 80 %. Enregistre le résultat. |
-| `check.py` | `python outils/check.py <exercice, module ou projet>` | Valide un exercice, tous les exercices d'un module (chemin du module, ex. `00-fondations/01-python`) ou un projet : tests pytest, lint ruff, couverture minimale, absence de secrets, présence de la documentation, limites de temps et de mémoire. Affiche un résultat clair en français. |
+| `qcm.py` | `python outils/qcm.py <module>` (`--valider` pour les auteurs) | Fait passer le QCM d'un module dans le terminal. Tire `tirage` questions au hasard, mélange les choix, affiche l'explication de chaque réponse, valide à 80 %. Enregistre le résultat. |
+| `check.py` | `python outils/check.py <exercice, module ou projet>` | Valide un exercice, tous les exercices d'un module (chemin du module, ex. `00-fondations/01-python`) ou un projet : tests pytest, lint ruff, couverture minimale, absence de secrets, présence de la documentation, limites de temps et de mémoire. Affiche un résultat clair en français. Avec `--production` : la solution passe, le starter échoue proprement, les tests refusent les réponses bidon et attrapent au moins 80 % des versions fausses de la solution (tests par mutation), sans réseau, sans fuite de la solution dans l'énoncé ou les indices. |
+| `contenu.py` | `python outils/contenu.py <module>` | Contrôle la fiche et les cours d'un module : format, MDX compilé comme la plateforme, structure, rédaction, code exécuté (`--executer`). Voir `docs/format-contenu.md` § 8. |
 | `progression.py` | `python outils/progression.py` | Affiche les modules faits, les suivants et le temps estimé restant. Génère la page de portfolio à la fin du parcours. |
 | `correcteur-ia/` | (voir son README) | Consignes de l'agent correcteur et de l'examen oral, avec un modèle local (gratuit) ou une API à bas coût. |
 

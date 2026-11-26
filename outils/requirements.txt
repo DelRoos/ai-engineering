@@ -1,0 +1,5 @@
+# Dépendances des outils de l'apprenant (qcm.py, check.py, contenu.py). Versions relevées en novembre 2026.
+PyYAML==6.0.2
+pytest==9.0.3
+jsonschema==4.26.0
+ruff==0.17.6

@@ -2,7 +2,7 @@ import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { slugify } from "./slug";
+import { exempleId, slugify } from "./slug";
 
 /**
  * Lecture du contenu de la formation, au build.
@@ -29,6 +29,18 @@ export type Statut = "brouillon" | "relu" | "publie";
 
 export type TocItem = { id: string; label: string };
 
+/** Une leçon = un bloc <Notion> du chapitre, affiché sur sa propre page. */
+export type Lesson = {
+  /** Identifiant de la notion, segment d'URL : /cours/0.0/1/pc-pret. */
+  id: string;
+  /** Numéro dans le chapitre (1, 2…) : affiché « Leçon 1.2 ». */
+  number: number;
+  title: string;
+  /** MDX de la leçon, avec les définitions des seules sources qu'elle cite. */
+  body: string;
+  toc: TocItem[];
+};
+
 export type Chapter = {
   moduleId: string;
   number: number;
@@ -37,9 +49,15 @@ export type Chapter = {
   objectives: string[];
   status: Statut;
   updatedAt: string | null;
-  /** Corps MDX, sans le front matter. */
+  /** Corps MDX complet, sans le front matter. */
   body: string;
   toc: TocItem[];
+  /** Cadre du chapitre avant la première leçon (objectifs, pourquoi…) : page d'ouverture. */
+  intro: string;
+  introToc: TocItem[];
+  /** Fin du chapitre après la dernière leçon (résumé, vocabulaire) : à la fin de la dernière leçon. */
+  outro: string;
+  lessons: Lesson[];
 };
 
 export type Module = {
@@ -78,6 +96,64 @@ function buildToc(body: string): TocItem[] {
   return items.sort((a, b) => a.index - b.index).map((x) => x.item);
 }
 
+const NOTION = /<Notion\s+id="([^"]+)"\s+titre="([^"]+)"[^>]*>[\s\S]*?<\/Notion>/g;
+const FOOTNOTE_DEF = /^\[\^([^\]\s]+)\]:.*$/gm;
+
+/** Ajoute à un morceau du chapitre les définitions des renvois [^id] qu'il cite. */
+function withFootnotes(part: string, defs: Map<string, string>): string {
+  const used = new Set([...part.matchAll(/\[\^([^\]\s]+)\](?!:)/g)].map((m) => m[1]));
+  const own = [...defs].filter(([id]) => used.has(id)).map(([, line]) => line);
+  return own.length ? `${part.trim()}\n\n${own.join("\n")}\n` : part.trim();
+}
+
+/** Sommaire d'une leçon : ses titres « ### », l'exemple, le mini-exercice, puis les sources. */
+function buildLessonToc(body: string): TocItem[] {
+  const items: { index: number; item: TocItem }[] = [];
+  for (const m of body.matchAll(/^###\s+(.+)$/gm)) {
+    const label = m[1].trim();
+    items.push({ index: m.index ?? 0, item: { id: slugify(label), label } });
+  }
+  for (const m of body.matchAll(/<Exemple(?:\s+titre="([^"]*)")?[^>]*>/g)) {
+    items.push({ index: m.index ?? 0, item: { id: exempleId(m[1]), label: "Exemple" } });
+  }
+  for (const m of body.matchAll(/<MiniExercice(?:\s+id="([^"]*)")?[^>]*>/g)) {
+    items.push({ index: m.index ?? 0, item: { id: m[1] ?? "a-toi-de-jouer", label: "À toi de jouer" } });
+  }
+  const resume = body.search(/<Resume>/);
+  if (resume >= 0) items.push({ index: resume, item: { id: "resume", label: "Résumé du chapitre" } });
+  const vocab = body.search(/<Vocabulaire>/);
+  if (vocab >= 0) items.push({ index: vocab, item: { id: "vocabulaire", label: "Vocabulaire" } });
+  const sorted = items.sort((a, b) => a.index - b.index).map((x) => x.item);
+  if (/^\[\^[^\]\s]+\]:/m.test(body)) sorted.push({ id: "footnote-label", label: "Sources" });
+  return sorted;
+}
+
+/** Découpe un chapitre en ouverture, leçons (blocs <Notion>) et fin de chapitre. */
+function splitChapter(body: string, title: string) {
+  const defs = new Map<string, string>();
+  for (const m of body.matchAll(FOOTNOTE_DEF)) if (!defs.has(m[1])) defs.set(m[1], m[0]);
+  const text = body.replace(FOOTNOTE_DEF, "");
+  const blocks = [...text.matchAll(NOTION)];
+  if (blocks.length === 0) {
+    const lessonBody = withFootnotes(text, defs);
+    return {
+      intro: "",
+      outro: "",
+      lessons: [{ id: "lecon", number: 1, title, body: lessonBody, toc: buildLessonToc(lessonBody) }],
+    };
+  }
+  const first = blocks[0].index ?? 0;
+  const last = blocks[blocks.length - 1];
+  const end = (last.index ?? 0) + last[0].length;
+  const outro = text.slice(end).trim();
+  const lessons = blocks.map((m, i) => {
+    const isLast = i === blocks.length - 1;
+    const lessonBody = withFootnotes(isLast && outro ? `${m[0]}\n\n${outro}` : m[0], defs);
+    return { id: m[1], number: i + 1, title: m[2], body: lessonBody, toc: buildLessonToc(lessonBody) };
+  });
+  return { intro: withFootnotes(text.slice(0, first), defs), outro, lessons };
+}
+
 function asString(v: unknown): string | null {
   if (v === undefined || v === null) return null;
   if (v instanceof Date) return v.toISOString().slice(0, 10);
@@ -87,10 +163,14 @@ function asString(v: unknown): string | null {
 function readChapter(file: string, fallbackNumber: number): Chapter {
   const source = fs.readFileSync(file, "utf8");
   const { data, body } = readFrontMatter(source);
+  const title = asString(data.titre) ?? path.basename(file, ".mdx");
+  const parts = splitChapter(body, title);
   return {
+    ...parts,
+    introToc: buildToc(parts.intro),
     moduleId: asString(data.id) ?? "",
     number: Number(data.chapitre ?? fallbackNumber),
-    title: asString(data.titre) ?? path.basename(file, ".mdx"),
+    title,
     duration: asString(data.duree_estimee),
     objectives: Array.isArray(data.objectifs) ? data.objectifs.map(String) : [],
     status: (asString(data.statut) as Statut) ?? "brouillon",

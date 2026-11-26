@@ -13,7 +13,7 @@ import {
   PlayCircle,
   Target,
 } from "lucide-react";
-import { slugify } from "@/lib/slug";
+import { exempleId, slugify } from "@/lib/slug";
 import { cn } from "@/components/ui";
 import { CodeBlock } from "./code-block";
 
@@ -80,9 +80,18 @@ function Notion({ id, titre, children }: WithChildren & { id: string; titre: str
   );
 }
 
+/** Notion affichée seule sur la page d'une leçon : sans son titre, qui est le h1 de la page. */
+export function LessonNotion({ id, children }: WithChildren & { id: string; titre: string }) {
+  return (
+    <section id={id} data-notion>
+      {children}
+    </section>
+  );
+}
+
 function Exemple({ titre, children }: WithChildren & { titre?: string }) {
   return (
-    <figure className="cours-exemple my-8 rounded-2xl border border-line bg-surface/60 p-5 sm:p-6">
+    <figure id={exempleId(titre)} className="cours-exemple my-8 scroll-mt-28 rounded-2xl border border-line bg-surface/60 p-5 sm:p-6">
       <figcaption className="mb-3 flex items-center gap-2 text-sm font-semibold text-fg">
         <BookOpenCheck className="size-4 text-accent" aria-hidden="true" />
         Exemple{titre ? ` : ${titre}` : ""}
@@ -92,9 +101,9 @@ function Exemple({ titre, children }: WithChildren & { titre?: string }) {
   );
 }
 
-function MiniExercice({ children }: WithChildren & { id?: string }) {
+function MiniExercice({ id, children }: WithChildren & { id?: string }) {
   return (
-    <aside className="cours-exercice ring-gradient my-8 rounded-2xl bg-surface-2 p-5 sm:p-6">
+    <aside id={id ?? "a-toi-de-jouer"} className="cours-exercice ring-gradient my-8 scroll-mt-28 rounded-2xl bg-surface-2 p-5 sm:p-6">
       <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-accent-1">
         <PenLine className="size-4 text-accent" aria-hidden="true" />À toi de jouer
       </p>
@@ -221,6 +230,11 @@ function H2(props: ComponentProps<"h2">) {
   return <h2 {...props} id={id} className="scroll-mt-28" />;
 }
 
+function H3(props: ComponentProps<"h3">) {
+  const id = props.id ?? slugify(textOf(props.children));
+  return <h3 {...props} id={id} className="scroll-mt-28" />;
+}
+
 function A({ href = "", ...props }: ComponentProps<"a">) {
   const external = /^https?:\/\//.test(href);
   return <a href={href} {...props} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} />;
@@ -250,6 +264,7 @@ export const courseComponents = {
   Vocabulaire,
   Video,
   h2: H2,
+  h3: H3,
   a: A,
   table: Table,
   pre: CodeBlock,
